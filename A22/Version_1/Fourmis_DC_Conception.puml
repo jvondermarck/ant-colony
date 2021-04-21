@@ -1,27 +1,45 @@
 @startuml
 'https://plantuml.com/class-diagram
 
-abstract class AbstractList
-abstract AbstractCollection
-interface List
-interface Collection
+skinparam style strictuml
+skinparam classAttributeIconSize 0
+skinparam classFontStyle Bold
+hide enum methods
 
-List <|-- AbstractList
-Collection <|-- AbstractCollection
+class Graphe {
+    -grille
+    +Obstacle()
+}
+class Noeud{
+    -cellule
+}
+class Arete {
 
-Collection <|- List
-AbstractCollection <|- AbstractList
-AbstractList <|-- ArrayList
-
-class ArrayList {
-Object[] elementData
-size()
 }
 
-enum TimeUnit {
-DAYS
-HOURS
-MINUTES
+abstract class Fourmis {
+    coordonnee(N:Noeud)
+    residenceDeBase(N:Noeud)
 }
+class Reine {
+    -reside
+    +donnerNaissance()
+}
+class Soldat {
+    +patrouille(N:Noeud)
+}
+
+class Etranger {
+    residenceDeBase(N:Noeud)
+}
+
+
+Graphe --> Noeud
+Noeud -> Arete
+Graphe -> Arete
+Noeud --> Fourmis
+Fourmis --> Reine : Occupé par une >
+Fourmis --> Etranger : Peut contenir >
+Reine --> Soldat
 
 @enduml
