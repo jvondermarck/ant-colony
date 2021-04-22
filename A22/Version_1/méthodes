@@ -1,0 +1,22 @@
+Enumération des méthodes/variables pour chaque classe :
+
+Noeud :
+ - estColonie()
+
+Colonie :
+ - private String nom
+
+Obstacle :
+
+Reine :
+ - donneNaissance()
+ -
+
+Soldat :
+ - seDeplace()
+ -
+
+Etrangere :
+ - seDeplace()
+ - demiTour()
+
