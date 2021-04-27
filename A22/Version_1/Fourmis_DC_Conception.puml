@@ -7,12 +7,22 @@ skinparam classFontStyle Bold
 hide enum methods
 
 class Graphe {
-    -grille
+    -taille[*][*]: Integer
+    -caseDejaPrise[*][*]: Boolean
+
+    <<Create>>Graphe(longueur, largueur)
+    +CreationEmplacement();
+    +getEmplacementNoeud(n:Noeud): Integer
     +Obstacle()
 }
+
 class Noeud{
-    -cellule
+    -coordonneeNoeud
+
+    <<Create>>Noeud(g:Graphe)
+    +getCoordonneNoeud()
 }
+
 class Arete {
 
 }
@@ -34,7 +44,7 @@ class Etranger {
 }
 
 
-Graphe --> Noeud
+Graphe *-- Noeud
 Noeud -> Arete
 Graphe -> Arete
 Noeud --> Fourmis
