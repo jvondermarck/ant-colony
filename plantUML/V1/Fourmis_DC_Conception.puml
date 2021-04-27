@@ -23,8 +23,14 @@ class Noeud{
     +getCoordonneNoeud()
 }
 
-class Arete {
+class Aretes {
+    -taille[*][*]: Integer
+    -coordonnee: Integer
 
+    <<Create>>Aretes(g:Graphe, n:Noeud)
+    +Affichage()
+    -afficheDonnee(x.coordonnee, y.coordonnee)
+    -valideDonnee(x.coordonnee, y.coordonnee):Boolean
 }
 
 abstract class Fourmis {
@@ -44,10 +50,11 @@ class Etranger {
 }
 
 
-Graphe *-- Noeud
-Noeud -> Arete
-Graphe -> Arete
-Noeud --> Fourmis
+Graphe *--> Noeud
+Noeud *-> Aretes
+Aretes -> Noeud
+Graphe *-> Aretes
+Noeud o--> Fourmis
 Fourmis --> Reine : Occupé par une >
 Fourmis --> Etranger : Peut contenir >
 Reine --> Soldat
