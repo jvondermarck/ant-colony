@@ -1,12 +1,18 @@
 public class Graphe {
     private int taille[][];
     private Boolean caseDejaPrise [][];
+    private int longueur;
+    private int largueur;
+    private int size;
 
     public Graphe(int longueur, int largueur)
     {
         this.taille = new int[longueur][largueur];
         this.caseDejaPrise = new Boolean[longueur][largueur];
         CreationEmplacement();
+        this.longueur = longueur;
+        this.largueur = largueur;
+        this.size = longueur*largueur;
     }
 
     public void CreationEmplacement()
@@ -48,5 +54,17 @@ public class Graphe {
                 System.out.println(data);
             }
         }
+    }
+
+    public int getLongueur() {
+        return longueur;
+    }
+
+    public int getLargueur() {
+        return largueur;
+    }
+
+    public int getSize() {
+        return size;
     }
 }
