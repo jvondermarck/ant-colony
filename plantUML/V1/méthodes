@@ -20,3 +20,7 @@ Etrangere :
  - seDeplace()
  - demiTour()
 
+Aretes
+    seDeplace sur aretes
+
+Class soldat : abstraite pour eviter qu'on puisse l'instancier

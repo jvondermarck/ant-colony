@@ -13,4 +13,13 @@ public class Noeud {
     public int getCoordonneNoeud() {
         return coordonneNoeud;
     }
+
+    public void setCoordonneNoeud(int coordonneNoeud) {
+        this.coordonneNoeud = coordonneNoeud;
+    }
+
+    @Override
+    public String toString() {
+        return "Le Noeud est : " + this.coordonneNoeud;
+    }
 }

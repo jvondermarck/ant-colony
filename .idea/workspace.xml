@@ -4,16 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="47cd6ad5-e8f1-43de-aae4-65f52ffc0fb8" name="Default Changelist" comment="Ajout class Aretes">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Aretes.java" afterDir="false" />
+    <list default="true" id="47cd6ad5-e8f1-43de-aae4-65f52ffc0fb8" name="Default Changelist" comment="MAJ UML DCC + MAJ Code Java">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/plantUML/V1/Fourmis_DC_Conception.puml" beforeDir="false" afterPath="$PROJECT_DIR$/plantUML/V1/Fourmis_DC_Conception.puml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plantUML/V1/Fourmis_DS_Iteration.puml" beforeDir="false" afterPath="$PROJECT_DIR$/plantUML/V1/Fourmis_DS_Iteration.puml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plantUML/V1/méthodes" beforeDir="false" afterPath="$PROJECT_DIR$/plantUML/V1/méthodes" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Aretes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Aretes.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Graphe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Graphe.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Noeud.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Noeud.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Graphe.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Graphe.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Noeud.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Noeud.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,7 +44,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Language Defaults" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -52,20 +54,18 @@
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
-      <module name="Fourmis" />
+      <module name="fourmis" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -87,6 +87,9 @@
       <workItem from="1619524199116" duration="326000" />
       <workItem from="1619524720301" duration="9713000" />
       <workItem from="1619547241362" duration="7893000" />
+      <workItem from="1619705449739" duration="148000" />
+      <workItem from="1619719563569" duration="99000" />
+      <workItem from="1619719685909" duration="9438000" />
     </task>
     <task id="LOCAL-00001" summary="Update du GIT">
       <created>1619524870580</created>
@@ -140,6 +143,7 @@
     <MESSAGE value="Update du git" />
     <MESSAGE value="Ajout ressources Java" />
     <MESSAGE value="Ajout class Aretes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ajout class Aretes" />
+    <MESSAGE value="MAJ UML DCC + MAJ Code Java" />
+    <option name="LAST_COMMIT_MESSAGE" value="MAJ UML DCC + MAJ Code Java" />
   </component>
 </project>

@@ -1,11 +1,19 @@
 @startuml
 'https://plantuml.com/sequence-diagram
 
-autonumber
+skinparam style strictuml
+skinparam responseMessageBelowArrow true
+hide footbox
+'autonumber
 
-Alice -> Bob: Authentication Request
-Bob --> Alice: Authentication Response
+participant "Graphe" as graphe
+participant "Noeud" as noeud
+participant "Reine" as reine
+participant "Soldat" as soldat
 
-Alice -> Bob: Another authentication Request
-Alice <-- Bob: another authentication Response
+-> graphe++:Graphe(longueur, largueur)
+graphe -> graphe++ : CreationEmplacement()
+
+
+
 @enduml

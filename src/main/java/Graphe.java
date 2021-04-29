@@ -1,14 +1,16 @@
+import java.util.Random;
+
 public class Graphe
 {
-    private int[][] taille;
-    private Boolean[][] caseDejaPrise;
-    private Boolean[][] isSetMatrix;
+    private int[][] taille; // Tableau où se trouve tous les emplacements des cellules du graphe (vide)
+    private Boolean[][] caseDejaPrise; // Tableau où se trouve les emplacements des cellules qui contient des noeuds
 
     private int longueur;
     private int largueur;
-    private int size;
+    private int size; // Air du rectangle
 
-    private int nbrNoeudDansGraphe;
+    private int nbrNoeudDansGraphe; // Pour savoir le nbr de Noeud total que présentent le graphe
+
 
     public Graphe(int longueur, int largueur)
     {
@@ -19,10 +21,10 @@ public class Graphe
         try {
             this.taille = new int[longueur][largueur];
             this.caseDejaPrise = new Boolean[longueur][longueur];
-            CreationEmplacement();
             this.longueur = longueur;
             this.largueur = largueur;
             this.size = longueur*largueur;
+            CreationEmplacement(); // On crée les emplacements de cellules sur le graphes (créer des cellules)
         } catch(RuntimeException ex)
         {
             System.out.println("Le format entrée est incorect, veuillez réssayer.");
@@ -38,7 +40,7 @@ public class Graphe
             for(int j = 0; j < taille[i].length; ++j)
             {
                 taille[i][j] = numeroCellule; // On ajoute sur cette cellule son numéro
-                caseDejaPrise[i][j] = false; // On dit que cette cellule est pas encore prise par un noeud
+                caseDejaPrise[i][j] = false; // On dit que cette cellule est pas encore prise par un noeud (vu qu'on est à l'étape de création seulement)
                 numeroCellule++; // On incrémente de 1 pour que la prochaine cellule aie un nbr différent de celle d'avant
             }
         }
@@ -56,7 +58,7 @@ public class Graphe
                 {
                     caseDejaPrise[i][j] = true; // On modifie l'état de la cellule en disant qu'elle est occupé par un noeud
                     this.nbrNoeudDansGraphe++; // On compte le nombre de case qu'on a dans notre graphe pour éviter qu'on créer + de noeud que de cellules
-                    return emplacementNoeud = taille[i][j];
+                    return taille[i][j]; // On retourne l'emplacement du noeud (le numéro de cellule où se trouve le noeud)
                 }
             }
         }
@@ -67,12 +69,18 @@ public class Graphe
     public void afficherGraphe()
     {
         for (int[] innerArray: taille) {
-            // second for...each loop access each element inside the row
             for(int data: innerArray) {
                 System.out.println(data);
             }
         }
     }
+
+    public void obstacle()
+    {
+
+
+    }
+
 
     public int getLongueur() {
         return longueur;

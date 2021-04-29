@@ -6,7 +6,7 @@ skinparam classAttributeIconSize 0
 skinparam classFontStyle Bold
 hide enum methods
 
-class Graphe {
+class Graphe #back:Wheat;line.bold {
     -taille[*][*]: Integer
     -caseDejaPrise[*][*]: Boolean
 
@@ -31,32 +31,35 @@ class Aretes {
     +Affichage()
     -afficheDonnee(x.coordonnee, y.coordonnee)
     -valideDonnee(x.coordonnee, y.coordonnee):Boolean
+    -deplacementNoeud()
 }
 
-abstract class Fourmis {
+abstract class Fourmis #lightblue;line:blue {
     coordonnee(N:Noeud)
     residenceDeBase(N:Noeud)
 }
-class Reine {
-    -reside
+class Reine #lightblue;line:green {
+    -reside: Noeud
     +donnerNaissance()
 }
-class Soldat {
+abstract class Soldat #lightblue;line:green {
     +patrouille(N:Noeud)
 }
 
-class Etranger {
+class Etranger #lightblue;line:green{
     residenceDeBase(N:Noeud)
 }
 
 
-Graphe *--> Noeud
-Noeud *-> Aretes
-Aretes -> Noeud
-Graphe *-> Aretes
-Noeud o--> Fourmis
+Graphe "1" *--> "0..*" Noeud
+
+Noeud "\n1" *-> "0..*" Aretes : \n Relie  >
+Aretes "0..*" -> "1" Noeud : Relie noeuds adjacents >
+
+Graphe .. Aretes : <<use>>
+Noeud "1" o--> Fourmis : Contient
 Fourmis --> Reine : Occupé par une >
-Fourmis --> Etranger : Peut contenir >
-Reine --> Soldat
+Fourmis --> "\t\t0..*" Etranger : Peut contenir >
+Reine "1" --> "*" Soldat : Donne naissance >
 
 @enduml

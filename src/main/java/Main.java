@@ -19,5 +19,7 @@ public class Main {
         //Display z = new Display(g.getLongueur(),g.getLargueur(),g.getSize());
         Aretes arr = new Aretes(g,a);
         arr.Affichage();
+        arr.deplacementNoeud();
+        System.out.println(a);
     }
 }
