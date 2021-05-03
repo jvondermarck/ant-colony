@@ -9,6 +9,11 @@ hide enum methods
 class Graphe #back:Wheat;line.bold {
     -taille[*][*]: Integer
     -caseDejaPrise[*][*]: Boolean
+    -longueur:Integer
+    -largueur:Integer
+    -size:Integer
+    -nbrNoeudDansGraphe:Integer
+    -nombreColonie:Integer
 
     <<Create>>Graphe(longueur, largueur)
     +CreationEmplacement();
@@ -16,11 +21,13 @@ class Graphe #back:Wheat;line.bold {
     +Obstacle()
 }
 
+
 class Noeud{
     -coordonneeNoeud
 
     <<Create>>Noeud(g:Graphe)
     +getCoordonneNoeud()
+    +setCoordonneNoeud()
 }
 
 class Aretes {
@@ -34,29 +41,42 @@ class Aretes {
     -deplacementNoeud()
 }
 
-abstract class Fourmis #lightblue;line:blue {
+class Colonie {
+    +nomColonie():String
+}
+
+interface Fourmis <<interface>> #lightblue;line:blue {
+    +coordonnee(N:Noeud)
+    +residenceDeBase(N:Noeud)
+    +colonie(C:Colonie)
+}
+class Reine #lightblue;line:green {
+    -reside:Noeud
+    +donnerNaissance()
     coordonnee(N:Noeud)
     residenceDeBase(N:Noeud)
 }
-class Reine #lightblue;line:green {
-    -reside: Noeud
-    +donnerNaissance()
-}
-abstract class Soldat #lightblue;line:green {
+class Soldat #lightblue;line:green {
+    -reside:Noeud
+    +coordonnee(N:Noeud)
+    +residenceDeBase(N:Noeud)
     +patrouille(N:Noeud)
 }
 
 class Etranger #lightblue;line:green{
+    -reside:Noeud
     residenceDeBase(N:Noeud)
 }
 
 
 Graphe "1" *--> "0..*" Noeud
+Graphe "1" *-left-> "1" Colonie
 
 Noeud "\n1" *-> "0..*" Aretes : \n Relie  >
 Aretes "0..*" -> "1" Noeud : Relie noeuds adjacents >
 
 Graphe .. Aretes : <<use>>
+Colonie <.. Fourmis : <<use>>
 Noeud "1" o--> Fourmis : Contient
 Fourmis --> Reine : Occupé par une >
 Fourmis --> "\t\t0..*" Etranger : Peut contenir >

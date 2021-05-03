@@ -1,6 +1,6 @@
 public class Main {
     public static void main(String[] args) {
-        Graphe g = new Graphe(3,3);
+        Graphe g = new Graphe(3,3, 2);
         //g.afficherGraphe();
         Noeud a = new Noeud(g);
         Noeud b = new Noeud(g);
@@ -21,5 +21,7 @@ public class Main {
         arr.Affichage();
         arr.deplacementNoeud();
         System.out.println(a);
+
+        Colonie.parcoursColonie();
     }
 }
