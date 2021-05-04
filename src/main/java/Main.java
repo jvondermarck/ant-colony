@@ -1,6 +1,6 @@
 public class Main {
     public static void main(String[] args) {
-        Graphe g = new Graphe(3,3, 2);
+        Graphe g = new Graphe(3,3);
         //g.afficherGraphe();
         Noeud a = new Noeud(g);
         Noeud b = new Noeud(g);
@@ -13,15 +13,14 @@ public class Main {
         Noeud i = new Noeud(g);
 
 
-        System.out.println("L'emplacement du noeud A se trouve à la case numéro : " + a.getCoordonneNoeud());
-        System.out.println("L'emplacement du noeud B se trouve à la case numéro : " + b.getCoordonneNoeud());
+        //System.out.println("L'emplacement du noeud A se trouve à la case numéro : " + a.getCoordonneNoeud());
+        //System.out.println("L'emplacement du noeud B se trouve à la case numéro : " + b.getCoordonneNoeud());
 
         //Display z = new Display(g.getLongueur(),g.getLargueur(),g.getSize());
-        Aretes arr = new Aretes(g,a);
-        arr.Affichage();
-        arr.deplacementNoeud();
-        System.out.println(a);
+        System.out.println();
+        System.out.println();
+        Reine r1 = new Reine(a, g);
 
-        Colonie.parcoursColonie();
+
     }
 }

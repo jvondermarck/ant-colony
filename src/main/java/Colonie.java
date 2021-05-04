@@ -3,6 +3,19 @@ import java.util.Map;
 import java.util.Scanner;
 
 public class Colonie {
+    
+    private final int numColonie;
+
+    public Colonie()
+    {
+        this.numColonie = 1;
+    }
+
+    public int getNumColonie() {
+        return numColonie;
+    }
+
+    /*
     private static final Map<Integer, String> colonie = new HashMap<Integer, String>();
 
     public Colonie()
@@ -29,4 +42,5 @@ public class Colonie {
     public static Map<Integer, String> getColonie() {
         return colonie;
     }
+     */
 }

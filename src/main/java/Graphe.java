@@ -10,8 +10,9 @@ public class Graphe
     private int size; // Air du rectangle
 
     private int nbrNoeudDansGraphe; // Pour savoir le nbr de Noeud total que présentent le graphe
+    private Colonie colonie;
 
-    public Graphe(int longueur, int largueur, int nbrColonie)
+    public Graphe(int longueur, int largueur)
     {
         // Si longueur ou largeur est négative, alors on lance un message d'erreur
         if(longueur<0 || largueur <0)
@@ -23,7 +24,7 @@ public class Graphe
             this.longueur = longueur;
             this.largueur = largueur;
             this.size = longueur*largueur;
-            CreationColonie(nbrColonie);
+            this.colonie= new Colonie();
             CreationEmplacement(); // On crée les emplacements de cellules sur le graphes (créer des cellules)
         } catch(RuntimeException ex)
         {
@@ -65,14 +66,6 @@ public class Graphe
         return emplacementNoeud;
     }
 
-    public void CreationColonie(int nbrColonie)
-    {
-        for(int i=0; i<nbrColonie; i++)
-        {
-            Colonie c = new Colonie();
-        }
-    }
-
     // Pour afficher le graphe
     public void afficherGraphe()
     {
@@ -110,4 +103,7 @@ public class Graphe
         return taille;
     }
 
+    public Colonie getColonie() {
+        return colonie;
+    }
 }

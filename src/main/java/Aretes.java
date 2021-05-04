@@ -11,11 +11,12 @@ public class Aretes {
     private final ArrayList<Integer> listNoeud = new ArrayList<>();
     private final Noeud n;
 
-    public Aretes(Graphe g, Noeud n)
+    public Aretes(Noeud n, Graphe g)
     {
         this.tab = g.getTaille();
         this.coordonne = n.getCoordonneNoeud();
         this.n = n;
+        Affichage();
     }
 
     public void Affichage()
@@ -35,7 +36,7 @@ public class Aretes {
             }
         }
 
-        System.out.print("Les aretes adjacentes du Noeud (" + coordonne + ") sont : ");
+        //System.out.print("Les aretes adjacentes du Noeud (" + coordonne + ") sont : ");
         for(int y=yTab-1; y<=yTab+1; y++)
             for(int x=xTab-1; x<=xTab+1; x++)
                 if(x!=xTab || y!=yTab) // On veut pas une aretes qui a fasse 1-1 par exemple, donc on check si c'est pas égale
@@ -45,7 +46,7 @@ public class Aretes {
     private void afficheDonnee(int xTab, int yTab) {
         if(valideDonnee(xTab, yTab))
         {
-            System.out.print("(" + this.coordonne + "-" + tab[xTab][yTab] + ") ");
+            //System.out.print("(" + this.coordonne + "-" + tab[xTab][yTab] + ") ");
             listNoeud.add(tab[xTab][yTab]);
         }
     }
@@ -59,10 +60,11 @@ public class Aretes {
     }
 
     // On va chosir aléatoirement en fonction des aretes adjacentes du noeud, un nouveau noeud à aller
-    public void deplacementNoeud()
+    public Noeud deplacementNoeud()
     {
         Random rand = new Random();
         int noeudSuivant = listNoeud.get(rand.nextInt(listNoeud.size()));
         this.n.setCoordonneNoeud(noeudSuivant);
+        return this.n;
     }
 }

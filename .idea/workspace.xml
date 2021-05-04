@@ -5,11 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="47cd6ad5-e8f1-43de-aae4-65f52ffc0fb8" name="Default Changelist" comment="Creation Colonie">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Colonie.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/plantUML/V1/Fourmis_DC_Conception.puml" beforeDir="false" afterPath="$PROJECT_DIR$/plantUML/V1/Fourmis_DC_Conception.puml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plantUML/V1/Fourmis_DS_Iteration.puml" beforeDir="false" afterPath="$PROJECT_DIR$/plantUML/V1/Fourmis_DS_Iteration.puml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Aretes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Aretes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Colonie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Colonie.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Graphe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Graphe.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Noeud.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Noeud.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Graphe.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Graphe.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Noeud.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Noeud.class" afterDir="false" />
@@ -40,6 +43,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="codeWithMe.voiceChat.enabledByDefault" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Language Defaults" />
   </component>
@@ -56,13 +60,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -88,7 +94,8 @@
       <workItem from="1619719563569" duration="99000" />
       <workItem from="1619719685909" duration="9698000" />
       <workItem from="1620071162075" duration="22000" />
-      <workItem from="1620071234135" duration="4449000" />
+      <workItem from="1620071234135" duration="4507000" />
+      <workItem from="1620111503288" duration="6719000" />
     </task>
     <task id="LOCAL-00001" summary="Update du GIT">
       <created>1619524870580</created>
@@ -125,7 +132,14 @@
       <option name="project" value="LOCAL" />
       <updated>1619729526867</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Creation Colonie">
+      <created>1620075737255</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1620075737255</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -152,5 +166,12 @@
     <MESSAGE value="MAJ UML DCC + MAJ Code Java" />
     <MESSAGE value="Creation Colonie" />
     <option name="LAST_COMMIT_MESSAGE" value="Creation Colonie" />
+  </component>
+  <component name="XDebuggerManager">
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="Noeud" memberName="coordonneNoeud" />
+      </pinned-members>
+    </pin-to-top-manager>
   </component>
 </project>

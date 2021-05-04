@@ -14,6 +14,8 @@ participant "Soldat" as soldat
 -> graphe++:Graphe(longueur, largueur)
 graphe -> graphe++ : CreationEmplacement()
 
+-> noeud++:Noeud(g)
+
 
 
 @enduml

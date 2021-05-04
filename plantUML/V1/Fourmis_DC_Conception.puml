@@ -48,19 +48,34 @@ class Colonie {
 interface Fourmis <<interface>> #lightblue;line:blue {
     +coordonnee(N:Noeud)
     +residenceDeBase(N:Noeud)
-    +colonie(C:Colonie)
+    +colonie()
 }
 class Reine #lightblue;line:green {
-    -reside:Noeud
-    +donnerNaissance()
-    coordonnee(N:Noeud)
-    residenceDeBase(N:Noeud)
-}
-class Soldat #lightblue;line:green {
-    -reside:Noeud
+    -residenceDeBase:Noeud
+    -colonie:Colonie
+    -coordonnee:Noeud
+
+    <<Create>>Reine(g:Graphe, n:Noeud)
+    +donnerNaissance(Integer, N:Noeud, C:Colonie, G:Graphe)
     +coordonnee(N:Noeud)
     +residenceDeBase(N:Noeud)
+    +colonie(C:Colonie)
+}
+
+class Soldat #lightblue;line:green {
+    -residenceDeBase:Noeud
+    -colonie:Colonie
+    -coordonnee:Noeud
+    -ListeNoeud:ArrayList<Noeud>
+    -numeroSoldat:Integer
+    -graphe:Graphe
+
+    <<Create>>Soldat(N:Noeud, C:Colonie, G:Graphe, Integer)
+    +coordonnee(N:Noeud)
+    +residenceDeBase(N:Noeud)
+    +colonie(C:Colonie)
     +patrouille(N:Noeud)
+    +enMouvement()
 }
 
 class Etranger #lightblue;line:green{
