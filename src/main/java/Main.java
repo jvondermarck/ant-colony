@@ -17,8 +17,7 @@ public class Main {
         //System.out.println("L'emplacement du noeud B se trouve à la case numéro : " + b.getCoordonneNoeud());
 
         //Display z = new Display(g.getLongueur(),g.getLargueur(),g.getSize());
-        System.out.println();
-        System.out.println();
+
         Reine r1 = new Reine(a, g);
 
 

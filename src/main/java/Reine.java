@@ -8,8 +8,8 @@ public class Reine implements Fourmis {
     {
         residenceDeBase(n);
         colonie(this.residenceDeBase.getColonie());
-        donnerNaissance(3, this.residenceDeBase, this.colonie, g);
         coordonnee(this.residenceDeBase);
+        donnerNaissance(3, this.residenceDeBase, this.colonie, g);
     }
 
     @Override
@@ -31,9 +31,9 @@ public class Reine implements Fourmis {
     {
         for(int i=0; i<nombreSoldat; i++)
         {
-            Soldat s = new Soldat(n, c, g, i);
+            Soldat s = new Soldat(n, c, g, i+1);
             System.out.println("Naissance du soldat : " + i);
-            s.enMouvement();
+            //s.enMouvement();
         }
     }
 }

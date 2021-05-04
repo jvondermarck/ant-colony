@@ -1,29 +1,46 @@
 @startuml
+'https://plantuml.com/class-diagram
 
 skinparam style strictuml
 skinparam classAttributeIconSize 0
 skinparam classFontStyle Bold
 hide enum methods
 
-class Graphe {}
-class Arete {}
-class Fourmis {}
-
-class Reine {}
-
-class Soldat {}
-
-class Noeud{}
-class Etranger {}
+class Graphe #back:Wheat;line.bold {
+}
 
 
-Graphe --> Noeud
-Noeud -> Arete : Relie
-Arete -> Noeud : Relie
-Noeud --> Fourmis
-Fourmis --> Reine : Occupé par >
-Fourmis --> Etranger : Peut contenir >
-Reine --> Soldat
+class Noeud{
+}
 
+class Aretes {
+}
+
+class Colonie {
+}
+
+interface Fourmis <<interface>> #lightblue;line:blue {
+}
+class Reine #lightblue;line:green {
+}
+
+class Soldat #lightblue;line:green {
+}
+
+class Etranger #lightblue;line:green{}
+
+
+Graphe  *-->  Noeud
+Graphe  *-left-> Colonie
+
+Noeud  *->  Aretes : \n Relie  >
+Aretes  -> Noeud : Relie noeuds adjacents >
+
+Graphe .. Aretes : <<use>>
+Colonie <.. Fourmis : <<use>>
+Noeud  o--> Fourmis : Contient
+Fourmis --> Reine : Occupé par une >
+Fourmis -->  Etranger : Peut contenir >
+Reine  -->  Soldat : Donne naissance >
 
 @enduml

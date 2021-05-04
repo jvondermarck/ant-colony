@@ -1,23 +1,25 @@
 import java.util.ArrayList;
+import java.util.List;
 
 public class Soldat implements Fourmis {
 
     private Noeud residenceDeBase;
     private Colonie colonie;
     private Noeud coordonnee;
-    private Graphe graphe;
-    private int numeroSoldat;
+    private final Graphe graphe;
+    private final int numeroSoldat;
 
-    private final ArrayList<Noeud> ListeNoeud = new ArrayList<Noeud>();
+    private final List<Integer> ListeNoeud = new ArrayList<>();
 
     public Soldat(Noeud n, Colonie c, Graphe g, int numSoldat)
     {
         this.graphe = g;
         this.numeroSoldat = numSoldat;
-        this.ListeNoeud.add(n);
+        this.ListeNoeud.add(n.getCoordonneNoeud());
         coordonnee(n);
         residenceDeBase(n);
         colonie(c);
+        enMouvement();
     }
 
     @Override
@@ -38,15 +40,15 @@ public class Soldat implements Fourmis {
     public void patrouille(Noeud n)
     {
         Aretes arr = new Aretes(n, this.graphe);
-        Noeud nouveauNoeud = arr.deplacementNoeud();
+        arr.deplacementNoeud();
 
-        while(ListeNoeud.contains(nouveauNoeud))
+        while(ListeNoeud.contains(n.getCoordonneNoeud()))
         {
-            nouveauNoeud = arr.deplacementNoeud();
+            arr.deplacementNoeud();
         }
 
-        ListeNoeud.add(nouveauNoeud);
-        coordonnee(nouveauNoeud);
+        this.ListeNoeud.add(n.getCoordonneNoeud());
+        coordonnee(n);
     }
 
     public void enMouvement()
@@ -54,7 +56,7 @@ public class Soldat implements Fourmis {
         for(int i=0; i<this.graphe.getNbrNoeudDansGraphe(); i++)
         {
             patrouille(this.coordonnee);
-            System.out.println("Soldat (" + this.numeroSoldat + "- né au Noeud : " + this.residenceDeBase + "), dans le noeud : " + this.coordonnee);
+            System.out.println("Soldat (" + this.numeroSoldat + ", habitation : " + this.residenceDeBase + "), se trouve au : " + this.coordonnee);
         }
     }
 }

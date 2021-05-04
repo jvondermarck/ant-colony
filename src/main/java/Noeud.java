@@ -24,8 +24,8 @@ public class Noeud {
         return colonie;
     }
 
-//    @Override
-//    public String toString() {
-//        return "Le Noeud est : " + this.coordonneNoeud;
-//    }
+    @Override
+    public String toString() {
+        return "n°" + this.coordonneNoeud;
+    }
 }

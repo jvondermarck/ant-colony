@@ -60,11 +60,12 @@ public class Aretes {
     }
 
     // On va chosir aléatoirement en fonction des aretes adjacentes du noeud, un nouveau noeud à aller
-    public Noeud deplacementNoeud()
+    public void deplacementNoeud()
     {
         Random rand = new Random();
         int noeudSuivant = listNoeud.get(rand.nextInt(listNoeud.size()));
         this.n.setCoordonneNoeud(noeudSuivant);
-        return this.n;
     }
+
+
 }
