@@ -28,9 +28,7 @@ public class Soldat implements Fourmis {
     }
 
     @Override
-    public void residenceDeBase(Noeud n) {
-        this.residenceDeBase = n;
-    }
+    public void residenceDeBase(Noeud n) { this.residenceDeBase = n; }
 
     @Override
     public void colonie(Colonie c) {
@@ -41,12 +39,6 @@ public class Soldat implements Fourmis {
     {
         Aretes arr = new Aretes(n, this.graphe);
         arr.deplacementNoeud();
-
-        while(ListeNoeud.contains(n.getCoordonneNoeud()))
-        {
-            arr.deplacementNoeud();
-        }
-
         this.ListeNoeud.add(n.getCoordonneNoeud());
         coordonnee(n);
     }

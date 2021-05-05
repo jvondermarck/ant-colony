@@ -24,7 +24,6 @@ public class Graphe
             this.longueur = longueur;
             this.largueur = largueur;
             this.size = longueur*largueur;
-            this.colonie= new Colonie();
             CreationEmplacement(); // On crée les emplacements de cellules sur le graphes (créer des cellules)
         } catch(RuntimeException ex)
         {

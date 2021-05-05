@@ -42,7 +42,14 @@ class Aretes {
 }
 
 class Colonie {
-    +nomColonie():String
+    -{static} nombreColonie = 0:Integer
+    -numColonie:Integer
+    <<Create>>Colonie()
+    +getNumColonie():Integer
+}
+
+class Obstacle {
+
 }
 
 interface Fourmis <<interface>> #lightblue;line:blue {
@@ -85,12 +92,13 @@ class Etranger #lightblue;line:green{
 
 
 Graphe "1" *--> "0..*" Noeud
-Graphe "1" *-left-> "1" Colonie
 
 Noeud "\n1" *-> "0..*" Aretes : \n Relie  >
 Aretes "0..*" -> "1" Noeud : Relie noeuds adjacents >
 
 Graphe .. Aretes : <<use>>
+Noeud "1" *-left> "1" Colonie
+Noeud *-left> Obstacle
 Colonie <.. Fourmis : <<use>>
 Noeud "1" o--> Fourmis : Contient
 Fourmis --> Reine : Occupé par une >

@@ -1,6 +1,6 @@
 public class Noeud {
     private int coordonneNoeud;
-    private Colonie colonie;
+    private final Colonie colonie;
 
     public Noeud(Graphe g)
     {
@@ -8,7 +8,7 @@ public class Noeud {
             throw new IndexOutOfBoundsException("Vous avez crée trop de noeud");
         else {
             this.coordonneNoeud = g.getEmplacementNoeud(Noeud.this);
-            this.colonie = g.getColonie();
+            this.colonie = new Colonie();
         }
     }
 
