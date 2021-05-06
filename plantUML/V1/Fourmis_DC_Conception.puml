@@ -8,31 +8,35 @@ hide enum methods
 
 class Graphe #back:Wheat;line.bold {
     -taille[*][*]: Integer
-    -caseDejaPrise[*][*]: Boolean
-    -longueur:Integer
-    -largueur:Integer
-    -size:Integer
+    -estObstacle[*][*]: Boolean
+    -airGraphe:Integer
     -nbrNoeudDansGraphe:Integer
-    -nombreColonie:Integer
 
     <<Create>>Graphe(longueur, largueur)
     +CreationEmplacement();
     +getEmplacementNoeud(n:Noeud): Integer
-    +Obstacle()
+    +getAirGraphe(): Integer
+    +getNbrNoeudDansGraphe(): Integer
+    +getTaille() : [*][*] Integer
+    +getEstObstacle() : [*][*] Boolean
 }
 
-
 class Noeud{
-    -coordonneeNoeud
+    -coordonneeNoeud: Integer
+    -colonie: Colonie
 
     <<Create>>Noeud(g:Graphe)
     +getCoordonneNoeud()
     +setCoordonneNoeud()
+    +getColonie()
 }
 
 class Aretes {
-    -taille[*][*]: Integer
+    -tab[*][*]: Integer
+    -estObstacle[*][*]: Boolean
     -coordonnee: Integer
+    -listNoeud: ArrayList<Integer>
+    -n: Noeud
 
     <<Create>>Aretes(g:Graphe, n:Noeud)
     +Affichage()
@@ -48,14 +52,10 @@ class Colonie {
     +getNumColonie():Integer
 }
 
-class Obstacle {
-
-}
-
 interface Fourmis <<interface>> #lightblue;line:blue {
-    +coordonnee(N:Noeud)
-    +residenceDeBase(N:Noeud)
-    +colonie()
+    +setPositionActuel(N:Noeud)
+    +setResidenceNaissance(N:Noeud)
+    +setColonie()
 }
 class Reine #lightblue;line:green {
     -residenceDeBase:Noeud
@@ -64,9 +64,9 @@ class Reine #lightblue;line:green {
 
     <<Create>>Reine(g:Graphe, n:Noeud)
     +donnerNaissance(Integer, N:Noeud, C:Colonie, G:Graphe)
-    +coordonnee(N:Noeud)
-    +residenceDeBase(N:Noeud)
-    +colonie(C:Colonie)
+    +setPositionActuel(N:Noeud)
+    +setResidenceNaissance(N:Noeud)
+    +setColonie(C:Colonie)
 }
 
 class Soldat #lightblue;line:green {
@@ -78,16 +78,21 @@ class Soldat #lightblue;line:green {
     -graphe:Graphe
 
     <<Create>>Soldat(N:Noeud, C:Colonie, G:Graphe, Integer)
-    +coordonnee(N:Noeud)
-    +residenceDeBase(N:Noeud)
-    +colonie(C:Colonie)
+    +setPositionActuel(N:Noeud)
+    +setResidenceNaissance(N:Noeud)
+    +setColonie(C:Colonie)
     +patrouille(N:Noeud)
     +enMouvement()
 }
 
 class Etranger #lightblue;line:green{
-    -reside:Noeud
-    residenceDeBase(N:Noeud)
+    -residenceDeBase:Noeud
+    -colonie:Colonie
+    -coordonnee:Noeud
+
+    +setPositionActuel(N:Noeud)
+    +setResidenceNaissance(N:Noeud)
+    +setColonie(C:Colonie)
 }
 
 
@@ -98,8 +103,8 @@ Aretes "0..*" -> "1" Noeud : Relie noeuds adjacents >
 
 Graphe .. Aretes : <<use>>
 Noeud "1" *-left> "1" Colonie
-Noeud *-left> Obstacle
 Colonie <.. Fourmis : <<use>>
+Reine "1" <-lefto "1" Colonie
 Noeud "1" o--> Fourmis : Contient
 Fourmis --> Reine : Occupé par une >
 Fourmis --> "\t\t0..*" Etranger : Peut contenir >

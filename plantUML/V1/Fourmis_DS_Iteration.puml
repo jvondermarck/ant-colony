@@ -6,15 +6,35 @@ skinparam responseMessageBelowArrow true
 hide footbox
 'autonumber
 
-participant "Graphe" as graphe
-participant "Noeud" as noeud
-participant "Reine" as reine
-participant "Soldat" as soldat
+participant "Graphe:g" as graphe
+participant "Noeud:n" as noeud
 
 -> graphe++:Graphe(longueur, largueur)
-graphe -> graphe++ : CreationEmplacement()
+graphe -> graphe : CreationEmplacement()
 
 -> noeud++:Noeud(g)
+noeud -> graphe : getEmplacementNoeud(n)
+graphe --> noeud : noeud
+
+create Colonie
+noeud --> Colonie : <<Create>>
+
+participant "Reine:r" as reine
+-> reine++ : Reine(n,g)
+reine -> reine++ : donnerNaissance(nbSoldat, n, c, g)
+loop i<nbSoldat
+    create Soldat
+    reine --> Soldat : <<Create>>
+    Soldat -> Soldat++ : enMouvement()
+    loop i<g.getNbrNoeudDansGraphe
+        Soldat -> Soldat : patrouille()
+        create Arettes
+        Soldat --> Arettes : <<Create>>
+        Arettes -> Arettes++ : deplacementNoeud()
+        Arettes -> noeud : setCoordonneNoeud(noeud2)
+        Soldat -> Soldat : setPositionActuel()
+    end
+end
 
 
 

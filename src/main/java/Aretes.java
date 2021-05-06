@@ -8,6 +8,7 @@ public class Aretes {
 
     private final int[][] tab;
     private final int coordonne;
+    private final Boolean[][] estObstacle;
     private final ArrayList<Integer> listNoeud = new ArrayList<>();
     private final Noeud n;
 
@@ -16,6 +17,7 @@ public class Aretes {
         this.tab = g.getTaille();
         this.coordonne = n.getCoordonneNoeud();
         this.n = n;
+        this.estObstacle = g.getEstObstacle();
         Affichage();
     }
 
@@ -28,7 +30,7 @@ public class Aretes {
         {
             for(int j = 0; j < tab[i].length; ++j)
             {
-                if(tab[i][j] == coordonne)
+                if(tab[i][j] == coordonne && !estObstacle[i][j]) // estObstacle = faux (que c'est un noeud)
                 {
                     xTab = i;
                     yTab = j;

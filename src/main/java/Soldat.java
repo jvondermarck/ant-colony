@@ -16,22 +16,22 @@ public class Soldat implements Fourmis {
         this.graphe = g;
         this.numeroSoldat = numSoldat;
         this.ListeNoeud.add(n.getCoordonneNoeud());
-        coordonnee(n);
-        residenceDeBase(n);
-        colonie(c);
+        setPositionActuel(n);
+        setResidenceNaissance(n);
+        setColonie(c);
         enMouvement();
     }
 
     @Override
-    public void coordonnee(Noeud n) {
+    public void setPositionActuel(Noeud n) {
         this.coordonnee = n;
     }
 
     @Override
-    public void residenceDeBase(Noeud n) { this.residenceDeBase = n; }
+    public void setResidenceNaissance(Noeud n) { this.residenceDeBase = n; }
 
     @Override
-    public void colonie(Colonie c) {
+    public void setColonie(Colonie c) {
         this.colonie = c;
     }
 
@@ -40,7 +40,7 @@ public class Soldat implements Fourmis {
         Aretes arr = new Aretes(n, this.graphe);
         arr.deplacementNoeud();
         this.ListeNoeud.add(n.getCoordonneNoeud());
-        coordonnee(n);
+        setPositionActuel(n);
     }
 
     public void enMouvement()

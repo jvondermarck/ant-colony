@@ -1,5 +1,5 @@
 public interface Fourmis {
-    void coordonnee(Noeud n);
-    void residenceDeBase(Noeud n);
-    void colonie(Colonie c);
+    void setPositionActuel(Noeud n);
+    void setResidenceNaissance(Noeud n);
+    void setColonie(Colonie c);
 }
