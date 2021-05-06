@@ -9,33 +9,50 @@ hide footbox
 participant "Graphe:g" as graphe
 participant "Noeud:n" as noeud
 
+' ---------GRAPHE--------------
 -> graphe++:Graphe(longueur, largueur)
-graphe -> graphe : CreationEmplacement()
+graphe -> graphe++ : CreationEmplacement()
+    return
 
+' ---------NOEUD--------------
 -> noeud++:Noeud(g)
-noeud -> graphe : getEmplacementNoeud(n)
-graphe --> noeud : noeud
+graphe <- noeud++ : getEmplacementNoeud(n)
+    return noeud
 
+' ---------COLONIE--------------
 create Colonie
 noeud --> Colonie : <<Create>>
 
+' ---------REINE--------------
 participant "Reine:r" as reine
 -> reine++ : Reine(n,g)
+
+reine -> reine++ : setResidenceNaissance(n)
+    return
+reine -> reine++ : setPositionActuel(n)
+    return
+reine -> reine++ : setColonie(c)
+    return
 reine -> reine++ : donnerNaissance(nbSoldat, n, c, g)
+
 loop i<nbSoldat
+    ' ---------SOLDAT--------------
     create Soldat
     reine --> Soldat : <<Create>>
     Soldat -> Soldat++ : enMouvement()
     loop i<g.getNbrNoeudDansGraphe
         Soldat -> Soldat : patrouille()
+        ' ---------ARETES--------------
         create Arettes
         Soldat --> Arettes : <<Create>>
+        Arettes -> Arettes++ : rechercheAretes()
+            return
         Arettes -> Arettes++ : deplacementNoeud()
         Arettes -> noeud : setCoordonneNoeud(noeud2)
-        Soldat -> Soldat : setPositionActuel()
+            return
+        Soldat -> Soldat : setPositionActuel(noeud2)
     end
 end
-
 
 
 @enduml

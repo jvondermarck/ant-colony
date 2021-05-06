@@ -1,25 +1,24 @@
 public class Reine implements Fourmis {
 
-    private Noeud residenceDeBase;
+    private Noeud residenceNaissance;
     private Colonie colonie;
-    private Noeud coordonnee;
+    private Noeud positionActuel;
 
     public Reine(Noeud n, Graphe g)
     {
         setResidenceNaissance(n);
-        setColonie(this.residenceDeBase.getColonie());
-        setPositionActuel(this.residenceDeBase);
-        donnerNaissance(3, this.residenceDeBase, this.colonie, g);
+        setColonie(this.residenceNaissance.getColonie());
+        setPositionActuel(this.residenceNaissance);
+        donnerNaissance(3, this.residenceNaissance, this.colonie, g);
     }
 
     @Override
     public void setPositionActuel(Noeud n) {
-        this.coordonnee = n;
+        this.positionActuel = n;
     }
 
-    @Override
     public void setResidenceNaissance(Noeud n) {
-        this.residenceDeBase = n;
+        this.residenceNaissance = n;
     }
 
     @Override

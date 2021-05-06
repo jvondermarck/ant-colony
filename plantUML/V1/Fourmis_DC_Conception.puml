@@ -39,9 +39,9 @@ class Aretes {
     -n: Noeud
 
     <<Create>>Aretes(g:Graphe, n:Noeud)
-    +Affichage()
-    -afficheDonnee(x.coordonnee, y.coordonnee)
-    -valideDonnee(x.coordonnee, y.coordonnee):Boolean
+    +rechercheAretes()
+    -ajouterAretes(x.coordonnee, y.coordonnee)
+    -verficationNoeud(x.coordonnee, y.coordonnee):Boolean
     -deplacementNoeud()
 }
 
@@ -58,9 +58,9 @@ interface Fourmis <<interface>> #lightblue;line:blue {
     +setColonie()
 }
 class Reine #lightblue;line:green {
-    -residenceDeBase:Noeud
+    -residenceNaissance:Noeud
     -colonie:Colonie
-    -coordonnee:Noeud
+    -positionActuel:Noeud
 
     <<Create>>Reine(g:Graphe, n:Noeud)
     +donnerNaissance(Integer, N:Noeud, C:Colonie, G:Graphe)
@@ -70,9 +70,9 @@ class Reine #lightblue;line:green {
 }
 
 class Soldat #lightblue;line:green {
-    -residenceDeBase:Noeud
+    -residenceNaissance:Noeud
     -colonie:Colonie
-    -coordonnee:Noeud
+    -positionActuel:Noeud
     -ListeNoeud:ArrayList<Integer>
     -numeroSoldat:Integer
     -graphe:Graphe
@@ -86,9 +86,9 @@ class Soldat #lightblue;line:green {
 }
 
 class Etranger #lightblue;line:green{
-    -residenceDeBase:Noeud
+    -residenceNaissance:Noeud
     -colonie:Colonie
-    -coordonnee:Noeud
+    -positionActuel:Noeud
 
     +setPositionActuel(N:Noeud)
     +setResidenceNaissance(N:Noeud)

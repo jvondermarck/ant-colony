@@ -3,9 +3,9 @@ import java.util.List;
 
 public class Soldat implements Fourmis {
 
-    private Noeud residenceDeBase;
+    private Noeud residenceNaissance;
     private Colonie colonie;
-    private Noeud coordonnee;
+    private Noeud positionActuel;
     private final Graphe graphe;
     private final int numeroSoldat;
 
@@ -24,11 +24,11 @@ public class Soldat implements Fourmis {
 
     @Override
     public void setPositionActuel(Noeud n) {
-        this.coordonnee = n;
+        this.positionActuel = n;
     }
 
     @Override
-    public void setResidenceNaissance(Noeud n) { this.residenceDeBase = n; }
+    public void setResidenceNaissance(Noeud n) { this.residenceNaissance = n; }
 
     @Override
     public void setColonie(Colonie c) {
@@ -47,8 +47,8 @@ public class Soldat implements Fourmis {
     {
         for(int i=0; i<this.graphe.getNbrNoeudDansGraphe(); i++)
         {
-            patrouille(this.coordonnee);
-            System.out.println("Soldat (" + this.numeroSoldat + ", habitation : " + this.residenceDeBase + "), se trouve au : " + this.coordonnee);
+            patrouille(this.positionActuel);
+            System.out.println("Soldat (" + this.numeroSoldat + ", habitation : " + this.residenceNaissance + "), se trouve au : " + this.positionActuel);
         }
     }
 }

@@ -4,16 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="47cd6ad5-e8f1-43de-aae4-65f52ffc0fb8" name="Default Changelist" comment="MAJ DCC">
+    <list default="true" id="47cd6ad5-e8f1-43de-aae4-65f52ffc0fb8" name="Default Changelist" comment="Creation Diagramme Sequence">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/plantUML/V1/Fourmis_DC_Conception.puml" beforeDir="false" afterPath="$PROJECT_DIR$/plantUML/V1/Fourmis_DC_Conception.puml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/plantUML/V1/Fourmis_DS_Iteration.puml" beforeDir="false" afterPath="$PROJECT_DIR$/plantUML/V1/Fourmis_DS_Iteration.puml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Aretes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Aretes.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Fourmis.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Fourmis.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Graphe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Graphe.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Noeud.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Noeud.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Reine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Reine.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Soldat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Soldat.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Graphe.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Graphe.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Noeud.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Noeud.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,13 +60,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -96,7 +100,8 @@
       <workItem from="1620158254928" duration="610000" />
       <workItem from="1620200683887" duration="9526000" />
       <workItem from="1620283699056" duration="92000" />
-      <workItem from="1620283808235" duration="4608000" />
+      <workItem from="1620283808235" duration="5851000" />
+      <workItem from="1620308695647" duration="6400000" />
     </task>
     <task id="LOCAL-00001" summary="Update du GIT">
       <created>1619524870580</created>
@@ -168,7 +173,14 @@
       <option name="project" value="LOCAL" />
       <updated>1620208866325</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Creation Diagramme Sequence">
+      <created>1620290228593</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1620290228593</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -196,7 +208,8 @@
     <MESSAGE value="Creation Colonie" />
     <MESSAGE value="Creation Reine et Soldat" />
     <MESSAGE value="MAJ DCC" />
-    <option name="LAST_COMMIT_MESSAGE" value="MAJ DCC" />
+    <MESSAGE value="Creation Diagramme Sequence" />
+    <option name="LAST_COMMIT_MESSAGE" value="Creation Diagramme Sequence" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>
