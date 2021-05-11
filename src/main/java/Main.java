@@ -1,25 +1,16 @@
 public class Main {
     public static void main(String[] args) {
-        Graphe g = new Graphe(3,3);
-        //g.afficherGraphe();
-        Noeud a = new Noeud(g);
-        Noeud b = new Noeud(g);
-        Noeud c = new Noeud(g);
-        Noeud d = new Noeud(g);
-        Noeud e = new Noeud(g);
-        Noeud f = new Noeud(g);
-        Noeud w = new Noeud(g);
-        Noeud h = new Noeud(g);
-        Noeud i = new Noeud(g);
+        AntFacade ant = new AntFacade(30,1500);
+        ant.createGrid(3,3);
 
+        ant.createColony(1,1);
+        ant.createSoldiers(1);
 
-        //System.out.println("L'emplacement du noeud A se trouve à la case numéro : " + a.getCoordonneNoeud());
-        //System.out.println("L'emplacement du noeud B se trouve à la case numéro : " + b.getCoordonneNoeud());
+//        for(int i = 0 ; i < 9 ; i ++){
+//            ant.putObstacle(i,i*2);
+//            ant.putObstacle(9-i,10+i);
+//        }
 
-        //Display z = new Display(g.getLongueur(),g.getLargueur(),g.getSize());
-
-        Reine r1 = new Reine(a, g);
-
-
+        ant.play(60,false);
     }
 }

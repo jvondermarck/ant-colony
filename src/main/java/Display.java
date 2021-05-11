@@ -23,7 +23,6 @@ public class Display extends JFrame {
             jlb.setBackground(Color.WHITE);
         }
         this.setContentPane( grid );
-
         this.setDefaultCloseOperation( JFrame.DISPOSE_ON_CLOSE );
         this.pack();
         this.setVisible( true );

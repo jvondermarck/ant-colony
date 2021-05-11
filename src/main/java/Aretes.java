@@ -1,23 +1,19 @@
-import org.w3c.dom.Node;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Random;
+import java.util.*;
 
 public class Aretes {
 
-    private final int[][] tab;
-    private final int coordonne;
-    private final Boolean[][] estObstacle;
-    private final ArrayList<Integer> listNoeud = new ArrayList<>();
-    private final Noeud n;
+    private final BitSet[][] grid;
+    private int x;
+    private int y;
+    //private final ArrayList<Integer> listNoeud = new ArrayList<>();
+    private Map<Integer, Integer> mapNoeud = new Hashtable<Integer,Integer>();
 
-    public Aretes(Noeud n, Graphe g)
+
+    public Aretes(BitSet[][] grid, int x, int y)
     {
-        this.tab = g.getTaille();
-        this.coordonne = n.getCoordonneNoeud();
-        this.n = n;
-        this.estObstacle = g.getEstObstacle();
+        this.grid = grid;
+        this.x = x;
+        this.y = y;
         rechercheAretes();
     }
 
@@ -26,11 +22,11 @@ public class Aretes {
         int xTab = 0;
         int yTab = 0;
 
-        for (int i = 0; i < tab.length; ++i)
+        for (int i = 0; i < this.grid.length; ++i)
         {
-            for(int j = 0; j < tab[i].length; ++j)
+            for(int j = 0; j < grid[i].length; ++j)
             {
-                if(tab[i][j] == coordonne && !estObstacle[i][j]) // estObstacle = faux (que c'est un noeud)
+                if(grid[i][j] == grid[this.x][this.y] && !grid[i][j].get(1)) // si ya pas un obstacle, alors
                 {
                     xTab = i;
                     yTab = j;
@@ -48,26 +44,28 @@ public class Aretes {
     private void ajouterAretes(int xTab, int yTab) {
         if(verficationNoeud(xTab, yTab))
         {
-            //System.out.print("(" + this.coordonne + "-" + tab[xTab][yTab] + ") ");
-            listNoeud.add(tab[xTab][yTab]);
+            //listNoeud.add(this.tab[xTab][yTab]);
+            mapNoeud.put(xTab,yTab);
         }
     }
 
     // Verifier qu'on ne depasse pas le tableau (a ne pas oublier).
     private boolean verficationNoeud(int xTab, int yTab) {
-        if(xTab<0 || xTab>=tab.length)
+        if(xTab<0 || xTab>=grid.length)
             return false;
-        return !(yTab<0 || yTab >= tab[0].length); // Si (false) = renvoie true et si (true) = renvoie false
+        return !(yTab<0 || yTab >= grid[0].length); // Si (false) = renvoie true et si (true) = renvoie false
         // tab[0] = car on regarde les colonnes, non pas les lignes
     }
 
     // On va chosir aléatoirement en fonction des aretes adjacentes du noeud, un nouveau noeud à aller
-    public void deplacementNoeud()
-    {
-        Random rand = new Random();
-        int noeudSuivant = listNoeud.get(rand.nextInt(listNoeud.size()));
-        this.n.setCoordonneNoeud(noeudSuivant);
+//    public int deplacementNoeud()
+//    {
+//        Random rand = new Random();
+//        int noeudSuivant = listNoeud.get(rand.nextInt(listNoeud.size()));
+//        return listNoeud.get(noeudSuivant);
+//    }
+
+    public Map<Integer, Integer> getMapNoeud() {
+        return mapNoeud;
     }
-
-
 }
