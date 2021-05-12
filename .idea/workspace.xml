@@ -4,20 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="47cd6ad5-e8f1-43de-aae4-65f52ffc0fb8" name="Default Changelist" comment="MAJ de zéro">
+    <list default="true" id="47cd6ad5-e8f1-43de-aae4-65f52ffc0fb8" name="Default Changelist" comment="MAJ code Java et DCC">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plantUML/V1/Fourmis_DC_Conception.puml" beforeDir="false" afterPath="$PROJECT_DIR$/plantUML/V1/Fourmis_DC_Conception.puml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/AntFacade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/AntFacade.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Aretes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Aretes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Display.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Display.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Fourmis.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Fourmis.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Aretes.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Reine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Reine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Soldat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Soldat.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main.class" afterDir="false" />
-    </list>
-    <list id="851c9ae6-fa2e-48e4-8ec1-9b49c499f11c" name="Changes by jad" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/Aretes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Aretes.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,21 +23,6 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/src/main/java/Aretes.java">
-      <ranges>
-        <range start1="0" end1="1" start2="0" end2="1" changelist="851c9ae6-fa2e-48e4-8ec1-9b49c499f11c" />
-        <range start1="5" end1="9" start2="5" end2="11" changelist="47cd6ad5-e8f1-43de-aae4-65f52ffc0fb8" />
-        <range start1="12" end1="12" start2="14" end2="15" changelist="47cd6ad5-e8f1-43de-aae4-65f52ffc0fb8" />
-        <range start1="14" end1="14" start2="17" end2="19" changelist="47cd6ad5-e8f1-43de-aae4-65f52ffc0fb8" />
-        <range start1="29" end1="29" start2="34" end2="35" changelist="47cd6ad5-e8f1-43de-aae4-65f52ffc0fb8" />
-        <range start1="36" end1="37" start2="42" end2="42" changelist="47cd6ad5-e8f1-43de-aae4-65f52ffc0fb8" />
-        <range start1="46" end1="48" start2="51" end2="53" changelist="47cd6ad5-e8f1-43de-aae4-65f52ffc0fb8" />
-        <range start1="59" end1="66" start2="64" end2="67" changelist="47cd6ad5-e8f1-43de-aae4-65f52ffc0fb8" />
-        <range start1="67" end1="69" start2="68" end2="70" changelist="47cd6ad5-e8f1-43de-aae4-65f52ffc0fb8" />
-      </ranges>
-    </file>
   </component>
   <component name="ProjectId" id="1rkdn9hR4W39HBtafDTmVD5ssqW" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -128,7 +103,7 @@
       <workItem from="1620754108852" duration="14568000" />
       <workItem from="1620804907062" duration="2256000" />
       <workItem from="1620807192342" duration="14639000" />
-      <workItem from="1620823252953" duration="4119000" />
+      <workItem from="1620823252953" duration="4407000" />
     </task>
     <task id="LOCAL-00001" summary="Update du GIT">
       <created>1619524870580</created>
@@ -228,7 +203,14 @@
       <option name="project" value="LOCAL" />
       <updated>1620768766206</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="MAJ code Java et DCC">
+      <created>1620827494465</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1620827494465</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -259,7 +241,8 @@
     <MESSAGE value="Creation Diagramme Sequence" />
     <MESSAGE value="MAJ DS Iteration" />
     <MESSAGE value="MAJ de zéro" />
-    <option name="LAST_COMMIT_MESSAGE" value="MAJ de zéro" />
+    <MESSAGE value="MAJ code Java et DCC" />
+    <option name="LAST_COMMIT_MESSAGE" value="MAJ code Java et DCC" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

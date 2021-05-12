@@ -4,7 +4,7 @@ public class Main {
         ant.createGrid(20,20);
 
         ant.createColony(9,9);
-        ant.createSoldiers(2);
+        ant.createSoldiers(1);
 
         ant.putObstacle(4,8);
         ant.putObstacle(7,12);
