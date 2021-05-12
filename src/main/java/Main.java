@@ -1,16 +1,16 @@
 public class Main {
     public static void main(String[] args) {
-        AntFacade ant = new AntFacade(30,1500);
-        ant.createGrid(3,3);
+        AntFacade ant = new AntFacade(40,750);
+        ant.createGrid(20,20);
 
-        ant.createColony(1,1);
-        ant.createSoldiers(1);
+        ant.createColony(9,9);
+        ant.createSoldiers(2);
 
-//        for(int i = 0 ; i < 9 ; i ++){
-//            ant.putObstacle(i,i*2);
-//            ant.putObstacle(9-i,10+i);
-//        }
+        ant.putObstacle(4,8);
+        ant.putObstacle(7,12);
+        ant.putObstacle(1,1);
+        ant.putObstacle(1,2);
 
-        ant.play(60,false);
+        ant.play(10,false);
     }
 }

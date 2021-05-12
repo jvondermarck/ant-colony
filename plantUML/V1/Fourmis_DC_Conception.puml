@@ -17,7 +17,36 @@ interface AntFacadeController <<interface>> #lightblue;line:blue {
     +createWorkers(amount:Integer)
     +setAntFile(antLogFile:String)
     +play(duration:Integer, record:Boolean) : BitSet[][]
+}
 
+class Graphe #back:Wheat;line.bold {
+    -taille[*][*]: Integer
+    -estObstacle[*][*]: Boolean
+    -airGraphe:Integer
+    -nbrNoeudDansGraphe:Integer
+
+    <<Create>>Graphe(longueur, largueur)
+    +CreationEmplacement();
+    +getEmplacementNoeud(n:Noeud): Integer
+    +rechercherNoeud(x:Integer, y:Integer) : Noeud
+    +mettreObstacle(row:Integer, colomn:Integer)
+    +getAirGraphe(): Integer
+    +getNbrNoeudDansGraphe(): Integer
+}
+
+class Colonie {
+    -{static} nombreColonie = 0:Integer
+    -numColonie:Integer
+    <<Create>>Colonie()
+}
+
+class Noeud{
+    -coordonneeNoeud: Integer
+    -{static} nombreNoeud: 0: Integer
+
+    <<Create>>Noeud(g:Graphe)
+    +getCoordonneNoeud()
+    +getColonie()
 }
 
 class AntFacade #back:Wheat;line.bold {
@@ -33,31 +62,67 @@ class Aretes {
     -grid[*][*]: BitSet
     -x: Integer
     -y: Integer
-    -listNoeud: ArrayList<Integer>
+    -listX: ArrayList<Integer>
+    -listY: ArrayList<Integer>
 
     <<Create>>Aretes(grid:BitSet, x:Integer, y:Integer)
     +rechercheAretes()
-    -ajouterAretes(x:Integer, y:Integer)
-    -verficationNoeud(x:Integer, y:Integer):Boolean
-    -deplacementNoeud()
+    +ajouterAretes(x:Integer, y:Integer)
+    +verficationNoeud(x:Integer, y:Integer):Boolean
+    +getListX(): ArrayList<Integer>
+    +getListY(): ArrayList<Integer>
 }
 
-class Fourmis #lightblue;line:green {
+abstract class Fourmis #lightblue;line:green {
     -x: Integer
     -y: Integer
+
+    <<Create>>Fourmis(x:Integer, y:Integer)
+    +randomDirection(grid: BitSet[*][*])
+    +getX(): Integer
+    +getY(): Integer
 }
 
 class Reine #lightblue;line:green {
+    -x: Integer
+    -y: Integer
+    -colonie: Colonie
+    -graphe: Graphe
+    -theSoldiers: ArrayList<Soldat>
 
+    <<Create>>Reine(x:Integer, y:Integer, g:Graphe)
+    +giveBirth(amount:Integer)
+    +getTheSoldiers(): ArrayList<Soldat>
 }
 
 class Soldat #lightblue;line:green {
+    -x: Integer
+    -y: Integer
+    -colonie: Colonie
+    -graphe: Graphe
+    -positionActuel: Noeud
+    -{static} nombreSoldat: 1: Integer
+    -numeroSoldat: Integer
 
+    <<Create>>Aretes(x:Integer, y:Integer, c:Colonie, g:Graphe)
+    +recherchePositionActuel(ligne:Integer, colonne:Integer)
 }
 
 AntFacadeController <|-- AntFacade
 AntFacade ..> Fourmis : <<use>>
-Fourmis *--> Reine
-Fourmis *--> Soldat
+
+Graphe "1" *--> "0..*" Noeud
+
+Noeud "\n1" *-> "0..*" Aretes : \n Relie  >
+Aretes "0..*" -> "1" Noeud : Relie noeuds adjacents >
+
+Graphe .. Aretes : <<use>>
+Noeud "1" *-left> "1" Colonie
+Colonie <.. Fourmis : <<use>>
+Reine "1" <-lefto "1" Colonie
+Noeud "1" o--> Fourmis : Contient
+Fourmis <|-- Reine : Occupé par une >
+Fourmis <|-- Soldat
+Reine "1" ..> "*" Soldat : Donne naissance >
 
 @enduml

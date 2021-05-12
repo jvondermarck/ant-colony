@@ -4,14 +4,15 @@ import java.util.BitSet;
 
 public class AntFacade implements AntFacadeController {
     private BitSet[][] grid;
+    private Graphe graphe;
 
-    ArrayList<Reine> theColonies = new ArrayList<Reine>();
-    ArrayList<Soldat> theSoldiers = new ArrayList<Soldat>();
-
+    private ArrayList<Soldat> theSoldiers;
+    static ArrayList<Noeud> theNoeud = new ArrayList<>();
+    private Reine reine;
     private int width; // Largueur
     private int height; // Hauteur
-    private int cellSize; // Taille de la cellule
-    private long sleepingTime; // Vitesse de repos entre chaque seconde de durée
+    private final int cellSize; // Taille de la cellule
+    private final long sleepingTime; // Vitesse de repos entre chaque seconde de durée
 
     public AntFacade(int cellSize, long sleepingTime)
     {
@@ -23,34 +24,37 @@ public class AntFacade implements AntFacadeController {
     public void createGrid(int width, int height) {
         this.width = width;
         this.height = height;
-        this.grid = new BitSet[this.height][this.width];
 
+        graphe = new Graphe(this.width, this.height);
+
+        this.grid = new BitSet[this.width][this.height];
         for(int x=0 ; x<this.width; x++){
             for(int y=0 ; y<this.height; y++){
                 this.grid[y][x] = new BitSet(7);
+                Noeud noeud = new Noeud(graphe);
+                theNoeud.add(noeud);
             }
         }
+        System.out.println("-NOEUD CRÉES : " + Noeud.nombreNoeud);
     }
 
     @Override
     public void putObstacle(int row, int column) {
         this.grid[row][column].set(1); // car : cells[i][j].get(1) --> obstacle "O"
+        graphe.mettreObstacle(row, column);
     }
 
     @Override
     public void createColony(int row, int column) {
         this.grid[row][column].set(0); // car : cells[i][j].get(0) --> fourmilière "F"
-        this.theColonies.add(new Reine(row,column));
+        reine = new Reine(row, column, graphe); // On a juste une colonie = une reine
+        //this.theColonies.add(new Reine(row,column));
     }
 
     @Override
     public void createSoldiers(int amount) {
-        for(int i=0; i<amount; i++)
-        {
-            for (Reine r:this.theColonies) {
-                this.theSoldiers.add(new Soldat(r));
-            }
-        }
+        reine.giveBirth(amount);
+        theSoldiers = reine.getTheSoldiers();
     }
 
     @Override
@@ -69,6 +73,8 @@ public class AntFacade implements AntFacadeController {
                 for(Soldat s : this.theSoldiers){
                     s.randomDirection(this.grid);
                     this.grid[s.getX()][s.getY()].set(2);
+                    s.recherchePositionActuel(s.getX(), s.getY());
+                    System.out.println(s);
                 }
 
                 display.update(this.grid);
@@ -103,5 +109,9 @@ public class AntFacade implements AntFacadeController {
     @Override
     public void setAntFile(String antLogFile) {
 
+    }
+
+    public ArrayList<Noeud> getTheNoeud() {
+        return theNoeud;
     }
 }

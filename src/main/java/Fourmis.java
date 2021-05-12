@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class Fourmis {
+public abstract class Fourmis {
     private int x;
     private int y;
 
@@ -12,24 +12,20 @@ public class Fourmis {
     public void randomDirection(BitSet[][] grid)
     {
         Aretes aretes = new Aretes(grid, this.x, this.y);
-        Map<Integer, Integer> mapNoeud;
-        mapNoeud = aretes.getMapNoeud();
 
-        if(mapNoeud.size() == 0){ // si aucune direction possible : ne rien faire
-            return;
-        }
+        Random rand = new Random();
+        ArrayList<Integer> listX;
+        ArrayList<Integer> listY;
 
-        Set<Integer> keySet = mapNoeud.keySet();
-        List<Integer> keyList = new ArrayList<>(keySet);
+        listX = aretes.getListX();
+        listY = aretes.getListY();
 
-        int size = keyList.size();
-        int randIdx = new Random().nextInt(size);
+       int alea = rand.nextInt(listX.size());
+       int nextX = listX.get(alea);
+       int nextY = listY.get(alea);
 
-        int randomKey = keyList.get(randIdx);
-        int randomValue = mapNoeud.get(randomKey);
-
-        this.x = randomKey;
-        this.y = randomValue;
+        this.x = nextX;
+        this.y = nextY;
     }
 
     public int getX() {
