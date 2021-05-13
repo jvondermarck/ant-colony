@@ -24,6 +24,7 @@ class Graphe #back:Wheat;line.bold {
     -estObstacle[*][*]: Boolean
     -airGraphe:Integer
     -nbrNoeudDansGraphe:Integer
+    -theNoeud: ArrayList<Noeud>
 
     <<Create>>Graphe(longueur, largueur)
     +CreationEmplacement();
@@ -53,7 +54,6 @@ class AntFacade #back:Wheat;line.bold {
     -grid: BitSet[*][*]
     -graphe: Graphe
     -theSoldiers: ArrayList<Soldat>
-    -theNoeud: ArrayList<Noeud>
     -reine: Reine
     -width: Integer
     -height: Integer
@@ -91,10 +91,12 @@ class Reine #lightblue;line:green {
     -colonie: Colonie
     -graphe: Graphe
     -theSoldiers: ArrayList<Soldat>
+    -duration: Integer
 
     <<Create>>Reine(x:Integer, y:Integer, g:Graphe)
     +giveBirth(amount:Integer)
     +getTheSoldiers(): ArrayList<Soldat>
+    +deplacementSoldat()
 }
 
 abstract class FourmisMove #lightblue;line:green {

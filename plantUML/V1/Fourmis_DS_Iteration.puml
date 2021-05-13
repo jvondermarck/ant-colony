@@ -6,6 +6,65 @@ skinparam responseMessageBelowArrow true
 hide footbox
 'autonumber
 
+participant "Graphe:g" as graphe
+
+' ---------GRAPHE--------------
+-> graphe:Graphe(longueur, largueur)
+graphe -> graphe++ : creationEmplacementNoeud()
+loop i<taille.length
+    loop i<taille[i].length
+        ' ---------NOEUD--------------
+            create Noeud
+            graphe --> Noeud : <<Create>>
+            graphe <- Noeud++ : getEmplacementNoeud(n)
+                return noeud
+    end
+end
+return
+
+graphe -> graphe++ : mettreObstacle(x,y)
+    return
+
+' ---------REINE--------------
+participant "Reine:r" as reine
+-> reine++ : Reine(x, y, g)
+
+' ---------COLONIE--------------
+create Colonie
+reine -> Colonie : <<Create>>
+
+reine -> reine++ : giveBirth(amount)
+loop i<amount
+    ' ---------SOLDAT--------------
+    create Soldat
+    reine --> Soldat : <<Create>>
+end
+return
+
+reine -> Soldat++ : deplacementSoldat()
+loop i<duration
+    loop Soldat s : theSoldiers
+        Soldat -> FourmisMove : randomDirection(this.g)
+        ' ---------ARETES--------------
+        create Aretes
+        FourmisMove -> Aretes : <<Create>>
+        Aretes -> Aretes++ : rechercheAretes()
+        loop y<=yTab+1
+            loop x<=xTab+1
+                alt x!=xTab || y!=yTab || !estObstacle[x][y]
+                    Aretes -> Aretes++ : ajouterAretes(x, y)
+                        alt verficationNoeud(xTba, yTab)
+                        return
+                        end
+                    return
+                end
+            end
+        end
+            return
+        Soldat -> Soldat++ : recherchePositionActuel(x,y)
+            return
+    end
+end
 
 
 

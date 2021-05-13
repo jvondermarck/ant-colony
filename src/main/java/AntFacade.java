@@ -7,7 +7,7 @@ public class AntFacade implements AntFacadeController {
     private Graphe graphe;
 
     private ArrayList<Soldat> theSoldiers;
-    static ArrayList<Noeud> theNoeud = new ArrayList<>();
+
     private Reine reine;
     private int width; // Largueur
     private int height; // Hauteur
@@ -31,11 +31,8 @@ public class AntFacade implements AntFacadeController {
         for(int x=0 ; x<this.width; x++){
             for(int y=0 ; y<this.height; y++){
                 this.grid[y][x] = new BitSet(7);
-                Noeud noeud = new Noeud(graphe);
-                theNoeud.add(noeud);
             }
         }
-        System.out.println("-NOEUD CRÉES : " + Noeud.nombreNoeud);
     }
 
     @Override
@@ -109,9 +106,5 @@ public class AntFacade implements AntFacadeController {
     @Override
     public void setAntFile(String antLogFile) {
 
-    }
-
-    public ArrayList<Noeud> getTheNoeud() {
-        return theNoeud;
     }
 }

@@ -5,6 +5,7 @@ public class Reine extends Fourmis {
     private final Graphe graphe;
     private final int x;
     private final int y;
+    private final int duration;
 
     private final ArrayList<Soldat> theSoldiers = new ArrayList<>();
 
@@ -15,6 +16,7 @@ public class Reine extends Fourmis {
         this.y = y;
         this.colonie = new Colonie();
         this.graphe = g;
+        this.duration = 10;
         System.out.println("-NAISSANCE REINE-");
     }
 
@@ -25,6 +27,23 @@ public class Reine extends Fourmis {
             Soldat soldat = new Soldat(this.x, this.y, colonie, graphe);
             theSoldiers.add(soldat);
             System.out.println("-NAISSANCE SOLDAT n°" + (i+1) + "-");
+        }
+    }
+
+    public void deplacementSoldat() {
+        for(int i=0; i<duration; i++)
+        {
+            for(Soldat s : this.theSoldiers){
+                s.randomDirection(this.graphe);
+                s.recherchePositionActuel(s.getX(), s.getY());
+                System.out.println(s);
+            }
+            try{
+                Thread.sleep(1000);
+            } catch (InterruptedException e)
+            {
+                e.printStackTrace();
+            }
         }
     }
 

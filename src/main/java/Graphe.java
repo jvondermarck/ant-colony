@@ -6,6 +6,7 @@ public class Graphe
     private Boolean[][] estObstacle; // Tableau où se trouve les emplacements des cellules qui contient des noeuds
     private int airGraphe; // Air du rectangle
     private int nbrNoeudDansGraphe; // Pour savoir le nbr de Noeud total que présentent le graphe
+    private final ArrayList<Noeud> theNoeud = new ArrayList<>();
 
     public Graphe(int longueur, int largueur)
     {
@@ -17,15 +18,15 @@ public class Graphe
             this.taille = new int[longueur][largueur];
             this.estObstacle = new Boolean[longueur][longueur];
             this.airGraphe = longueur*largueur;
-            CreationEmplacement(); // On crée les emplacements de cellules sur le graphes (créer des cellules)
+            creationEmplacementNoeud(); // On crée les emplacements de cellules sur le graphes (créer des cellules)
         } catch(RuntimeException ex)
         {
             System.out.println("Le format entrée est incorect, veuillez réssayer.");
         }
     }
 
-    // Pour chaque cellule du graphe on va ajouter des numéros pour les repérer.
-    public void CreationEmplacement()
+    // Pour chaque cellule du graphe on va ajouter des numéros pour les repérer - On va créer les noeuds.
+    public void creationEmplacementNoeud()
     {
         int numeroCellule = 1;
         for (int i = 0; i < taille.length; ++i)
@@ -35,8 +36,13 @@ public class Graphe
                 taille[i][j] = numeroCellule; // On ajoute sur cette cellule son numéro
                 estObstacle[i][j] = true; // On dit que cette cellule est pas encore prise par un noeud (vu qu'on est à l'étape de création seulement) = donc que c'est un obstacle
                 numeroCellule++; // On incrémente de 1 pour que la prochaine cellule aie un nbr différent de celle d'avant
+
+                // On va créer le Noeud
+                Noeud noeud = new Noeud(Graphe.this);
+                theNoeud.add(noeud);
             }
         }
+        System.out.println("-NOEUD CRÉES dans Graphe: " + Noeud.nombreNoeud);
     }
 
     // On s'occupe d'attribuer à un noued, une cellule non prise sur le Graphe
@@ -59,14 +65,14 @@ public class Graphe
 
     public Noeud rechercherNoeud(int x, int y)
     {
-        ArrayList<Noeud> theNoeud = AntFacade.theNoeud;
+        //ArrayList<Noeud> theNoeud = AntFacade.theNoeud;
         for (int i = 0; i < taille.length; ++i)
         {
             for(int j = 0; j < taille[i].length; ++j)
             {
                 if(taille[i][j] == taille[x][y])
                 {
-                    for(Noeud n : theNoeud){
+                    for(Noeud n : this.theNoeud){
                         int numero = n.getCoordonneNoeud();
                         if(numero == taille[x][y])
                         {
