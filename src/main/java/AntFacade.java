@@ -71,7 +71,7 @@ public class AntFacade implements AntFacadeController {
                 }
 
                 for(Soldat s : this.theSoldiers){
-                    s.randomDirection(this.grid);
+                    s.randomDirection(this.graphe);
                     this.grid[s.getX()][s.getY()].set(2);
                     s.recherchePositionActuel(s.getX(), s.getY());
                     System.out.println(s);

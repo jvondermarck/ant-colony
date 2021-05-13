@@ -1,21 +1,17 @@
-public class Soldat extends Fourmis{
+public class Soldat extends FourmisMove {
     private final Colonie colonie;
-    private Graphe graphe;
-    private static int nombreSoldat = 1;
-    private int numeroSoldat;
+    private final Graphe graphe;
+    private static int nombreSoldat = 0;
+    private final int numeroSoldat;
     private Noeud positionActuel;
-    private final int x;
-    private final int y;
 
     public Soldat(int x, int y, Colonie colonie, Graphe graphe) {
         super(x,y);
-        this.x = x;
-        this.y = y;
         this.colonie = colonie;
         this.graphe = graphe;
+        nombreSoldat = nombreSoldat+1;
         this.numeroSoldat = nombreSoldat;
-        nombreSoldat++;
-        recherchePositionActuel(this.x, this.y);
+        recherchePositionActuel(x, y);
     }
 
     public void recherchePositionActuel(int ligne, int colonne)

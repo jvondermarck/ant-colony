@@ -24,7 +24,7 @@ public class Reine extends Fourmis {
         {
             Soldat soldat = new Soldat(this.x, this.y, colonie, graphe);
             theSoldiers.add(soldat);
-            System.out.println("-NAISSANCE SOLDAT n°" + i+1 + "-");
+            System.out.println("-NAISSANCE SOLDAT n°" + (i+1) + "-");
         }
     }
 

@@ -4,12 +4,14 @@ public class Main {
         ant.createGrid(20,20);
 
         ant.createColony(9,9);
-        ant.createSoldiers(1);
+        ant.createSoldiers(3);
 
-        ant.putObstacle(4,8);
-        ant.putObstacle(7,12);
-        ant.putObstacle(1,1);
-        ant.putObstacle(1,2);
+//        ant.putObstacle(8,8);
+//        ant.putObstacle(9,10);
+//        ant.putObstacle(9,8);
+//        ant.putObstacle(8,9);
+//        ant.putObstacle(10,10);
+//        ant.putObstacle(10,11);
 
         ant.play(10,false);
     }

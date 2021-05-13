@@ -39,10 +39,10 @@ public class Display extends JFrame {
             for( int j = 0; j < height; j++) {
 
                 if ( cells[i][j].get( 0 ) ) // fourmilière
-                    ( (JLabel) grid.getComponent( k ) ).setText( "F" );
+                    ( (JLabel) grid.getComponent( k ) ).setText( "  F  " );
 
                 else if ( cells[i][j].get( 1 ) ) // obstacle
-                    ( (JLabel) grid.getComponent( k ) ).setText( "O" );
+                    ( (JLabel) grid.getComponent( k ) ).setText( "  O  " );
 
                 else if ( cells[i][j].get( 5 ) ) // nourriture
                     ( (JLabel) grid.getComponent( k ) ).setText( "N" );
@@ -50,7 +50,9 @@ public class Display extends JFrame {
                 else {
                     int r = 255, g = 255, b = 255;
                     if ( cells[i][j].get( 2 ) ) // soldat
+                    {
                         b = 0; // jaune
+                    }
                     if ( cells[i][j].get( 3 ) ) // ouvrier aller
                         g = 0; // magenta
                     if ( cells[i][j].get( 4 ) ) // ouvrier retour

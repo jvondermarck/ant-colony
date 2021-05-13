@@ -50,22 +50,25 @@ class Noeud{
 }
 
 class AntFacade #back:Wheat;line.bold {
-    -grid: BitSet[][]
-    -theColonies: ArrayList<Reine>
+    -grid: BitSet[*][*]
+    -graphe: Graphe
     -theSoldiers: ArrayList<Soldat>
+    -theNoeud: ArrayList<Noeud>
+    -reine: Reine
     -width: Integer
     -height: Integer
     -cellSize: Integer
+    -sleepingTime: Long
 }
 
 class Aretes {
-    -grid[*][*]: BitSet
+    -tab[*][*]: Integer
     -x: Integer
     -y: Integer
     -listX: ArrayList<Integer>
     -listY: ArrayList<Integer>
 
-    <<Create>>Aretes(grid:BitSet, x:Integer, y:Integer)
+    <<Create>>Aretes(tab:Integer, x:Integer, y:Integer)
     +rechercheAretes()
     +ajouterAretes(x:Integer, y:Integer)
     +verficationNoeud(x:Integer, y:Integer):Boolean
@@ -78,7 +81,6 @@ abstract class Fourmis #lightblue;line:green {
     -y: Integer
 
     <<Create>>Fourmis(x:Integer, y:Integer)
-    +randomDirection(grid: BitSet[*][*])
     +getX(): Integer
     +getY(): Integer
 }
@@ -95,21 +97,27 @@ class Reine #lightblue;line:green {
     +getTheSoldiers(): ArrayList<Soldat>
 }
 
-class Soldat #lightblue;line:green {
+abstract class FourmisMove #lightblue;line:green {
     -x: Integer
     -y: Integer
+
+    <<Create>>FourmisMove(x:Integer, y:Integer)
+    +randomDirection(graphe: Graphe)
+}
+
+class Soldat #lightblue;line:green {
     -colonie: Colonie
     -graphe: Graphe
     -positionActuel: Noeud
     -{static} nombreSoldat: 1: Integer
     -numeroSoldat: Integer
 
-    <<Create>>Aretes(x:Integer, y:Integer, c:Colonie, g:Graphe)
+    <<Create>>Soldat(x:Integer, y:Integer, c:Colonie, g:Graphe)
     +recherchePositionActuel(ligne:Integer, colonne:Integer)
 }
 
 AntFacadeController <|-- AntFacade
-AntFacade ..> Fourmis : <<use>>
+AntFacade ..> Reine : <<instantiate>>
 
 Graphe "1" *--> "0..*" Noeud
 
@@ -122,7 +130,8 @@ Colonie <.. Fourmis : <<use>>
 Reine "1" <-lefto "1" Colonie
 Noeud "1" o--> Fourmis : Contient
 Fourmis <|-- Reine : Occupé par une >
-Fourmis <|-- Soldat
+Fourmis <|-- FourmisMove
+FourmisMove <|-- Soldat
 Reine "1" ..> "*" Soldat : Donne naissance >
 
 @enduml
