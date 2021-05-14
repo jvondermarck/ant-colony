@@ -6,6 +6,42 @@ skinparam classAttributeIconSize 0
 skinparam classFontStyle Bold
 hide enum methods
 
+package "Diagramme de Classe d'Analyse" <<Folder>> {
+    interface AntFacadeController <<interface>> #pink ##[bold]red {}
 
+    class Graphe #lightcoral;line.bold {}
+
+    class Colonie #burlywood {}
+
+    class Noeud #burlywood {}
+
+    class AntFacade #back:Wheat;line.bold {}
+
+    class Aretes #burlywood {}
+
+    abstract class Fourmis #lightgreen;line:green {}
+
+    class Reine #lightblue;line:green {}
+
+    abstract class FourmisMove #lightgreen;line:green {}
+
+    class Soldat #lightblue;line:green {}
+}
+
+
+
+AntFacadeController <|.. AntFacade
+AntFacade .up.|> Graphe : <<instantiate>>
+AntFacade ..|> Reine : <<instantiate>>
+
+Graphe "1" *--> "1..*" Noeud : contient
+
+FourmisMove "\t\t\t\t1" <--up* "0..*" Aretes : relie
+Reine "1" *-right> "1" Colonie : appartient
+Noeud "1" o--> "0..*\t" Fourmis : comporte
+Fourmis <|-- Reine
+Fourmis <|-- FourmisMove
+FourmisMove <|-- Soldat
+Reine "\t\t\t\t\t\t1" *-> "1..*" Soldat : Donne naissance >
 
 @enduml

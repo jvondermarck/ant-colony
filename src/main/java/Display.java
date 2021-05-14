@@ -5,14 +5,12 @@ import java.util.BitSet;
 
 public class Display extends JFrame {
 
-    private final int cellSize;
     private final int width;
     private final int height;
 
     public Display(int width, int height, int cellSize){
         this.width = width;
         this.height = height;
-        this.cellSize = cellSize;
 
         JPanel grid = new JPanel(new GridLayout(height, width, 1, 1));
         grid.setPreferredSize(new Dimension(width * cellSize, height * cellSize));

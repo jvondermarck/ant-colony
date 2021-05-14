@@ -46,7 +46,7 @@ public class Graphe
     }
 
     // On s'occupe d'attribuer à un noued, une cellule non prise sur le Graphe
-    public int getEmplacementNoeud(Noeud n)
+    public int getEmplacementNoeud()
     {
         for (int i = 0; i < taille.length; ++i)
         {
@@ -63,19 +63,15 @@ public class Graphe
         return 0;
     }
 
+    // On recherche le numéro de la cellule où se trouve la fourmis
     public Noeud rechercherNoeud(int x, int y)
     {
-        //ArrayList<Noeud> theNoeud = AntFacade.theNoeud;
-        for (int i = 0; i < taille.length; ++i)
-        {
-            for(int j = 0; j < taille[i].length; ++j)
-            {
-                if(taille[i][j] == taille[x][y])
-                {
-                    for(Noeud n : this.theNoeud){
+        for (int[] ints : taille) {
+            for (int anInt : ints) {
+                if (anInt == taille[x][y]) {
+                    for (Noeud n : this.theNoeud) {
                         int numero = n.getCoordonneNoeud();
-                        if(numero == taille[x][y])
-                        {
+                        if (numero == taille[x][y]) {
                             return n;
                         }
                     }
@@ -88,16 +84,6 @@ public class Graphe
     public void mettreObstacle(int row, int column)
     {
         estObstacle[row][column] = true;
-    }
-
-    // Pour afficher le graphe
-    public void afficherGraphe()
-    {
-        for (int[] innerArray: taille) {
-            for(int data: innerArray) {
-                System.out.println(data);
-            }
-        }
     }
 
     public int[][] getTaille() {

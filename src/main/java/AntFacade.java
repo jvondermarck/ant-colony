@@ -1,4 +1,3 @@
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.BitSet;
 
@@ -11,13 +10,11 @@ public class AntFacade implements AntFacadeController {
     private Reine reine;
     private int width; // Largueur
     private int height; // Hauteur
-    private final int cellSize; // Taille de la cellule
     private final long sleepingTime; // Vitesse de repos entre chaque seconde de durée
 
-    public AntFacade(int cellSize, long sleepingTime)
+    public AntFacade()
     {
-        this.cellSize = cellSize;
-        this.sleepingTime = sleepingTime;
+        this.sleepingTime = 750;
     }
 
     @Override
@@ -57,7 +54,6 @@ public class AntFacade implements AntFacadeController {
     @Override
     public BitSet[][] play(int duration, boolean record)
     {
-        Display display = new Display(this.height, this.width,this.cellSize);
         try{
             for(int i = 0 ;i < duration; i++)
             {
@@ -74,8 +70,6 @@ public class AntFacade implements AntFacadeController {
                     System.out.println(s);
                 }
 
-                display.update(this.grid);
-
                 Thread.sleep(this.sleepingTime);
             }
         }
@@ -83,7 +77,6 @@ public class AntFacade implements AntFacadeController {
         {
             e.printStackTrace();
         }
-
         return this.grid;
     }
 

@@ -6,134 +6,133 @@ skinparam classAttributeIconSize 0
 skinparam classFontStyle Bold
 hide enum methods
 
+package "Diagramme de Classe de Conception" <<Folder>> {
+  interface AntFacadeController <<interface>> #pink ##[bold]red {
+      +setParameters(evaporationParam:Integer,
+      foodParam:Integer, pheromoneParam:Integer)
+      +createGrid(width:Integer, height:Integer)
+      +putObstacle(row:Integer, column:Integer)
+      +putFood(row:Integer, column:Integer, quantity:Integer)
+      +createColony(row:Integer, column:Integer)
+      +createSoldiers(amount:Integer)
+      +createWorkers(amount:Integer)
+      +setAntFile(antLogFile:String)
+      +play(duration:Integer, record:Boolean) : BitSet[][]
+  }
 
-interface AntFacadeController <<interface>> #lightblue;line:blue {
-    +setParameters(evaporationParam:Integer, foodParam:Integer, pheromoneParam:Integer)
-    +createGrid(width:Integer, height:Integer)
-    +putObstacle(row:Integer, column:Integer)
-    +putFood(row:Integer, column:Integer, quantity:Integer)
-    +createColony(row:Integer, column:Integer)
-    +createSoldiers(amount:Integer)
-    +createWorkers(amount:Integer)
-    +setAntFile(antLogFile:String)
-    +play(duration:Integer, record:Boolean) : BitSet[][]
+  class Graphe #lightcoral;line.bold {
+      -taille[*][*]: Integer
+      -estObstacle[*][*]: Boolean
+      -airGraphe:Integer
+      -nbrNoeudDansGraphe:Integer
+      -theNoeud: ArrayList<Noeud>
+
+      <<Create>>Graphe(longueur, largueur)
+      +CreationEmplacement();
+      +getEmplacementNoeud(): Integer
+      +rechercherNoeud(x:Integer, y:Integer) : Noeud
+      +mettreObstacle(row:Integer, colomn:Integer)
+      +getAirGraphe(): Integer
+      +getNbrNoeudDansGraphe(): Integer
+  }
+
+  class Colonie #burlywood {
+      -{static} nombreColonie = 0:Integer
+      -numColonie:Integer
+      <<Create>>Colonie()
+  }
+
+  class Noeud #burlywood {
+      -coordonneeNoeud: Integer
+      -{static} nombreNoeud: 0: Integer
+
+      <<Create>>Noeud(g:Graphe)
+      +getCoordonneNoeud()
+      +getColonie()
+  }
+
+  class AntFacade #back:Wheat;line.bold {
+      -grid: BitSet[*][*]
+      -graphe: Graphe
+      -theSoldiers: ArrayList<Soldat>
+      -reine: Reine
+      -width: Integer
+      -height: Integer
+      -cellSize: Integer
+      -sleepingTime: Long
+  }
+
+  class Aretes #burlywood {
+      -tab[*][*]: Integer
+      -x: Integer
+      -y: Integer
+      -listX: ArrayList<Integer>
+      -listY: ArrayList<Integer>
+
+      <<Create>>Aretes(tab:Integer, x:Integer, y:Integer)
+      +rechercheAretes()
+      +ajouterAretes(x:Integer, y:Integer)
+      +verficationNoeud(x:Integer, y:Integer):Boolean
+      +getListX(): ArrayList<Integer>
+      +getListY(): ArrayList<Integer>
+  }
+
+  interface Fourmis <<interface>> #lightgreen;line:green {
+      +setX(x:Integer);
+      +setY(y:Integer);
+  }
+
+  class Reine #lightblue;line:green {
+      -x: Integer
+      -y: Integer
+      -colonie: Colonie
+      -graphe: Graphe
+      -theSoldiers: ArrayList<Soldat>
+      -duration: Integer
+
+      <<Create>>Reine(x:Integer, y:Integer, g:Graphe)
+      +giveBirth(amount:Integer)
+      +getTheSoldiers(): ArrayList<Soldat>
+      +deplacementSoldat()
+      +setX(x:Integer);
+      +setY(y:Integer);
+  }
+
+  abstract class FourmisMove #lightgreen;line:green {
+      -x: Integer
+      -y: Integer
+
+      <<Create>>FourmisMove(x:Integer, y:Integer)
+      +randomDirection(graphe: Graphe)
+      +setX(x:Integer);
+      +setY(y:Integer);
+  }
+
+  class Soldat #lightblue;line:green {
+      -colonie: Colonie
+      -graphe: Graphe
+      -positionActuel: Noeud
+      -{static} nombreSoldat: 1: Integer
+      -numeroSoldat: Integer
+
+      <<Create>>Soldat(x:Integer, y:Integer, c:Colonie, g:Graphe)
+      +recherchePositionActuel(ligne:Integer, colonne:Integer)
+  }
 }
 
-class Graphe #back:Wheat;line.bold {
-    -taille[*][*]: Integer
-    -estObstacle[*][*]: Boolean
-    -airGraphe:Integer
-    -nbrNoeudDansGraphe:Integer
-    -theNoeud: ArrayList<Noeud>
 
-    <<Create>>Graphe(longueur, largueur)
-    +CreationEmplacement();
-    +getEmplacementNoeud(n:Noeud): Integer
-    +rechercherNoeud(x:Integer, y:Integer) : Noeud
-    +mettreObstacle(row:Integer, colomn:Integer)
-    +getAirGraphe(): Integer
-    +getNbrNoeudDansGraphe(): Integer
-}
+AntFacadeController <|.. AntFacade : <<implements>>
+AntFacade .up.|> Graphe : <<instantiate>>
+AntFacade ..|> Reine : <<instantiate>>
 
-class Colonie {
-    -{static} nombreColonie = 0:Integer
-    -numColonie:Integer
-    <<Create>>Colonie()
-}
+Graphe "1" *--> "1..*" Noeud : contient
 
-class Noeud{
-    -coordonneeNoeud: Integer
-    -{static} nombreNoeud: 0: Integer
-
-    <<Create>>Noeud(g:Graphe)
-    +getCoordonneNoeud()
-    +getColonie()
-}
-
-class AntFacade #back:Wheat;line.bold {
-    -grid: BitSet[*][*]
-    -graphe: Graphe
-    -theSoldiers: ArrayList<Soldat>
-    -reine: Reine
-    -width: Integer
-    -height: Integer
-    -cellSize: Integer
-    -sleepingTime: Long
-}
-
-class Aretes {
-    -tab[*][*]: Integer
-    -x: Integer
-    -y: Integer
-    -listX: ArrayList<Integer>
-    -listY: ArrayList<Integer>
-
-    <<Create>>Aretes(tab:Integer, x:Integer, y:Integer)
-    +rechercheAretes()
-    +ajouterAretes(x:Integer, y:Integer)
-    +verficationNoeud(x:Integer, y:Integer):Boolean
-    +getListX(): ArrayList<Integer>
-    +getListY(): ArrayList<Integer>
-}
-
-abstract class Fourmis #lightblue;line:green {
-    -x: Integer
-    -y: Integer
-
-    <<Create>>Fourmis(x:Integer, y:Integer)
-    +getX(): Integer
-    +getY(): Integer
-}
-
-class Reine #lightblue;line:green {
-    -x: Integer
-    -y: Integer
-    -colonie: Colonie
-    -graphe: Graphe
-    -theSoldiers: ArrayList<Soldat>
-    -duration: Integer
-
-    <<Create>>Reine(x:Integer, y:Integer, g:Graphe)
-    +giveBirth(amount:Integer)
-    +getTheSoldiers(): ArrayList<Soldat>
-    +deplacementSoldat()
-}
-
-abstract class FourmisMove #lightblue;line:green {
-    -x: Integer
-    -y: Integer
-
-    <<Create>>FourmisMove(x:Integer, y:Integer)
-    +randomDirection(graphe: Graphe)
-}
-
-class Soldat #lightblue;line:green {
-    -colonie: Colonie
-    -graphe: Graphe
-    -positionActuel: Noeud
-    -{static} nombreSoldat: 1: Integer
-    -numeroSoldat: Integer
-
-    <<Create>>Soldat(x:Integer, y:Integer, c:Colonie, g:Graphe)
-    +recherchePositionActuel(ligne:Integer, colonne:Integer)
-}
-
-AntFacadeController <|-- AntFacade
-AntFacade ..> Reine : <<instantiate>>
-
-Graphe "1" *--> "0..*" Noeud
-
-Noeud "\n1" *-> "0..*" Aretes : \n Relie  >
-Aretes "0..*" -> "1" Noeud : Relie noeuds adjacents >
-
-Graphe .. Aretes : <<use>>
-Noeud "1" *-left> "1" Colonie
-Colonie <.. Fourmis : <<use>>
-Reine "1" <-lefto "1" Colonie
-Noeud "1" o--> Fourmis : Contient
-Fourmis <|-- Reine : Occupé par une >
-Fourmis <|-- FourmisMove
+FourmisMove "\t\t\t\t1" <--up* "0..*" Aretes : relie
+Reine "1" *-right> "1" Colonie : appartient
+Noeud "1" o--> "0..*\t" Fourmis : comporte
+Fourmis <|.. Reine : <<implements>>
+Fourmis <|.. FourmisMove : <<implements>>
 FourmisMove <|-- Soldat
-Reine "1" ..> "*" Soldat : Donne naissance >
+Reine "\t\t\t\t\t\t1" *-> "1..*" Soldat : Donne naissance >
 
 @enduml

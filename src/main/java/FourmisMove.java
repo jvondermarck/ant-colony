@@ -1,14 +1,13 @@
 import java.util.ArrayList;
 import java.util.Random;
 
-public abstract class FourmisMove extends Fourmis {
+public abstract class FourmisMove implements Fourmis {
     private int x;
     private int y;
 
     public FourmisMove(int x, int y) {
-        super(x, y);
-        this.x = x;
-        this.y = y;
+        setX(x);
+        setY(y);
     }
 
     public void randomDirection(Graphe g)
@@ -36,5 +35,15 @@ public abstract class FourmisMove extends Fourmis {
 
     public int getY() {
         return y;
+    }
+
+    @Override
+    public void setX(int x) {
+        this.x = x;
+    }
+
+    @Override
+    public void setY(int y) {
+        this.y = y;
     }
 }

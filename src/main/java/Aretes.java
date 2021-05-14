@@ -37,17 +37,11 @@ public class Aretes {
 
         for(int y=yTab-1; y<=yTab+1; y++) // On parcous la colonne cellule-1 jusqu'a la cellule+1
             for(int x=xTab-1; x<=xTab+1; x++) // On parcous la ligne cellule-1 jusqu'a la cellule+1
-                if(x!=xTab || y!=yTab || !estObstacle[x][y] ) // On bloque la possibilité de se déplacer a la cellule de départ
+                if(verficationNoeud(x, y)) // On vérfie qu'il n'est pas OutOfBands, qu'il est hors du graphe
                     // On vérifie que la case n'est pas un obstacle
-                    ajouterAretes(x, y);
-    }
+                    if((x!=xTab || y!=yTab) && !estObstacle[x][y]) // On bloque la possibilité de se déplacer a la cellule de départ
+                        ajouterAretes(x, y);
 
-    private void ajouterAretes(int xTab, int yTab) {
-        if(verficationNoeud(xTab, yTab))
-        {
-            listX.add(xTab); // On ajoute la coordonnée de la ligne dans la 1er liste
-            listY.add(yTab); // On ajoute la coordonnée de la colonne dans la 2e liste
-        }
     }
 
     // Verifier qu'on ne depasse pas le tableau
@@ -57,6 +51,15 @@ public class Aretes {
         return !(yTab<0 || yTab >= tab[0].length); // Si (false) = renvoie true et si (true) = renvoie false
         // tab[0] = car on regarde les colonnes, non pas les lignes
     }
+
+    // On ajoute les deux coordonnées dans deux listes différentes
+    private void ajouterAretes(int xTab, int yTab) {
+        listX.add(xTab); // On ajoute la coordonnée de la ligne dans la 1er liste
+        listY.add(yTab); // On ajoute la coordonnée de la colonne dans la 2e liste
+    }
+
+
+
 
     public ArrayList<Integer> getListX() {
         return listX;

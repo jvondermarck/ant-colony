@@ -27,15 +27,15 @@
   Comparé au soldat qui nait dans le noeud où est la Reine, mais celui-ci doit 
   pouvoir se déplacer, comparé à la reine qui ne doit pas se promener dans le graphe.
   C'est pour cela que la classe Soldat hérite de la classe FourmisMove, pour qu'il 
-  y ai que le soldat qui puisse changer de direction, et qu'on bloque l'accès
+  y aie que le soldat qui puisse changer de direction, et qu'on bloque l'accès
   à la reine de changer de noeud.
 - Dans une Version 2, nous aurons une classe Ouvrière qui héritera aussi de
-la classe FourmisMove. 
+  la classe FourmisMove. 
   
 4. Interface Segregation P.
    
 - (Decouper une interface en plusieurs interfaces afin d'éviter la casse)
-- Dans la version 1, nous avons pas utilisé d'interface pour implementer des classes.
+- Dans la version 1, nous n’avons pas utilisé d'interface pour implementer des classes.
     On ne veut pas mettre la classe FourmisMove dans une interface car quand on aura la classe 
     Ouvriere, on devra écrire en double, deux fois la méthode randomDirection.
   

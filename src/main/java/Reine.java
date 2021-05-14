@@ -1,19 +1,18 @@
 import java.util.ArrayList;
 
-public class Reine extends Fourmis {
+public class Reine implements Fourmis {
     private final Colonie colonie;
     private final Graphe graphe;
-    private final int x;
-    private final int y;
+    private int x;
+    private int y;
     private final int duration;
 
     private final ArrayList<Soldat> theSoldiers = new ArrayList<>();
 
     public Reine(int x, int y, Graphe g)
     {
-        super(x, y);
-        this.x = x;
-        this.y = y;
+        setX(x);
+        setY(y);
         this.colonie = new Colonie();
         this.graphe = g;
         this.duration = 10;
@@ -49,5 +48,15 @@ public class Reine extends Fourmis {
 
     public ArrayList<Soldat> getTheSoldiers() {
         return theSoldiers;
+    }
+
+    @Override
+    public void setX(int x) {
+        this.x = x;
+    }
+
+    @Override
+    public void setY(int y) {
+        this.y = y;
     }
 }
