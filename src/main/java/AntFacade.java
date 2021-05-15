@@ -12,9 +12,15 @@ public class AntFacade implements AntFacadeController {
     private int height; // Hauteur
     private final long sleepingTime; // Vitesse de repos entre chaque seconde de durée
 
+    private int xColonie, yColonie;
+
     public AntFacade()
     {
-        this.sleepingTime = 750;
+        this.sleepingTime = 0;
+    }
+    public AntFacade(int temps)
+    {
+        this.sleepingTime = temps;
     }
 
     @Override
@@ -22,24 +28,31 @@ public class AntFacade implements AntFacadeController {
         this.width = width;
         this.height = height;
 
-        graphe = new Graphe(this.width, this.height);
+        graphe = new Graphe(this.height, this.width);
 
-        this.grid = new BitSet[this.width][this.height];
-        for(int x=0 ; x<this.width; x++){
-            for(int y=0 ; y<this.height; y++){
-                this.grid[y][x] = new BitSet(7);
+        this.grid = new BitSet[this.height][this.width];
+        for(int x=0 ; x<this.grid.length; x++){
+            for(int y=0 ; y<this.grid[x].length; y++){
+                this.grid[x][y] = new BitSet(7);
             }
         }
     }
 
     @Override
     public void putObstacle(int row, int column) {
-        this.grid[row][column].set(1); // car : cells[i][j].get(1) --> obstacle "O"
-        graphe.mettreObstacle(row, column);
+        if(row == this.xColonie && column == this.yColonie)
+        {
+            throw new IllegalArgumentException("Obstacle placé sur la fourmilière");
+        } else {
+            this.grid[row][column].set(1); // car : cells[i][j].get(1) --> obstacle "O"
+            graphe.mettreObstacle(row, column);
+        }
     }
 
     @Override
     public void createColony(int row, int column) {
+        this.xColonie = row;
+        this.yColonie = column;
         this.grid[row][column].set(0); // car : cells[i][j].get(0) --> fourmilière "F"
         reine = new Reine(row, column, graphe); // On a juste une colonie = une reine
         //this.theColonies.add(new Reine(row,column));
@@ -49,6 +62,9 @@ public class AntFacade implements AntFacadeController {
     public void createSoldiers(int amount) {
         reine.giveBirth(amount);
         theSoldiers = reine.getTheSoldiers(); // On récupere tous les soldats crées
+        for(Soldat s : this.theSoldiers){
+            this.grid[this.xColonie][this.yColonie].set(2); // On met en jaune la case
+        }
     }
 
     @Override

@@ -33,8 +33,8 @@ public class Display extends JFrame {
 
         int k = 0; // indice du JLabel dans la grille
 
-        for(int i= 0; i < width; i++)
-            for( int j = 0; j < height; j++) {
+        for(int i= 0; i < height; i++)
+            for( int j = 0; j < width; j++) {
 
                 if ( cells[i][j].get( 0 ) ) // fourmilière
                     ( (JLabel) grid.getComponent( k ) ).setText( "  F  " );

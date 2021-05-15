@@ -10,37 +10,82 @@ hide enum methods
 package "Diagramme de Classe d'Analyse" <<Folder>> {
     interface AntFacadeController <<interface>> #pink ##[bold]red {}
 
-    class Graphe #lightcoral;line.bold {}
+    class Graphe #lightcoral;line.bold {
+      taille
+      estObstacle
+      airGraphe
+      nbrNoeudDansGraphe
+      theNoeud
+    }
 
-    class Colonie #burlywood {}
+    class Colonie #burlywood {
+        nombreColonie
+        numColonie
+    }
 
-    class Noeud #burlywood {}
+    class Noeud #burlywood {
+    coordonneeNoeud
+    nombreNoeud
+    }
 
-    class AntFacade #back:Wheat;line.bold {}
+    class AntFacade #back:Wheat;line.bold {
+      grid
+      graphe
+      theSoldiers
+      reine
+      width
+      height
+      cellSize
+      sleepingTime
+      xColonie
+      yColonie
+    }
 
-    class Aretes #burlywood {}
+    class Aretes #burlywood {
+      tab
+      estObstacle
+      x
+      y
+      listX
+      listY
+    }
 
     interface Fourmis <<interface>> #lightgreen;line:green {}
 
-    class Reine #lightblue;line:green {}
+    class Reine #lightblue;line:green {
+      x
+      y
+      colonie
+      graphe
+      theSoldiers
+    }
 
-    abstract class FourmisMove #lightgreen;line:green {}
+    abstract class FourmisMove #lightgreen;line:green {
+        x
+        y
+    }
 
-    class Soldat #lightblue;line:green {}
+    class Soldat #lightblue;line:green {
+      colonie
+      graphe
+      positionActuel
+      nombreSoldat
+      numeroSoldat
+    }
 }
 
 AntFacadeController <|.. AntFacade : <<implements>>
 AntFacade .up.|> Graphe : <<instantiate>>
 AntFacade ..|> Reine : <<instantiate>>
 
-Graphe "1" *--> "1..*" Noeud : contient
+Graphe *--> Noeud : contient
 
-FourmisMove "\t\t\t\t1" <--up* "0..*" Aretes : relie
-Reine "1" *-right> "1" Colonie : appartient
-Noeud "1" o--> "0..*\t" Fourmis : comporte
+FourmisMove  <--up*  Aretes : relie
+Reine *-right>  Colonie : appartient
+Noeud o--> Fourmis : comporte
 Fourmis <|.. Reine : <<implements>>
 Fourmis <|.. FourmisMove : <<implements>>
 FourmisMove <|-- Soldat
-Reine "\t\t\t\t\t\t1" *-> "1..*" Soldat : Donne naissance >
+Reine  *->  Soldat : Donne naissance >
 
 @enduml

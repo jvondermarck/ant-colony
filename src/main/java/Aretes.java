@@ -34,14 +34,22 @@ public class Aretes {
                 }
             }
         }
+        for(int x=xTab-1; x<=xTab+1; x++) // On parcous la ligne cellule-1 jusqu'a la cellule+1
+            for(int y=yTab-1; y<=yTab+1; y++) // On parcous la colonne cellule-1 jusqu'a la cellule+1
+                if(x == xTab || y == yTab) // Ce qui fait un +, on cherche pas les cellules adjacentes sur la diagonales
+                {
+                    if(verficationNoeud(x, y)) // On vérfie qu'il n'est pas OutOfBands, qu'il est hors du graphe
+                        // On vérifie que la case n'est pas un obstacle
+                        if((tab[x][y] != tab[xTab][yTab]) && !estObstacle[x][y]) // On bloque la possibilité de se déplacer a la cellule de départ
+                            ajouterAretes(x, y);
+                }
 
-        for(int y=yTab-1; y<=yTab+1; y++) // On parcous la colonne cellule-1 jusqu'a la cellule+1
-            for(int x=xTab-1; x<=xTab+1; x++) // On parcous la ligne cellule-1 jusqu'a la cellule+1
-                if(verficationNoeud(x, y)) // On vérfie qu'il n'est pas OutOfBands, qu'il est hors du graphe
-                    // On vérifie que la case n'est pas un obstacle
-                    if((x!=xTab || y!=yTab) && !estObstacle[x][y]) // On bloque la possibilité de se déplacer a la cellule de départ
-                        ajouterAretes(x, y);
 
+        if(listX.isEmpty() && listY.isEmpty())
+        {
+            listX.add(xTab);
+            listY.add(yTab);
+        }
     }
 
     // Verifier qu'on ne depasse pas le tableau

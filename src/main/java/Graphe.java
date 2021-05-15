@@ -16,7 +16,7 @@ public class Graphe
 
         try {
             this.taille = new int[longueur][largueur];
-            this.estObstacle = new Boolean[longueur][longueur];
+            this.estObstacle = new Boolean[longueur][largueur];
             this.airGraphe = longueur*largueur;
             creationEmplacementNoeud(); // On crée les emplacements de cellules sur le graphes (créer des cellules)
         } catch(RuntimeException ex)

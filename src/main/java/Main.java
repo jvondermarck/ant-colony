@@ -3,8 +3,13 @@ public class Main {
     {
         //utilisationInterface();
         //utilisationSansInterface();
-        MyOwnTest(new AntFacade());
+        MyOwnTest(new AntFacade(500));
     }
+
+    /*
+          METTRE DANS LA CLASSE  public AntFacade() { this.sleepingTime = votreValeur};
+          pour pouvoir voir l'interface graphique OU utiliser la surchage constructeur
+     */
 
     public static void MyOwnTest(AntFacadeController controller)
     {
