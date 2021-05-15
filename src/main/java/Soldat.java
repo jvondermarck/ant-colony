@@ -14,6 +14,7 @@ public class Soldat extends FourmisMove {
         recherchePositionActuel(x, y);
     }
 
+    // On recherche le numéro du Noeud où se trouve le soldat
     public void recherchePositionActuel(int ligne, int colonne)
     {
         positionActuel = graphe.rechercherNoeud(ligne, colonne);

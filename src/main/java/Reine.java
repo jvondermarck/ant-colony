@@ -5,7 +5,7 @@ public class Reine implements Fourmis {
     private final Graphe graphe;
     private int x;
     private int y;
-    private final int duration;
+    private final int duration; // Uniquement pour un test
 
     private final ArrayList<Soldat> theSoldiers = new ArrayList<>();
 
@@ -29,6 +29,7 @@ public class Reine implements Fourmis {
         }
     }
 
+    // Méthode simplement utiliser pour des tests ...
     public void deplacementSoldat() {
         for(int i=0; i<duration; i++)
         {

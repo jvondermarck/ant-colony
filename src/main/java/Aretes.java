@@ -58,9 +58,6 @@ public class Aretes {
         listY.add(yTab); // On ajoute la coordonnée de la colonne dans la 2e liste
     }
 
-
-
-
     public ArrayList<Integer> getListX() {
         return listX;
     }

@@ -48,7 +48,7 @@ public class AntFacade implements AntFacadeController {
     @Override
     public void createSoldiers(int amount) {
         reine.giveBirth(amount);
-        theSoldiers = reine.getTheSoldiers();
+        theSoldiers = reine.getTheSoldiers(); // On récupere tous les soldats crées
     }
 
     @Override
@@ -64,10 +64,10 @@ public class AntFacade implements AntFacadeController {
                 }
 
                 for(Soldat s : this.theSoldiers){
-                    s.randomDirection(this.graphe);
-                    this.grid[s.getX()][s.getY()].set(2);
-                    s.recherchePositionActuel(s.getX(), s.getY());
-                    System.out.println(s);
+                    s.randomDirection(this.graphe); // On cherche toutes les aretes adjacentes
+                    this.grid[s.getX()][s.getY()].set(2); // On met en jaune la case
+                    s.recherchePositionActuel(s.getX(), s.getY()); // On cherche le numéro du noeud où il se trouve
+                    System.out.println(s); // On affiche sa position, son numéro de soldat, et sa colonie
                 }
 
                 Thread.sleep(this.sleepingTime);

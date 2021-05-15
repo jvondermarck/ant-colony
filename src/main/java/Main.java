@@ -48,7 +48,7 @@ public class Main {
         graphe.mettreObstacle(1,0);
         graphe.mettreObstacle(1,2);
         reine.giveBirth(1);
-        reine.deplacementSoldat();
+        //reine.deplacementSoldat();
     }
 
 }

@@ -45,11 +45,10 @@ package "Diagramme de Classe de Conception" <<Folder>> {
 
   class Noeud #burlywood {
       -coordonneeNoeud: Integer
-      -{static} nombreNoeud: 0: Integer
+      +{static} nombreNoeud: 0: Integer
 
       <<Create>>Noeud(g:Graphe)
       +getCoordonneNoeud()
-      +getColonie()
   }
 
   class AntFacade #back:Wheat;line.bold {
@@ -65,12 +64,13 @@ package "Diagramme de Classe de Conception" <<Folder>> {
 
   class Aretes #burlywood {
       -tab[*][*]: Integer
+      -estObstacle[*][*]: Boolean
       -x: Integer
       -y: Integer
       -listX: ArrayList<Integer>
       -listY: ArrayList<Integer>
 
-      <<Create>>Aretes(tab:Integer, x:Integer, y:Integer)
+      <<Create>>Aretes(g:Graphe, x:Integer, y:Integer)
       +rechercheAretes()
       +ajouterAretes(x:Integer, y:Integer)
       +verficationNoeud(x:Integer, y:Integer):Boolean
@@ -89,12 +89,10 @@ package "Diagramme de Classe de Conception" <<Folder>> {
       -colonie: Colonie
       -graphe: Graphe
       -theSoldiers: ArrayList<Soldat>
-      -duration: Integer
 
       <<Create>>Reine(x:Integer, y:Integer, g:Graphe)
       +giveBirth(amount:Integer)
       +getTheSoldiers(): ArrayList<Soldat>
-      +deplacementSoldat()
       +setX(x:Integer);
       +setY(y:Integer);
   }
@@ -105,6 +103,8 @@ package "Diagramme de Classe de Conception" <<Folder>> {
 
       <<Create>>FourmisMove(x:Integer, y:Integer)
       +randomDirection(graphe: Graphe)
+      +getX(x:Integer);
+      +getY(y:Integer);
       +setX(x:Integer);
       +setY(y:Integer);
   }
@@ -113,7 +113,7 @@ package "Diagramme de Classe de Conception" <<Folder>> {
       -colonie: Colonie
       -graphe: Graphe
       -positionActuel: Noeud
-      -{static} nombreSoldat: 1: Integer
+      -{static} nombreSoldat = 0: Integer
       -numeroSoldat: Integer
 
       <<Create>>Soldat(x:Integer, y:Integer, c:Colonie, g:Graphe)
