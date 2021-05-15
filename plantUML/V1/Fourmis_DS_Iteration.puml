@@ -68,12 +68,14 @@ loop i<duration
         Aretes -> Aretes++ #DarkSalmon : rechercheAretes()
         loop y<=yTab+1
             loop x<=xTab+1
-                alt verficationNoeud(x, y) == true
-                    Aretes -> Aretes++ #FFBBBB : verficationNoeud(x,y)
-                        alt x!=xTab || y!=yTab || !estObstacle[x][y]
-                            Aretes -> Aretes++ #FFBBBB : ajouterAretes(x,y)
-                        end
-                    return
+                alt x == xTab || y == yTab
+                    alt verficationNoeud(x, y) == true
+                        Aretes -> Aretes++ #FFBBBB : verficationNoeud(x,y)
+                            alt (tab[x][y] != tab[xTab][yTab]) && !estObstacle[x][y]
+                                Aretes -> Aretes++ #FFBBBB : ajouterAretes(x,y)
+                            end
+                        return
+                    end
                 end
             end
         end

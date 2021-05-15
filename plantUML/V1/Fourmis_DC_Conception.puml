@@ -58,8 +58,11 @@ package "Diagramme de Classe de Conception" <<Folder>> {
       -reine: Reine
       -width: Integer
       -height: Integer
+      -xColonie: Integer
+      -yColonie: Integer
       -cellSize: Integer
       -sleepingTime: Long
+
   }
 
   class Aretes #burlywood {
