@@ -4,6 +4,7 @@
 skinparam style strictuml
 skinparam classAttributeIconSize 0
 skinparam classFontStyle Bold
+skinparam roundcorner 20
 hide enum methods
 
 package "Diagramme de Classe d'Analyse" <<Folder>> {
@@ -19,7 +20,7 @@ package "Diagramme de Classe d'Analyse" <<Folder>> {
 
     class Aretes #burlywood {}
 
-    abstract class Fourmis #lightgreen;line:green {}
+    interface Fourmis <<interface>> #lightgreen;line:green {}
 
     class Reine #lightblue;line:green {}
 
@@ -28,9 +29,7 @@ package "Diagramme de Classe d'Analyse" <<Folder>> {
     class Soldat #lightblue;line:green {}
 }
 
-
-
-AntFacadeController <|.. AntFacade
+AntFacadeController <|.. AntFacade : <<implements>>
 AntFacade .up.|> Graphe : <<instantiate>>
 AntFacade ..|> Reine : <<instantiate>>
 
@@ -39,8 +38,8 @@ Graphe "1" *--> "1..*" Noeud : contient
 FourmisMove "\t\t\t\t1" <--up* "0..*" Aretes : relie
 Reine "1" *-right> "1" Colonie : appartient
 Noeud "1" o--> "0..*\t" Fourmis : comporte
-Fourmis <|-- Reine
-Fourmis <|-- FourmisMove
+Fourmis <|.. Reine : <<implements>>
+Fourmis <|.. FourmisMove : <<implements>>
 FourmisMove <|-- Soldat
 Reine "\t\t\t\t\t\t1" *-> "1..*" Soldat : Donne naissance >
 

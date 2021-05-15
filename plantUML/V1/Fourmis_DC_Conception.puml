@@ -4,6 +4,7 @@
 skinparam style strictuml
 skinparam classAttributeIconSize 0
 skinparam classFontStyle Bold
+skinparam roundcorner 20
 hide enum methods
 
 package "Diagramme de Classe de Conception" <<Folder>> {

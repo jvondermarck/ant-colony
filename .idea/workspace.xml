@@ -10,28 +10,6 @@
       <change beforePath="$PROJECT_DIR$/plantUML/V1/Fourmis_DC_Analyse.puml" beforeDir="false" afterPath="$PROJECT_DIR$/plantUML/V1/Fourmis_DC_Analyse.puml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/plantUML/V1/Fourmis_DC_Conception.puml" beforeDir="false" afterPath="$PROJECT_DIR$/plantUML/V1/Fourmis_DC_Conception.puml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/plantUML/V1/Fourmis_DS_Iteration.puml" beforeDir="false" afterPath="$PROJECT_DIR$/plantUML/V1/Fourmis_DS_Iteration.puml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plantUML/V1/old/Fourmis_DC_Analyse.puml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plantUML/V1/old/Fourmis_DC_Conception.puml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plantUML/V1/old/Fourmis_DS_Iteration.puml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/AntFacade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/AntFacade.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/AntFacadeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/AntFacadeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Aretes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Aretes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Display.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Display.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Fourmis.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Fourmis.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/FourmisMove.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/FourmisMove.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Graphe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Graphe.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Noeud.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Noeud.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Reine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Reine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/old/Aretes.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/old/Colonie.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/old/Fourmis.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/old/Graphe.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/old/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/old/Noeud.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/old/Reine.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/old/Soldat.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,6 +26,14 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
   <component name="ProjectId" id="1rkdn9hR4W39HBtafDTmVD5ssqW" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -61,7 +47,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="codeWithMe.voiceChat.enabledByDefault" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java" />
-    <property name="settings.editor.selected.configurable" value="preferences.editor" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -80,15 +66,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -131,7 +115,8 @@
       <workItem from="1620890006689" duration="16599000" />
       <workItem from="1620931710404" duration="481000" />
       <workItem from="1621010522807" duration="1777000" />
-      <workItem from="1621016742134" duration="12239000" />
+      <workItem from="1621016742134" duration="12486000" />
+      <workItem from="1621063633726" duration="4396000" />
     </task>
     <task id="LOCAL-00001" summary="Update du GIT">
       <created>1619524870580</created>
@@ -266,7 +251,14 @@
       <option name="project" value="LOCAL" />
       <updated>1620908031486</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Correction Bug Aretes Java + Refont UML DC et DS">
+      <created>1621029176616</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1621029176616</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

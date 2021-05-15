@@ -3,14 +3,18 @@
 
 skinparam style strictuml
 skinparam responseMessageBelowArrow true
+skinparam roundcorner 20
+skinparam ArrowColor #black
 hide footbox
 
 participant "AntFacade" as ant #lightgreen
 participant "Graphe:g" as graphe #lightcoral
 
+== Mise en place du Graphe ==
 ' ---------GRAPHE--------------
 ant -> ant++ #lightgreen : createGrid(width, height)
-    ant --> graphe: <<Create>> Graphe(width, height)
+    ant --> graphe++ #lightcoral : <<Create>> Graphe(width, height)
+return
 return
 
 graphe -> graphe++ #lightcoral : creationEmplacementNoeud()
@@ -30,6 +34,7 @@ ant -> ant++ #lightgreen : putObstacle(x,y)
 return
 return
 
+== Création des Fourmis ==
 ' ---------REINE--------------
 ant -> ant++ #lightgreen : createColony(x, y)
 create Reine
@@ -52,7 +57,7 @@ return
 
 participant "FourmisMove" #Wheat
 == Déclenchement des itérations ==
-ant -> ant++ #DarkSalmon : play(100, false)
+ant -> ant++ #DarkSalmon : play(time, false)
 ant -> Soldat++ #DarkSalmon
 loop i<duration
     loop Soldat s : theSoldiers
