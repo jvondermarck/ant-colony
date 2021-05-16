@@ -1,5 +1,8 @@
 import java.util.ArrayList;
 
+/**
+ * The type Reine.
+ */
 public class Reine implements Fourmis {
     private final Colonie colonie;
     private final Graphe graphe;
@@ -9,6 +12,13 @@ public class Reine implements Fourmis {
 
     private final ArrayList<Soldat> theSoldiers = new ArrayList<>();
 
+    /**
+     * Instantiates a new Reine.
+     *
+     * @param x the x
+     * @param y the y
+     * @param g the g
+     */
     public Reine(int x, int y, Graphe g)
     {
         setX(x);
@@ -19,6 +29,12 @@ public class Reine implements Fourmis {
         System.out.println("-NAISSANCE REINE-");
     }
 
+
+    /**
+     * Give birth.
+     *
+     * @param amount the amount
+     */
     public void giveBirth(int amount)
     {
         for(int i=0; i<amount; i++)
@@ -47,6 +63,11 @@ public class Reine implements Fourmis {
         }
     }
 
+    /**
+     * Gets the soldiers.
+     *
+     * @return une liste de soldats
+     */
     public ArrayList<Soldat> getTheSoldiers() {
         return theSoldiers;
     }
