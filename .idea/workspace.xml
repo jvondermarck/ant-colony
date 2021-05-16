@@ -4,17 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="47cd6ad5-e8f1-43de-aae4-65f52ffc0fb8" name="Default Changelist" comment="Modif de re-lecture">
+    <list default="true" id="47cd6ad5-e8f1-43de-aae4-65f52ffc0fb8" name="Default Changelist" comment="Test Unitaire + Fix bug">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plantUML/V1/Fourmis_DC_Analyse.puml" beforeDir="false" afterPath="$PROJECT_DIR$/plantUML/V1/Fourmis_DC_Analyse.puml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plantUML/V1/Fourmis_DC_Conception.puml" beforeDir="false" afterPath="$PROJECT_DIR$/plantUML/V1/Fourmis_DC_Conception.puml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plantUML/V1/Fourmis_DS_Iteration.puml" beforeDir="false" afterPath="$PROJECT_DIR$/plantUML/V1/Fourmis_DS_Iteration.puml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/AntFacade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/AntFacade.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Aretes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Aretes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Display.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Display.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Graphe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Graphe.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,6 +30,19 @@
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/main/java/Display.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/Reine.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/FourmiSoldatTest.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/AntFacadeController.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/FourmisMove.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/Soldat.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/Aretes.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/Main.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/AntFacade.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/Graphe.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/Noeud.java" root0="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="ProjectId" id="1rkdn9hR4W39HBtafDTmVD5ssqW" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -51,7 +55,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="codeWithMe.voiceChat.enabledByDefault" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/plantUML/V1" />
     <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.repository.indices" />
   </component>
   <component name="RecentsManager">
@@ -63,21 +67,10 @@
       <recent name="C:\Users\Julien\Documents\DUT Info\A22 - Modélisation objet avec UML\Projet\GitProject\fourmis\src\main" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="JUnit.FourmiSoldatTest">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="fourmis" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -103,8 +96,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.FourmiSoldatTest" />
+        <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.FourmiSoldatTest.test4" />
       </list>
     </recent_temporary>
@@ -145,7 +138,9 @@
       <workItem from="1621063633726" duration="5337000" />
       <workItem from="1621069188429" duration="3425000" />
       <workItem from="1621107312363" duration="2399000" />
-      <workItem from="1621111373857" duration="8119000" />
+      <workItem from="1621111373857" duration="8301000" />
+      <workItem from="1621153706088" duration="379000" />
+      <workItem from="1621186475500" duration="1229000" />
     </task>
     <task id="LOCAL-00001" summary="Update du GIT">
       <created>1619524870580</created>
@@ -308,7 +303,21 @@
       <option name="project" value="LOCAL" />
       <updated>1621072777334</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Test Unitaire + Fix bug">
+      <created>1621119641130</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1621119641130</updated>
+    </task>
+    <task id="LOCAL-00025" summary="Test Unitaire + Fix bug">
+      <created>1621119647623</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1621119647623</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -347,7 +356,8 @@
     <MESSAGE value="MAJ Rapport + Les 3 UML" />
     <MESSAGE value="(Correction Bug rapport)" />
     <MESSAGE value="Modif de re-lecture" />
-    <option name="LAST_COMMIT_MESSAGE" value="Modif de re-lecture" />
+    <MESSAGE value="Test Unitaire + Fix bug" />
+    <option name="LAST_COMMIT_MESSAGE" value="Test Unitaire + Fix bug" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>
