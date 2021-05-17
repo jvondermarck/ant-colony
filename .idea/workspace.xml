@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="47cd6ad5-e8f1-43de-aae4-65f52ffc0fb8" name="Default Changelist" comment="Images Vectorielles">
+    <list default="true" id="47cd6ad5-e8f1-43de-aae4-65f52ffc0fb8" name="Default Changelist" comment="MAJ">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/AntFacade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/AntFacade.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Display.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Display.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/FourmiSoldatTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/FourmiSoldatTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/AntFacadeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/AntFacadeController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -158,7 +156,7 @@
       <workItem from="1621191292456" duration="5901000" />
       <workItem from="1621199654134" duration="1287000" />
       <workItem from="1621237338234" duration="73000" />
-      <workItem from="1621241075666" duration="551000" />
+      <workItem from="1621241075666" duration="916000" />
     </task>
     <task id="LOCAL-00001" summary="Update du GIT">
       <created>1619524870580</created>
@@ -349,7 +347,14 @@
       <option name="project" value="LOCAL" />
       <updated>1621195525625</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="MAJ">
+      <created>1621241650873</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1621241650873</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -390,7 +395,8 @@
     <MESSAGE value="Modif de re-lecture" />
     <MESSAGE value="Test Unitaire + Fix bug" />
     <MESSAGE value="Images Vectorielles" />
-    <option name="LAST_COMMIT_MESSAGE" value="Images Vectorielles" />
+    <MESSAGE value="MAJ" />
+    <option name="LAST_COMMIT_MESSAGE" value="MAJ" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>

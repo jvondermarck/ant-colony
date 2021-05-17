@@ -4,7 +4,6 @@ import java.util.BitSet;
 
 public interface AntFacadeController {
 
-
     /**
      * Fixe les paramètres de l'application.
      * @param evaporationParam rythme d'évaporation des phéromones. La valeur par défaut est 1 par itération.
@@ -64,8 +63,9 @@ public interface AntFacadeController {
     /**
      * Déclenche des itérations.
      * @param duration nombre d'itérations à effectuer
+     * @param record true si les états successifs de la colonie doivent être enregistrés dans un fichier ; false sinon.
      * @return un tableau de vecteurs de 5 bits. La dimension du tableau est celle de la grille.
-     *  - le bit n° 0 vaut true si le noeu+d correspondant de la grille abrite la fourmilière ;
+     *  - le bit n° 0 vaut true si le noeud correspondant de la grille abrite la fourmilière ;
      *  - le bit n° 1 vaut true si le noeud est occupé par un obstacle ;
      *  - le bit n° 2 vaut true s'il y a au moins une fourmi-soldat sur le noeud ;
      *  - le bit n° 3 vaut true s'il y a au moins une fourmi-ouvrière sans nourriture sur le noeud ;
