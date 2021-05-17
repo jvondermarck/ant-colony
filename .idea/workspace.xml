@@ -6,7 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="47cd6ad5-e8f1-43de-aae4-65f52ffc0fb8" name="Default Changelist" comment="MAJ">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/AntFacadeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/AntFacadeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/AntFacade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/AntFacade.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Display.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Display.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Graphe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Graphe.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Reine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Reine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,7 +73,7 @@
       <recent name="C:\Users\Julien\Documents\DUT Info\A22 - Modélisation objet avec UML\Projet\GitProject\fourmis\src\main" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.FourmiSoldatTest.test4">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="fourmis" />
@@ -76,13 +81,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -108,9 +115,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.FourmiSoldatTest.test4" />
         <item itemvalue="JUnit.FourmiSoldatTest" />
-        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -156,7 +163,8 @@
       <workItem from="1621191292456" duration="5901000" />
       <workItem from="1621199654134" duration="1287000" />
       <workItem from="1621237338234" duration="73000" />
-      <workItem from="1621241075666" duration="916000" />
+      <workItem from="1621241075666" duration="1044000" />
+      <workItem from="1621253356765" duration="6443000" />
     </task>
     <task id="LOCAL-00001" summary="Update du GIT">
       <created>1619524870580</created>
@@ -354,7 +362,14 @@
       <option name="project" value="LOCAL" />
       <updated>1621241650873</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="MAJ">
+      <created>1621242009474</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1621242009474</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

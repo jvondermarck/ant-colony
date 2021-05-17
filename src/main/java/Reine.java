@@ -11,6 +11,7 @@ public class Reine implements Fourmis {
     private final int duration; // Uniquement pour un test
 
     private final ArrayList<Soldat> theSoldiers = new ArrayList<>();
+    private final ArrayList<Ouvrier> theWorkers = new ArrayList<>();
 
     /**
      * Instantiates a new Reine.
@@ -31,17 +32,32 @@ public class Reine implements Fourmis {
 
 
     /**
-     * Give birth.
+     * Give birth for Soldiers.
      *
      * @param amount the amount
      */
-    public void giveBirth(int amount)
+    public void giveBirthSoldier(int amount)
     {
         for(int i=0; i<amount; i++)
         {
             Soldat soldat = new Soldat(this.x, this.y, colonie, graphe);
             theSoldiers.add(soldat);
             System.out.println("-NAISSANCE SOLDAT n°" + (i+1) + "-");
+        }
+    }
+
+    /**
+     * Give birth for workers.
+     *
+     * @param amount the amount
+     */
+    public void giveBirthWorker(int amount)
+    {
+        for(int i=0; i<amount; i++)
+        {
+            Ouvrier ouvrier = new Ouvrier(this.x, this.y, colonie, graphe);
+            theWorkers.add(ouvrier);
+            System.out.println("-NAISSANCE OUVRIER n°" + (i+1) + "-");
         }
     }
 
@@ -70,6 +86,10 @@ public class Reine implements Fourmis {
      */
     public ArrayList<Soldat> getTheSoldiers() {
         return theSoldiers;
+    }
+
+    public ArrayList<Ouvrier> getTheWorkers() {
+        return theWorkers;
     }
 
     @Override

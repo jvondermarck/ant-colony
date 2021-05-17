@@ -6,6 +6,7 @@ public class AntFacade implements AntFacadeController {
     private Graphe graphe;
 
     private ArrayList<Soldat> theSoldiers;
+    private ArrayList<Ouvrier> theWorkers;
 
     private Reine reine;
     private int width; // Largueur
@@ -60,10 +61,19 @@ public class AntFacade implements AntFacadeController {
 
     @Override
     public void createSoldiers(int amount) {
-        reine.giveBirth(amount);
+        reine.giveBirthSoldier(amount);
         theSoldiers = reine.getTheSoldiers(); // On récupere tous les soldats crées
         for(Soldat s : this.theSoldiers){
             this.grid[this.xColonie][this.yColonie].set(2); // On met en jaune la case
+        }
+    }
+
+    @Override
+    public void createWorkers(int amount) {
+        reine.giveBirthWorker(amount);
+        theWorkers = reine.getTheWorkers(); // On récupere tous les workers crées
+        for(Ouvrier o : this.theWorkers){
+            this.grid[this.xColonie][this.yColonie].set(3);
         }
     }
 
@@ -98,18 +108,13 @@ public class AntFacade implements AntFacadeController {
 
     @Override
     public void putFood(int row, int column, int quantity) {
-
+        this.grid[row][column].set(5); // car : cells[i][j].get(5) --> obstacle "N"
+        graphe.mettreNourriture(row, column, quantity);
     }
 
     @Override
     public void setParameters(int evaporationParam, int foodParam, int pheromoneParam) {
         // Version 2
-    }
-
-
-    @Override
-    public void createWorkers(int amount) {
-
     }
 
     @Override

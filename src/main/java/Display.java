@@ -53,7 +53,10 @@ public class Display extends JFrame {
                     if ( cells[i][j].get( 4 ) ) // ouvrier retour
                         r = 200;
                     if ( cells[i][j].get( 5 ) )  // nourriture
+                    {
                         g = 255;
+                    }
+
                     if ( cells[i][j].get( 6 ) ) // phéromones
                         b = 255;
                     grid.getComponent( k ).setBackground( new Color( r, g, b ) );

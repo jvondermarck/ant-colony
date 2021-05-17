@@ -13,17 +13,20 @@ public class Main {
 
     public static void MyOwnTest(AntFacadeController controller)
     {
-        controller.createGrid( 20,20 );
-        controller.createColony( 10,10 );
+        controller.createGrid( 15,15 );
+        controller.createColony( 8,8 );
 
         controller.putObstacle( 12,10 );
         controller.putObstacle( 10,11 );
         controller.putObstacle( 10,9 );
         controller.putObstacle( 12,14 );
 
+        controller.putFood(7,6,15);
+
+        controller.createWorkers(3);
         controller.createSoldiers( 5 );
 
-        Display w = new Display( 20, 20, 50 );
+        Display w = new Display( 15, 15, 40 );
         for( int i = 0; i < 30; i++)
             w.update( controller.play( 1, false ) );
     }
@@ -52,7 +55,7 @@ public class Main {
         Reine reine = new Reine(1,1,graphe);
         graphe.mettreObstacle(1,0);
         graphe.mettreObstacle(1,2);
-        reine.giveBirth(1);
+        reine.giveBirthSoldier(1);
         //reine.deplacementSoldat();
     }
 
