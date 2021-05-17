@@ -4,8 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="47cd6ad5-e8f1-43de-aae4-65f52ffc0fb8" name="Default Changelist" comment="Test Unitaire + Fix bug">
+    <list default="true" id="47cd6ad5-e8f1-43de-aae4-65f52ffc0fb8" name="Default Changelist" comment="Images Vectorielles">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/AntFacade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/AntFacade.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Display.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Display.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/FourmiSoldatTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/FourmiSoldatTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,10 +70,21 @@
       <recent name="C:\Users\Julien\Documents\DUT Info\A22 - Modélisation objet avec UML\Projet\GitProject\fourmis\src\main" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.FourmiSoldatTest">
+  <component name="RunManager" selected="JUnit.FourmiSoldatTest.test4">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="fourmis" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -96,9 +110,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.FourmiSoldatTest.test4" />
         <item itemvalue="JUnit.FourmiSoldatTest" />
         <item itemvalue="Application.Main" />
-        <item itemvalue="JUnit.FourmiSoldatTest.test4" />
       </list>
     </recent_temporary>
   </component>
@@ -140,7 +154,11 @@
       <workItem from="1621107312363" duration="2399000" />
       <workItem from="1621111373857" duration="8301000" />
       <workItem from="1621153706088" duration="379000" />
-      <workItem from="1621186475500" duration="1229000" />
+      <workItem from="1621186475500" duration="2625000" />
+      <workItem from="1621191292456" duration="5901000" />
+      <workItem from="1621199654134" duration="1287000" />
+      <workItem from="1621237338234" duration="73000" />
+      <workItem from="1621241075666" duration="551000" />
     </task>
     <task id="LOCAL-00001" summary="Update du GIT">
       <created>1619524870580</created>
@@ -317,7 +335,21 @@
       <option name="project" value="LOCAL" />
       <updated>1621119647623</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="Images Vectorielles">
+      <created>1621188404135</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1621188404135</updated>
+    </task>
+    <task id="LOCAL-00027" summary="Images Vectorielles">
+      <created>1621195525625</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1621195525625</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -357,7 +389,8 @@
     <MESSAGE value="(Correction Bug rapport)" />
     <MESSAGE value="Modif de re-lecture" />
     <MESSAGE value="Test Unitaire + Fix bug" />
-    <option name="LAST_COMMIT_MESSAGE" value="Test Unitaire + Fix bug" />
+    <MESSAGE value="Images Vectorielles" />
+    <option name="LAST_COMMIT_MESSAGE" value="Images Vectorielles" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>

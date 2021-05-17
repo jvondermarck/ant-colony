@@ -16,7 +16,7 @@ public class AntFacade implements AntFacadeController {
 
     public AntFacade()
     {
-        this.sleepingTime = 0;
+        this.sleepingTime = 500;
     }
     public AntFacade(int temps)
     {
