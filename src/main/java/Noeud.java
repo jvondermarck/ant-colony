@@ -12,10 +12,16 @@ public class Noeud {
         }
     }
 
+    /** getCoordonneeNoeud() : méthode qui renvoie le numéro de l'objet Noeud
+     @return coordonneNoeud : un entier du numero du noeud
+     */
     public int getCoordonneNoeud() {
         return coordonneNoeud;
     }
 
+    /** toString() : redéfinition de la méthode de même nom, affiche le numéro de l'objet Noeud
+     @return chaine de caractère contenant le numéro du noeud
+     */
     @Override
     public String toString() {
         return "Noeud n°" + this.coordonneNoeud;
