@@ -10,9 +10,15 @@ public abstract class FourmisMove implements Fourmis {
         setY(y);
     }
 
-    public void randomDirection(Graphe g)
+    public void randomDirection(Graphe g, Object o, Reine r)
     {
         Aretes aretes = new Aretes(g, this.x, this.y);
+
+        if(o instanceof Ouvrier)
+        {
+            Ouvrier ouvrier = (Ouvrier)o;
+            aretes.paramSoldat(r, ouvrier);
+        }
 
         Random rand = new Random();
         ArrayList<Integer> listX;

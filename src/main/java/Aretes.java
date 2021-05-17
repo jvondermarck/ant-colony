@@ -8,6 +8,7 @@ public class Aretes {
     private final int y;
     private final ArrayList<Integer> listX = new ArrayList<>();
     private final ArrayList<Integer> listY = new ArrayList<>();
+    private final Graphe graphe;
 
     public Aretes(Graphe g, int x, int y)
     {
@@ -15,6 +16,7 @@ public class Aretes {
         this.estObstacle = g.getEstObstacle();
         this.x = x;
         this.y = y;
+        this.graphe = g;
         rechercheAretes();
     }
 
@@ -64,6 +66,69 @@ public class Aretes {
     private void ajouterAretes(int xTab, int yTab) {
         listX.add(xTab); // On ajoute la coordonnée de la ligne dans la 1er liste
         listY.add(yTab); // On ajoute la coordonnée de la colonne dans la 2e liste
+    }
+
+    public void paramSoldat(Reine reine, Ouvrier ouvrier)
+    {
+        Colonie colonie = reine.getColonie();
+        int evaporationParam = colonie.getEvaporationParam();
+        int foodParam = colonie.getFoodParam();
+        int pheromoneParam = colonie.getPheromoneParam();
+
+        Boolean[][] aVisite = ouvrier.getaVisite();
+
+        for(int i=0; i<listX.size(); i++)
+        {
+            for(int j=0; j<listY.size(); j++)
+            {
+                int xCoord = listX.get(i);
+                int yCoord = listY.get(j);
+
+                if(!aVisite[xCoord][yCoord]) // Si il a pas visité cette cellule
+                {
+                    if(rechercheBestPheromone(xCoord,yCoord)) // Si la cellule a la meilleure quantite de pheromone
+                    {
+                        aVisite[xCoord][yCoord] = true;
+                        ouvrier.setaVisite(aVisite);
+
+                        listX.clear(); // On supprime toutes les aretes adjacentes de depart
+                        listX.add(xCoord); // On ajoute juste la coordonnée de x
+                        listY.clear();
+                        listY.add(yCoord); // On ajoute juste la coordonnée de y
+                    }
+                }
+                i++;
+            }
+        }
+    }
+
+    private boolean rechercheBestPheromone(int x, int y)
+    {
+        int xBest = 0;
+        int yBest = 0;
+
+        int bestQuantity = 0;
+
+        int [][] quantityPheromone = graphe.getQuantityPheromone();
+
+        for(int i=0; i<listX.size(); i++)
+        {
+            for(int j=0; j<listY.size(); j++)
+            {
+                int xCoord = listX.get(i);
+                int yCoord = listY.get(j);
+                if(quantityPheromone[xCoord][yCoord] > bestQuantity)
+                {
+                    xBest = xCoord;
+                    yBest = yCoord;
+                    bestQuantity = quantityPheromone[xCoord][yCoord];
+                }
+
+                i++;
+            }
+        }
+
+        return x == xBest && y == yBest; // Si les parametres correspondent aux best coord où se trouve les pheromones
     }
 
     public ArrayList<Integer> getListX() {

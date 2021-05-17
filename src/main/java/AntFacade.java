@@ -86,14 +86,22 @@ public class AntFacade implements AntFacadeController {
                 for(int y=0;y<height;y++){
                     for(int x=0;x<width;x++){
                         this.grid[y][x].clear(2); // Effacer emplacement Soldat de duration-1
+                        //this.grid[y][x].clear(3); // Effacer emplacement Soldat de duration-1
                     }
                 }
 
                 for(Soldat s : this.theSoldiers){
-                    s.randomDirection(this.graphe); // On cherche toutes les aretes adjacentes
+                    s.randomDirection(this.graphe, s, reine); // On cherche toutes les aretes adjacentes
                     this.grid[s.getX()][s.getY()].set(2); // On met en jaune la case
                     s.recherchePositionActuel(s.getX(), s.getY()); // On cherche le numéro du noeud où il se trouve
                     System.out.println(s); // On affiche sa position, son numéro de soldat, et sa colonie
+                }
+
+                for(Ouvrier o : this.theWorkers){
+                    o.randomDirection(this.graphe, o, reine); // On cherche toutes les aretes adjacentes
+                    this.grid[o.getX()][o.getY()].set(3); // On met en jaune la case
+                    o.recherchePositionActuel(o.getX(), o.getY()); // On cherche le numéro du noeud où il se trouve
+                    System.out.println(o); // On affiche sa position, son numéro de soldat, et sa colonie
                 }
 
                 Thread.sleep(this.sleepingTime);
@@ -114,7 +122,7 @@ public class AntFacade implements AntFacadeController {
 
     @Override
     public void setParameters(int evaporationParam, int foodParam, int pheromoneParam) {
-        // Version 2
+        reine.setParametreColonie(evaporationParam,foodParam,pheromoneParam);
     }
 
     @Override

@@ -22,9 +22,10 @@ public class Main {
         controller.putObstacle( 12,14 );
 
         controller.putFood(7,6,15);
+        controller.setParameters(2,10,3);
 
-        controller.createWorkers(3);
-        controller.createSoldiers( 5 );
+        controller.createWorkers(1);
+        controller.createSoldiers( 0 );
 
         Display w = new Display( 15, 15, 40 );
         for( int i = 0; i < 30; i++)

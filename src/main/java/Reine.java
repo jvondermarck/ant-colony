@@ -61,12 +61,20 @@ public class Reine implements Fourmis {
         }
     }
 
+    public void setParametreColonie(int evaporationParam, int foodParam, int pheromoneParam)
+    {
+        this.colonie.setFoodParam(foodParam);
+        this.colonie.setEvaporationParam(evaporationParam);
+        this.colonie.setPheromoneParam(pheromoneParam);
+    }
+
+
     // Méthode simplement utiliser pour des tests ...
     public void deplacementSoldat() {
         for(int i=0; i<duration; i++)
         {
             for(Soldat s : this.theSoldiers){
-                s.randomDirection(this.graphe);
+                s.randomDirection(this.graphe, s, Reine.this);
                 s.recherchePositionActuel(s.getX(), s.getY());
                 System.out.println(s);
             }
@@ -100,5 +108,9 @@ public class Reine implements Fourmis {
     @Override
     public void setY(int y) {
         this.y = y;
+    }
+
+    public Colonie getColonie() {
+        return colonie;
     }
 }

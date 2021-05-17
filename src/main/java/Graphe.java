@@ -5,8 +5,12 @@ public class Graphe
     private int[][] taille; // Tableau où se trouve tous les emplacements des cellules du graphe (vide)
     private Boolean[][] estObstacle; // Tableau où se trouve les emplacements des cellules qui contient des noeuds
     private Boolean[][] estNourriture; // Tableau où e trouve les emplacements des cellules qui contient de la nourriture
-    private int[][] quantityFood;
+    private int[][] quantityFood; // Quandtite de nourriture dans chaque cellule
+    private int [][] quantityPheromone; // Quantité de pheromone dans chaque cellule
+
     private int airGraphe; // Air du rectangle
+    private int longueur;
+    private int largueur;
     private int nbrNoeudDansGraphe; // Pour savoir le nbr de Noeud total que présentent le graphe
     private final ArrayList<Noeud> theNoeud = new ArrayList<>();
 
@@ -17,12 +21,20 @@ public class Graphe
             throw new NumberFormatException("Votre valeur est négative, veuillez inscrire que des nombres positifs");
 
         try {
+            this.longueur = longueur;
+            this.largueur = largueur;
+
             this.taille = new int[longueur][largueur];
             this.estObstacle = new Boolean[longueur][largueur];
             this.estNourriture = new Boolean[longueur][largueur];
             this.quantityFood = new int[longueur][largueur];
+            this.quantityPheromone = new int[longueur][largueur];
             this.airGraphe = longueur*largueur;
             creationEmplacementNoeud(); // On crée les emplacements de cellules sur le graphes (créer des cellules)
+            this.quantityPheromone[8][9] = 10;
+            this.quantityPheromone[8][7] = 8;
+            this.quantityPheromone[7][8] = 6;
+            this.quantityPheromone[9][8] = 9;
         } catch(RuntimeException ex)
         {
             System.out.println("Le format entrée est incorect, veuillez réssayer.");
@@ -41,6 +53,7 @@ public class Graphe
                 estObstacle[i][j] = true; // On dit que cette cellule est pas encore prise par un noeud (vu qu'on est à l'étape de création seulement) = donc que c'est un obstacle
                 estNourriture[i][j] = false; // Au début on a aucune cellule qui contient de la nourriture
                 quantityFood[i][j] = 0; // On dit que au début on a une quantité de 0 comme nourriture
+                quantityPheromone[i][j] = 0; // On dit que au début on a une quantité de 0 comme pheromone
                 numeroCellule++; // On incrémente de 1 pour que la prochaine cellule aie un nbr différent de celle d'avant
 
                 // On va créer le Noeud
@@ -106,11 +119,31 @@ public class Graphe
         return estObstacle;
     }
 
+    public Boolean[][] getEstNourriture() {
+        return estNourriture;
+    }
+
+    public int[][] getQuantityFood() {
+        return quantityFood;
+    }
+
+    public int[][] getQuantityPheromone() {
+        return quantityPheromone;
+    }
+
     public int getAirGraphe() {
         return airGraphe;
     }
 
     public int getNbrNoeudDansGraphe() {
         return nbrNoeudDansGraphe;
+    }
+
+    public int getLongueur() {
+        return longueur;
+    }
+
+    public int getLargueur() {
+        return largueur;
     }
 }
