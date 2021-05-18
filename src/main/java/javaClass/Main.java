@@ -23,7 +23,8 @@ public class Main {
 //        controller.putObstacle( 12,14 );
 
         controller.putFood(0,0,15);
-        controller.setParameters(20,10,3);
+        controller.putFood(5,5,15);
+        controller.setParameters(1,8,0);
 
         controller.createWorkers(1);
         controller.createSoldiers( 0 );

@@ -78,7 +78,7 @@ public class Aretes {
         boolean droitDePasssage = rechercheToutVisite(ouvrier); // si true (tout visités), on autorise a se deplacer aléatoirement
 
         // Si rechercheAucunPheromone = false = ca veut dire que ya au moins une cellule qui contient au min 1 pheromone, donc on execute cette condition
-        if(!rechercheAucunPheromone())
+        if(!rechercheAucunPheromone(droitDePasssage))
         {
             for(int i=0; i<listX.size(); i++)
             {
@@ -91,9 +91,6 @@ public class Aretes {
                     {
                         if(rechercheBestPheromone(xCoord,yCoord)) // Si la cellule a la meilleure quantite de pheromone
                         {
-                            aVisite[xCoord][yCoord] = true;
-                            ouvrier.setaVisite(aVisite);
-
                             listX.clear(); // On supprime toutes les aretes adjacentes de depart
                             listX.add(xCoord); // On ajoute juste la coordonnée de x
                             listY.clear();
@@ -101,6 +98,24 @@ public class Aretes {
                         }
                     }
                     i++;
+                }
+            }
+        } else { // Si il n'y a aucun phéromone ou que c'est que des cellules déja visités :
+            for(int i=0; i<listX.size(); i++)
+            {
+                for(int j=0; j<listY.size(); j++)
+                {
+                    int xCoord = listX.get(i);
+                    int yCoord = listY.get(j);
+                    if(aVisite[xCoord][yCoord]) // Si on a visité la cellule
+                    {
+                        listX.remove(i); // On supprime la coordonnée de X du tableau pour pas que la fourmis se deplace sur cette cellule
+                        listY.remove(i);
+                        i = 0;
+                        j = -1;
+                    } else {
+                        i++;
+                    }
                 }
             }
         }
@@ -137,7 +152,7 @@ public class Aretes {
     }
 
     // Si les cellules adjacentes ne contiennent pas de pheromone, il devra aller de facon aléatoire comme la fourmis soldat
-    public boolean rechercheAucunPheromone()
+    public boolean rechercheAucunPheromone(Boolean droitDePassage)
     {
         int quantityNull = 0;
         int nbFois = 0;
@@ -149,9 +164,14 @@ public class Aretes {
             {
                 int xCoord = listX.get(i);
                 int yCoord = listY.get(j);
-                if(quantityPheromone[xCoord][yCoord] == quantityNull)
+                if(!aVisite[xCoord][yCoord] || droitDePassage) // Si il n'a pas visité le noeud OU qu'il a un droit de passage, alors on peut regarder combien il y a de pheromones ou non
                 {
-                    nbFois++;
+                    if(quantityPheromone[xCoord][yCoord] == quantityNull) // Si la cellule a une quantité de nourriture = 0, on incremente de 1 le nb de fois où ya pas a manger dans les cellules adjacentes
+                    {
+                        nbFois++;
+                    }
+                } else {
+                    nbFois++; // Si la cellule a deja etait visité, on incremente quand meme de 1, car on dit que comme on peut pas la visiter, ya plus de pheromone
                 }
                 i++;
             }
@@ -159,6 +179,7 @@ public class Aretes {
 
         return listX.size() == nbFois && listY.size() == nbFois;
         // return true si on a toutes les cellules de X,Y adjacentes a la fourmis qui contient 0 en pheromone
+        // si 4 cellules adjacentes sans nourriture = true, sinon false
     }
 
     // Recherche si la fourmis soldat a deja visite tous les noeuds adjacents

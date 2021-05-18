@@ -45,10 +45,11 @@ public class Ouvrier extends FourmisMove {
         listXRetour.add(xColonie);
         listYRetour.add(yColonie);
 
-//        this.aVisite[8][9] = true;
-//        this.aVisite[8][7] = true;
-//        this.aVisite[7][8] = true;
-//        this.aVisite[9][8] = true;
+        //this.aVisite[2][3] = true;
+        this.aVisite[3][2] = true;
+        this.aVisite[3][3] = true;
+        this.aVisite[3][4] = true;
+        this.aVisite[4][3] = true;
     }
 
     /**
@@ -75,16 +76,19 @@ public class Ouvrier extends FourmisMove {
                     aVisite[i][j] = false; // On dit au début qu'il a rien visité
                 }
             }
+            // Comme on recommence tout a zero, on re-initialise tout
             aVisite[xColonie][yColonie] = true;
             listXRetour.add(xColonie);
             listYRetour.add(yColonie);
+            quantityFoodTaken = 0;
+            System.out.println(colonie); // On affiche l'état de la colonie
         }
         return !etatRetour;
     }
 
     @Override
     public String toString() {
-        return "Ouvrier n°" + numeroWorker + " - " + this.colonie.toString() + " --> se trouve au " + this.positionActuel;
+        return "Ouvrier n°" + numeroWorker + " | " + this.colonie.toString() + " | " + this.positionActuel + " | Transporte : " + quantityFoodTaken + " kg de nourriture | Retourne à la colonie : " + etatRetour;
     }
 
     public Boolean[][] getaVisite() {

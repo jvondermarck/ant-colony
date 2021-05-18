@@ -83,14 +83,14 @@ public class Colonie {
     }
 
     /**
-     * Redéfinition de la méthode toString(), on affiche le numéro de colonie
+     * Redéfinition de la méthode toString(), on affiche le numéro de colonie, et sa quantité de nourriture stockées
      */
     @Override
     public String toString() {
-        return "Colonie n°" + numColonie;
+        return "Colonie n°" + numColonie + " -> Quantité de nourriture stockée : " + quantityFood ;
     }
 
     public void setQuantityFood(int quantityFood) {
-        this.quantityFood = quantityFood;
+        this.quantityFood += quantityFood;
     }
 }

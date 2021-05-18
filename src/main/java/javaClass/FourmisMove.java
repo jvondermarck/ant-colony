@@ -44,6 +44,7 @@ public abstract class FourmisMove implements Fourmis {
         if(o instanceof Ouvrier) // Si c'est un ouvrier, on va lui mettre ses coordonnées qui lui servira pour le retour
         {
             Ouvrier ouvrier = (Ouvrier)o; // Comme on sait que o est une instance de Ouvrier, on le cast
+            ouvrier.getaVisite()[this.x][this.y] = true;
             if(g.getEstNourriture()[this.x][this.y]) // Si au nouvelle emplacement de la fourmis il y a de la nourriture
             {
                 ouvrier.setEtatRetour(true); // Elle va devoir retourner sur la fourmilière ramener la nourriture
