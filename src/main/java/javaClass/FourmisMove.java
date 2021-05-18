@@ -1,5 +1,12 @@
+package javaClass;
 import java.util.ArrayList;
 import java.util.Random;
+
+/**
+ * La classe abstraite modifiable {@code Figure}.
+ * <p>
+ *
+ */
 
 public abstract class FourmisMove implements Fourmis {
     private int x;
@@ -14,10 +21,10 @@ public abstract class FourmisMove implements Fourmis {
     {
         Aretes aretes = new Aretes(g, this.x, this.y);
 
-        if(o instanceof Ouvrier)
+        if(o instanceof Ouvrier) // Si c'est un ouvrier, on va chercher sa future cellule différement
         {
-            Ouvrier ouvrier = (Ouvrier)o;
-            aretes.paramSoldat(r, ouvrier);
+            Ouvrier ouvrier = (Ouvrier)o; // Comme on sait que o est une instance de Ouvrier, on le cast
+            aretes.paramOuvrier(r, ouvrier); // On cherche le ou les cellules adjacentes en fonction des cellules deja visite et des pheromones
         }
 
         Random rand = new Random();
@@ -33,6 +40,13 @@ public abstract class FourmisMove implements Fourmis {
 
         this.x = nextX;
         this.y = nextY;
+
+        if(o instanceof Ouvrier) // Si c'est un ouvrier, on va lui mettre ses coordonnées qui lui servira pour le retour
+        {
+            Ouvrier ouvrier = (Ouvrier)o; // Comme on sait que o est une instance de Ouvrier, on le cast
+            ouvrier.getListXRetour().add(this.x);
+            ouvrier.getListYRetour().add(this.y);
+        }
     }
 
     public int getX() {

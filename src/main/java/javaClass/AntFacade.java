@@ -1,3 +1,5 @@
+package javaClass;
+
 import java.util.ArrayList;
 import java.util.BitSet;
 
@@ -84,9 +86,22 @@ public class AntFacade implements AntFacadeController {
             for(int i = 0 ;i < duration; i++)
             {
                 for(int y=0;y<height;y++){
-                    for(int x=0;x<width;x++){
+                    for(int x=0;x<width;x++)
+                    {
                         this.grid[y][x].clear(2); // Effacer emplacement Soldat de duration-1
                         //this.grid[y][x].clear(3); // Effacer emplacement Soldat de duration-1
+
+                        // On s'occupe de gérer les itérations de pheromones
+                        int nbEvaporation = reine.getColonie().getEvaporationParam();
+                        if(i % nbEvaporation == 0) // si 16%8=0 bah on suppr les pheromones
+                        {
+                            if(graphe.getTaille()[y][x] >= nbEvaporation)
+                            {
+                                graphe.getTaille()[y][x] -= nbEvaporation;
+                            } else {
+                                graphe.getTaille()[y][x] = 0;
+                            }
+                        }
                     }
                 }
 

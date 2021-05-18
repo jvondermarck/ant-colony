@@ -1,3 +1,4 @@
+package javaClass;
 public class Soldat extends FourmisMove {
     private final Colonie colonie;
     private final Graphe graphe;

@@ -1,3 +1,4 @@
+package javaClass;
 import java.util.*;
 
 public class Aretes {
@@ -68,7 +69,9 @@ public class Aretes {
         listY.add(yTab); // On ajoute la coordonnée de la colonne dans la 2e liste
     }
 
-    public void paramSoldat(Reine reine, Ouvrier ouvrier)
+
+    // Methode qui sert uniquement a la fourmis Ouvriere en fonction des noeuds visités, et des phéromones
+    public void paramOuvrier(Reine reine, Ouvrier ouvrier)
     {
         Colonie colonie = reine.getColonie();
         int evaporationParam = colonie.getEvaporationParam();
@@ -76,32 +79,38 @@ public class Aretes {
         int pheromoneParam = colonie.getPheromoneParam();
 
         Boolean[][] aVisite = ouvrier.getaVisite();
+        boolean droitDePasssage = rechercheToutVisite(ouvrier); // si true (tout visités), on autorise a se deplacer aléatoirement
 
-        for(int i=0; i<listX.size(); i++)
+        // Si rechercheAucunPheromone = false = ca veut dire que ya au moins une cellule qui contient au min 1 pheromone, donc on execute cette condition
+        if(!rechercheAucunPheromone())
         {
-            for(int j=0; j<listY.size(); j++)
+            for(int i=0; i<listX.size(); i++)
             {
-                int xCoord = listX.get(i);
-                int yCoord = listY.get(j);
-
-                if(!aVisite[xCoord][yCoord]) // Si il a pas visité cette cellule
+                for(int j=0; j<listY.size(); j++)
                 {
-                    if(rechercheBestPheromone(xCoord,yCoord)) // Si la cellule a la meilleure quantite de pheromone
-                    {
-                        aVisite[xCoord][yCoord] = true;
-                        ouvrier.setaVisite(aVisite);
+                    int xCoord = listX.get(i);
+                    int yCoord = listY.get(j);
 
-                        listX.clear(); // On supprime toutes les aretes adjacentes de depart
-                        listX.add(xCoord); // On ajoute juste la coordonnée de x
-                        listY.clear();
-                        listY.add(yCoord); // On ajoute juste la coordonnée de y
+                    if(!aVisite[xCoord][yCoord] || droitDePasssage) // Si il a pas visité cette cellule ou qu'il a deja tout visité
+                    {
+                        if(rechercheBestPheromone(xCoord,yCoord)) // Si la cellule a la meilleure quantite de pheromone
+                        {
+                            aVisite[xCoord][yCoord] = true;
+                            ouvrier.setaVisite(aVisite);
+
+                            listX.clear(); // On supprime toutes les aretes adjacentes de depart
+                            listX.add(xCoord); // On ajoute juste la coordonnée de x
+                            listY.clear();
+                            listY.add(yCoord); // On ajoute juste la coordonnée de y
+                        }
                     }
+                    i++;
                 }
-                i++;
             }
         }
     }
 
+    // Sur les cellules adjacentes de la fourmis, on cherche la cellule qui a le + de pheromone
     private boolean rechercheBestPheromone(int x, int y)
     {
         int xBest = 0;
@@ -110,6 +119,7 @@ public class Aretes {
         int bestQuantity = 0;
 
         int [][] quantityPheromone = graphe.getQuantityPheromone();
+
 
         for(int i=0; i<listX.size(); i++)
         {
@@ -129,6 +139,57 @@ public class Aretes {
         }
 
         return x == xBest && y == yBest; // Si les parametres correspondent aux best coord où se trouve les pheromones
+    }
+
+    // Si les cellules adjacentes ne contiennent pas de pheromone, il devra aller de facon aléatoire comme la fourmis soldat
+    public boolean rechercheAucunPheromone()
+    {
+        int quantityNull = 0;
+        int nbFois = 0;
+
+        int [][] quantityPheromone = graphe.getQuantityPheromone();
+        for(int i=0; i<listX.size(); i++)
+        {
+            for(int j=0; j<listY.size(); j++)
+            {
+                int xCoord = listX.get(i);
+                int yCoord = listY.get(j);
+                if(quantityPheromone[xCoord][yCoord] == quantityNull)
+                {
+                    nbFois++;
+                }
+                i++;
+            }
+        }
+
+        return listX.size() == nbFois && listY.size() == nbFois;
+        // return true si on a toutes les cellules de X,Y adjacentes a la fourmis qui contient 0 en pheromone
+    }
+
+    // Recherche si la fourmis soldat a deja visite tous les noeuds adjacents
+    public boolean rechercheToutVisite(Ouvrier ouvrier)
+    {
+        int nbFois = 0;
+
+        Boolean[][] aVisite = ouvrier.getaVisite();
+
+        for(int i=0; i<listX.size(); i++)
+        {
+            for(int j=0; j<listY.size(); j++)
+            {
+                int xCoord = listX.get(i);
+                int yCoord = listY.get(j);
+                if(aVisite[xCoord][yCoord]) // Si il a deja visité la cellule, alors on incremente de 1
+                {
+                    nbFois++;
+                }
+                i++;
+            }
+        }
+
+        return listX.size() == nbFois && listY.size() == nbFois;
+        // return true si on a toutes les cellules de X,Y adjacentes a la fourmis qui on deja etait visité
+        // si on a 4 cellules adjacentes, et que les 4 ont deja étaient visités, on renvoie true
     }
 
     public ArrayList<Integer> getListX() {

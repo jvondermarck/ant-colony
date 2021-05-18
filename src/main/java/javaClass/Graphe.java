@@ -1,3 +1,4 @@
+package javaClass;
 import java.util.ArrayList;
 
 public class Graphe
@@ -35,6 +36,7 @@ public class Graphe
             this.quantityPheromone[8][7] = 8;
             this.quantityPheromone[7][8] = 6;
             this.quantityPheromone[9][8] = 9;
+
         } catch(RuntimeException ex)
         {
             System.out.println("Le format entrée est incorect, veuillez réssayer.");

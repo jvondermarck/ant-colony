@@ -1,3 +1,7 @@
+package javaClass;
+
+import java.util.ArrayList;
+
 public class Ouvrier extends FourmisMove {
     private final Colonie colonie;
     private final Graphe graphe;
@@ -6,6 +10,8 @@ public class Ouvrier extends FourmisMove {
     private Noeud positionActuel;
 
     private Boolean[][] aVisite; // True : si il a deja visité une cellule
+    private final ArrayList<Integer> listXRetour = new ArrayList<>(); // Liste coordonné de x : servira pour le retour de la fourmis ouvriere
+    private final ArrayList<Integer> listYRetour = new ArrayList<>(); // Liste coordonné de y :  servira pour le retour de la fourmis ouvriere
 
     // Paramètre de la fourmis
     private int evaporationParam;
@@ -33,6 +39,11 @@ public class Ouvrier extends FourmisMove {
                 aVisite[i][j] = false; // On dit au début qu'il a rien visité
             }
         }
+
+        this.aVisite[8][9] = true;
+        this.aVisite[8][7] = true;
+        this.aVisite[7][8] = true;
+        this.aVisite[9][8] = true;
     }
 
     /**
@@ -57,4 +68,14 @@ public class Ouvrier extends FourmisMove {
     public void setaVisite(Boolean[][] aVisite) {
         this.aVisite = aVisite;
     }
+
+    public ArrayList<Integer> getListXRetour() {
+        return listXRetour;
+    }
+
+    public ArrayList<Integer> getListYRetour() {
+        return listYRetour;
+    }
+
+
 }
