@@ -1,5 +1,4 @@
 package javaClass;
-import java.io.IOException;
 import java.util.BitSet;
 
 public interface AntFacadeController {

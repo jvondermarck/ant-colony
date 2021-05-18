@@ -5,6 +5,7 @@ public class Aretes {
 
     private final int[][] tab;
     private final Boolean[][] estObstacle;
+    private Boolean[][] aVisite;
     private final int x;
     private final int y;
     private final ArrayList<Integer> listX = new ArrayList<>();
@@ -71,14 +72,9 @@ public class Aretes {
 
 
     // Methode qui sert uniquement a la fourmis Ouvriere en fonction des noeuds visités, et des phéromones
-    public void paramOuvrier(Reine reine, Ouvrier ouvrier)
+    public void paramOuvrier(Ouvrier ouvrier)
     {
-        Colonie colonie = reine.getColonie();
-        int evaporationParam = colonie.getEvaporationParam();
-        int foodParam = colonie.getFoodParam();
-        int pheromoneParam = colonie.getPheromoneParam();
-
-        Boolean[][] aVisite = ouvrier.getaVisite();
+        aVisite = ouvrier.getaVisite();
         boolean droitDePasssage = rechercheToutVisite(ouvrier); // si true (tout visités), on autorise a se deplacer aléatoirement
 
         // Si rechercheAucunPheromone = false = ca veut dire que ya au moins une cellule qui contient au min 1 pheromone, donc on execute cette condition
@@ -120,14 +116,13 @@ public class Aretes {
 
         int [][] quantityPheromone = graphe.getQuantityPheromone();
 
-
         for(int i=0; i<listX.size(); i++)
         {
             for(int j=0; j<listY.size(); j++)
             {
                 int xCoord = listX.get(i);
                 int yCoord = listY.get(j);
-                if(quantityPheromone[xCoord][yCoord] > bestQuantity)
+                if(quantityPheromone[xCoord][yCoord] > bestQuantity && !aVisite[xCoord][yCoord])
                 {
                     xBest = xCoord;
                     yBest = yCoord;

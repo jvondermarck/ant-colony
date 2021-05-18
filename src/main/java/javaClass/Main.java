@@ -4,7 +4,7 @@ public class Main {
     {
         //utilisationInterface();
         //utilisationSansInterface();
-        MyOwnTest(new AntFacade(500));
+        MyOwnTest(new AntFacade(1000));
     }
 
     /*
@@ -14,22 +14,22 @@ public class Main {
 
     public static void MyOwnTest(AntFacadeController controller)
     {
-        controller.createGrid( 15,15 );
-        controller.createColony( 8,8 );
+        controller.createGrid( 6,6 );
+        controller.createColony( 3,3 );
 
-        controller.putObstacle( 12,10 );
-        controller.putObstacle( 10,11 );
-        controller.putObstacle( 10,9 );
-        controller.putObstacle( 12,14 );
+        controller.putObstacle( 1,1 );
+//        controller.putObstacle( 10,11 );
+//        controller.putObstacle( 10,9 );
+//        controller.putObstacle( 12,14 );
 
-        controller.putFood(7,6,15);
-        controller.setParameters(2,10,3);
+        controller.putFood(0,0,15);
+        controller.setParameters(20,10,3);
 
         controller.createWorkers(1);
         controller.createSoldiers( 0 );
 
-        Display w = new Display( 15, 15, 40 );
-        for( int i = 0; i < 30; i++)
+        Display w = new Display( 6, 6, 40 );
+        for( int i = 0; i < 50; i++)
             w.update( controller.play( 1, false ) );
     }
 

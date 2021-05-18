@@ -24,7 +24,7 @@ public abstract class FourmisMove implements Fourmis {
         if(o instanceof Ouvrier) // Si c'est un ouvrier, on va chercher sa future cellule différement
         {
             Ouvrier ouvrier = (Ouvrier)o; // Comme on sait que o est une instance de Ouvrier, on le cast
-            aretes.paramOuvrier(r, ouvrier); // On cherche le ou les cellules adjacentes en fonction des cellules deja visite et des pheromones
+            aretes.paramOuvrier(ouvrier); // On cherche le ou les cellules adjacentes en fonction des cellules deja visite et des pheromones
         }
 
         Random rand = new Random();
@@ -44,8 +44,35 @@ public abstract class FourmisMove implements Fourmis {
         if(o instanceof Ouvrier) // Si c'est un ouvrier, on va lui mettre ses coordonnées qui lui servira pour le retour
         {
             Ouvrier ouvrier = (Ouvrier)o; // Comme on sait que o est une instance de Ouvrier, on le cast
-            ouvrier.getListXRetour().add(this.x);
-            ouvrier.getListYRetour().add(this.y);
+            if(g.getEstNourriture()[this.x][this.y]) // Si au nouvelle emplacement de la fourmis il y a de la nourriture
+            {
+                ouvrier.setEtatRetour(true); // Elle va devoir retourner sur la fourmilière ramener la nourriture
+                if(g.getQuantityFood()[this.x][this.y] >= r.getColonie().getFoodParam()) // Si ya + a manger que la fourmis va prendre
+                {
+                    ouvrier.setQuantityFoodTaken(r.getColonie().getFoodParam()); // On prend que la quantite de nourriture qu'on lui a indiqué
+                    g.getQuantityFood()[this.x][this.y] -= r.getColonie().getFoodParam();
+                } else {
+                    ouvrier.setQuantityFoodTaken(g.getQuantityFood()[this.x][this.y]); // On prend la nourriture qu'il reste, donc sa sera inferieur a ce qu'elle doit prendre de base
+                    g.getQuantityFood()[this.x][this.y] = 0;
+                }
+            } else {
+                ouvrier.getListXRetour().add(this.x); // Si ouvrier est pas sur la cellule où se trouve de la nourriture, on ajoute ses coordonnés dans la liste
+                ouvrier.getListYRetour().add(this.y);
+
+            }
+        }
+    }
+
+    public void cheminRetour(Ouvrier ouvrier)
+    {
+        if(ouvrier.isEtatRetour()) // Si il retourne bien à la base
+        {
+            this.x = ouvrier.getListXRetour().get(ouvrier.getListXRetour().size()-1); // on prend sa derniere coordonnée enrengistré
+            this.y = ouvrier.getListYRetour().get(ouvrier.getListYRetour().size()-1);
+
+            // On va supprimer le dernier élement de la liste des coordonnées X et Y
+            ouvrier.getListXRetour().remove(ouvrier.getListXRetour().size()-1);
+            ouvrier.getListYRetour().remove(ouvrier.getListYRetour().size()-1);
         }
     }
 

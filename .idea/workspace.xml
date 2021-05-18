@@ -4,24 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="47cd6ad5-e8f1-43de-aae4-65f52ffc0fb8" name="Default Changelist" comment="Ouvrier deplace Pheromone">
+    <list default="true" id="47cd6ad5-e8f1-43de-aae4-65f52ffc0fb8" name="Default Changelist" comment="Code fonctionnel Ouvrier allé/retour">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plantUML/V1/méthodes" beforeDir="false" afterPath="$PROJECT_DIR$/plantUML/V1/méthodes" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/AntFacade.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/AntFacadeController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Aretes.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Colonie.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Display.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/FourmiSoldatTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/javaTest/FourmiSoldatTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Fourmis.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/FourmisMove.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Graphe.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Noeud.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Ouvrier.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Reine.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Soldat.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/javaClass/AntFacade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/javaClass/AntFacade.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/javaClass/AntFacadeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/javaClass/AntFacadeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/javaClass/Aretes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/javaClass/Aretes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/javaClass/Colonie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/javaClass/Colonie.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/javaClass/FourmisMove.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/javaClass/FourmisMove.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/javaClass/Graphe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/javaClass/Graphe.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/javaClass/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/javaClass/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/javaClass/Ouvrier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/javaClass/Ouvrier.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,19 +82,6 @@
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="fourmis" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -180,7 +159,8 @@
       <workItem from="1621241075666" duration="1044000" />
       <workItem from="1621253356765" duration="6527000" />
       <workItem from="1621282445134" duration="6980000" />
-      <workItem from="1621326703273" duration="6864000" />
+      <workItem from="1621326703273" duration="13733000" />
+      <workItem from="1621342522367" duration="7485000" />
     </task>
     <task id="LOCAL-00001" summary="Update du GIT">
       <created>1619524870580</created>
@@ -399,7 +379,14 @@
       <option name="project" value="LOCAL" />
       <updated>1621289326474</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="MAJ Pheromone + JavaDoc">
+      <created>1621333897485</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1621333897485</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -418,8 +405,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Update du GIT" />
-    <MESSAGE value="Mise en place des classes principales" />
     <MESSAGE value="Update du git" />
     <MESSAGE value="Ajout ressources Java" />
     <MESSAGE value="Ajout class Aretes" />
@@ -443,7 +428,9 @@
     <MESSAGE value="MAJ" />
     <MESSAGE value="Commencement V2 Java" />
     <MESSAGE value="Ouvrier deplace Pheromone" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ouvrier deplace Pheromone" />
+    <MESSAGE value="MAJ Pheromone + JavaDoc" />
+    <MESSAGE value="Code fonctionnel Ouvrier allé/retour" />
+    <option name="LAST_COMMIT_MESSAGE" value="Code fonctionnel Ouvrier allé/retour" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>
@@ -463,5 +450,8 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/fourmis$Main.ic" NAME="Main Coverage Results" MODIFIED="1620823210993" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/fourmis$Main__1_.ic" NAME="Main (1) Coverage Results" MODIFIED="1621342490591" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>javaClass.*</FILTER>
+    </SUITE>
   </component>
 </project>

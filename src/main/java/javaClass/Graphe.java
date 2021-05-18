@@ -32,10 +32,11 @@ public class Graphe
             this.quantityPheromone = new int[longueur][largueur];
             this.airGraphe = longueur*largueur;
             creationEmplacementNoeud(); // On crée les emplacements de cellules sur le graphes (créer des cellules)
-            this.quantityPheromone[8][9] = 10;
-            this.quantityPheromone[8][7] = 8;
-            this.quantityPheromone[7][8] = 6;
-            this.quantityPheromone[9][8] = 9;
+            this.quantityPheromone[3][2] = 10;
+            this.quantityPheromone[3][1] = 8;
+            this.quantityPheromone[3][0] = 6;
+            this.quantityPheromone[2][0] = 9;
+            this.quantityPheromone[1][0] = 9;
 
         } catch(RuntimeException ex)
         {
@@ -87,7 +88,7 @@ public class Graphe
     // On recherche le numéro de la cellule où se trouve la fourmis
     public Noeud rechercherNoeud(int x, int y)
     {
-        for (int[] ints : taille) {
+        for (int[] ints : this.taille) {
             for (int anInt : ints) {
                 if (anInt == taille[x][y]) {
                     for (Noeud n : this.theNoeud) {

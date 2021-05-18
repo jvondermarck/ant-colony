@@ -16,6 +16,8 @@ public class Colonie {
     private int foodParam;
     private int pheromoneParam;
 
+    private int quantityFood; // Quantité de nourriture ramené par les fourmis ouvrieres
+
     /**
      * Instantiates a new Colonie.
      */
@@ -23,6 +25,7 @@ public class Colonie {
     {
         this.numColonie = nombreColonie + 1 ;
         nombreColonie++;
+        this.quantityFood = 0;
     }
 
     /**
@@ -85,5 +88,9 @@ public class Colonie {
     @Override
     public String toString() {
         return "Colonie n°" + numColonie;
+    }
+
+    public void setQuantityFood(int quantityFood) {
+        this.quantityFood = quantityFood;
     }
 }
