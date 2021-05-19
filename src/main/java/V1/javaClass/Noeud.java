@@ -1,4 +1,4 @@
-package javaClass;
+package V1.javaClass;
 public class Noeud {
     private final int coordonneNoeud;
     static int nombreNoeud = 0;

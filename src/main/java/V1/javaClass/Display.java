@@ -1,4 +1,4 @@
-package javaClass;
+package V1.javaClass;
 import javax.swing.*;
 import java.awt.*;
 import java.util.BitSet;

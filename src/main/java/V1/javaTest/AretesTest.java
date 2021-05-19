@@ -1,4 +1,4 @@
-package javaTest;
+package V1.javaTest;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -13,18 +13,6 @@ class AretesTest {
 
     @Test
     void rechercheAretes() {
-    }
-
-    @Test
-    void paramOuvrier() {
-    }
-
-    @Test
-    void rechercheAucunPheromone() {
-    }
-
-    @Test
-    void rechercheToutVisite() {
     }
 
     @Test

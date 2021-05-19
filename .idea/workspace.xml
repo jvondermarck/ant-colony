@@ -4,11 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="47cd6ad5-e8f1-43de-aae4-65f52ffc0fb8" name="Default Changelist" comment="Test generate Jav Doc">
+    <list default="true" id="47cd6ad5-e8f1-43de-aae4-65f52ffc0fb8" name="Default Changelist" comment="fix bug">
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/javaClass/Aretes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/javaClass/Aretes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/javaClass/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/javaClass/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/javaClass/Ouvrier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/javaClass/Ouvrier.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/javaClass/AntFacade.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/javaClass/AntFacadeController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/javaClass/Aretes.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/javaClass/Colonie.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/javaClass/Display.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/javaClass/Fourmis.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/javaClass/FourmisMove.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/javaClass/Graphe.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/javaClass/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/javaClass/Noeud.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/javaClass/Ouvrier.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/javaClass/Reine.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/javaClass/Soldat.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/javaTest/AretesTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/javaTest/FourmiSoldatTest.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,9 +46,6 @@
       <filtered-out-file-type name="TAG" />
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
-  </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/src/main/java/javaTest/FourmiSoldatTest.java" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="1rkdn9hR4W39HBtafDTmVD5ssqW" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -70,7 +80,7 @@
       <recent name="javaTest" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main (1)">
+  <component name="RunManager" selected="JUnit.FourmiSoldatTest (1)">
     <configuration name="Main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="javaClass.Main" />
       <module name="fourmis" />
@@ -87,6 +97,32 @@
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="fourmis" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FourmiSoldatTest (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="fourmis" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="V1.javaTest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="V1.javaTest" />
+      <option name="MAIN_CLASS_NAME" value="V1.javaTest.FourmiSoldatTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -112,6 +148,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.FourmiSoldatTest (1)" />
         <item itemvalue="Application.Main (1)" />
         <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.FourmiSoldatTest.test4" />
@@ -168,7 +205,8 @@
       <workItem from="1621342522367" duration="7797000" />
       <workItem from="1621368949945" duration="6300000" />
       <workItem from="1621415079048" duration="485000" />
-      <workItem from="1621417941806" duration="5332000" />
+      <workItem from="1621417941806" duration="5510000" />
+      <workItem from="1621428169067" duration="1225000" />
     </task>
     <task id="LOCAL-00001" summary="Update du GIT">
       <created>1619524870580</created>
@@ -415,7 +453,14 @@
       <option name="project" value="LOCAL" />
       <updated>1621415559835</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="fix bug">
+      <created>1621423971746</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1621423971746</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -434,7 +479,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Ajout class Aretes" />
     <MESSAGE value="MAJ UML DCC + MAJ Code Java" />
     <MESSAGE value="Creation Colonie" />
     <MESSAGE value="Creation Reine et Soldat" />
@@ -459,7 +503,8 @@
     <MESSAGE value="Code fonctionnel Ouvrier allé/retour" />
     <MESSAGE value="Fix bug deplacement Ouvrier" />
     <MESSAGE value="Test generate Jav Doc" />
-    <option name="LAST_COMMIT_MESSAGE" value="Test generate Jav Doc" />
+    <MESSAGE value="fix bug" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix bug" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

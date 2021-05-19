@@ -1,4 +1,4 @@
-package javaClass;
+package V2.javaClass;
 
 /**
  * La classe modifiable {@code Colonie}.
