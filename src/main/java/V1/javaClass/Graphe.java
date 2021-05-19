@@ -1,6 +1,9 @@
 package V1.javaClass;
 import java.util.ArrayList;
 
+/**
+ * Un Graphe où se trouvera une colonie, des fourmis soldats, ouvrières, reine, avec des obstales, nourritures et phéromones.
+ */
 public class Graphe
 {
     private int[][] taille; // Tableau où se trouve tous les emplacements des cellules du graphe (vide)
@@ -10,6 +13,12 @@ public class Graphe
     private int nbrNoeudDansGraphe; // Pour savoir le nbr de Noeud total que présentent le graphe
     private final ArrayList<Noeud> theNoeud = new ArrayList<>();
 
+    /**
+     * Crée un Graphe.
+     *
+     * @param longueur la longueur du Graphe
+     * @param largueur la largueur du Graphe
+     */
     public Graphe(int longueur, int largueur)
     {
         // Si longueur ou largeur est négative, alors on lance un message d'erreur
@@ -27,7 +36,10 @@ public class Graphe
         }
     }
 
-    // Pour chaque cellule du graphe on va ajouter des numéros pour les repérer - On va créer les noeuds.
+    /**
+     * Creation emplacement noeud. Pour chaque cellule du graphe on va ajouter des numéros pour les repérer - On va créer les noeuds.
+     */
+
     public void creationEmplacementNoeud()
     {
         int numeroCellule = 1;
@@ -47,7 +59,11 @@ public class Graphe
         System.out.println("-NOEUD CRÉES dans Graphe: " + Noeud.nombreNoeud);
     }
 
-    // On s'occupe d'attribuer à un noued, une cellule non prise sur le Graphe
+    /**
+     * On s'occupe d'attribuer à un noued, une cellule non prise sur le Graphe
+     * Cette méthode sera appelée dans la classe Noeud.
+     * @return l'emplacement du noeud
+     */
     public int getEmplacementNoeud()
     {
         for (int i = 0; i < taille.length; ++i)
@@ -65,7 +81,14 @@ public class Graphe
         return 0;
     }
 
-    // On recherche le numéro de la cellule où se trouve la fourmis
+    /**
+     * On recherche le numéro de la cellule où se trouve la fourmis fonction de sa coordonnée X et Y.
+     *
+     * @param x sa coordonée X (ligne)
+     * @param y sa coordonée Y (colonne)
+     * @return le noeud en question
+     */
+
     public Noeud rechercherNoeud(int x, int y)
     {
         for (int[] ints : this.taille) {
@@ -83,24 +106,59 @@ public class Graphe
         return null;
     }
 
+    /**
+     * Mettre obstacle a une coordonnée bien précise.
+     *
+     * @param row    la ligne
+     * @param column la colonne
+     */
     public void mettreObstacle(int row, int column)
     {
         this.estObstacle[row][column] = true;
     }
 
+    /**
+     * Récuperer le tableau d'entiers à deux dimensions qui est le Graphe en lui-meme
+     *
+     * @return un tableau d'entiers à deux dimensions
+     */
     public int[][] getTaille() {
         return taille;
     }
 
+    /**
+     * Récuperer le tableau de boolean à deux dimensions qui indique où se trouve les obstacles
+     *
+     * @return the boolean [ ] [ ]
+     */
     public Boolean[][] getEstObstacle() {
         return estObstacle;
     }
 
+    /**
+     * Récuperer les dimensions du graphe
+     *
+     * @return l'air du graphe
+     */
     public int getAirGraphe() {
         return airGraphe;
     }
 
+    /**
+     * Récuperer le nombre de noeuds que le graphe à crée.
+     *
+     * @return le nombre de noeuds
+     */
     public int getNbrNoeudDansGraphe() {
         return nbrNoeudDansGraphe;
+    }
+
+    /**
+     * Quand on veut modifier le tableau 2D sur les obstacles, on appelle cette méthode
+     *
+     * @param estObstacle le tableau boolean à deux dimensions concernant les obstacles
+     */
+    public void setEstObstacle(Boolean[][] estObstacle) {
+        this.estObstacle = estObstacle;
     }
 }

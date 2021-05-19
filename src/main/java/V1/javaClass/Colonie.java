@@ -2,17 +2,17 @@ package V1.javaClass;
 
 /**
  * La classe modifiable {@code Colonie}.
- *
- * Une colonie est
+ * <p>
+ * Une colonie a un numéro de colonie
+ * On peut savoir le nombre total de colonie
  */
 public class Colonie {
 
     private static int nombreColonie = 0;
     private final int numColonie;
 
-
     /**
-     * Instantiates a new Colonie.
+     * Instancie une nouvelle Colonie, et lui attribu un numéro.
      */
     public Colonie()
     {

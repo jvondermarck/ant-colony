@@ -3,6 +3,9 @@ package V1.javaClass;
 import java.util.ArrayList;
 import java.util.BitSet;
 
+/**
+ * La classe Ant facade qui implémante l'interface pour jouer.
+ */
 public class AntFacade implements AntFacadeController {
     private BitSet[][] grid;
     private Graphe graphe;
@@ -16,10 +19,19 @@ public class AntFacade implements AntFacadeController {
 
     private int xColonie, yColonie;
 
+    /**
+     * Instantiates a new Ant facade qui met son propre timer pour la vitesse de jeu.
+     */
     public AntFacade()
     {
         this.sleepingTime = 500;
     }
+
+    /**
+     * Instantiates a new Ant facade où l'utilisateur indique sa propre vitesse de jeu.
+     *
+     * @param temps la vitesse auquel se déroulera le jeu (déplacement des fourmis)
+     */
     public AntFacade(int temps)
     {
         this.sleepingTime = temps;

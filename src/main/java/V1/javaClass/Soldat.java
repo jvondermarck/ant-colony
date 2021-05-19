@@ -1,4 +1,8 @@
 package V1.javaClass;
+
+/**
+ * La classe Soldat qui se promène dans le Graphe.
+ */
 public class Soldat extends FourmisMove {
     private final Colonie colonie;
     private final Graphe graphe;
@@ -6,6 +10,14 @@ public class Soldat extends FourmisMove {
     private final int numeroSoldat;
     private Noeud positionActuel;
 
+    /**
+     * Crée un nouveau Soldat.
+     *
+     * @param x       sa coordonnée X de naissance
+     * @param y       sa coordonnée Y de naissance
+     * @param colonie sa colonie où il est né
+     * @param graphe  le graphe où le soldat réside
+     */
     public Soldat(int x, int y, Colonie colonie, Graphe graphe) {
         super(x,y);
         this.colonie = colonie;
@@ -17,7 +29,8 @@ public class Soldat extends FourmisMove {
 
     /**
      * On recherche le numéro du Noeud où se trouve le soldat
-     * @param ligne numéro de la ligne où se trouve le noeud
+     *
+     * @param ligne   numéro de la ligne où se trouve le noeud
      * @param colonne numéro de la colonne où se trouve le noeud
      */
     public void recherchePositionActuel(int ligne, int colonne)
@@ -31,5 +44,13 @@ public class Soldat extends FourmisMove {
     @Override
     public String toString() {
         return "Soldat n°" + numeroSoldat + " - " + this.colonie.toString() + " --> se trouve au " + this.positionActuel;
+    }
+
+    /**
+     * On retourne le Noeud où se trouve le soldat
+     * @return la position du noeud
+     */
+    public Noeud getPositionActuel() {
+        return positionActuel;
     }
 }
