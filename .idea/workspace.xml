@@ -4,13 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="47cd6ad5-e8f1-43de-aae4-65f52ffc0fb8" name="Default Changelist" comment="Code fonctionnel Ouvrier allé/retour">
+    <list default="true" id="47cd6ad5-e8f1-43de-aae4-65f52ffc0fb8" name="Default Changelist" comment="Fix bug deplacement Ouvrier">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/javaClass/Aretes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/javaClass/Aretes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/javaClass/Colonie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/javaClass/Colonie.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/javaClass/FourmisMove.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/javaClass/FourmisMove.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/javaClass/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/javaClass/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/javaClass/Ouvrier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/javaClass/Ouvrier.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/javaClass/Noeud.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/javaClass/Noeud.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,6 +18,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -50,6 +48,9 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="codeWithMe.voiceChat.enabledByDefault" value="false" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
+    <property name="create.test.in.the.same.root" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/plantUML/V1" />
     <property name="settings.editor.selected.configurable" value="CodeWithMe" />
   </component>
@@ -60,6 +61,12 @@
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Julien\Documents\DUT Info\A22 - Modélisation objet avec UML\Projet\GitProject\fourmis\src\main" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="javaTest" />
     </key>
   </component>
   <component name="RunManager" selected="Application.Main (1)">
@@ -79,6 +86,17 @@
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="fourmis" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -158,7 +176,8 @@
       <workItem from="1621282445134" duration="6980000" />
       <workItem from="1621326703273" duration="13733000" />
       <workItem from="1621342522367" duration="7797000" />
-      <workItem from="1621368949945" duration="6078000" />
+      <workItem from="1621368949945" duration="6300000" />
+      <workItem from="1621415079048" duration="443000" />
     </task>
     <task id="LOCAL-00001" summary="Update du GIT">
       <created>1619524870580</created>
@@ -391,7 +410,14 @@
       <option name="project" value="LOCAL" />
       <updated>1621350840022</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="Fix bug deplacement Ouvrier">
+      <created>1621375303595</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1621375303595</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -410,7 +436,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Update du git" />
     <MESSAGE value="Ajout ressources Java" />
     <MESSAGE value="Ajout class Aretes" />
     <MESSAGE value="MAJ UML DCC + MAJ Code Java" />
@@ -435,7 +460,8 @@
     <MESSAGE value="Ouvrier deplace Pheromone" />
     <MESSAGE value="MAJ Pheromone + JavaDoc" />
     <MESSAGE value="Code fonctionnel Ouvrier allé/retour" />
-    <option name="LAST_COMMIT_MESSAGE" value="Code fonctionnel Ouvrier allé/retour" />
+    <MESSAGE value="Fix bug deplacement Ouvrier" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix bug deplacement Ouvrier" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>

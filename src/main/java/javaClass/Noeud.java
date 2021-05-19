@@ -3,6 +3,10 @@ public class Noeud {
     private final int coordonneNoeud;
     static int nombreNoeud = 0;
 
+    /**
+     * Constructeur Noeud qui cherche un emplacement pour créer le noeud et lui ai attribué un numero
+     * @param g : un graphe
+     */
     public Noeud(Graphe g)
     {
         if(g.getNbrNoeudDansGraphe() >= g.getAirGraphe()) // Si le nbr de noeud déjà crée est >= au nbr max de cellule possibles, on lance une erreur
