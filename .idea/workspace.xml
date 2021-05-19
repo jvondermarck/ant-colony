@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="47cd6ad5-e8f1-43de-aae4-65f52ffc0fb8" name="Default Changelist" comment="Fix bug deplacement Ouvrier">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="47cd6ad5-e8f1-43de-aae4-65f52ffc0fb8" name="Default Changelist" comment="Test generate Jav Doc">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/javaClass/Noeud.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/javaClass/Noeud.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/javaClass/Aretes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/javaClass/Aretes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/javaClass/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/javaClass/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/javaClass/Ouvrier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/javaClass/Ouvrier.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,17 +91,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="FourmiSoldatTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="fourmis" />
       <option name="PACKAGE_NAME" value="javaTest" />
@@ -177,7 +167,8 @@
       <workItem from="1621326703273" duration="13733000" />
       <workItem from="1621342522367" duration="7797000" />
       <workItem from="1621368949945" duration="6300000" />
-      <workItem from="1621415079048" duration="443000" />
+      <workItem from="1621415079048" duration="485000" />
+      <workItem from="1621417941806" duration="5332000" />
     </task>
     <task id="LOCAL-00001" summary="Update du GIT">
       <created>1619524870580</created>
@@ -417,7 +408,14 @@
       <option name="project" value="LOCAL" />
       <updated>1621375303595</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="Test generate Jav Doc">
+      <created>1621415559835</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1621415559835</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -436,7 +434,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Ajout ressources Java" />
     <MESSAGE value="Ajout class Aretes" />
     <MESSAGE value="MAJ UML DCC + MAJ Code Java" />
     <MESSAGE value="Creation Colonie" />
@@ -461,9 +458,18 @@
     <MESSAGE value="MAJ Pheromone + JavaDoc" />
     <MESSAGE value="Code fonctionnel Ouvrier allé/retour" />
     <MESSAGE value="Fix bug deplacement Ouvrier" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix bug deplacement Ouvrier" />
+    <MESSAGE value="Test generate Jav Doc" />
+    <option name="LAST_COMMIT_MESSAGE" value="Test generate Jav Doc" />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.IllegalArgumentException" package="java.lang" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo parentTag="Noeud" memberName="coordonneNoeud" />

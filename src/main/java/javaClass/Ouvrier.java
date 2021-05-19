@@ -46,10 +46,10 @@ public class Ouvrier extends FourmisMove {
         listYRetour.add(yColonie);
 
         //this.aVisite[2][3] = true;
-        this.aVisite[3][2] = true;
-        this.aVisite[3][3] = true;
-        this.aVisite[3][4] = true;
-        this.aVisite[4][3] = true;
+//        this.aVisite[3][2] = true;
+//        this.aVisite[3][3] = true;
+//        this.aVisite[3][4] = true;
+//        this.aVisite[4][3] = true;
     }
 
     /**

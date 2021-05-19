@@ -101,20 +101,23 @@ public class Aretes {
                 }
             }
         } else { // Si il n'y a aucun phéromone ou que c'est que des cellules déja visités :
-            for(int i=0; i<listX.size(); i++)
+            if(!droitDePasssage) // Si on met pas cette condition et que droitPassage = true, on va supprimer toutes les coord adjacentes vu qu'on a tout visité
             {
-                for(int j=0; j<listY.size(); j++)
+                for(int i=0; i<listX.size(); i++)
                 {
-                    int xCoord = listX.get(i);
-                    int yCoord = listY.get(j);
-                    if(aVisite[xCoord][yCoord]) // Si on a visité la cellule
+                    for(int j=0; j<listY.size(); j++)
                     {
-                        listX.remove(i); // On supprime la coordonnée de X du tableau pour pas que la fourmis se deplace sur cette cellule
-                        listY.remove(i);
-                        i = 0;
-                        j = -1;
-                    } else {
-                        i++;
+                        int xCoord = listX.get(i);
+                        int yCoord = listY.get(j);
+                        if(aVisite[xCoord][yCoord]) // Si on a visité la cellule
+                        {
+                            listX.remove(i); // On supprime la coordonnée de X du tableau pour pas que la fourmis se deplace sur cette cellule
+                            listY.remove(i);
+                            i = 0;
+                            j = -1;
+                        } else {
+                            i++;
+                        }
                     }
                 }
             }
