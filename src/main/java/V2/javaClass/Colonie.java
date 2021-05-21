@@ -58,25 +58,25 @@ public class Colonie {
     /**
      * Affecte le nombre d'itération avant de retirer les phéromones d'une colonie pour l'attribut en paramètre
      *
-     * @param evaporationParam
+     * @param evaporationParam rythme d'évaporation des phéromones. La valeur par défaut est 1 par itération.
      */
     public void setEvaporationParam(int evaporationParam) {
         this.evaporationParam = evaporationParam;
     }
 
     /**
-     * Sets food param.
+     * Mettre les parametres de nourritures
      *
-     * @param foodParam the food param
+     * @param foodParam quantité maximale de nourriture que peut transporter une fourmi ouvrière.
      */
     public void setFoodParam(int foodParam) {
         this.foodParam = foodParam;
     }
 
     /**
-     * Sets pheromone param.
+     * Mettre les parametres de pheromones
      *
-     * @param pheromoneParam
+     * @param pheromoneParam quantité de phéromone déposée par les fourmis lors de leur passage dans une cellule.
      */
     public void setPheromoneParam(int pheromoneParam) {
         this.pheromoneParam = pheromoneParam;
