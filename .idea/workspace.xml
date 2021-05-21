@@ -4,20 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="47cd6ad5-e8f1-43de-aae4-65f52ffc0fb8" name="Default Changelist" comment="Différence V1/V2">
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+    <list default="true" id="47cd6ad5-e8f1-43de-aae4-65f52ffc0fb8" name="Default Changelist" comment="JavaDoc + Tests V1">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/V1/javaClass/AntFacade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/V1/javaClass/AntFacade.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/V1/javaClass/Aretes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/V1/javaClass/Aretes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/V1/javaClass/Colonie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/V1/javaClass/Colonie.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/V1/javaClass/Fourmis.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/V1/javaClass/Fourmis.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plantUML/V1/Fourmis_DC_Conception.puml" beforeDir="false" afterPath="$PROJECT_DIR$/plantUML/V1/Fourmis_DC_Conception.puml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/V1/javaClass/FourmisMove.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/V1/javaClass/FourmisMove.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/V1/javaClass/Graphe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/V1/javaClass/Graphe.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/V1/javaClass/Noeud.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/V1/javaClass/Noeud.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/V1/javaClass/Reine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/V1/javaClass/Reine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/V1/javaClass/Soldat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/V1/javaClass/Soldat.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/V1/javaTest/AretesTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/V1/javaTest/AretesTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/V1/javaTest/FourmiSoldatTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/V1/javaTest/FourmiSoldatTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/V2/javaClass/AntFacade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/V2/javaClass/AntFacade.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/V2/javaClass/Aretes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/V2/javaClass/Aretes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/V2/javaClass/FourmisMove.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/V2/javaClass/FourmisMove.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/V2/javaClass/Ouvrier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/V2/javaClass/Ouvrier.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/V2/javaClass/Soldat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/V2/javaClass/Soldat.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/V2/javaTest/FourmiSoldatTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/V2/javaTest/FourmiSoldatTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,8 +23,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="JUnit5 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -78,20 +74,7 @@
       <recent name="javaTest" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.SoldatTest">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="V1.javaClass.Main" />
-      <module name="fourmis" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="V1.javaTest.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.FourmiOuvrierTest">
     <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -103,53 +86,69 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AretesTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="FourmiOuvrierTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="fourmis" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="V1.javaTest.*" />
+          <option name="PATTERN" value="V2.javaTest.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="V1.javaTest" />
-      <option name="MAIN_CLASS_NAME" value="V1.javaTest.AretesTest" />
+      <option name="PACKAGE_NAME" value="V2.javaTest" />
+      <option name="MAIN_CLASS_NAME" value="V2.javaTest.FourmiOuvrierTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ColonieTest.creationColonie" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="FourmiOuvrierTest.testDeplacementElemtaire" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="fourmis" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="V1.javaTest.*" />
+          <option name="PATTERN" value="V2.javaTest.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="V1.javaTest" />
-      <option name="MAIN_CLASS_NAME" value="V1.javaTest.ColonieTest" />
-      <option name="METHOD_NAME" value="creationColonie" />
+      <option name="PACKAGE_NAME" value="V2.javaTest" />
+      <option name="MAIN_CLASS_NAME" value="V2.javaTest.FourmiOuvrierTest" />
+      <option name="METHOD_NAME" value="testDeplacementElemtaire" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SoldatTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="FourmiOuvrierTest.testPutObstacle" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="fourmis" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="V1.javaTest.*" />
+          <option name="PATTERN" value="V2.javaTest.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="V1.javaTest" />
-      <option name="MAIN_CLASS_NAME" value="V1.javaTest.SoldatTest" />
+      <option name="PACKAGE_NAME" value="V2.javaTest" />
+      <option name="MAIN_CLASS_NAME" value="V2.javaTest.FourmiOuvrierTest" />
+      <option name="METHOD_NAME" value="testPutObstacle" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FourmiSoldatTest (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="fourmis" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="V2.javaTest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="V2.javaTest" />
+      <option name="MAIN_CLASS_NAME" value="V2.javaTest.FourmiSoldatTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SoldatTest.recherchePositionActuel" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="FourmiSoldatTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="fourmis" />
       <extension name="coverage">
         <pattern>
@@ -158,20 +157,19 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="V1.javaTest" />
-      <option name="MAIN_CLASS_NAME" value="V1.javaTest.SoldatTest" />
-      <option name="METHOD_NAME" value="recherchePositionActuel" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="MAIN_CLASS_NAME" value="V1.javaTest.FourmiSoldatTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.SoldatTest" />
-        <item itemvalue="JUnit.SoldatTest.recherchePositionActuel" />
-        <item itemvalue="Application.Main" />
-        <item itemvalue="JUnit.AretesTest" />
-        <item itemvalue="JUnit.ColonieTest.creationColonie" />
+        <item itemvalue="JUnit.FourmiOuvrierTest" />
+        <item itemvalue="JUnit.FourmiOuvrierTest.testDeplacementElemtaire" />
+        <item itemvalue="JUnit.FourmiOuvrierTest.testPutObstacle" />
+        <item itemvalue="JUnit.FourmiSoldatTest (1)" />
+        <item itemvalue="JUnit.FourmiSoldatTest" />
       </list>
     </recent_temporary>
   </component>
@@ -225,7 +223,11 @@
       <workItem from="1621368949945" duration="6300000" />
       <workItem from="1621415079048" duration="485000" />
       <workItem from="1621417941806" duration="5510000" />
-      <workItem from="1621428169067" duration="11542000" />
+      <workItem from="1621428169067" duration="12722000" />
+      <workItem from="1621443227582" duration="2945000" />
+      <workItem from="1621517931229" duration="90000" />
+      <workItem from="1621605802630" duration="5496000" />
+      <workItem from="1621615446581" duration="15355000" />
     </task>
     <task id="LOCAL-00001" summary="Update du GIT">
       <created>1619524870580</created>
@@ -486,7 +488,14 @@
       <option name="project" value="LOCAL" />
       <updated>1621429495593</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="JavaDoc + Tests V1">
+      <created>1621440463659</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1621440463659</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -505,7 +514,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Creation Colonie" />
     <MESSAGE value="Creation Reine et Soldat" />
     <MESSAGE value="MAJ DCC" />
     <MESSAGE value="Creation Diagramme Sequence" />
@@ -530,7 +538,8 @@
     <MESSAGE value="Test generate Jav Doc" />
     <MESSAGE value="fix bug" />
     <MESSAGE value="Différence V1/V2" />
-    <option name="LAST_COMMIT_MESSAGE" value="Différence V1/V2" />
+    <MESSAGE value="JavaDoc + Tests V1" />
+    <option name="LAST_COMMIT_MESSAGE" value="JavaDoc + Tests V1" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -549,6 +558,7 @@
     <watches-manager>
       <configuration name="JUnit">
         <watch expression="g.estObstacle[1]" />
+        <watch expression="this" />
       </configuration>
       <configuration name="Application">
         <watch expression="ouvrier" language="JAVA" />

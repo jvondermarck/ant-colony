@@ -20,7 +20,7 @@ public class FourmiSoldatTest
     @BeforeEach
     void setUp()
     {
-        appli = new AntFacade();
+        appli = new AntFacade(0);
         appli.createGrid(WIDTH, HEIGHT);
         appli.createColony(0,0);
 
@@ -131,15 +131,15 @@ public class FourmiSoldatTest
         appli.putObstacle(0, 1);
         int i = 0;
         int j = 2;
-        Display w = new Display( WIDTH, HEIGHT, 50 );
+        //Display w = new Display( WIDTH, HEIGHT, 50 );
         while (i < HEIGHT)
         {
             BitSet actual = bitsets[i][j];
             boolean soldatPresent = actual.get(2);
             assertTrue(soldatPresent,
                     "bitsets[" + i + "][" + j + "] = " + bitsets[i][j]);
-            //bitsets = appli.play(1, false);
-            w.update(appli.play(1, false));
+            bitsets = appli.play(1, false);
+            //w.update(appli.play(1, false));
             appli.putObstacle(i, j);
 
             if (i % 4 == 0 && j < WIDTH - 1)

@@ -1,5 +1,5 @@
 package V2.javaClass;
-public class Soldat extends FourmisMove {
+public class Soldat extends MoveSoldat {
     private final Colonie colonie;
     private final Graphe graphe;
     private static int nombreSoldat = 0;

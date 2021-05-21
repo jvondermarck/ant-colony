@@ -2,10 +2,10 @@ package V2.javaClass;
 
 import java.util.ArrayList;
 
-public class Ouvrier extends FourmisMove {
+public class Ouvrier extends MoveOuvrier {
     private final Colonie colonie;
     private final Graphe graphe;
-    private static int nombreSoldat = 0;
+    private static int nombreOuvrier = 0;
     private final int numeroWorker;
     private Noeud positionActuel;
     private final int xColonie;
@@ -23,8 +23,8 @@ public class Ouvrier extends FourmisMove {
         super(x,y);
         this.colonie = colonie;
         this.graphe = graphe;
-        nombreSoldat = nombreSoldat+1;
-        this.numeroWorker = nombreSoldat;
+        nombreOuvrier = nombreOuvrier+1;
+        this.numeroWorker = nombreOuvrier;
         this.quantityFoodTaken = 0;
         recherchePositionActuel(x, y);
 

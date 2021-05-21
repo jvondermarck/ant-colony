@@ -1,0 +1,91 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+skinparam style strictuml
+skinparam classAttributeIconSize 0
+skinparam classFontStyle Bold
+skinparam roundcorner 20
+hide enum methods
+
+package "Diagramme de Classe d'Analyse" <<Folder>> {
+    interface AntFacadeController <<interface>> #pink ##[bold]red {}
+
+    class Graphe #lightcoral;line.bold {
+      taille
+      estObstacle
+      airGraphe
+      nbrNoeudDansGraphe
+      theNoeud
+    }
+
+    class Colonie #burlywood {
+        nombreColonie
+        numColonie
+    }
+
+    class Noeud #burlywood {
+    coordonneeNoeud
+    nombreNoeud
+    }
+
+    class AntFacade #back:Wheat;line.bold {
+      grid
+      graphe
+      theSoldiers
+      reine
+      width
+      height
+      cellSize
+      sleepingTime
+      xColonie
+      yColonie
+    }
+
+    class Aretes #burlywood {
+      tab
+      estObstacle
+      x
+      y
+      listX
+      listY
+    }
+
+    interface Fourmis <<interface>> #lightgreen;line:green {}
+
+    class Reine #lightblue;line:green {
+      x
+      y
+      colonie
+      graphe
+      theSoldiers
+    }
+
+    abstract class FourmisMove #lightgreen;line:green {
+        x
+        y
+    }
+
+    class Soldat #lightblue;line:green {
+      colonie
+      graphe
+      positionActuel
+      nombreSoldat
+      numeroSoldat
+    }
+}
+
+AntFacadeController <|.. AntFacade : <<implements>>
+AntFacade .up.|> Graphe : <<instantiate>>
+AntFacade ..|> Reine : <<instantiate>>
+
+Graphe *--> Noeud : contient
+
+FourmisMove  <--up*  Aretes : relie
+Reine *-right>  Colonie : appartient
+Noeud o--> Fourmis : comporte
+Fourmis <|.. Reine : <<implements>>
+Fourmis <|.. FourmisMove : <<implements>>
+FourmisMove <|-- Soldat
+Reine  *->  Soldat : Donne naissance >
+
+@enduml

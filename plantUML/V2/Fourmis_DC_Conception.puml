@@ -55,6 +55,7 @@ package "Diagramme de Classe de Conception" <<Folder>> {
       -grid: BitSet[*][*]
       -graphe: Graphe
       -theSoldiers: ArrayList<Soldat>
+      -theWorkers: ArrayList<Ouvrier>
       -reine: Reine
       -width: Integer
       -height: Integer
@@ -62,7 +63,6 @@ package "Diagramme de Classe de Conception" <<Folder>> {
       -yColonie: Integer
       -cellSize: Integer
       -sleepingTime: Long
-
   }
 
   class Aretes #burlywood {
@@ -80,6 +80,16 @@ package "Diagramme de Classe de Conception" <<Folder>> {
       +getListX(): ArrayList<Integer>
       +getListY(): ArrayList<Integer>
   }
+
+  class AretesOuvrier #burlywood {
+        -aVisite[*][*]: Boolean
+
+        <<Create>>AretesOuvrier(g:Graphe, x:Integer, y:Integer)
+        +paramOuvrier(ouvrier:Ouvrier)
+        +rechercheBestPheromone(x:Integer, y:Integer): Boolean
+        +rechercheAucunPheromone(droitPassage: Boolean):Boolean
+        +rechercheToutVisite(ouvrier:Ouvrier): Boolean
+    }
 
   interface Fourmis <<interface>> #lightgreen;line:green {
       +setX(x:Integer);
@@ -100,12 +110,33 @@ package "Diagramme de Classe de Conception" <<Folder>> {
       +setY(y:Integer);
   }
 
-   class FourmisMove #lightgreen;line:green {
+  interface FourmisMove <<interface>> #lightgreen;line:green {
+      +randomDirection(graphe: Graphe)
+      +getX(x:Integer);
+      +getY(y:Integer);
+      +setX(x:Integer);
+      +setY(y:Integer);
+  }
+
+  class MoveSoldat {
       -x: Integer
       -y: Integer
 
-      <<Create>>FourmisMove(x:Integer, y:Integer)
+      <<Create>>MoveSoldat(x:Integer, y:Integer)
       +randomDirection(graphe: Graphe)
+      +getX(x:Integer);
+      +getY(y:Integer);
+      +setX(x:Integer);
+      +setY(y:Integer);
+  }
+
+  class MoveOuvrier {
+      -x: Integer
+      -y: Integer
+
+      <<Create>>MoveSoldat(x:Integer, y:Integer)
+      +randomDirection(graphe: Graphe)
+      +cheminRetour(ouvrier:Ouvrier)
       +getX(x:Integer);
       +getY(y:Integer);
       +setX(x:Integer);
@@ -122,6 +153,25 @@ package "Diagramme de Classe de Conception" <<Folder>> {
       <<Create>>Soldat(x:Integer, y:Integer, c:Colonie, g:Graphe)
       +recherchePositionActuel(ligne:Integer, colonne:Integer)
   }
+
+    class Ouvrier #lightblue;line:green {
+        -aVisite[*][*]: Boolean
+        -listXRetour: ArrayList<Integer>
+        -listYRetour: ArrayList<Integer>
+        -etatRetour:Boolean
+        -quantityFoodTaken: Integer
+        -colonie: Colonie
+        -graphe: Graphe
+        -positionActuel: Noeud
+        -{static} nombreOuvrier = 0: Integer
+        -numeroOuvrier: Integer
+        -xColinie: Integer
+        -yColonie: Integer
+
+        <<Create>>Ouvrier(x:Integer, y:Integer, c:Colonie, g:Graphe)
+        +recherchePositionActuel(ligne:Integer, colonne:Integer)
+        +doitRetravailler(): Boolean
+    }
 }
 
 
@@ -131,12 +181,28 @@ AntFacade ..|> Reine : <<instantiate>>
 
 Graphe "1" *--> "1..*" Noeud : contient
 
-FourmisMove "\t\t\t\t1" <--up* "0..*" Aretes : relie
-Reine "1" *-right> "1" Colonie : appartient
+Reine "1" *-> "1" Colonie : appartient
 Noeud "1" o--> "0..*\t" Fourmis : comporte
+
 Fourmis <|.. Reine : <<implements>>
-Fourmis <|.. FourmisMove : <<implements>>
-FourmisMove <|-- Soldat
-Reine "\t\t\t\t\t\t1" *-> "1..*" Soldat : Donne naissance >
+Fourmis <|.. FourmisMove : <<extends>>
+
+Aretes <-- AretesOuvrier
+Aretes -left- MoveSoldat
+AretesOuvrier -left- MoveOuvrier
+
+FourmisMove <|.. MoveOuvrier : <<implements>>
+FourmisMove <|.. MoveSoldat : <<implements>>
+
+MoveSoldat o--> Soldat
+MoveOuvrier o--> Ouvrier
+Reine *--> Soldat
+Reine *--> Ouvrier
+
+
+
+
+
+
 
 @enduml

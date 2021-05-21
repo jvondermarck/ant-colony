@@ -1,0 +1,94 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+skinparam style strictuml
+skinparam responseMessageBelowArrow true
+skinparam roundcorner 20
+skinparam ArrowColor #black
+hide footbox
+
+participant "AntFacade" as ant #lightgreen
+participant "Graphe:g" as graphe #lightcoral
+
+== Mise en place du Graphe ==
+' ---------GRAPHE--------------
+ant -> ant++ #lightgreen : createGrid(width, height)
+    ant --> graphe++ #lightcoral : <<Create>> Graphe(width, height)
+return
+return
+
+graphe -> graphe++ #lightcoral : creationEmplacementNoeud()
+loop i<taille.length
+    loop i<taille[i].length
+        ' ---------NOEUD--------------
+            create Noeud
+            graphe --> Noeud : <<Create>> Noeud(g)
+            graphe <- Noeud++ : getEmplacementNoeud(n)
+                return noeud
+    end
+end
+return
+
+ant -> ant++ #lightgreen : putObstacle(x,y)
+    ant -> graphe++ #lightcoral : mettreObstacle(x,y)
+return
+return
+
+== Création des Fourmis ==
+' ---------REINE--------------
+ant -> ant++ #lightgreen : createColony(x, y)
+create Reine
+    ant --> Reine : <<Create>> Reine(x,y,g)
+return
+
+' ---------COLONIE--------------
+create Colonie
+Reine --> Colonie : <<Create>> Colonie()
+
+ant -> ant++ #lightgreen : createSoldiers(amount)
+    ant -> Reine++ #lightblue : giveBirth(amount)
+    loop i<amount
+        ' ---------SOLDAT--------------
+        create Soldat
+        Reine --> Soldat : <<Create>> Soldat(x,y,c,g)
+    end
+return
+return
+
+participant "FourmisMove" #Wheat
+== Déclenchement des itérations ==
+ant -> ant++ #DarkSalmon : play(time, false)
+ant -> Soldat++ #DarkSalmon
+loop i<duration
+    loop Soldat s : theSoldiers
+        Soldat -> FourmisMove : randomDirection(this.g)
+        ' ---------ARETES--------------
+        create Aretes
+        FourmisMove --> Aretes : <<Create>> Aretes(g,x,y)
+        Aretes -> Aretes++ #DarkSalmon : rechercheAretes()
+        loop y<=yTab+1
+            loop x<=xTab+1
+                alt x == xTab || y == yTab
+                    alt verficationNoeud(x, y) == true
+                        Aretes -> Aretes++ #FFBBBB : verficationNoeud(x,y)
+                            alt (tab[x][y] != tab[xTab][yTab]) && !estObstacle[x][y]
+                                Aretes -> Aretes++ #FFBBBB : ajouterAretes(x,y)
+                            end
+                        return
+                    end
+                end
+            end
+        end
+            return
+        Soldat -> Soldat++ #FFBBBB : recherchePositionActuel(x,y)
+            return
+    end
+end
+return
+return
+return
+
+
+
+
+@enduml

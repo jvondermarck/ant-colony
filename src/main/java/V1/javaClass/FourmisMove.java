@@ -3,10 +3,10 @@ import java.util.ArrayList;
 import java.util.Random;
 
 /**
- * La classe abstraite FourmisMove utilisé uniquement par des fourmis qui on le droit de se déplacer {@code Figure}.
+ * La classe FourmisMove utilisé uniquement par des fourmis qui on le droit de se déplacer {@code Figure}.
  * <p>
  */
-public abstract class FourmisMove implements Fourmis {
+public class FourmisMove implements Fourmis {
     private int x;
     private int y;
 
