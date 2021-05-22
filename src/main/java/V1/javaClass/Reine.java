@@ -21,6 +21,10 @@ public class Reine implements Fourmis {
      */
     public Reine(int x, int y, Graphe g)
     {
+        // Si l'emplacement de la reine est négative, alors on lance un message d'erreur
+        if(x<0 || y<0)
+            throw new NumberFormatException("Votre valeur est négative, veuillez inscrire que des nombres positifs");
+
         setX(x);
         setY(y);
         this.colonie = new Colonie();
@@ -35,6 +39,10 @@ public class Reine implements Fourmis {
      */
     public void giveBirthSoldier(int amount)
     {
+        // Si le nbr de soldat est négative, alors on lance un message d'erreur
+        if(amount<0)
+            throw new NumberFormatException("Votre valeur est négative, veuillez inscrire que des nombres positifs");
+
         for(int i=0; i<amount; i++)
         {
             Soldat soldat = new Soldat(this.x, this.y, colonie, graphe);

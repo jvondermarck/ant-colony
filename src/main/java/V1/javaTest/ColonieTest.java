@@ -3,7 +3,6 @@ package V1.javaTest;
 import V1.javaClass.AntFacade;
 import V1.javaClass.AntFacadeController;
 import V1.javaClass.Colonie;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 

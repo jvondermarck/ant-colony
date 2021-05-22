@@ -23,7 +23,7 @@ public class FourmiOuvrierTest {
     @BeforeEach
     void setUp()
     {
-        appli = new AntFacade(50);
+        appli = new AntFacade(10);
         appli.createGrid(WIDTH, HEIGHT);
         appli.createColony(0,0);
 
@@ -143,7 +143,7 @@ public class FourmiOuvrierTest {
         int i = 0;
         int j = 2;
         Display w = new Display( WIDTH, HEIGHT, 50 );
-        while (i < HEIGHT)
+        while (i < HEIGHT && !bitsets[18][0].get(3))
         {
             BitSet actual = bitsets[i][j];
             boolean ouvrierPresent = actual.get(3);
@@ -154,31 +154,64 @@ public class FourmiOuvrierTest {
 
             if (i % 4 == 0 && j < WIDTH - 1)
                 j++;
-            else if (i % 4 == 2 && j > 0)
+            else if (i % 4 == 2 && j > 0) // a droite
                 j--;
             else
                 i++;
         }
+        System.out.println(i + " - " + j);
         int k = HEIGHT-1;
-        int l = 2;
-        while (k >= 0)
+        int l = 0;
+        while (k >= 0 && !bitsets[0][0].get(3))
         {
-            BitSet actual = bitsets[i][j];
+            BitSet actual = bitsets[k][l];
+            System.out.println("debut boucle " + k + " - " + l);
+            System.out.println(bitsets[k][l].get(3));
+            System.out.println(bitsets[18][1].get(3));
+            System.out.println(bitsets[18][2].get(3));
             boolean ouvrierPresent = actual.get(3);
             assertTrue(ouvrierPresent,
-                    "bitsets[" + k + "][" + l + "] = " + bitsets[i][j]);
+                    "bitsets[" + k + "][" + l + "] = " + bitsets[k][l]);
             //bitsets = appli.play(1, false);
             w.update(appli.play(1, false));
 
-            if (k % 4 == 0 && l < WIDTH - 1)
+            if (k % 4 == 0 && l > WIDTH - 1)
                 l--;
-            else if (k % 4 == 2 && l > 0)
+            else if (k % 4 == 2 && l < WIDTH)
                 l++;
             else
-                l--;
+                k--;
+            System.out.println("Fin boucle " + k + " - " + l);
         }
     }
     */
+
+    @Test
+    @DisplayName("Test ")
+    void test6()
+    {
+        BitSet[][] bitsets;
+
+        Display w = new Display( WIDTH, HEIGHT, 50 );
+        boolean surFourmiliere;
+        do
+        {
+            bitsets = appli.play(2, false);
+            surFourmiliere= bitsets[0][0].get(3);
+        }
+        while (surFourmiliere);
+
+        appli.putFood(HEIGHT-1,0,15);
+        appli.setParameters(0,10,0);
+
+        while(!bitsets[0][0].get(3) && !bitsets[18][0].get(5))
+        {
+            //bitsets = appli.play(1, false);
+            w.update(appli.play(1, false));
+        }
+    }
+
+
 
     @Test
     @DisplayName("Fourmi prend toute la nourriture d'un endroit")

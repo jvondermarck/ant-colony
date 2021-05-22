@@ -13,10 +13,6 @@ public interface FourmisMove extends Fourmis {
     int getX();
 
     int getY();
-
-    @Override
-    void setX(int x);
-
-    @Override
-    void setY(int y);
 }
+
+// Comme cette interface extends l'interface Fourmis, on est pas obligé de remettre les méthodes de l'interface Fourmis

@@ -169,6 +169,7 @@ public class AntFacade implements AntFacadeController {
         else {
             this.grid[row][column].set(5); // car : cells[i][j].get(5) --> obstacle "N"
             graphe.mettreNourriture(row, column, quantity);
+
         }
     }
 

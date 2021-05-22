@@ -38,6 +38,7 @@ public class MoveOuvrier implements FourmisMove {
         ouvrier.getaVisite()[this.x][this.y] = true;
         if(g.getEstNourriture()[this.x][this.y]) // Si au nouvelle emplacement de la fourmis il y a de la nourriture
         {
+            System.out.println("Nourriture trouvé ! ("+ this.x + "," + this.y + ")" + ouvrier.getPositionActuel());
             ouvrier.setEtatRetour(true); // Elle va devoir retourner sur la fourmilière ramener la nourriture
             if(g.getQuantityFood()[this.x][this.y] >= r.getColonie().getFoodParam()) // Si ya + a manger que la fourmis va prendre
             {

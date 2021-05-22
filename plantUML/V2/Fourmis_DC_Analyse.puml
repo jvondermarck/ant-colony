@@ -60,7 +60,7 @@ package "Diagramme de Classe d'Analyse" <<Folder>> {
       theSoldiers
     }
 
-    abstract class FourmisMove #lightgreen;line:green {
+    class FourmisMove #lightgreen;line:green {
         x
         y
     }

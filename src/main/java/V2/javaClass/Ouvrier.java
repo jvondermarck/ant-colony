@@ -118,4 +118,8 @@ public class Ouvrier extends MoveOuvrier {
     public void setQuantityFoodTaken(int quantityFoodTaken) {
         this.quantityFoodTaken = quantityFoodTaken;
     }
+
+    public Noeud getPositionActuel() {
+        return positionActuel;
+    }
 }

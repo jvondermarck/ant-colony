@@ -1,15 +1,9 @@
 package V1.javaTest;
-
-import V1.javaClass.AntFacade;
-import V1.javaClass.AntFacadeController;
 import V1.javaClass.Aretes;
 import V1.javaClass.Graphe;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-
-import java.util.BitSet;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 class AretesTest {
