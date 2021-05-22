@@ -13,6 +13,7 @@ public class BitToHex {
 //                hex += 1<<i;
 //            }
 //        }
+//        return String.format("%02x", hex);
         return String.format("%s", grid.toString());
     }
 

@@ -4,14 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="47cd6ad5-e8f1-43de-aae4-65f52ffc0fb8" name="Default Changelist" comment="Fichier Historique">
+    <list default="true" id="47cd6ad5-e8f1-43de-aae4-65f52ffc0fb8" name="Default Changelist" comment="Test Unitaires">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TraceFourmis.csv" beforeDir="false" afterPath="$PROJECT_DIR$/TraceFourmis.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/V2/javaClass/AntFacade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/V2/javaClass/AntFacade.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/V2/javaClass/Graphe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/V2/javaClass/Graphe.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/V2/javaClass/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/V2/javaClass/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/V2/javaClass/MoveOuvrier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/V2/javaClass/MoveOuvrier.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/V2/javaTest/FourmiOuvrierTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/V2/javaTest/FourmiOuvrierTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/V2/javaClass/BitToHex.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/V2/javaClass/BitToHex.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,7 +68,7 @@
       <recent name="javaTest" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main (1)">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="V1.javaClass.Main" />
       <module name="fourmis" />
@@ -158,10 +155,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main" />
         <item itemvalue="Application.Main (1)" />
         <item itemvalue="JUnit.FourmiOuvrierTest.test6" />
         <item itemvalue="JUnit.FourmiDeplacementTest" />
-        <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.FourmiOuvrierTest.test9" />
       </list>
     </recent_temporary>
@@ -222,7 +219,7 @@
       <workItem from="1621605802630" duration="5496000" />
       <workItem from="1621615446581" duration="16452000" />
       <workItem from="1621674546676" duration="21473000" />
-      <workItem from="1621714348036" duration="7665000" />
+      <workItem from="1621714348036" duration="8796000" />
     </task>
     <task id="LOCAL-00001" summary="Update du GIT">
       <created>1619524870580</created>
@@ -518,7 +515,14 @@
       <option name="project" value="LOCAL" />
       <updated>1621700071119</updated>
     </task>
-    <option name="localTasksCounter" value="43" />
+    <task id="LOCAL-00043" summary="Test Unitaires">
+      <created>1621722439834</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1621722439834</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -537,7 +541,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="MAJ de zéro" />
     <MESSAGE value="MAJ code Java et DCC" />
     <MESSAGE value="MAJ Java - DCC - Rapport" />
     <MESSAGE value="Differentiation java.Main Avec&amp;Sans Interface + DS" />
@@ -562,7 +565,8 @@
     <MESSAGE value="JavaDoc V2" />
     <MESSAGE value="Test Unitaires + Fix bug" />
     <MESSAGE value="Fichier Historique" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fichier Historique" />
+    <MESSAGE value="Test Unitaires" />
+    <option name="LAST_COMMIT_MESSAGE" value="Test Unitaires" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

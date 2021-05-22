@@ -1,7 +1,6 @@
 package V2.javaClass;
 
 import java.io.File;
-import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.time.LocalDateTime;
@@ -113,9 +112,13 @@ public class AntFacade implements AntFacadeController {
                 fw.write("| Bienvenue dans le fichier de l'historique des etats succesifs du systeme de fourmis");
                 fw.write("| Date & Heure de la simulation : "+ LocalDateTime.now()+"\n");
                 fw.write("| Les cellules des générations suivantes sont codé en héxadécimale\n");
-                fw.write("| bit n°0 de pois faible symbolise la présence d'une colonie / fourmis reine\n");
-                fw.write("| bit n°1 de pois faible symbolise la présence d'un obstacle\n");
-                fw.write("| bit n°2 de pois faible symbolise la présence d'une fourmis soldat\n");
+                fw.write("| le bit n° 0 vaut true si le noeud correspondant de la grille abrite la fourmilière \n");
+                fw.write("| le bit n° 1 vaut true si le noeud est occupé par un obstacle \n");
+                fw.write("| le bit n° 2 vaut true s'il y a au moins une fourmi-soldat sur le noeud \n");
+                fw.write("| le bit n° 3 vaut true s'il y a au moins une fourmi-ouvrière sans nourriture sur le noeud \n");
+                fw.write("| le bit n° 4 vaut true s'il y a au moins une ouvrière portant de la nourriture sur le noeud \n");
+                fw.write("| le bit n° 5 vaut true s'il y a de la nourriture sur le noeud \n");
+                fw.write("| le bit n° 6 vaut true s'il y a des phéromones sur le noeud. \n");
                 fw.write("|-----------------------------\n");
             }
             durationPlay++;
@@ -246,14 +249,14 @@ public class AntFacade implements AntFacadeController {
 
     @Override
     public void setAntFile(String antLogFile) {
+        boolean bool;
         try {
             fLog = new File(antLogFile);
 
-           if(fLog.exists())
-           {
-               fLog.delete();
-           }
-            fLog.createNewFile();
+            bool = fLog.delete();
+            System.out.println("File deleted: "+ bool);
+
+            boolean sucess = fLog.createNewFile();
         } catch (IOException e) {
             System.err.println("Erreur dans la création du fichier");
             e.printStackTrace();
