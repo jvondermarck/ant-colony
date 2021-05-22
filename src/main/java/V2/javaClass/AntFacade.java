@@ -1,5 +1,10 @@
 package V2.javaClass;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.BitSet;
 
@@ -14,8 +19,10 @@ public class AntFacade implements AntFacadeController {
     private int width; // Largueur
     private int height; // Hauteur
     private final long sleepingTime; // Vitesse de repos entre chaque seconde de durée
+    private static File fLog;
 
     private int xColonie, yColonie;
+    private static int durationPlay = 0;
 
     public AntFacade()
     {
@@ -83,36 +90,79 @@ public class AntFacade implements AntFacadeController {
             this.grid[this.xColonie][this.yColonie].set(3);
         }
     }
+     /*
+        enregistrer dans un fichier au format .csv une trace des états successifs du système indiquant pour
+        chaque fourmi le noeud occupé, l’état de ce noeud et de ses voisins (nourriture, phéromones) et la
+        quantité de nourriture éventuellement transportée par la fourmi.
+     */
+
+    private FileWriter fw;
 
     @Override
     public BitSet[][] play(int duration, boolean record)
     {
         try{
-            for(int i = 0 ;i < duration; i++)
-            {
-                for(int y=0;y<height;y++){
-                    for(int x=0;x<width;x++)
-                    {
-                        this.grid[y][x].clear(2); // Effacer emplacement Soldat de duration-1
-                        this.grid[y][x].clear(3); // Effacer emplacement Soldat de duration-1
-                        this.grid[y][x].clear(4);
 
-                        if(this.grid[y][x].get(5) && !graphe.getEstNourriture()[y][x]) // Si la cellule était nourriture et que dans le graphe ya plus de nourriture
+            if(record)
+            {
+                fw = new FileWriter(fLog,true);
+            }
+
+            if(record && durationPlay == 0)
+            {
+                fw.write("| Bienvenue dans le fichier de l'historique des etats succesifs du systeme de fourmis");
+                fw.write("| Date & Heure de la simulation : "+ LocalDateTime.now()+"\n");
+                fw.write("| Les cellules des générations suivantes sont codé en héxadécimale\n");
+                fw.write("| bit n°0 de pois faible symbolise la présence d'une colonie / fourmis reine\n");
+                fw.write("| bit n°1 de pois faible symbolise la présence d'un obstacle\n");
+                fw.write("| bit n°2 de pois faible symbolise la présence d'une fourmis soldat\n");
+                fw.write("|-----------------------------\n");
+            }
+            durationPlay++;
+
+            for(int i = 1 ;i <= duration; i++)
+            {
+                if (record) {
+                    fw.write("\n|-----------------------------\n Itération n°"+durationPlay+"\n");
+                    fw.write("|-----------------------------");
+                }
+
+                for(int x=0;x<height;x++)
+                {
+                    for(int y=0;y<width;y++)
+                    {
+                        this.grid[x][y].clear(2); // Effacer emplacement Soldat de duration-1
+                        this.grid[x][y].clear(3); // Effacer emplacement Ouvrier de duration-1
+                        this.grid[x][y].clear(4);
+
+                        if(this.grid[x][y].get(5) && !graphe.getEstNourriture()[x][y]) // Si la cellule était nourriture et que dans le graphe ya plus de nourriture
                         {
-                            this.grid[y][x].clear(5); // On efface sur l'affichage la nourriture
+                            this.grid[x][y].clear(5); // On efface sur l'affichage la nourriture
+                        }
+
+                        if(graphe.getQuantityPheromone()[y][x] >= 1) // Si la cellule contient au moins 1 phéromone
+                        {
+                            this.grid[x][y].set(6); // On affiche les pheromones
+                        } else {
+                            this.grid[x][y].clear(6); // On efface sur l'affichage la nourriture
                         }
 
                         // On s'occupe de gérer les itérations de pheromones
                         int nbEvaporation = reine.getColonie().getEvaporationParam();
+                        int[][] tabQuantityPheromone = graphe.getQuantityPheromone();
                         if(nbEvaporation!=0) // On fait ette condition pour pas avoir l'erreur de division par 0
                         {
-                            if(i % nbEvaporation == 0 && i != 0) // si 16%8=0 bah on suppr les pheromones
+                            if(i % nbEvaporation == 0) // si 16%8=0 bah on suppr les pheromones
                             {
-                                if(graphe.getQuantityPheromone()[y][x] >= nbEvaporation)
+                                if(tabQuantityPheromone[x][y] >= nbEvaporation)
                                 {
-                                    graphe.getQuantityPheromone()[y][x] -= nbEvaporation;
+                                    tabQuantityPheromone[x][y] -= nbEvaporation;
+                                    System.out.println(tabQuantityPheromone[x][y]);
+                                    graphe.setQuantityPheromone(tabQuantityPheromone);
                                 } else {
-                                    graphe.getQuantityPheromone()[y][x] = 0;
+                                    tabQuantityPheromone[x][y] = 0;
+                                    graphe.setQuantityPheromone(tabQuantityPheromone);
+                                    this.grid[x][y].clear(6); // On efface sur l'affichage la nourriture
                                 }
                             }
                         }
@@ -147,10 +197,24 @@ public class AntFacade implements AntFacadeController {
                     }
                 }
 
+                if(record){
+                    for(int x=0;x<height;x++)
+                    {
+                        fw.write("\n| ");
+                        for (int y = 0; y < width; y++) {
+                            fw.write( BitToHex.hex( this.grid[x][y]) +" ");
+                        }
+                    }
+                }
+
+
                 Thread.sleep(this.sleepingTime);
             }
+            if (record){
+                fw.close();
+            }
         }
-        catch (InterruptedException e)
+        catch (InterruptedException | IOException e)
         {
             e.printStackTrace();
         }
@@ -169,7 +233,6 @@ public class AntFacade implements AntFacadeController {
         else {
             this.grid[row][column].set(5); // car : cells[i][j].get(5) --> obstacle "N"
             graphe.mettreNourriture(row, column, quantity);
-
         }
     }
 
@@ -180,6 +243,17 @@ public class AntFacade implements AntFacadeController {
 
     @Override
     public void setAntFile(String antLogFile) {
-        System.out.println();
+        try {
+            fLog = new File(antLogFile);
+
+           if(fLog.exists())
+           {
+               fLog.delete();
+           }
+            fLog.createNewFile();
+        } catch (IOException e) {
+            System.err.println("Erreur dans la création du fichier");
+            e.printStackTrace();
+        }
     }
 }

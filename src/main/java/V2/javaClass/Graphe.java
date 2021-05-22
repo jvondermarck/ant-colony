@@ -32,11 +32,11 @@ public class Graphe
             this.quantityPheromone = new int[longueur][largueur];
             this.airGraphe = longueur*largueur;
             creationEmplacementNoeud(); // On crée les emplacements de cellules sur le graphes (créer des cellules)
-            this.quantityPheromone[3][2] = 10;
-            this.quantityPheromone[3][1] = 8;
-            this.quantityPheromone[3][0] = 6;
-            this.quantityPheromone[2][0] = 9;
-            this.quantityPheromone[1][0] = 9;
+//            this.quantityPheromone[3][2] = 10;
+//            this.quantityPheromone[3][1] = 8;
+//            this.quantityPheromone[3][0] = 6;
+//            this.quantityPheromone[2][0] = 9;
+//            this.quantityPheromone[1][0] = 9;
 
         } catch(RuntimeException ex)
         {
@@ -148,5 +148,9 @@ public class Graphe
 
     public int getLargueur() {
         return largueur;
+    }
+
+    public void setQuantityPheromone(int[][] quantityPheromone) {
+        this.quantityPheromone = quantityPheromone;
     }
 }

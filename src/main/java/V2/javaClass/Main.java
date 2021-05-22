@@ -14,8 +14,8 @@ public class Main {
 
     public static void MyOwnTest(AntFacadeController controller)
     {
-        controller.createGrid( 20,20 );
-        controller.createColony( 10,10 );
+        controller.createGrid( 6,6 );
+        controller.createColony( 3,3 );
 
 //        controller.putObstacle( 1,1 );
 //        controller.putObstacle( 3,0 );
@@ -26,17 +26,18 @@ public class Main {
 //        controller.putObstacle( 3,5 );
 
         controller.putFood(0,0,15);
-        controller.putFood(0,19,15);
-        controller.putFood(19,0,15);
-        controller.putFood(19,19,15);
-        controller.setParameters(2,8,5);
+        controller.putFood(1,4,15);
+        controller.putFood(2,5,15);
+        controller.putFood(5,3,15);
+        controller.setParameters(1,8,1);
 
-        controller.createWorkers(5);
+        controller.createWorkers(1);
         controller.createSoldiers( 0 );
 
-        Display w = new Display( 20, 20, 40 );
-        for( int i = 0; i < 50; i++)
-            w.update( controller.play( 1, false ) );
+        Display w = new Display( 6, 6, 40 );
+        controller.setAntFile("TraceFourmis.csv");
+        for( int i = 0; i < 5; i++)
+            w.update( controller.play( 1, true ) );
     }
 
     public static void utilisationInterface()
