@@ -140,7 +140,7 @@ public class AntFacade implements AntFacadeController {
                             this.grid[x][y].clear(5); // On efface sur l'affichage la nourriture
                         }
 
-                        if(graphe.getQuantityPheromone()[y][x] >= 1) // Si la cellule contient au moins 1 phéromone
+                        if(graphe.getQuantityPheromone()[x][y] >= 1) // Si la cellule contient au moins 1 phéromone
                         {
                             this.grid[x][y].set(6); // On affiche les pheromones
                         } else {
@@ -157,7 +157,6 @@ public class AntFacade implements AntFacadeController {
                                 if(tabQuantityPheromone[x][y] >= nbEvaporation)
                                 {
                                     tabQuantityPheromone[x][y] -= nbEvaporation;
-                                    System.out.println(tabQuantityPheromone[x][y]);
                                     graphe.setQuantityPheromone(tabQuantityPheromone);
                                 } else {
                                     tabQuantityPheromone[x][y] = 0;
@@ -186,7 +185,11 @@ public class AntFacade implements AntFacadeController {
                         {
                             o.cheminRetour(o); // On fait le chemin inverse
                             this.grid[o.getX()][o.getY()].set(4); // On met son état en mode fourmis retour
-                            graphe.getQuantityPheromone()[o.getX()][o.getY()] = reine.getColonie().getPheromoneParam(); // On pose des phéromones
+                            // On ne doit pas poser des pheromones sur la fourmiliere et sur la nourriture
+                            if(!this.grid[xColonie][yColonie].get(4) && !graphe.getEstNourriture()[o.getX()][o.getY()])
+                            {
+                                graphe.getQuantityPheromone()[o.getX()][o.getY()] = reine.getColonie().getPheromoneParam(); // On pose des phéromones
+                            }
                         } else
                         { // Si elle cherche de la nourritire
                             o.randomDirection(this.graphe, o, reine); // On cherche toutes les aretes adjacentes

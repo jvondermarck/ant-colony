@@ -4,11 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="47cd6ad5-e8f1-43de-aae4-65f52ffc0fb8" name="Default Changelist" comment="Test Unitaires + Fix bug">
+    <list default="true" id="47cd6ad5-e8f1-43de-aae4-65f52ffc0fb8" name="Default Changelist" comment="Fichier Historique">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TraceFourmis.csv" beforeDir="false" afterPath="$PROJECT_DIR$/TraceFourmis.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/V2/javaClass/AntFacade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/V2/javaClass/AntFacade.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/V2/javaClass/Graphe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/V2/javaClass/Graphe.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/V2/javaClass/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/V2/javaClass/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/V2/javaClass/MoveOuvrier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/V2/javaClass/MoveOuvrier.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/V2/javaTest/FourmiOuvrierTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/V2/javaTest/FourmiOuvrierTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,7 +71,20 @@
       <recent name="javaTest" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="Application.Main (1)">
+    <configuration name="Main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="V1.javaClass.Main" />
+      <module name="fourmis" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="V1.javaClass.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="V2.javaClass.Main" />
       <module name="fourmis" />
@@ -82,86 +98,71 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="AretesTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="fourmis" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="V1.javaTest.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="V1.javaTest" />
-      <option name="MAIN_CLASS_NAME" value="V1.javaTest.AretesTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GrapheTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="FourmiDeplacementTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="fourmis" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="V1.javaTest.*" />
+          <option name="PATTERN" value="V2.javaTest.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="V1.javaTest" />
-      <option name="MAIN_CLASS_NAME" value="V1.javaTest.GrapheTest" />
+      <option name="PACKAGE_NAME" value="V2.javaTest" />
+      <option name="MAIN_CLASS_NAME" value="V2.javaTest.FourmiDeplacementTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="NoeudTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="FourmiOuvrierTest.test6" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="fourmis" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="V1.javaTest.*" />
+          <option name="PATTERN" value="V2.javaTest.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="V1.javaTest" />
-      <option name="MAIN_CLASS_NAME" value="V1.javaTest.NoeudTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="PACKAGE_NAME" value="V2.javaTest" />
+      <option name="MAIN_CLASS_NAME" value="V2.javaTest.FourmiOuvrierTest" />
+      <option name="METHOD_NAME" value="test6" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ReineTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="FourmiOuvrierTest.test9" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="fourmis" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="V1.javaTest.*" />
+          <option name="PATTERN" value="V2.javaTest.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="V1.javaTest" />
-      <option name="MAIN_CLASS_NAME" value="V1.javaTest.ReineTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="PACKAGE_NAME" value="V2.javaTest" />
+      <option name="MAIN_CLASS_NAME" value="V2.javaTest.FourmiOuvrierTest" />
+      <option name="METHOD_NAME" value="test9" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main (1)" />
+        <item itemvalue="JUnit.FourmiOuvrierTest.test6" />
+        <item itemvalue="JUnit.FourmiDeplacementTest" />
         <item itemvalue="Application.Main" />
-        <item itemvalue="JUnit.GrapheTest" />
-        <item itemvalue="JUnit.AretesTest" />
-        <item itemvalue="JUnit.FourmiReineTest" />
-        <item itemvalue="JUnit.NoeudTest" />
+        <item itemvalue="JUnit.FourmiOuvrierTest.test9" />
       </list>
     </recent_temporary>
   </component>
@@ -220,7 +221,8 @@
       <workItem from="1621517931229" duration="90000" />
       <workItem from="1621605802630" duration="5496000" />
       <workItem from="1621615446581" duration="16452000" />
-      <workItem from="1621674546676" duration="21440000" />
+      <workItem from="1621674546676" duration="21473000" />
+      <workItem from="1621714348036" duration="7665000" />
     </task>
     <task id="LOCAL-00001" summary="Update du GIT">
       <created>1619524870580</created>
@@ -509,7 +511,14 @@
       <option name="project" value="LOCAL" />
       <updated>1621689507410</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="Fichier Historique">
+      <created>1621700071119</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1621700071119</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -528,7 +537,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="MAJ DS Iteration" />
     <MESSAGE value="MAJ de zéro" />
     <MESSAGE value="MAJ code Java et DCC" />
     <MESSAGE value="MAJ Java - DCC - Rapport" />
@@ -553,7 +561,8 @@
     <MESSAGE value="Changements Majeurs (Java+UML+Bug) V1&amp;2" />
     <MESSAGE value="JavaDoc V2" />
     <MESSAGE value="Test Unitaires + Fix bug" />
-    <option name="LAST_COMMIT_MESSAGE" value="Test Unitaires + Fix bug" />
+    <MESSAGE value="Fichier Historique" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fichier Historique" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -566,15 +575,11 @@
     </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
+        <PinnedItemInfo parentTag="V2.javaClass.AntFacade" memberName="graphe" />
         <PinnedItemInfo parentTag="Noeud" memberName="coordonneNoeud" />
       </pinned-members>
     </pin-to-top-manager>
     <watches-manager>
-      <configuration name="JUnit">
-        <watch expression="g.estObstacle[1]" />
-        <watch expression="this" />
-        <watch expression="((Graphe)((AntFacade)((FourmiOuvrierTest)this).appli).graphe).estNourriture" custom="V2.javaTest.FourmiOuvrierTest,V2.javaClass.AntFacade,V2.javaClass.Graphe" />
-      </configuration>
       <configuration name="Application">
         <watch expression="ouvrier" language="JAVA" />
       </configuration>

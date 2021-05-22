@@ -5,7 +5,7 @@ public class Graphe
 {
     private int[][] taille; // Tableau où se trouve tous les emplacements des cellules du graphe (vide)
     private Boolean[][] estObstacle; // Tableau où se trouve les emplacements des cellules qui contient des noeuds
-    private Boolean[][] estNourriture; // Tableau où e trouve les emplacements des cellules qui contient de la nourriture
+    private Boolean[][] estNourriture; // Tableau où se trouve les emplacements des cellules qui contient de la nourriture
     private int[][] quantityFood; // Quandtite de nourriture dans chaque cellule
     private int [][] quantityPheromone; // Quantité de pheromone dans chaque cellule
 
@@ -153,4 +153,9 @@ public class Graphe
     public void setQuantityPheromone(int[][] quantityPheromone) {
         this.quantityPheromone = quantityPheromone;
     }
+
+    public void setEstNourriture(Boolean[][] estNourriture) {
+        this.estNourriture = estNourriture;
+    }
+
 }

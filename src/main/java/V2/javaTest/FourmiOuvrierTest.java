@@ -23,7 +23,7 @@ public class FourmiOuvrierTest {
     @BeforeEach
     void setUp()
     {
-        appli = new AntFacade(10);
+        appli = new AntFacade(500);
         appli.createGrid(WIDTH, HEIGHT);
         appli.createColony(0,0);
 
@@ -122,7 +122,7 @@ public class FourmiOuvrierTest {
         assertTrue(ouvrierPresent, "Ouvrier absent : bitsets[0][0] = " + actual);
     }
 
-    /*
+
     @Test
     @DisplayName("Trajet aller-retour")
     void test6()
@@ -184,33 +184,32 @@ public class FourmiOuvrierTest {
             System.out.println("Fin boucle " + k + " - " + l);
         }
     }
-    */
 
-    @Test
-    @DisplayName("Test ")
-    void test6()
-    {
-        BitSet[][] bitsets;
 
-        Display w = new Display( WIDTH, HEIGHT, 50 );
-        boolean surFourmiliere;
-        do
-        {
-            bitsets = appli.play(2, false);
-            surFourmiliere= bitsets[0][0].get(3);
-        }
-        while (surFourmiliere);
-
-        appli.putFood(HEIGHT-1,0,15);
-        appli.setParameters(0,10,0);
-
-        while(!bitsets[0][0].get(3) && !bitsets[18][0].get(5))
-        {
-            //bitsets = appli.play(1, false);
-            w.update(appli.play(1, false));
-        }
-    }
-
+//    @Test
+//    @DisplayName("Test ")
+//    void test6()
+//    {
+//        BitSet[][] bitsets;
+//
+//        Display w = new Display( WIDTH, HEIGHT, 50 );
+//        boolean surFourmiliere;
+//        do
+//        {
+//            bitsets = appli.play(2, false);
+//            surFourmiliere= bitsets[0][0].get(3);
+//        }
+//        while (surFourmiliere);
+//
+//        appli.putFood(HEIGHT-1,0,15);
+//        appli.setParameters(0,10,0);
+//
+//        while(!bitsets[0][0].get(3) && !bitsets[18][0].get(5))
+//        {
+//            //bitsets = appli.play(1, false);
+//            w.update(appli.play(1, false));
+//        }
+//    }
 
 
     @Test
@@ -230,6 +229,52 @@ public class FourmiOuvrierTest {
         }
 
         assertFalse(bitsets[0][2].get(5));
+    }
+
+    @Test
+    @DisplayName("Trajet retour perturbé par un obstacle")
+    void test8()
+    {
+        appli.putFood(0, WIDTH-1,10);
+        appli.setParameters(0,10,0);
+
+        BitSet[][] bitsets = appli.play(1, false);
+
+        while (!bitsets[0][WIDTH-1].get(3))
+        {
+            bitsets = appli.play(1, false);
+        }
+
+        appli.putObstacle(0,WIDTH-2);
+
+        for(int i=0; i<5; i++)
+        {
+            bitsets = appli.play(1, false);
+            assertFalse(bitsets[0][WIDTH-2].get(4));
+        }
+    }
+
+    @Test
+    @DisplayName("L'évaporation des phéromones s'opère correctement.")
+    void test9()
+    {
+        appli.putFood(0, WIDTH-1,10);
+        appli.setParameters(1,10,11);
+
+        BitSet[][] bitsets = appli.play(1, false);
+
+        while (!bitsets[0][0].get(4))
+        {
+            bitsets = appli.play(1, false);
+        }
+
+        appli.putObstacle(0,1);
+
+        for(int i=WIDTH-2; i>0; i--)
+        {
+            bitsets = appli.play(1, false);
+            assertFalse(bitsets[0][i].get(6));
+        }
     }
 
 }

@@ -29,14 +29,14 @@ public class Main {
         controller.putFood(1,4,15);
         controller.putFood(2,5,15);
         controller.putFood(5,3,15);
-        controller.setParameters(1,8,1);
+        controller.setParameters(1,20,1);
 
         controller.createWorkers(1);
         controller.createSoldiers( 0 );
 
         Display w = new Display( 6, 6, 40 );
         controller.setAntFile("TraceFourmis.csv");
-        for( int i = 0; i < 5; i++)
+        for( int i = 0; i < 30; i++)
             w.update( controller.play( 1, true ) );
     }
 
