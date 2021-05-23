@@ -6,7 +6,7 @@ package V1.javaClass;
 public class Noeud {
     private int coordonneNoeud;
     /**
-     * The nombre de noeuds qu'on a crée.
+     * Le nombres de noeuds qu'on a crée.
      */
     static int nombreNoeud = 0;
 
@@ -43,7 +43,7 @@ public class Noeud {
         this.coordonneNoeud = coordonneNoeud;
     }
 
-    /** toString() : redéfinition de la méthode de même nom, affiche le numéro de l'objet Noeud
+    /** toString() : redéfinition de la méthode, affiche le numéro de l'objet Noeud
      @return chaine de caractère contenant le numéro du noeud
      */
     @Override

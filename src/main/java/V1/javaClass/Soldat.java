@@ -1,7 +1,7 @@
 package V1.javaClass;
 
 /**
- * La classe Soldat qui se promène dans le Graphe.
+ * La classe Soldat qui se promène dans le Graphe en évitant des obstacles.
  */
 public class Soldat extends FourmisMove {
     private final Colonie colonie;
@@ -48,6 +48,7 @@ public class Soldat extends FourmisMove {
 
     /**
      * On retourne le Noeud où se trouve le soldat
+     *
      * @return la position du noeud
      */
     public Noeud getPositionActuel() {

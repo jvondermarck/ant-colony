@@ -20,6 +20,9 @@ public class Colonie {
         nombreColonie++;
     }
 
+    /** toString() : redéfinition de la méthode de colonie
+     @return chaine de caractère contenant le numéro de colonie
+     */
     @Override
     public String toString() {
         return "Colonie n°" + numColonie;

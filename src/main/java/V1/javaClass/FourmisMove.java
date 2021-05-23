@@ -13,8 +13,8 @@ public class FourmisMove implements Fourmis {
     /**
      * Définit la fourmi comme fourmi qui peut se déplacer et prend ses coordonnées.
      *
-     * @param x the x
-     * @param y the y
+     * @param x la coordonné x (ligne)
+     * @param y la coordonné y (colonne)
      */
     public FourmisMove(int x, int y) {
         setX(x);

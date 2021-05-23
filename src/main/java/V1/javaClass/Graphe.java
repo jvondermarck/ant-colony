@@ -14,7 +14,8 @@ public class Graphe
     private final ArrayList<Noeud> theNoeud = new ArrayList<>();
 
     /**
-     * Crée un Graphe.
+     * Crée un Graphe en fonction de sa longueur et largueur.
+     * Il créera automatiquement les cellules et les noeuds en leur attribuant des numéros
      *
      * @param longueur la longueur du Graphe
      * @param largueur la largueur du Graphe
@@ -86,7 +87,7 @@ public class Graphe
      *
      * @param x sa coordonée X (ligne)
      * @param y sa coordonée Y (colonne)
-     * @return le noeud en question
+     * @return le noeud en question qu'on cherche
      */
 
     public Noeud rechercherNoeud(int x, int y)

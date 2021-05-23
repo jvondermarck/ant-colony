@@ -60,11 +60,17 @@ public class Reine implements Fourmis {
         return theSoldiers;
     }
 
+    /**
+     * Mettre la coordonné x
+     */
     @Override
     public void setX(int x) {
         this.x = x;
     }
 
+    /**
+     * Mettre la coordonné y
+     */
     @Override
     public void setY(int y) {
         this.y = y;
