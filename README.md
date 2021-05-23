@@ -40,19 +40,17 @@
   Comparé au soldat qui nait dans le noeud où est la Reine, mais celui-ci doit
   pouvoir se déplacer, comparé à la reine qui ne doit pas se promener dans le graphe.
 - C'est pour-cela que nous avons créé une interface Fourmis où il y a Reine qui implémente 
- cette interface, et une deuxieème interface qui hérite de cette interface qui est FourmisMove
+  cette interface, et une deuxieème interface qui hérite de cette interface qui est FourmisMove
 - Au vu des grandes différences de fonctions entre une fourmi Soldat et Ouvrière, nous avons 
   décidé de créer des classes qui implémente cette interface, FourmisMove, qui se dénomme
   MoveOuvrier et MoveSoldat.
-- MoveOuvrier fait déplacer des soldats de facons aléatoires en évitant des obstacles
-  en utilsant la classe Aretes.
+- MoveOuvrier fait déplacer des soldats de facons aléatoires en évitant des obstacles en utilsant la classe Aretes.
 - Alors que MoveOuvrier fait déplacer des ouvriers qui ne doivent pas retourner sur leur pas
- antérieur, ils doivent chercher à manger et suivre les phéromones et en lacher, donc tout ceci
+  antérieur, ils doivent chercher à manger et suivre les phéromones et en lacher, donc tout ceci 
   est réalisé grâce à la class AretesOuvrier qui hérite de la classe Aretes, cette sous-classe
   permet d'utiliser des méthodes spécifiques à des ouvriers, ce qui bloque l'àccès aux Soldats
   et à la Reine.
-
-  C'est pour cela que la classe Soldat hérite de la classe FourmisMove, pour qu'il
+- C'est pour cela que la classe Soldat hérite de la classe FourmisMove, pour qu'il
   y ait que le soldat qui puisse changer de direction, et qu'on bloque l'accès
   à la reine de changer de noeud.
 
