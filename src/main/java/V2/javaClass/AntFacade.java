@@ -109,9 +109,8 @@ public class AntFacade implements AntFacadeController {
 
             if(record && durationPlay == 0)
             {
-                fw.write("| Bienvenue dans le fichier de l'historique des etats succesifs du systeme de fourmis");
-                fw.write("| Date & Heure de la simulation : "+ LocalDateTime.now()+"\n");
-                fw.write("| Les cellules des générations suivantes sont codé en héxadécimale\n");
+                fw.write("| Bienvenue dans le fichier de l'historique des etats succesifs du systeme de fourmis\n");
+                fw.write("| Date et Heure du lancement de la colonie de fourmis : "+ LocalDateTime.now()+"\n");
                 fw.write("| le bit n° 0 vaut true si le noeud correspondant de la grille abrite la fourmilière \n");
                 fw.write("| le bit n° 1 vaut true si le noeud est occupé par un obstacle \n");
                 fw.write("| le bit n° 2 vaut true s'il y a au moins une fourmi-soldat sur le noeud \n");
@@ -208,11 +207,10 @@ public class AntFacade implements AntFacadeController {
                     {
                         fw.write("\n| ");
                         for (int y = 0; y < width; y++) {
-                            fw.write( BitToHex.hex( this.grid[x][y]) +" ");
+                            fw.write(String.format("%s", this.grid[x][y]) + " ");
                         }
                     }
                 }
-
 
                 Thread.sleep(this.sleepingTime);
             }
@@ -250,12 +248,11 @@ public class AntFacade implements AntFacadeController {
     @Override
     public void setAntFile(String antLogFile) {
         boolean bool;
-        try {
+        try
+        {
             fLog = new File(antLogFile);
-
             bool = fLog.delete();
             System.out.println("File deleted: "+ bool);
-
             boolean sucess = fLog.createNewFile();
         } catch (IOException e) {
             System.err.println("Erreur dans la création du fichier");

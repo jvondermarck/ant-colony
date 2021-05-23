@@ -7,7 +7,7 @@ skinparam classFontStyle Bold
 skinparam roundcorner 20
 hide enum methods
 
-package "Diagramme de Classe de Conception" <<Folder>> {
+package "Diagramme de Classe de Conception V2 " <<Folder>> {
   interface AntFacadeController <<interface>> #pink ##[bold]red {
       +setParameters(evaporationParam:Integer,
       foodParam:Integer, pheromoneParam:Integer)
@@ -118,7 +118,7 @@ package "Diagramme de Classe de Conception" <<Folder>> {
       +setY(y:Integer);
   }
 
-  class MoveSoldat {
+  class MoveSoldat #gold;line:goldenrod {
       -x: Integer
       -y: Integer
 
@@ -130,7 +130,7 @@ package "Diagramme de Classe de Conception" <<Folder>> {
       +setY(y:Integer);
   }
 
-  class MoveOuvrier {
+  class MoveOuvrier #gold;line:goldenrod  {
       -x: Integer
       -y: Integer
 
@@ -143,7 +143,7 @@ package "Diagramme de Classe de Conception" <<Folder>> {
       +setY(y:Integer);
   }
 
-  class Soldat #lightblue;line:green {
+  class Soldat #mediumpurple;line:darkviolet {
       -colonie: Colonie
       -graphe: Graphe
       -positionActuel: Noeud
@@ -154,7 +154,7 @@ package "Diagramme de Classe de Conception" <<Folder>> {
       +recherchePositionActuel(ligne:Integer, colonne:Integer)
   }
 
-    class Ouvrier #lightblue;line:green {
+    class Ouvrier #mediumpurple;line:darkviolet {
         -aVisite[*][*]: Boolean
         -listXRetour: ArrayList<Integer>
         -listYRetour: ArrayList<Integer>
@@ -171,6 +171,10 @@ package "Diagramme de Classe de Conception" <<Folder>> {
         <<Create>>Ouvrier(x:Integer, y:Integer, c:Colonie, g:Graphe)
         +recherchePositionActuel(ligne:Integer, colonne:Integer)
         +doitRetravailler(): Boolean
+        +toString(): String
+        +getaVisite(): Boolean[*][*]
+        getListXRetour()
+        +setaVisite()
     }
 }
 
@@ -187,22 +191,26 @@ Noeud "1" o--> "0..*\t" Fourmis : comporte
 Fourmis <|.. Reine : <<implements>>
 Fourmis <|.. FourmisMove : <<extends>>
 
-Aretes <-- AretesOuvrier
-Aretes -left- MoveSoldat
-AretesOuvrier -left- MoveOuvrier
+Aretes <|-- AretesOuvrier : <<extends>>
+Aretes <.. MoveSoldat : <<use>>
+AretesOuvrier <.. MoveOuvrier : <<use>>
 
-FourmisMove <|.. MoveOuvrier : <<implements>>
+FourmisMove <|.. MoveOuvrier : \n\n<<implements>>
 FourmisMove <|.. MoveSoldat : <<implements>>
 
-MoveSoldat o--> Soldat
-MoveOuvrier o--> Ouvrier
-Reine *--> Soldat
-Reine *--> Ouvrier
+MoveSoldat <|-- Soldat : <<extends>>
+MoveOuvrier <|-- Ouvrier : <<extends>>
+Reine "1" *--> "1..*" Soldat : donne naissance
+Reine "1" *--> "1..*" Ouvrier : donne naissance
 
-
-
-
-
-
+AntFacade ..> Soldat : <<use>>
+AntFacade ..> Ouvrier : <<use>>
+Aretes .up.> Graphe : <<use>>
+AretesOuvrier .up.> Graphe : <<use>>
+AretesOuvrier ..> Ouvrier : <<use>>
+MoveSoldat ..> Reine : <<use>>
+MoveOuvrier ..> Reine : <<use>>
+Ouvrier ..> Colonie : <<use>>
+Soldat ..> Colonie : <<use>>
 
 @enduml

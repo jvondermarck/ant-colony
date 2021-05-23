@@ -1,5 +1,5 @@
-| Bienvenue dans le fichier de l'historique des etats succesifs du systeme de fourmis| Date & Heure de la simulation : 2021-05-23T00:39:28.528419100
-| Les cellules des générations suivantes sont codé en héxadécimale
+| Bienvenue dans le fichier de l'historique des etats succesifs du systeme de fourmis
+| Date et Heure du lancement de la colonie de fourmis : 2021-05-23T17:56:43.004041500
 | le bit n° 0 vaut true si le noeud correspondant de la grille abrite la fourmilière 
 | le bit n° 1 vaut true si le noeud est occupé par un obstacle 
 | le bit n° 2 vaut true s'il y a au moins une fourmi-soldat sur le noeud 
@@ -14,8 +14,8 @@
 |-----------------------------
 | {5} {} {} {} {} {} 
 | {} {} {} {} {5} {} 
-| {} {} {} {3} {} {5} 
-| {} {} {} {0} {} {} 
+| {} {} {} {} {} {5} 
+| {} {} {} {0} {3} {} 
 | {} {} {} {} {} {} 
 | {} {} {} {5} {} {} 
 |-----------------------------
@@ -23,25 +23,7 @@
 |-----------------------------
 | {5} {} {} {} {} {} 
 | {} {} {} {} {5} {} 
-| {} {} {} {} {3} {5} 
-| {} {} {} {0} {} {} 
-| {} {} {} {} {} {} 
-| {} {} {} {5} {} {} 
-|-----------------------------
- Itération n°3
-|-----------------------------
-| {5} {} {} {} {} {} 
-| {} {} {} {} {3, 5} {} 
 | {} {} {} {} {} {5} 
-| {} {} {} {0} {} {} 
-| {} {} {} {} {} {} 
-| {} {} {} {5} {} {} 
-|-----------------------------
- Itération n°4
-|-----------------------------
-| {5} {} {} {} {} {} 
-| {} {} {} {} {} {} 
-| {} {} {} {} {4} {5} 
-| {} {} {} {0} {} {} 
+| {} {} {} {0} {} {3} 
 | {} {} {} {} {} {} 
 | {} {} {} {5} {} {} 

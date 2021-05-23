@@ -1,4 +1,7 @@
 package V2.javaClass;
+
+import V2.javaClass.Graphe;
+
 public class Noeud {
     private final int coordonneNoeud;
     static int nombreNoeud = 0;

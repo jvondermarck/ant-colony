@@ -1,4 +1,7 @@
 package V2.javaClass;
+
+import V2.javaClass.Graphe;
+
 import java.util.*;
 
 public class Aretes {

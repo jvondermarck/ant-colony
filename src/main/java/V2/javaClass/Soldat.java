@@ -1,4 +1,5 @@
 package V2.javaClass;
+
 public class Soldat extends MoveSoldat {
     private final Colonie colonie;
     private final Graphe graphe;
