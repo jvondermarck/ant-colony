@@ -118,7 +118,7 @@ package "Diagramme de Classe de Conception V2 " <<Folder>> {
       +setY(y:Integer);
   }
 
-  class MoveSoldat #gold;line:goldenrod {
+  abstract class MoveSoldat #gold;line:goldenrod {
       -x: Integer
       -y: Integer
 
@@ -130,7 +130,7 @@ package "Diagramme de Classe de Conception V2 " <<Folder>> {
       +setY(y:Integer);
   }
 
-  class MoveOuvrier #gold;line:goldenrod  {
+  abstract class MoveOuvrier #gold;line:goldenrod  {
       -x: Integer
       -y: Integer
 

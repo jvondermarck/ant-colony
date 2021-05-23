@@ -4,15 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="47cd6ad5-e8f1-43de-aae4-65f52ffc0fb8" name="Default Changelist" comment="DS UML V2 + Checkup V1 Java">
+    <list default="true" id="47cd6ad5-e8f1-43de-aae4-65f52ffc0fb8" name="Default Changelist" comment="Fix bug">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TraceFourmis.csv" beforeDir="false" afterPath="$PROJECT_DIR$/TraceFourmis.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plantUML/V1/Fourmis_DC_Conception.puml" beforeDir="false" afterPath="$PROJECT_DIR$/plantUML/V1/Fourmis_DC_Conception.puml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/plantUML/V2/Fourmis_DC_Conception.puml" beforeDir="false" afterPath="$PROJECT_DIR$/plantUML/V2/Fourmis_DC_Conception.puml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/V1/javaClass/FourmisMove.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/V1/javaClass/FourmisMove.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/V2/javaClass/MoveOuvrier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/V2/javaClass/MoveOuvrier.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/V2/javaClass/MoveSoldat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/V2/javaClass/MoveSoldat.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -228,7 +224,7 @@
       <workItem from="1621714348036" duration="8833000" />
       <workItem from="1621760483712" duration="726000" />
       <workItem from="1621784508267" duration="5388000" />
-      <workItem from="1621795219302" duration="10953000" />
+      <workItem from="1621795219302" duration="13056000" />
     </task>
     <task id="LOCAL-00001" summary="Update du GIT">
       <created>1619524870580</created>
@@ -552,7 +548,14 @@
       <option name="project" value="LOCAL" />
       <updated>1621804115313</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="Fix bug">
+      <created>1621806314463</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1621806314463</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -571,7 +574,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Menage" />
     <MESSAGE value="Correction Bug Aretes Java + Refont UML DC et DS" />
     <MESSAGE value="MAJ Rapport + Les 3 UML" />
     <MESSAGE value="(Correction Bug rapport)" />
@@ -596,7 +598,8 @@
     <MESSAGE value="Historique .CSV" />
     <MESSAGE value="DCC UML" />
     <MESSAGE value="DS UML V2 + Checkup V1 Java" />
-    <option name="LAST_COMMIT_MESSAGE" value="DS UML V2 + Checkup V1 Java" />
+    <MESSAGE value="Fix bug" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix bug" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
