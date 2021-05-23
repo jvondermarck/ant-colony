@@ -1,11 +1,12 @@
-# Fourmis - Rapport du projet A22
+# Fourmis - Rapport du projet A22 et P21
+![A22](https://static.vecteezy.com/ti/vecteur-libre/t2/373734-fourmis-et-trou-rouge-feu-gratuit-vectoriel.jpg)
 
 **Réalisation du projet** :
 - Julien VON DER MARCK
 - Jad MACHKOUR
 
 
-## Deuxieme rendu
+## A22 - Deuxieme rendu
 
 ### **1) Principes SOLID**
 
@@ -157,9 +158,11 @@
   à la classe AntFacade qui est l'expert en information, cette classe à toutes les informations nécessaires pour créer
   un fichier d'historique pour les fourmis.
 
+<hr />
+<hr />
 
 
-## Premier rendu
+## A22 - Premier rendu
 
 
 ### **1) Principes SOLID**
