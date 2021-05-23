@@ -3,7 +3,7 @@ package V2.javaClass;
 import java.util.ArrayList;
 import java.util.Random;
 
-public class MoveOuvrier implements FourmisMove {
+public abstract class MoveOuvrier implements FourmisMove {
 
     private int x;
     private int y;

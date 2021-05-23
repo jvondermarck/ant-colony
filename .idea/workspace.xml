@@ -4,17 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="47cd6ad5-e8f1-43de-aae4-65f52ffc0fb8" name="Default Changelist" comment="DCC UML">
+    <list default="true" id="47cd6ad5-e8f1-43de-aae4-65f52ffc0fb8" name="Default Changelist" comment="DS UML V2 + Checkup V1 Java">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TraceFourmis.csv" beforeDir="false" afterPath="$PROJECT_DIR$/TraceFourmis.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plantUML/V2/Fourmis_DS_Iteration.puml" beforeDir="false" afterPath="$PROJECT_DIR$/plantUML/V2/Fourmis_DS_Iteration.puml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/V1/javaClass/Aretes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/V1/javaClass/Aretes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/V1/javaClass/Colonie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/V1/javaClass/Colonie.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plantUML/V1/Fourmis_DC_Conception.puml" beforeDir="false" afterPath="$PROJECT_DIR$/plantUML/V1/Fourmis_DC_Conception.puml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plantUML/V2/Fourmis_DC_Conception.puml" beforeDir="false" afterPath="$PROJECT_DIR$/plantUML/V2/Fourmis_DC_Conception.puml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/V1/javaClass/FourmisMove.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/V1/javaClass/FourmisMove.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/V1/javaClass/Graphe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/V1/javaClass/Graphe.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/V1/javaClass/Noeud.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/V1/javaClass/Noeud.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/V1/javaClass/Reine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/V1/javaClass/Reine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/V1/javaClass/Soldat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/V1/javaClass/Soldat.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/V2/javaClass/MoveOuvrier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/V2/javaClass/MoveOuvrier.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/V2/javaClass/MoveSoldat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/V2/javaClass/MoveSoldat.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,7 +72,20 @@
       <recent name="javaTest" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.SoldatTest">
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="V2.javaClass.Main" />
+      <module name="fourmis" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="V2.javaClass.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -84,21 +95,6 @@
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="FourmiSoldatTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="fourmis" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="V1.javaTest.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="V1.javaTest" />
-      <option name="MAIN_CLASS_NAME" value="V1.javaTest.FourmiSoldatTest" />
-      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -165,11 +161,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.SoldatTest" />
         <item itemvalue="JUnit.ReineTest" />
         <item itemvalue="JUnit.NoeudTest" />
         <item itemvalue="JUnit.GrapheTest" />
-        <item itemvalue="JUnit.FourmiSoldatTest" />
       </list>
     </recent_temporary>
   </component>
@@ -232,7 +228,7 @@
       <workItem from="1621714348036" duration="8833000" />
       <workItem from="1621760483712" duration="726000" />
       <workItem from="1621784508267" duration="5388000" />
-      <workItem from="1621795219302" duration="8688000" />
+      <workItem from="1621795219302" duration="10953000" />
     </task>
     <task id="LOCAL-00001" summary="Update du GIT">
       <created>1619524870580</created>
@@ -549,7 +545,14 @@
       <option name="project" value="LOCAL" />
       <updated>1621789926702</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="DS UML V2 + Checkup V1 Java">
+      <created>1621804115313</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1621804115313</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -568,7 +571,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Differentiation java.Main Avec&amp;Sans Interface + DS" />
     <MESSAGE value="Menage" />
     <MESSAGE value="Correction Bug Aretes Java + Refont UML DC et DS" />
     <MESSAGE value="MAJ Rapport + Les 3 UML" />
@@ -593,7 +595,8 @@
     <MESSAGE value="Test Unitaires" />
     <MESSAGE value="Historique .CSV" />
     <MESSAGE value="DCC UML" />
-    <option name="LAST_COMMIT_MESSAGE" value="DCC UML" />
+    <MESSAGE value="DS UML V2 + Checkup V1 Java" />
+    <option name="LAST_COMMIT_MESSAGE" value="DS UML V2 + Checkup V1 Java" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

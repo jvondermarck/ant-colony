@@ -6,7 +6,7 @@ import java.util.Random;
  * La classe FourmisMove utilisé uniquement par des fourmis qui on le droit de se déplacer {@code Figure}.
  * <p>
  */
-public class FourmisMove implements Fourmis {
+public abstract class FourmisMove implements Fourmis {
     private int x;
     private int y;
 

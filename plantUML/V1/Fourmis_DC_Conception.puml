@@ -100,7 +100,7 @@ package "Diagramme de Classe de Conception" <<Folder>> {
       +setY(y:Integer);
   }
 
-   class FourmisMove #lightgreen;line:green {
+   abstract class FourmisMove #lightgreen;line:green {
       -x: Integer
       -y: Integer
 
