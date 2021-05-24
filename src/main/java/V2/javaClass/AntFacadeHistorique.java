@@ -5,6 +5,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 import java.util.BitSet;
 
 public class AntFacadeHistorique {
@@ -62,30 +63,56 @@ public class AntFacadeHistorique {
             fw.write("| le bit n° 6 vaut true s'il y a des phéromones sur le noeud.                                       | \n");
             fw.write("|---------------------------------------------------------------------------------------------------|\n");
             fw.write("|---------------------------------------------------------------------------------------------------|\n");
-            fw.write("|                            Made by Julien VON DER MARCK et Jad MACHKOUT                           |\n");
+            fw.write("|                            Made by Julien VON DER MARCK et Jad MACHKOUR                           |\n");
             fw.write("|---------------------------------------------------------------------------------------------------|\n");
 
             fw.close();
         }
     }
 
-    public void iteration(BitSet[][] grid) throws IOException {
+    public void iteration(BitSet[][] grid, ArrayList<Ouvrier> theWorkers, ArrayList<Soldat> theSoldiers) throws IOException {
         fw = new FileWriter(fLog,true);
         durationPlay++;
+
         this.grid = grid;
 
         fw.write("\n");
-        fw.write("\n|-----------------------------|");
-        fw.write("\n|        Itération n°"+durationPlay+"        |\n");
-        fw.write("|-----------------------------|");
+        fw.write("\n|----------------------------------------------------------------------------------------------------------------------|");
+        fw.write("\n|----------------------------------------------------------------------------------------------------------------------|");
+        fw.write("\n|                                           Itération n°"+durationPlay+"                                                              |\n");
+        fw.write("|----------------------------------------------------------------------------------------------------------------------|\n");
+        fw.write("|----------------------------------------------------------------------------------------------------------------------|");
+        fw.write("\n\t|-----------------------------|");
+        fw.write("\n\t|      Etat de la colonie     |\n");
+        fw.write("\t|-----------------------------|");
+
 
         for(int x=0;x<height;x++)
         {
-            fw.write("\n\t ");
+            fw.write("\n\t| ");
             for (int y = 0; y < width; y++) {
                 fw.write(String.format("%s", this.grid[x][y]) + " ");
             }
         }
+
+        fw.write("\n\n\t|-----------------------------|");
+        fw.write("\n\t|  Etat des fourmis ouvrières |\n");
+        fw.write("\t|-----------------------------| -----------------------------------------------------------------------------------------------------------------|\n");
+        for(Ouvrier o : theWorkers)
+        {
+            fw.write("\t| " + o.toString() + " |\n");
+        }
+
+        fw.write("\t| -----------------------------------------------------------------------------------------------------------------------------------------------|\n");
+
+        fw.write("\n\t|-----------------------------|");
+        fw.write("\n\t|  Etat des fourmis soldats   |\n");
+        fw.write("\t|-----------------------------|--------------------------------------------------------------|\n");
+        for(Soldat s : theSoldiers)
+        {
+            fw.write("\t| " + s.toString() + " |\n");
+        }
+        fw.write("\t| -------------------------------------------------------------------------------------------|\n");
     }
 
     public void closeFile() throws IOException {

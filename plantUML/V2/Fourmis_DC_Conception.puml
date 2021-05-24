@@ -68,7 +68,7 @@ package "Diagramme de Classe de Conception V2 " <<Folder>> {
       +setFoodParam(foodParam: Integer)
       +setPheromoneParam(pheromoneParam: Integer)
       +setQuantityFood(quantityFood: Integer)
-      +toString(): String
+      {abstract} +toString(): String
   }
 
   class Noeud #burlywood {
@@ -92,6 +92,17 @@ package "Diagramme de Classe de Conception V2 " <<Folder>> {
       -yColonie: Integer
       -sleepingTime: Long
       -antHisto: AntFacadeHistorique
+
+      {abstract}  +setParameters(evaporationParam:Integer,
+      {abstract}  foodParam:Integer, pheromoneParam:Integer)
+      {abstract}  +createGrid(width:Integer, height:Integer)
+      {abstract} +putObstacle(row:Integer, column:Integer)
+      {abstract}  +putFood(row:Integer, column:Integer, quantity:Integer)
+      {abstract}  +createColony(row:Integer, column:Integer)
+      {abstract}  +createSoldiers(amount:Integer)
+      {abstract}  +createWorkers(amount:Integer)
+      {abstract}  +setAntFile(antLogFile:String)
+      {abstract}  +play(duration:Integer, record:Boolean) : BitSet[*][*]
   }
 
     class AntFacadeHistorique #back:Wheat;line.bold {
@@ -153,8 +164,8 @@ package "Diagramme de Classe de Conception V2 " <<Folder>> {
       foodParam:Integer, pheromoneParam:Integer)
       +getTheSoldiers(): ArrayList<Soldat>
       +getTheWorkers(): ArrayList<Ouvrier>
-      +setX(x:Integer)
-      +setY(y:Integer)
+      {abstract} +setX(x:Integer)
+      {abstract} +setY(y:Integer)
       +getColonie(): Colonie
   }
 
@@ -169,11 +180,11 @@ package "Diagramme de Classe de Conception V2 " <<Folder>> {
       -y: Integer
 
       <<Create>>MoveSoldat(x:Integer, y:Integer)
-      +randomDirection(graphe: Graphe, o: Object, r: Reine)
+      {abstract} +randomDirection(graphe: Graphe, o: Object, r: Reine)
       +getX(x:Integer);
       +getY(y:Integer);
-      +setX(x:Integer);
-      +setY(y:Integer);
+      {abstract} +setX(x:Integer);
+      {abstract} +setY(y:Integer);
   }
 
   abstract class MoveOuvrier #gold;line:goldenrod  {
@@ -182,12 +193,12 @@ package "Diagramme de Classe de Conception V2 " <<Folder>> {
       -estObstacle: Boolean[*][*]
 
       <<Create>>MoveOuvrier(x:Integer, y:Integer)
-      +randomDirection(graphe: Graphe, o: Object, r: Reine)
+      {abstract} +randomDirection(graphe: Graphe, o: Object, r: Reine)
       +cheminRetour(ouvrier:Ouvrier)
       +getX(x:Integer);
       +getY(y:Integer);
-      +setX(x:Integer);
-      +setY(y:Integer);
+      {abstract} +setX(x:Integer);
+      {abstract} +setY(y:Integer);
   }
 
   class Soldat #mediumpurple;line:darkviolet {
@@ -199,7 +210,7 @@ package "Diagramme de Classe de Conception V2 " <<Folder>> {
 
       <<Create>>Soldat(x:Integer, y:Integer, c:Colonie, g:Graphe)
       +recherchePositionActuel(ligne:Integer, colonne:Integer)
-      +toString(): String
+      {abstract} +toString(): String
   }
 
    class Ouvrier #mediumpurple;line:darkviolet {
@@ -220,7 +231,7 @@ package "Diagramme de Classe de Conception V2 " <<Folder>> {
         +recherchePositionActuel(ligne:Integer, colonne:Integer)
         +doitRetravailler(): Boolean
 
-        +toString(): String
+        {abstract} +toString(): String
         +getaVisite(): Boolean[*][*]
         +setaVisite(aVisite: Boolean[*][*])
         -getListXRetour(): ArrayList<Integer>
@@ -240,7 +251,7 @@ AntFacade ..|> Reine : <<instantiate>>
 Graphe "1" *--> "1..*" Noeud : contient
 
 Reine "1" *-> "1" Colonie : appartient
-Noeud "1" o--> "0..*\t" Fourmis : comporte
+Noeud "1" *--> "0..*\t" Fourmis : comporte
 
 Fourmis <|.. Reine : <<implements>>
 Fourmis <|.. FourmisMove : <<extends>>
@@ -254,8 +265,8 @@ FourmisMove <|.. MoveSoldat : <<implements>>
 
 MoveSoldat <|-- Soldat : <<extends>>
 MoveOuvrier <|-- Ouvrier : <<extends>>
-Reine "1" *--> "1..*" Soldat : donne naissance
-Reine "1" *--> "1..*" Ouvrier : donne naissance
+Reine "1" o--> "1..*" Soldat : donne naissance
+Reine "1" o--> "1..*" Ouvrier : donne naissance
 
 AntFacade ..> Soldat : <<use>>
 AntFacade ..> Ouvrier : <<use>>
@@ -266,6 +277,6 @@ MoveSoldat ..> Reine : <<use>>
 MoveOuvrier ..> Reine : <<use>>
 Ouvrier ..> Colonie : <<use>>
 Soldat ..> Colonie : <<use>>
-AntFacade *--> AntFacadeHistorique : sauvegarde
+AntFacade o--> AntFacadeHistorique : sauvegarde
 
 @enduml

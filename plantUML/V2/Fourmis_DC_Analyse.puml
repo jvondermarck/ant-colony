@@ -7,85 +7,157 @@ skinparam classFontStyle Bold
 skinparam roundcorner 20
 hide enum methods
 
-package "Diagramme de Classe d'Analyse" <<Folder>> {
-    interface AntFacadeController <<interface>> #pink ##[bold]red {}
+package "Diagramme de Classe d'Analyse V2 " <<Folder>> {
+  interface AntFacadeController <<interface>> #pink ##[bold]red {
+  }
 
-    class Graphe #lightcoral;line.bold {
+  class Graphe #lightcoral;line.bold {
       taille
       estObstacle
+      estNourriture
+      quantityFood
+      quantityPheromone
       airGraphe
+      longueur
+      largueur
       nbrNoeudDansGraphe
       theNoeud
-    }
+  }
 
-    class Colonie #burlywood {
-        nombreColonie
-        numColonie
-    }
+  class Colonie #burlywood {
+      nombreColonie
+      numColonie:Integer
+      evaporationParam: Integer
+      foodParam: Integer
+      pheromoneParam: Integer
+      quantityFood
+  }
 
-    class Noeud #burlywood {
-    coordonneeNoeud
-    nombreNoeud
-    }
+  class Noeud #burlywood {
+      coordonneeNoeud
+      nombreNoeud
+  }
 
-    class AntFacade #back:Wheat;line.bold {
+  class AntFacade #back:Wheat;line.bold {
       grid
       graphe
       theSoldiers
+      theWorkers
       reine
       width
       height
-      cellSize
-      sleepingTime
       xColonie
       yColonie
+      sleepingTime
+      antHisto
+  }
+
+    class AntFacadeHistorique #back:Wheat;line.bold {
+        grid
+        width
+        height
+        durationPlay
+        fLog: File
+        fw
     }
 
-    class Aretes #burlywood {
+  class Aretes #burlywood {
       tab
       estObstacle
       x
       y
       listX
       listY
+      graphe
+  }
+
+  class AretesOuvrier #burlywood {
+        aVisite
     }
 
-    interface Fourmis <<interface>> #lightgreen;line:green {}
+  interface Fourmis <<interface>> #lightgreen;line:green {
+  }
 
-    class Reine #lightblue;line:green {
+  class Reine #lightblue;line:green {
       x
       y
       colonie
       graphe
       theSoldiers
-    }
+  }
 
-    class FourmisMove #lightgreen;line:green {
-        x
-        y
-    }
+  interface FourmisMove <<interface>> #lightgreen;line:green {
+  }
 
-    class Soldat #lightblue;line:green {
+  abstract class MoveSoldat #gold;line:goldenrod {
+      x
+      y
+  }
+
+  abstract class MoveOuvrier #gold;line:goldenrod  {
+      x
+      y
+      estObstacle
+  }
+
+  class Soldat #mediumpurple;line:darkviolet {
       colonie
       graphe
       positionActuel
       nombreSoldat
       numeroSoldat
+  }
+
+   class Ouvrier #mediumpurple;line:darkviolet {
+        aVisite
+        listXRetour
+        listYRetour
+        etatRetour
+        quantityFoodTaken
+        colonie
+        graphe
+        positionActuel
+        nombreOuvrier
+        numeroOuvrier
+        xColinie
+        yColonie
     }
 }
+
 
 AntFacadeController <|.. AntFacade : <<implements>>
 AntFacade .up.|> Graphe : <<instantiate>>
 AntFacade ..|> Reine : <<instantiate>>
 
-Graphe *--> Noeud : contient
+Graphe  *--> Noeud : contient
 
-FourmisMove  <--up*  Aretes : relie
-Reine *-right>  Colonie : appartient
-Noeud o--> Fourmis : comporte
+Reine  *-> Colonie : appartient
+Noeud  o-->  Fourmis : comporte
+
 Fourmis <|.. Reine : <<implements>>
-Fourmis <|.. FourmisMove : <<implements>>
-FourmisMove <|-- Soldat
-Reine  *->  Soldat : Donne naissance >
+Fourmis <|.. FourmisMove : <<extends>>
+
+Aretes <|-- AretesOuvrier : <<extends>>
+Aretes <.. MoveSoldat : <<use>>
+AretesOuvrier <.. MoveOuvrier : <<use>>
+
+FourmisMove <|.. MoveOuvrier : \n\n<<implements>>
+FourmisMove <|.. MoveSoldat : <<implements>>
+
+MoveSoldat <|-- Soldat : <<extends>>
+MoveOuvrier <|-- Ouvrier : <<extends>>
+Reine  *-->  Soldat : donne naissance
+Reine  *-->  Ouvrier : donne naissance
+
+AntFacade ..> Soldat : <<use>>
+AntFacade ..> Ouvrier : <<use>>
+Aretes .up.> Graphe : <<use>>
+AretesOuvrier .up.> Graphe : <<use>>
+AretesOuvrier ..> Ouvrier : <<use>>
+MoveSoldat ..> Reine : <<use>>
+MoveOuvrier ..> Reine : <<use>>
+Ouvrier ..> Colonie : <<use>>
+Soldat ..> Colonie : <<use>>
+AntFacade *--> AntFacadeHistorique : sauvegarde
 
 @enduml

@@ -32,8 +32,8 @@ public class Main {
         controller.putFood(5,3,15);
         controller.setParameters(1,20,1);
 
-        controller.createWorkers(1);
-        controller.createSoldiers( 0 );
+        controller.createWorkers(3);
+        controller.createSoldiers( 3);
 
         Display w = new Display( 6, 6, 40 );
         controller.setAntFile("TraceFourmis.csv");

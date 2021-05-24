@@ -175,7 +175,7 @@ public class AntFacade implements AntFacadeController {
                 }
 
                 if(record){
-                    antHisto.iteration(this.grid); // On va créer l'affichage de l'íteration qui s'est passé
+                    antHisto.iteration(this.grid, this.theWorkers, this.theSoldiers); // On va créer l'affichage de l'íteration qui s'est passé
                 }
 
                 Thread.sleep(this.sleepingTime);

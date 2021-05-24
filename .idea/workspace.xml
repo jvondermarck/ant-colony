@@ -4,10 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="47cd6ad5-e8f1-43de-aae4-65f52ffc0fb8" name="Default Changelist" comment="A22 MAJ UML + Rapport">
+    <list default="true" id="47cd6ad5-e8f1-43de-aae4-65f52ffc0fb8" name="Default Changelist" comment="Rapport">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TraceFourmis.csv" beforeDir="false" afterPath="$PROJECT_DIR$/TraceFourmis.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plantUML/V2/Fourmis_DC_Analyse.puml" beforeDir="false" afterPath="$PROJECT_DIR$/plantUML/V2/Fourmis_DC_Analyse.puml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plantUML/V2/Fourmis_DC_Conception.puml" beforeDir="false" afterPath="$PROJECT_DIR$/plantUML/V2/Fourmis_DC_Conception.puml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/V2/javaClass/AntFacade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/V2/javaClass/AntFacade.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/V2/javaClass/AntFacadeHistorique.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/V2/javaClass/AntFacadeHistorique.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/V2/javaClass/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/V2/javaClass/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -222,14 +226,7 @@
       <workItem from="1621760483712" duration="726000" />
       <workItem from="1621784508267" duration="5388000" />
       <workItem from="1621795219302" duration="14033000" />
-      <workItem from="1621862214249" duration="7787000" />
-    </task>
-    <task id="LOCAL-00003" summary="Update du git">
-      <created>1619525893941</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1619525893941</updated>
+      <workItem from="1621862214249" duration="10720000" />
     </task>
     <task id="LOCAL-00004" summary="Ajout ressources Java">
       <created>1619530897069</created>
@@ -567,7 +564,14 @@
       <option name="project" value="LOCAL" />
       <updated>1621868840531</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="Rapport">
+      <created>1621870187637</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1621870187637</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -586,7 +590,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="(Correction Bug rapport)" />
     <MESSAGE value="Modif de re-lecture" />
     <MESSAGE value="Test Unitaire + Fix bug" />
     <MESSAGE value="Images Vectorielles" />
@@ -611,7 +614,8 @@
     <MESSAGE value="Fix bug" />
     <MESSAGE value="Rapport V2 A22" />
     <MESSAGE value="A22 MAJ UML + Rapport" />
-    <option name="LAST_COMMIT_MESSAGE" value="A22 MAJ UML + Rapport" />
+    <MESSAGE value="Rapport" />
+    <option name="LAST_COMMIT_MESSAGE" value="Rapport" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
