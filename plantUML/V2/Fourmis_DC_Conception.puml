@@ -113,8 +113,11 @@ package "Diagramme de Classe de Conception V2 " <<Folder>> {
         -fLog: File
         -fw: FileWriter
 
+        <<Create>>AntFacadeHistorique(width:Integer,
+          height:Integer, grid:BitSet[*][*], antLogFile:String)
         +startFile()
-        +iteration(grid:BitSet[*][*])
+        +iteration(grid:BitSet[*][*], theWorkers:ArrayList<Ouvrier>,
+         theSoldiers:ArrayList<Soldat>)
         +closeFile()
     }
 
@@ -278,5 +281,6 @@ MoveOuvrier ..> Reine : <<use>>
 Ouvrier ..> Colonie : <<use>>
 Soldat ..> Colonie : <<use>>
 AntFacade o--> AntFacadeHistorique : sauvegarde
-
+AntFacadeHistorique .right.> Soldat : <<use>>
+AntFacadeHistorique .right.> Ouvrier : <<use>>
 @enduml

@@ -42,7 +42,7 @@ return
 ' ---------AntFacade Historique--------------
 ant -> ant++ #lightgreen : setAntFile(antLogFile)
     create "antHisto:AntFacadeHistorique"
-    ant -> "antHisto:AntFacadeHistorique" : <<Create>> AntFacadeHistorique()
+    ant -> "antHisto:AntFacadeHistorique" : <<Create>> AntFacadeHistorique(width,height, grid, antLogFile)
 return
 
 
@@ -180,8 +180,18 @@ loop i<duration
     return
     ' ---------Déplacer Ouvrier--------------
     end
+' ---------Fichier historique des fourmis--------------
+== Mise à jour du fichier d'historique des fourmis ==
     alt record
-        ant --> "antHisto:AntFacadeHistorique"++ #FFBBBB : iteration(this.grid)
+        ant --> "antHisto:AntFacadeHistorique"++ #FFBBBB : iteration(this.grid, this.theSoldiers, this.theWorkers)
+            loop Ouvrier o : theWorkers
+                "antHisto:AntFacadeHistorique" --> "o:Ouvrier"++ #FFBBBB: toString()
+                return
+            end
+            loop Soldat s : theSoldiers
+                "antHisto:AntFacadeHistorique" --> "s:Soldat"++ #FFBBBB : toString()
+                return
+            end
         return
     end
 end

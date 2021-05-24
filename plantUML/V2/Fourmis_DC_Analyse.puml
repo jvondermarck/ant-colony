@@ -159,5 +159,7 @@ MoveOuvrier ..> Reine : <<use>>
 Ouvrier ..> Colonie : <<use>>
 Soldat ..> Colonie : <<use>>
 AntFacade *--> AntFacadeHistorique : sauvegarde
+AntFacadeHistorique .right.> Soldat : <<use>>
+AntFacadeHistorique .right.> Ouvrier : <<use>>
 
 @enduml
