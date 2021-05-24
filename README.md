@@ -152,9 +152,16 @@
 
 9. **Invention Pure**
 
-- Lors de l'enrengistrement des traces des états successifs de chaque fourmi nous avons attribué la responsabilityé
-  à la classe AntFacade qui est l'expert en information, cette classe à toutes les informations nécessaires pour créer
-  un fichier d'historique pour les fourmis.
+- On veut enrengistrer les traces des états successifs de chaque fourmi. A quelle classe assigner cette responsabilité ?
+- L'expert en information c'est la classe AntFacade qui possède l'information de la grille avec son BitSet par exemple.
+- Mais, donner la responsabilité des enrengistrements des etats succesifs de la grille à AntFacade -->
+  diminue la cohésion et couple la classe au système de fichier...
+- C'est pour-cela que nous avons décidé de créer une nouvelle classe pour ce type d'opération :
+  - Elle se dénomme : **AntFacadeHistorique**
+  - Cette classe est une invention pure, elle aura une unique responsabilité qui est d'afficher l'historique de la grille
+  - Elle aura plus de chance d'être réutilisé et elle peut être utilisé dans d'autres classes 
+  - Elle a un impact minimal sur la cohésion et le couplage de AntFacade
+  - Cette classe connaitra juste l'êtat dut BitSet et les dimensions de la grille.
 
 <hr />
 <hr />

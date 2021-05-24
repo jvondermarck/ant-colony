@@ -24,7 +24,12 @@ package "Diagramme de Classe de Conception V2 " <<Folder>> {
   class Graphe #lightcoral;line.bold {
       -taille[*][*]: Integer
       -estObstacle[*][*]: Boolean
+      -estNourriture[*][*]: Boolean
+      -quantityFood[*][*]: Integer
+      -quantityPheromone[*][*]: Integer
       -airGraphe:Integer
+      -longueur: Integer
+      -largueur: Integer
       -nbrNoeudDansGraphe:Integer
       -theNoeud: ArrayList<Noeud>
 
@@ -33,14 +38,37 @@ package "Diagramme de Classe de Conception V2 " <<Folder>> {
       +getEmplacementNoeud(): Integer
       +rechercherNoeud(x:Integer, y:Integer) : Noeud
       +mettreObstacle(row:Integer, colomn:Integer)
+      +mettreNourriture(row:Integer, colomn:Integer, quantity: Integer)
       +getAirGraphe(): Integer
       +getNbrNoeudDansGraphe(): Integer
+      +getTaille(): Integer
+      +getEstObstacle(): Boolean[*][*]
+      +getEstNourriture(): Boolean[*][*]
+      +getQuantityFood(): Integer
+      +getQuantityPheromone(): Integer
+      +getLongueur(): Integer
+      +getLargueur(): Integer
+      +setQuantityPheromone(quantityPheromone: Integer[*][*])
+      +setEstNourriture(estNourriture: Boolean[*][*])
   }
 
   class Colonie #burlywood {
       -{static} nombreColonie = 0:Integer
       -numColonie:Integer
+      -evaporationParam: Integer
+      -foodParam: Integer
+      -pheromoneParam: Integer
+      -quantityFood: Integer
+
       <<Create>>Colonie()
+      +getEvaporationParam(): Integer
+      +getFoodParam(): Integer
+      +getPheromoneParam(): Integer
+      +setEvaporationParam(evaporationParam: Integer)
+      +setFoodParam(foodParam: Integer)
+      +setPheromoneParam(pheromoneParam: Integer)
+      +setQuantityFood(quantityFood: Integer)
+      +toString(): String
   }
 
   class Noeud #burlywood {
@@ -49,6 +77,7 @@ package "Diagramme de Classe de Conception V2 " <<Folder>> {
 
       <<Create>>Noeud(g:Graphe)
       +getCoordonneNoeud()
+      +toString(): String
   }
 
   class AntFacade #back:Wheat;line.bold {
@@ -61,9 +90,22 @@ package "Diagramme de Classe de Conception V2 " <<Folder>> {
       -height: Integer
       -xColonie: Integer
       -yColonie: Integer
-      -cellSize: Integer
       -sleepingTime: Long
+      -antHisto: AntFacadeHistorique
   }
+
+    class AntFacadeHistorique #back:Wheat;line.bold {
+        -grid: BitSet[*][*]
+        -width: Integer
+        -height: Integer
+        -durationPlay: Integer
+        -fLog: File
+        -fw: FileWriter
+
+        +startFile()
+        +iteration(grid:BitSet[*][*])
+        +closeFile()
+    }
 
   class Aretes #burlywood {
       -tab[*][*]: Integer
@@ -72,6 +114,7 @@ package "Diagramme de Classe de Conception V2 " <<Folder>> {
       -y: Integer
       -listX: ArrayList<Integer>
       -listY: ArrayList<Integer>
+      -graphe: Graphe
 
       <<Create>>Aretes(g:Graphe, x:Integer, y:Integer)
       +rechercheAretes()
@@ -105,17 +148,20 @@ package "Diagramme de Classe de Conception V2 " <<Folder>> {
 
       <<Create>>Reine(x:Integer, y:Integer, g:Graphe)
       +giveBirth(amount:Integer)
+      +giveBirthWorker(amount:Integer)
+      +setParameters(evaporationParam:Integer,
+      foodParam:Integer, pheromoneParam:Integer)
       +getTheSoldiers(): ArrayList<Soldat>
-      +setX(x:Integer);
-      +setY(y:Integer);
+      +getTheWorkers(): ArrayList<Ouvrier>
+      +setX(x:Integer)
+      +setY(y:Integer)
+      +getColonie(): Colonie
   }
 
   interface FourmisMove <<interface>> #lightgreen;line:green {
       +randomDirection(graphe: Graphe)
       +getX(x:Integer);
       +getY(y:Integer);
-      +setX(x:Integer);
-      +setY(y:Integer);
   }
 
   abstract class MoveSoldat #gold;line:goldenrod {
@@ -123,7 +169,7 @@ package "Diagramme de Classe de Conception V2 " <<Folder>> {
       -y: Integer
 
       <<Create>>MoveSoldat(x:Integer, y:Integer)
-      +randomDirection(graphe: Graphe)
+      +randomDirection(graphe: Graphe, o: Object, r: Reine)
       +getX(x:Integer);
       +getY(y:Integer);
       +setX(x:Integer);
@@ -133,9 +179,10 @@ package "Diagramme de Classe de Conception V2 " <<Folder>> {
   abstract class MoveOuvrier #gold;line:goldenrod  {
       -x: Integer
       -y: Integer
+      -estObstacle: Boolean[*][*]
 
-      <<Create>>MoveSoldat(x:Integer, y:Integer)
-      +randomDirection(graphe: Graphe)
+      <<Create>>MoveOuvrier(x:Integer, y:Integer)
+      +randomDirection(graphe: Graphe, o: Object, r: Reine)
       +cheminRetour(ouvrier:Ouvrier)
       +getX(x:Integer);
       +getY(y:Integer);
@@ -152,9 +199,10 @@ package "Diagramme de Classe de Conception V2 " <<Folder>> {
 
       <<Create>>Soldat(x:Integer, y:Integer, c:Colonie, g:Graphe)
       +recherchePositionActuel(ligne:Integer, colonne:Integer)
+      +toString(): String
   }
 
-    class Ouvrier #mediumpurple;line:darkviolet {
+   class Ouvrier #mediumpurple;line:darkviolet {
         -aVisite[*][*]: Boolean
         -listXRetour: ArrayList<Integer>
         -listYRetour: ArrayList<Integer>
@@ -171,10 +219,16 @@ package "Diagramme de Classe de Conception V2 " <<Folder>> {
         <<Create>>Ouvrier(x:Integer, y:Integer, c:Colonie, g:Graphe)
         +recherchePositionActuel(ligne:Integer, colonne:Integer)
         +doitRetravailler(): Boolean
+
         +toString(): String
         +getaVisite(): Boolean[*][*]
-        getListXRetour()
-        +setaVisite()
+        +setaVisite(aVisite: Boolean[*][*])
+        -getListXRetour(): ArrayList<Integer>
+        -getListYRetour(): ArrayList<Integer>
+        +isEtatRetour(): Boolean
+        +isEtatRetour(): Noeud
+        +setEtatRetour(etatRetour: Boolean)
+        +setQuantityFoodTaken(quantityFoodTaken: Boolean)
     }
 }
 
@@ -212,5 +266,6 @@ MoveSoldat ..> Reine : <<use>>
 MoveOuvrier ..> Reine : <<use>>
 Ouvrier ..> Colonie : <<use>>
 Soldat ..> Colonie : <<use>>
+AntFacade *--> AntFacadeHistorique : sauvegarde
 
 @enduml

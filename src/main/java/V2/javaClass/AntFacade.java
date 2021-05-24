@@ -1,9 +1,6 @@
 package V2.javaClass;
 
-import java.io.File;
-import java.io.FileWriter;
 import java.io.IOException;
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.BitSet;
 
@@ -18,10 +15,9 @@ public class AntFacade implements AntFacadeController {
     private int width; // Largueur
     private int height; // Hauteur
     private final long sleepingTime; // Vitesse de repos entre chaque seconde de durée
-    private static File fLog;
 
     private int xColonie, yColonie;
-    private static int durationPlay = 0;
+    AntFacadeHistorique antHisto;
 
     public AntFacade()
     {
@@ -95,40 +91,16 @@ public class AntFacade implements AntFacadeController {
         quantité de nourriture éventuellement transportée par la fourmi.
      */
 
-    private FileWriter fw;
-
     @Override
     public BitSet[][] play(int duration, boolean record)
     {
         try{
-
-            if(record)
-            {
-                fw = new FileWriter(fLog,true);
+            if(record) {
+                  antHisto.startFile(); // Si on est au lancement du jeu, on va créer l'en-tête
             }
-
-            if(record && durationPlay == 0)
-            {
-                fw.write("| Bienvenue dans le fichier de l'historique des etats succesifs du systeme de fourmis\n");
-                fw.write("| Date et Heure du lancement de la colonie de fourmis : "+ LocalDateTime.now()+"\n");
-                fw.write("| le bit n° 0 vaut true si le noeud correspondant de la grille abrite la fourmilière \n");
-                fw.write("| le bit n° 1 vaut true si le noeud est occupé par un obstacle \n");
-                fw.write("| le bit n° 2 vaut true s'il y a au moins une fourmi-soldat sur le noeud \n");
-                fw.write("| le bit n° 3 vaut true s'il y a au moins une fourmi-ouvrière sans nourriture sur le noeud \n");
-                fw.write("| le bit n° 4 vaut true s'il y a au moins une ouvrière portant de la nourriture sur le noeud \n");
-                fw.write("| le bit n° 5 vaut true s'il y a de la nourriture sur le noeud \n");
-                fw.write("| le bit n° 6 vaut true s'il y a des phéromones sur le noeud. \n");
-                fw.write("|-----------------------------\n");
-            }
-            durationPlay++;
 
             for(int i = 1 ;i <= duration; i++)
             {
-                if (record) {
-                    fw.write("\n|-----------------------------\n Itération n°"+durationPlay+"\n");
-                    fw.write("|-----------------------------");
-                }
-
                 for(int x=0;x<height;x++)
                 {
                     for(int y=0;y<width;y++)
@@ -203,19 +175,13 @@ public class AntFacade implements AntFacadeController {
                 }
 
                 if(record){
-                    for(int x=0;x<height;x++)
-                    {
-                        fw.write("\n| ");
-                        for (int y = 0; y < width; y++) {
-                            fw.write(String.format("%s", this.grid[x][y]) + " ");
-                        }
-                    }
+                    antHisto.iteration(this.grid); // On va créer l'affichage de l'íteration qui s'est passé
                 }
 
                 Thread.sleep(this.sleepingTime);
             }
             if (record){
-                fw.close();
+                antHisto.closeFile(); // on ferme la connexion d'écriture
             }
         }
         catch (InterruptedException | IOException e)
@@ -247,16 +213,6 @@ public class AntFacade implements AntFacadeController {
 
     @Override
     public void setAntFile(String antLogFile) {
-        boolean bool;
-        try
-        {
-            fLog = new File(antLogFile);
-            bool = fLog.delete();
-            System.out.println("File deleted: "+ bool);
-            boolean sucess = fLog.createNewFile();
-        } catch (IOException e) {
-            System.err.println("Erreur dans la création du fichier");
-            e.printStackTrace();
-        }
+        antHisto = new AntFacadeHistorique(width, height, grid, antLogFile);
     }
 }

@@ -10,7 +10,6 @@ public class Reine implements Fourmis {
     private final Graphe graphe;
     private int x;
     private int y;
-    private final int duration; // Uniquement pour un test
 
     private final ArrayList<Soldat> theSoldiers = new ArrayList<>();
     private final ArrayList<Ouvrier> theWorkers = new ArrayList<>();
@@ -32,7 +31,6 @@ public class Reine implements Fourmis {
         setY(y);
         this.colonie = new Colonie();
         this.graphe = g;
-        this.duration = 10;
         System.out.println("-NAISSANCE REINE-");
     }
 
@@ -76,25 +74,6 @@ public class Reine implements Fourmis {
         this.colonie.setFoodParam(foodParam);
         this.colonie.setEvaporationParam(evaporationParam);
         this.colonie.setPheromoneParam(pheromoneParam);
-    }
-
-
-    // Méthode simplement utiliser pour des tests ...
-    public void deplacementSoldat() {
-        for(int i=0; i<duration; i++)
-        {
-            for(Soldat s : this.theSoldiers){
-                s.randomDirection(this.graphe, s, Reine.this);
-                s.recherchePositionActuel(s.getX(), s.getY());
-                System.out.println(s);
-            }
-            try{
-                Thread.sleep(1000);
-            } catch (InterruptedException e)
-            {
-                e.printStackTrace();
-            }
-        }
     }
 
     /**

@@ -39,6 +39,12 @@ ant -> ant++ #lightgreen : putFood(x,y,quantity)
 return
 return
 
+' ---------AntFacade Historique--------------
+ant -> ant++ #lightgreen : setAntFile(antLogFile)
+    create "antHisto:AntFacadeHistorique"
+    ant -> "antHisto:AntFacadeHistorique" : <<Create>> AntFacadeHistorique()
+return
+
 
 == Création des Fourmis ==
 ' ---------REINE--------------
@@ -86,6 +92,10 @@ participant "MoveSoldat:ms" as MoveSoldat #Wheat
 participant "MoveOuvrier:mo" as MoveOuvrier #Wheat
 == Déclenchement des itérations ==
 ant -> ant++ #DarkSalmon : play(time, false)
+alt record
+    ant --> "antHisto:AntFacadeHistorique"++ #FFBBBB : startFile()
+    return
+end
 loop i<duration
 
     '----------Mettre phéromne -------------
@@ -169,12 +179,17 @@ loop i<duration
     end
     return
     ' ---------Déplacer Ouvrier--------------
-
-end
+    end
+    alt record
+        ant --> "antHisto:AntFacadeHistorique"++ #FFBBBB : iteration(this.grid)
+        return
+    end
 end
 return
 
-
-
+alt record
+    ant --> "antHisto:AntFacadeHistorique"++ #FFBBBB : closeFile()
+    return
+end
 
 @enduml
