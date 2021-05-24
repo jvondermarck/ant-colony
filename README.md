@@ -8,7 +8,7 @@
 
 ## A22 - Deuxieme rendu
 
-### **1) Principes SOLID**
+### **1) Principes SOLID - V2**
 
 ---
 
@@ -71,7 +71,7 @@
 - Ces deux abstractions permettent d'être plus stables que les types concrets.
 
 
-### **2) Principes GRASP**
+### **2) Principes GRASP - V2**
 
 ---
 
@@ -170,7 +170,7 @@
 ## A22 - Premier rendu
 
 
-### **1) Principes SOLID**
+### **1) Principes SOLID - V1**
 
 ---
 
@@ -212,7 +212,7 @@
   Soldat qui hérite de cette classe, depend d'une abstraction que d'un type concret.
 
 
-### **2) Principes GRASP**
+### **2) Principes GRASP - V1**
 
 ---
 
