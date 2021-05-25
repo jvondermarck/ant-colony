@@ -4,16 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="47cd6ad5-e8f1-43de-aae4-65f52ffc0fb8" name="Default Changelist" comment="MAJ UML dû à la classe Historique">
+    <list default="true" id="47cd6ad5-e8f1-43de-aae4-65f52ffc0fb8" name="Default Changelist" comment="MAJ Historique">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TraceFourmis.csv" beforeDir="false" afterPath="$PROJECT_DIR$/TraceFourmis.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plantUML/V2/Fourmis_DC_Analyse.puml" beforeDir="false" afterPath="$PROJECT_DIR$/plantUML/V2/Fourmis_DC_Analyse.puml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/plantUML/V2/Fourmis_DC_Conception.puml" beforeDir="false" afterPath="$PROJECT_DIR$/plantUML/V2/Fourmis_DC_Conception.puml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plantUML/V2/Fourmis_DS_Iteration.puml" beforeDir="false" afterPath="$PROJECT_DIR$/plantUML/V2/Fourmis_DS_Iteration.puml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/V2/javaClass/AntFacadeHistorique.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/V2/javaClass/AntFacadeHistorique.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/V2/javaClass/Aretes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/V2/javaClass/Aretes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/V2/javaClass/MoveOuvrier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/V2/javaClass/MoveOuvrier.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/V2/javaClass/Ouvrier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/V2/javaClass/Ouvrier.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/V2/javaTest/FourmiOuvrierTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/V2/javaTest/FourmiOuvrierTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/V2/javaClass/Colonie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/V2/javaClass/Colonie.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/V2/javaClass/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/V2/javaClass/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/V2/javaClass/MoveSoldat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/V2/javaClass/MoveSoldat.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/V2/javaClass/Soldat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/V2/javaClass/Soldat.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,17 +84,6 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -232,14 +222,9 @@
       <workItem from="1621886354723" duration="200000" />
       <workItem from="1621889188988" duration="893000" />
       <workItem from="1621926902531" duration="1396000" />
-      <workItem from="1621930855886" duration="5357000" />
-    </task>
-    <task id="LOCAL-00006" summary="Creation Colonie">
-      <created>1620075737255</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1620075737255</updated>
+      <workItem from="1621930855886" duration="5390000" />
+      <workItem from="1621952867114" duration="1679000" />
+      <workItem from="1621961398552" duration="8107000" />
     </task>
     <task id="LOCAL-00007" summary="Creation Reine et Soldat">
       <created>1620118537756</created>
@@ -577,7 +562,14 @@
       <option name="project" value="LOCAL" />
       <updated>1621874671377</updated>
     </task>
-    <option name="localTasksCounter" value="55" />
+    <task id="LOCAL-00055" summary="MAJ Historique">
+      <created>1621939606115</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1621939606115</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -596,7 +588,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Images Vectorielles" />
     <MESSAGE value="MAJ" />
     <MESSAGE value="Commencement V2 Java" />
     <MESSAGE value="Ouvrier deplace Pheromone" />
@@ -621,7 +612,8 @@
     <MESSAGE value="Rapport" />
     <MESSAGE value="MAJ Fichier d'historique des fourmis" />
     <MESSAGE value="MAJ UML dû à la classe Historique" />
-    <option name="LAST_COMMIT_MESSAGE" value="MAJ UML dû à la classe Historique" />
+    <MESSAGE value="MAJ Historique" />
+    <option name="LAST_COMMIT_MESSAGE" value="MAJ Historique" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

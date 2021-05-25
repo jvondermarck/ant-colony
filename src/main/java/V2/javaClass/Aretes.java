@@ -1,7 +1,5 @@
 package V2.javaClass;
 
-import V2.javaClass.Graphe;
-
 import java.util.*;
 
 public class Aretes {
@@ -13,8 +11,6 @@ public class Aretes {
     protected ArrayList<Integer> listX = new ArrayList<>();
     protected ArrayList<Integer> listY = new ArrayList<>();
     protected Graphe graphe;
-    private Boolean passeDroitVoisin = false;
-    private String noeudVoisin;
 
     public Aretes(Graphe g, int x, int y)
     {
@@ -48,7 +44,7 @@ public class Aretes {
                 {
                     if(verficationNoeud(x, y)) // On vérfie qu'il n'est pas OutOfBands, qu'il est hors du graphe
                         // On vérifie que la case n'est pas un obstacle
-                        if((tab[x][y] != tab[xTab][yTab]) && ((!estObstacle[x][y]) || passeDroitVoisin)) // On bloque la possibilité de se déplacer a la cellule de départ
+                        if((tab[x][y] != tab[xTab][yTab]) && !estObstacle[x][y]) // On bloque la possibilité de se déplacer a la cellule de départ
                             ajouterAretes(x, y);
                 }
 
@@ -76,49 +72,55 @@ public class Aretes {
 
     public String noeudVoisin(Object o)
     {
+        StringBuilder noeudVoisin = new StringBuilder();
+
         if(o instanceof Ouvrier)
         {
             Ouvrier ouvrier = (Ouvrier)o;
-            passeDroitVoisin = true;
             int numeroOuvrier = ouvrier.getNumeroWorker();
-            noeudVoisin = "\t --> Ouvrier n°" + numeroOuvrier + " | ";
-//            rechercheAretes();
-            int nbrNoeudVoisin = 1;
-            for(int i=0; i<listX.size(); i++)
-            {
-                for(int j=0; j<listY.size(); j++)
-                {
-                    int numNoeud = graphe.rechercherNoeud(listX.get(i),listY.get(j)).getCoordonneNoeud();
-                    noeudVoisin += " Voisin n°" + nbrNoeudVoisin + " se trouve au Noeud n°" + numNoeud + " ";
-                    if(estObstacle[listX.get(i)][listY.get(j)])
-                    {
-                        noeudVoisin += " est un obstacle.";
-                    } else{
-                        noeudVoisin += " est pas un obstacle - ";
-                    }
-                    if(graphe.getEstNourriture()[listX.get(i)][listY.get(j)])
-                    {
-                        noeudVoisin += " contient : " + graphe.getQuantityFood()[listX.get(i)][listY.get(j)] + "kg de nourriture.";
-                    } else {
-                        noeudVoisin += " n'a pas de nourriture - ";
-                    }
-                    if(graphe.getQuantityPheromone()[listX.get(i)][listY.get(j)] >= 1)
-                    {
-                        noeudVoisin += " contient : " + graphe.getQuantityPheromone()[listX.get(i)][listY.get(j)]+ " phéromones.";
-                    } else{
-                        noeudVoisin += " et n'a pas de phéromones.";
-                    }
-                    noeudVoisin += " |\n\t|                      ";
-                    i++;
-                    nbrNoeudVoisin++;
-                }
-            }
+            noeudVoisin = new StringBuilder("\t --> Ouvrier n°" + numeroOuvrier + " | ");
         }
         if(o instanceof Soldat)
         {
-
+            Soldat soldat = (Soldat)o;
+            int numeroSoldat = soldat.getNumeroSoldat();
+            noeudVoisin = new StringBuilder("\t --> Soldat n°" + numeroSoldat + "  | ");
         }
-        return noeudVoisin;
+
+        int nbrNoeudVoisin = 1;
+        for(int i=0; i<listX.size(); i++)
+        {
+            for(int j=0; j<listY.size(); j++)
+            {
+                int numNoeud = graphe.rechercherNoeud(listX.get(i),listY.get(j)).getCoordonneNoeud();
+                noeudVoisin.append(" Voisin n°").append(nbrNoeudVoisin).append(" se trouve au Noeud n°").append(numNoeud).append(" ");
+                if(estObstacle[listX.get(i)][listY.get(j)])
+                {
+                    noeudVoisin.append("- est un obstacle - ");
+                } else{
+                    noeudVoisin.append("- est pas un obstacle - ");
+                }
+                if(graphe.getEstNourriture()[listX.get(i)][listY.get(j)])
+                {
+                    noeudVoisin.append(" contient : ").append(graphe.getQuantityFood()[listX.get(i)][listY.get(j)]).append("kg de nourriture.");
+                } else {
+                    noeudVoisin.append(" n'a pas de nourriture - ");
+                }
+                if(graphe.getQuantityPheromone()[listX.get(i)][listY.get(j)] >= 1)
+                {
+                    noeudVoisin.append(" contient : ").append(graphe.getQuantityPheromone()[listX.get(i)][listY.get(j)]).append(" phéromones.");
+                } else{
+                    noeudVoisin.append(" et n'a pas de phéromones.             ");
+                }
+                noeudVoisin.append("\n\t|                      ");
+                i++;
+                nbrNoeudVoisin++;
+            }
+        }
+        noeudVoisin = new StringBuilder(noeudVoisin.substring(0, noeudVoisin.lastIndexOf("\n\t|                      ")));
+        noeudVoisin.append("\n\t| -------------------------------------------------------------------------------------------------------------------------------------------------|");
+
+        return noeudVoisin.toString();
     }
 
     public ArrayList<Integer> getListX() {

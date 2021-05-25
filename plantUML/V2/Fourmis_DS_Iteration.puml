@@ -23,7 +23,7 @@ loop i<taille.length
         ' ---------NOEUD--------------
             create "n:Noeud"
             graphe --> "n:Noeud" : <<Create>> Noeud(g)
-            graphe <- "n:Noeud"++ : getEmplacementNoeud(n)
+            graphe <- "n:Noeud"++ #FFBBBB: getEmplacementNoeud(n)
                 return noeud
     end
 end
@@ -59,11 +59,11 @@ create "c:Colonie"
 
 ant -> ant++ #lightgreen : setParameters(evapaParam,foodParam,pheroParam)
     ant -> "r:Reine"++ #lightcoral : setParametreColonie(evapaParam,foodParam,pheroParam)
-    "r:Reine" -> "c:Colonie"++ : setFoodParam(foodParam)
+    "r:Reine" -> "c:Colonie"++ #FFBBBB: setFoodParam(foodParam)
     return
-    "r:Reine" -> "c:Colonie"++ : setEvaporationParam(evapaParam)
+    "r:Reine" -> "c:Colonie"++ #FFBBBB: setEvaporationParam(evapaParam)
     return
-    "r:Reine" -> "c:Colonie"++ : setPheromoneParam(pheroParam)
+    "r:Reine" -> "c:Colonie"++ #FFBBBB: setPheromoneParam(pheroParam)
     return
 return
 return
@@ -91,9 +91,9 @@ return
 participant "MoveSoldat:ms" as MoveSoldat #Wheat
 participant "MoveOuvrier:mo" as MoveOuvrier #Wheat
 == Déclenchement des itérations ==
-ant -> ant++ #DarkSalmon : play(time, false)
-alt record
-    ant --> "antHisto:AntFacadeHistorique"++ #FFBBBB : startFile()
+ant -> ant++ #RoyalBlue : play(time, false)
+alt record == true
+    ant --> "antHisto:AntFacadeHistorique"++ #DeepSkyBlue : startFile()
     return
 end
 loop i<duration
@@ -116,30 +116,32 @@ loop i<duration
     '----------Mettre phéromne -------------
 
     ' ---------Déplacer Soldat--------------
-    ant -> "s:Soldat"++ #DarkSalmon
+
     alt this.theSoldiers != null
         loop Soldat s : MoveSoldat
-            "s:Soldat" -> MoveSoldat : randomDirection(this.g, soldat, r)
-            ' ---------ARETES--------------
-            create "arr:Aretes"
-            MoveSoldat --> "arr:Aretes" : <<Create>> Aretes(g,x,y)
-            "arr:Aretes" -> "arr:Aretes"++ #DarkSalmon : rechercheAretes()
-            loop y<=yTab+1
-                loop x<=xTab+1
-                    alt x == xTab || y == yTab
-                        alt verficationNoeud(x, y) == true
-                            "arr:Aretes" -> "arr:Aretes"++ #FFBBBB : verficationNoeud(x,y)
-                                alt (tab[x][y] != tab[xTab][yTab]) && !estObstacle[x][y]
-                                    "arr:Aretes" -> "arr:Aretes"++ #FFBBBB : ajouterAretes(x,y)
+            ant -> "s:Soldat"++ #lightcoral
+                "s:Soldat" -> MoveSoldat++ #FFBBBB: randomDirection(this.g, soldat, r)
+                    ' ---------ARETES--------------
+                    create "arr:Aretes"
+                    MoveSoldat --> "arr:Aretes" : <<Create>> Aretes(g,x,y)
+                    "arr:Aretes" -> "arr:Aretes"++ #DarkSalmon : rechercheAretes()
+                    loop y<=yTab+1
+                        loop x<=xTab+1
+                            alt x == xTab || y == yTab
+                                alt verficationNoeud(x, y) == true
+                                    "arr:Aretes" -> "arr:Aretes"++ #FFBBBB : verficationNoeud(x,y)
+                                        alt (tab[x][y] != tab[xTab][yTab]) && !estObstacle[x][y]
+                                            "arr:Aretes" -> "arr:Aretes"++ #FFBBBB : ajouterAretes(x,y)
+                                            return
+                                        end
                                     return
                                 end
-                            return
+                            end
                         end
                     end
-                end
-            end
+                return
             return
-            "s:Soldat" -> "s:Soldat"++ #FFBBBB : recherchePositionActuel(x,y)
+            ant -> "s:Soldat"++ #FFBBBB : recherchePositionActuel(x,y)
             return
         end
     end
@@ -147,15 +149,17 @@ loop i<duration
     ' ---------Déplacer Soldat--------------
 
     ' ---------Déplacer Ouvrier--------------
-    ant -> "o:Ouvrier"++ #DarkSalmon
     alt this.theWorkers != null
         loop Ouvrier o : MoveOuvrier
         alt o.isEtatRetour() && !o.doitRetravailler()
+            ant -> "o:Ouvrier"++ #lightcoral
             "o:Ouvrier"  -> MoveOuvrier++ #FFBBBB : cheminRetour(ouvrier)
+            return
             return
 
         else sinon
-            "o:Ouvrier" -> MoveOuvrier : randomDirection(this.g, ouvrier, r)
+             ant -> "o:Ouvrier"++ #lightcoral
+            "o:Ouvrier" -> MoveOuvrier++ #FFBBBB : randomDirection(this.g, ouvrier, r)
              ' ---------ARETES OUVRIER--------------
              create "arrO:AretesOuvriers"
              MoveOuvrier --> "arrO:AretesOuvriers" : <<Create>> Aretes(g,x,y)
@@ -172,9 +176,12 @@ loop i<duration
                         end
                     end
              return
+             return
+             return
+             return
         end
         end
-        "o:Ouvrier" -> "o:Ouvrier"++ #FFBBBB : recherchePositionActuel(x,y)
+        ant -> "o:Ouvrier"++ #FFBBBB : recherchePositionActuel(x,y)
         return
     end
     return
@@ -182,24 +189,36 @@ loop i<duration
     end
 ' ---------Fichier historique des fourmis--------------
 == Mise à jour du fichier d'historique des fourmis ==
-    alt record
-        ant --> "antHisto:AntFacadeHistorique"++ #FFBBBB : iteration(this.grid, this.theSoldiers, this.theWorkers)
+    alt record == true
+        ant --> "antHisto:AntFacadeHistorique"++ #DeepSkyBlue : iteration(this.grid, this.theSoldiers, this.theWorkers)
             loop Ouvrier o : theWorkers
-                "antHisto:AntFacadeHistorique" --> "o:Ouvrier"++ #FFBBBB: toString()
+                "antHisto:AntFacadeHistorique" --> "o:Ouvrier"++ #DeepSkyBlue: toString()
+                return
+                "antHisto:AntFacadeHistorique" --> MoveOuvrier++ #DeepSkyBlue: noeudVoisin(ouvrier)
+                create "arr1:Aretes"
+                MoveOuvrier --> "arr1:Aretes" : <<Create>> Aretes(g,x,y)
+                MoveOuvrier --> "arr1:Aretes"++ #DeepSkyBlue: noeudVoisin(ouvrier)
+                return
                 return
             end
             loop Soldat s : theSoldiers
-                "antHisto:AntFacadeHistorique" --> "s:Soldat"++ #FFBBBB : toString()
+                "antHisto:AntFacadeHistorique" --> "s:Soldat"++ #DeepSkyBlue : toString()
+                return
+                "antHisto:AntFacadeHistorique" --> MoveSoldat++ #DeepSkyBlue: noeudVoisin(soldat)
+                create "arr2:Aretes"
+                MoveOuvrier --> "arr2:Aretes" : <<Create>> Aretes(g,x,y)
+                MoveSoldat --> "arr2:Aretes"++ #DeepSkyBlue: noeudVoisin(soldat)
+                return
                 return
             end
         return
     end
 end
-return
 
-alt record
-    ant --> "antHisto:AntFacadeHistorique"++ #FFBBBB : closeFile()
+alt record == true
+    ant --> "antHisto:AntFacadeHistorique"++ #DeepSkyBlue : closeFile()
     return
 end
+return
 
 @enduml

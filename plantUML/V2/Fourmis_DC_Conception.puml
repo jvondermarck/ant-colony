@@ -134,6 +134,7 @@ package "Diagramme de Classe de Conception V2 " <<Folder>> {
       +rechercheAretes()
       +ajouterAretes(x:Integer, y:Integer)
       +verficationNoeud(x:Integer, y:Integer):Boolean
+      +noeudVoisin(o:Object): String
       +getListX(): ArrayList<Integer>
       +getListY(): ArrayList<Integer>
   }
@@ -184,6 +185,7 @@ package "Diagramme de Classe de Conception V2 " <<Folder>> {
 
       <<Create>>MoveSoldat(x:Integer, y:Integer)
       {abstract} +randomDirection(graphe: Graphe, o: Object, r: Reine)
+      +noeudVoisin(soldat:Soldat): String
       +getX(x:Integer);
       +getY(y:Integer);
       {abstract} +setX(x:Integer);
@@ -198,6 +200,7 @@ package "Diagramme de Classe de Conception V2 " <<Folder>> {
       <<Create>>MoveOuvrier(x:Integer, y:Integer)
       {abstract} +randomDirection(graphe: Graphe, o: Object, r: Reine)
       +cheminRetour(ouvrier:Ouvrier)
+      +noeudVoisin(ouvrier:Ouvrier): String
       +getX(x:Integer);
       +getY(y:Integer);
       {abstract} +setX(x:Integer);
@@ -283,4 +286,6 @@ Soldat ..> Colonie : <<use>>
 AntFacade "1" o--> "1" AntFacadeHistorique : sauvegarde
 AntFacadeHistorique .right.> Soldat : <<use>>
 AntFacadeHistorique .right.> Ouvrier : <<use>>
+Aretes ..> Ouvrier : <<use>>
+Aretes ..> Soldat : <<use>>
 @enduml

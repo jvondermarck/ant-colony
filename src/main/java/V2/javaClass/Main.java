@@ -30,7 +30,7 @@ public class Main {
         controller.putFood(1,4,15);
         controller.putFood(2,5,15);
         controller.putFood(5,3,15);
-        controller.setParameters(1,20,1);
+        controller.setParameters(5,20,10);
 
         controller.createWorkers(3);
         controller.createSoldiers( 3);

@@ -31,6 +31,10 @@ public class Soldat extends MoveSoldat {
      */
     @Override
     public String toString() {
-        return "Soldat n°" + numeroSoldat + " - " + this.colonie.toString() + " --> se trouve au " + this.positionActuel;
+        return "Soldat n°" + numeroSoldat + "  | " + this.colonie.toString() + " | " + this.positionActuel;
+    }
+
+    public int getNumeroSoldat() {
+        return numeroSoldat;
     }
 }

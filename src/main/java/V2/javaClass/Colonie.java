@@ -87,7 +87,7 @@ public class Colonie {
      */
     @Override
     public String toString() {
-        return "Colonie n°" + numColonie + " -> Quantité de nourriture stockée : " + quantityFood ;
+        return "Colonie n°" + numColonie + " -> à un stock de " + quantityFood +  " nourriture stockée";
     }
 
     public void setQuantityFood(int quantityFood) {
