@@ -4,17 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="47cd6ad5-e8f1-43de-aae4-65f52ffc0fb8" name="Default Changelist" comment="MAJ Historique">
+    <list default="true" id="47cd6ad5-e8f1-43de-aae4-65f52ffc0fb8" name="Default Changelist" comment="MAJ Historique + DCC + DS">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TraceFourmis.csv" beforeDir="false" afterPath="$PROJECT_DIR$/TraceFourmis.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plantUML/V2/Fourmis_DC_Conception.puml" beforeDir="false" afterPath="$PROJECT_DIR$/plantUML/V2/Fourmis_DC_Conception.puml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plantUML/V2/Fourmis_DS_Iteration.puml" beforeDir="false" afterPath="$PROJECT_DIR$/plantUML/V2/Fourmis_DS_Iteration.puml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/V2/javaClass/AntFacadeHistorique.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/V2/javaClass/AntFacadeHistorique.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/V2/javaClass/Aretes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/V2/javaClass/Aretes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/V2/javaClass/Colonie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/V2/javaClass/Colonie.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/V2/javaClass/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/V2/javaClass/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/V2/javaClass/MoveSoldat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/V2/javaClass/MoveSoldat.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/V2/javaClass/Soldat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/V2/javaClass/Soldat.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -224,14 +218,8 @@
       <workItem from="1621926902531" duration="1396000" />
       <workItem from="1621930855886" duration="5390000" />
       <workItem from="1621952867114" duration="1679000" />
-      <workItem from="1621961398552" duration="8107000" />
-    </task>
-    <task id="LOCAL-00007" summary="Creation Reine et Soldat">
-      <created>1620118537756</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1620118537756</updated>
+      <workItem from="1621961398552" duration="8441000" />
+      <workItem from="1621978617824" duration="1333000" />
     </task>
     <task id="LOCAL-00008" summary="Creation Reine et Soldat">
       <created>1620118574719</created>
@@ -569,7 +557,14 @@
       <option name="project" value="LOCAL" />
       <updated>1621939606115</updated>
     </task>
-    <option name="localTasksCounter" value="56" />
+    <task id="LOCAL-00056" summary="MAJ Historique + DCC + DS">
+      <created>1621974120077</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1621974120078</updated>
+    </task>
+    <option name="localTasksCounter" value="57" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -588,7 +583,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="MAJ" />
     <MESSAGE value="Commencement V2 Java" />
     <MESSAGE value="Ouvrier deplace Pheromone" />
     <MESSAGE value="MAJ Pheromone + JavaDoc" />
@@ -613,7 +607,8 @@
     <MESSAGE value="MAJ Fichier d'historique des fourmis" />
     <MESSAGE value="MAJ UML dû à la classe Historique" />
     <MESSAGE value="MAJ Historique" />
-    <option name="LAST_COMMIT_MESSAGE" value="MAJ Historique" />
+    <MESSAGE value="MAJ Historique + DCC + DS" />
+    <option name="LAST_COMMIT_MESSAGE" value="MAJ Historique + DCC + DS" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

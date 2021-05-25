@@ -102,7 +102,7 @@ public class Aretes {
                 }
                 if(graphe.getEstNourriture()[listX.get(i)][listY.get(j)])
                 {
-                    noeudVoisin.append(" contient : ").append(graphe.getQuantityFood()[listX.get(i)][listY.get(j)]).append("kg de nourriture.");
+                    noeudVoisin.append(" contient : ").append(graphe.getQuantityFood()[listX.get(i)][listY.get(j)]).append("kg de nourriture - ");
                 } else {
                     noeudVoisin.append(" n'a pas de nourriture - ");
                 }
@@ -110,7 +110,7 @@ public class Aretes {
                 {
                     noeudVoisin.append(" contient : ").append(graphe.getQuantityPheromone()[listX.get(i)][listY.get(j)]).append(" phéromones.");
                 } else{
-                    noeudVoisin.append(" et n'a pas de phéromones.             ");
+                    noeudVoisin.append(" et n'a pas de phéromones");
                 }
                 noeudVoisin.append("\n\t|                      ");
                 i++;

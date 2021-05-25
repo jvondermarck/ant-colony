@@ -44,27 +44,39 @@ public class AntFacadeHistorique {
             String formattedDateTime = dateTime.format(formatter);
 
             fw = new FileWriter(fLog,true);
-            fw.write("|---------------------------------------------------------------------------------------------------|\n");
-            fw.write("|                          Projet Colonie de fourmis - A22 et P21 - 2021                            |\n");
-            fw.write("|---------------------------------------------------------------------------------------------------|\n");
-            fw.write("|---------------------------------------------------------------------------------------------------|\n");
-            fw.write("|                 Fichier d'historique des etats succesifs du systeme de fourmis                    |\n");
-            fw.write("|---------------------------------------------------------------------------------------------------|\n");
-            fw.write("|                    Lancement de la colonie de fourmis : "+ formattedDateTime +"                          |\n");
-            fw.write("|---------------------------------------------------------------------------------------------------|\n");
-            fw.write("| Petit mémo :                                                                                      |\n");
-            fw.write("| ............                                                                                      |\n");
-            fw.write("| le bit n° 0 vaut true si le noeud correspondant de la grille abrite la fourmilière                |\n");
-            fw.write("| le bit n° 1 vaut true si le noeud est occupé par un obstacle                                      |\n");
-            fw.write("| le bit n° 2 vaut true s'il y a au moins une fourmi-soldat sur le noeud                            |\n");
-            fw.write("| le bit n° 3 vaut true s'il y a au moins une fourmi-ouvrière sans nourriture sur le noeud          |\n");
-            fw.write("| le bit n° 4 vaut true s'il y a au moins une ouvrière portant de la nourriture sur le noeud        |\n");
-            fw.write("| le bit n° 5 vaut true s'il y a de la nourriture sur le noeud                                      | \n");
-            fw.write("| le bit n° 6 vaut true s'il y a des phéromones sur le noeud.                                       | \n");
-            fw.write("|---------------------------------------------------------------------------------------------------|\n");
-            fw.write("|---------------------------------------------------------------------------------------------------|\n");
-            fw.write("|                            Made by Julien VON DER MARCK et Jad MACHKOUR                           |\n");
-            fw.write("|---------------------------------------------------------------------------------------------------|\n");
+            fw.write("\t\t\t\t\t\t|---------------------------------------------------------------------------------------------------|\n");
+            fw.write("\t\t\t\t\t\t|                          Projet Colonie de fourmis - A22 et P21 - 2021                            |\n");
+            fw.write("\t\t\t\t\t\t|---------------------------------------------------------------------------------------------------|\n");
+            fw.write("\t\t\t\t\t\t|---------------------------------------------------------------------------------------------------|\n");
+            fw.write("\t\t\t\t\t\t|                 Fichier d'historique des etats succesifs du systeme de fourmis                    |\n");
+            fw.write("\t\t\t\t\t\t|---------------------------------------------------------------------------------------------------|\n");
+            fw.write("\t\t\t\t\t\t|                    Lancement de la colonie de fourmis : "+ formattedDateTime +"                          |\n");
+            fw.write("\t\t\t\t\t\t|---------------------------------------------------------------------------------------------------|\n");
+            fw.write("\t\t\t\t\t\t| Petit mémo :                                                                                      |\n");
+            fw.write("\t\t\t\t\t\t| ............                                                                                      |\n");
+            fw.write("\t\t\t\t\t\t| le bit n° 0 vaut true si le noeud correspondant de la grille abrite la fourmilière                |\n");
+            fw.write("\t\t\t\t\t\t| le bit n° 1 vaut true si le noeud est occupé par un obstacle                                      |\n");
+            fw.write("\t\t\t\t\t\t| le bit n° 2 vaut true s'il y a au moins une fourmi-soldat sur le noeud                            |\n");
+            fw.write("\t\t\t\t\t\t| le bit n° 3 vaut true s'il y a au moins une fourmi-ouvrière sans nourriture sur le noeud          |\n");
+            fw.write("\t\t\t\t\t\t| le bit n° 4 vaut true s'il y a au moins une ouvrière portant de la nourriture sur le noeud        |\n");
+            fw.write("\t\t\t\t\t\t| le bit n° 5 vaut true s'il y a de la nourriture sur le noeud                                      | \n");
+            fw.write("\t\t\t\t\t\t| le bit n° 6 vaut true s'il y a des phéromones sur le noeud.                                       | \n");
+            fw.write("\t\t\t\t\t\t|                                                                                                   | \n");
+            fw.write("\t\t\t\t\t\t| 1. Vous trouverez en premier le numéro de l'itération de la Colonie                               | \n");
+            fw.write("\t\t\t\t\t\t| 2. Vous trouverez en deuxième l'état du graphe avec les 7 bits différents concernant              | \n");
+            fw.write("\t\t\t\t\t\t| 3. Vous trouverez en troisième l'état de chaques ouvriers et ses noeuds voisins, soit             | \n");
+            fw.write("\t\t\t\t\t\t|     - Concernant les ouvriers vous avait son numéro, sa colonie, son noeud, sa nourriture         | \n");
+            fw.write("\t\t\t\t\t\t|       transporté, et si il est à la recherche de nourriture ou si il ramène à sa colonie à manger | \n");
+            fw.write("\t\t\t\t\t\t|     - Si le noeud voisin en question est un obstacle ou non                                       | \n");
+            fw.write("\t\t\t\t\t\t|     - Si le noeud voisin en question contient de la nourriture ou non                             | \n");
+            fw.write("\t\t\t\t\t\t|     - Si le noeud voisin en question contient au plus 1 phéromone                                 | \n");
+            fw.write("\t\t\t\t\t\t| 4. Vous trouverez en quatrième l'état de chaques soldats et ses noeuds voisins, soit              | \n");
+            fw.write("\t\t\t\t\t\t|     - Concernant les soldats vous avait son numéro, sa colonie, et son noeud                      | \n");
+            fw.write("\t\t\t\t\t\t|     - Et vous aurez la même nomenclature nommé ci-dessus concernant l'affichage des noeuds voisins| \n");
+            fw.write("\t\t\t\t\t\t|---------------------------------------------------------------------------------------------------|\n");
+            fw.write("\t\t\t\t\t\t|---------------------------------------------------------------------------------------------------|\n");
+            fw.write("\t\t\t\t\t\t|                            Made by Julien VON DER MARCK et Jad MACHKOUR                           |\n");
+            fw.write("\t\t\t\t\t\t|---------------------------------------------------------------------------------------------------|\n");
 
             fw.close();
         }
@@ -77,13 +89,13 @@ public class AntFacadeHistorique {
         this.grid = grid;
 
         fw.write("\n");
-        fw.write("\n|----------------------------------------------------------------------------------------------------------------------|");
-        fw.write("\n|----------------------------------------------------------------------------------------------------------------------|");
-        fw.write("\n|                                           Itération n°"+durationPlay+"                                                              |\n");
-        fw.write("|----------------------------------------------------------------------------------------------------------------------|\n");
-        fw.write("|----------------------------------------------------------------------------------------------------------------------|");
+        fw.write("\n|-----------------------------------------------------------------------------------------------------------------------------------------------------|");
+        fw.write("\n|-----------------------------------------------------------------------------------------------------------------------------------------------------|");
+        fw.write("\n|                                                                 ITÉRATION n°"+durationPlay+"                                                                       |\n");
+        fw.write("|-----------------------------------------------------------------------------------------------------------------------------------------------------|\n");
+        fw.write("|-----------------------------------------------------------------------------------------------------------------------------------------------------|");
         fw.write("\n\t|-----------------------------|");
-        fw.write("\n\t|      Etat de la colonie     |\n");
+        fw.write("\n\t|      Etat du Graphe         |\n");
         fw.write("\t|-----------------------------|");
 
 
