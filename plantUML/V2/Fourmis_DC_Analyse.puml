@@ -158,7 +158,7 @@ MoveSoldat ..> Reine : <<use>>
 MoveOuvrier ..> Reine : <<use>>
 Ouvrier ..> Colonie : <<use>>
 Soldat ..> Colonie : <<use>>
-AntFacade *--> AntFacadeHistorique : sauvegarde
+AntFacade o--> AntFacadeHistorique : sauvegarde
 AntFacadeHistorique .right.> Soldat : <<use>>
 AntFacadeHistorique .right.> Ouvrier : <<use>>
 

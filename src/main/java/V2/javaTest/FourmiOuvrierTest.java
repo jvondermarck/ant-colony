@@ -23,7 +23,7 @@ public class FourmiOuvrierTest {
     @BeforeEach
     void setUp()
     {
-        appli = new AntFacade(500);
+        appli = new AntFacade(0);
         appli.createGrid(WIDTH, HEIGHT);
         appli.createColony(0,0);
 

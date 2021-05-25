@@ -4,11 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="47cd6ad5-e8f1-43de-aae4-65f52ffc0fb8" name="Default Changelist" comment="MAJ Fichier d'historique des fourmis">
+    <list default="true" id="47cd6ad5-e8f1-43de-aae4-65f52ffc0fb8" name="Default Changelist" comment="MAJ UML dû à la classe Historique">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TraceFourmis.csv" beforeDir="false" afterPath="$PROJECT_DIR$/TraceFourmis.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/plantUML/V2/Fourmis_DC_Analyse.puml" beforeDir="false" afterPath="$PROJECT_DIR$/plantUML/V2/Fourmis_DC_Analyse.puml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/plantUML/V2/Fourmis_DC_Conception.puml" beforeDir="false" afterPath="$PROJECT_DIR$/plantUML/V2/Fourmis_DC_Conception.puml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plantUML/V2/Fourmis_DS_Iteration.puml" beforeDir="false" afterPath="$PROJECT_DIR$/plantUML/V2/Fourmis_DS_Iteration.puml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/V2/javaClass/AntFacadeHistorique.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/V2/javaClass/AntFacadeHistorique.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/V2/javaClass/Aretes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/V2/javaClass/Aretes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/V2/javaClass/MoveOuvrier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/V2/javaClass/MoveOuvrier.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/V2/javaClass/Ouvrier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/V2/javaClass/Ouvrier.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/V2/javaTest/FourmiOuvrierTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/V2/javaTest/FourmiOuvrierTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,37 +98,37 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GrapheTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="FourmiDeplacementTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="fourmis" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="V1.javaTest.*" />
+          <option name="PATTERN" value="V2.javaTest.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="V1.javaTest" />
-      <option name="MAIN_CLASS_NAME" value="V1.javaTest.GrapheTest" />
+      <option name="PACKAGE_NAME" value="V2.javaTest" />
+      <option name="MAIN_CLASS_NAME" value="V2.javaTest.FourmiDeplacementTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="NoeudTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="FourmiOuvrierTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="fourmis" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="V1.javaTest.*" />
+          <option name="PATTERN" value="V2.javaTest.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="V1.javaTest" />
-      <option name="MAIN_CLASS_NAME" value="V1.javaTest.NoeudTest" />
+      <option name="PACKAGE_NAME" value="V2.javaTest" />
+      <option name="MAIN_CLASS_NAME" value="V2.javaTest.FourmiOuvrierTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ReineTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="FourmiSoldatTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="fourmis" />
       <extension name="coverage">
         <pattern>
@@ -132,7 +137,7 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="V1.javaTest" />
-      <option name="MAIN_CLASS_NAME" value="V1.javaTest.ReineTest" />
+      <option name="MAIN_CLASS_NAME" value="V1.javaTest.FourmiSoldatTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -156,10 +161,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.FourmiSoldatTest" />
+        <item itemvalue="JUnit.FourmiDeplacementTest" />
+        <item itemvalue="JUnit.FourmiOuvrierTest" />
         <item itemvalue="JUnit.SoldatTest" />
-        <item itemvalue="JUnit.ReineTest" />
-        <item itemvalue="JUnit.NoeudTest" />
-        <item itemvalue="JUnit.GrapheTest" />
       </list>
     </recent_temporary>
   </component>
@@ -223,14 +228,11 @@
       <workItem from="1621760483712" duration="726000" />
       <workItem from="1621784508267" duration="5388000" />
       <workItem from="1621795219302" duration="14033000" />
-      <workItem from="1621862214249" duration="12161000" />
-    </task>
-    <task id="LOCAL-00005" summary="MAJ UML DCC + MAJ Code Java">
-      <created>1619729526867</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1619729526867</updated>
+      <workItem from="1621862214249" duration="12289000" />
+      <workItem from="1621886354723" duration="200000" />
+      <workItem from="1621889188988" duration="893000" />
+      <workItem from="1621926902531" duration="1396000" />
+      <workItem from="1621930855886" duration="5357000" />
     </task>
     <task id="LOCAL-00006" summary="Creation Colonie">
       <created>1620075737255</created>
@@ -568,7 +570,14 @@
       <option name="project" value="LOCAL" />
       <updated>1621873282710</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="MAJ UML dû à la classe Historique">
+      <created>1621874671377</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1621874671377</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -587,7 +596,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Test Unitaire + Fix bug" />
     <MESSAGE value="Images Vectorielles" />
     <MESSAGE value="MAJ" />
     <MESSAGE value="Commencement V2 Java" />
@@ -612,7 +620,8 @@
     <MESSAGE value="A22 MAJ UML + Rapport" />
     <MESSAGE value="Rapport" />
     <MESSAGE value="MAJ Fichier d'historique des fourmis" />
-    <option name="LAST_COMMIT_MESSAGE" value="MAJ Fichier d'historique des fourmis" />
+    <MESSAGE value="MAJ UML dû à la classe Historique" />
+    <option name="LAST_COMMIT_MESSAGE" value="MAJ UML dû à la classe Historique" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

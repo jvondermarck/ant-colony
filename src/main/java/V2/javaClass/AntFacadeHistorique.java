@@ -101,6 +101,7 @@ public class AntFacadeHistorique {
         for(Ouvrier o : theWorkers)
         {
             fw.write("\t| " + o.toString() + " |\n");
+            fw.write("\t| " + o.noeudVoisin(o) + " |\n");
         }
 
         fw.write("\t| -----------------------------------------------------------------------------------------------------------------------------------------------|\n");

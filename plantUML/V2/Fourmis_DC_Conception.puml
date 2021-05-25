@@ -237,8 +237,8 @@ package "Diagramme de Classe de Conception V2 " <<Folder>> {
         {abstract} +toString(): String
         +getaVisite(): Boolean[*][*]
         +setaVisite(aVisite: Boolean[*][*])
-        -getListXRetour(): ArrayList<Integer>
-        -getListYRetour(): ArrayList<Integer>
+        +getListXRetour(): ArrayList<Integer>
+        +getListYRetour(): ArrayList<Integer>
         +isEtatRetour(): Boolean
         +isEtatRetour(): Noeud
         +setEtatRetour(etatRetour: Boolean)
@@ -280,7 +280,7 @@ MoveSoldat ..> Reine : <<use>>
 MoveOuvrier ..> Reine : <<use>>
 Ouvrier ..> Colonie : <<use>>
 Soldat ..> Colonie : <<use>>
-AntFacade o--> AntFacadeHistorique : sauvegarde
+AntFacade "1" o--> "1" AntFacadeHistorique : sauvegarde
 AntFacadeHistorique .right.> Soldat : <<use>>
 AntFacadeHistorique .right.> Ouvrier : <<use>>
 @enduml

@@ -122,4 +122,8 @@ public class Ouvrier extends MoveOuvrier {
     public Noeud getPositionActuel() {
         return positionActuel;
     }
+
+    public int getNumeroWorker() {
+        return numeroWorker;
+    }
 }

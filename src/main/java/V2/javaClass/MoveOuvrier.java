@@ -8,6 +8,7 @@ public abstract class MoveOuvrier implements FourmisMove {
     private int x;
     private int y;
     private Boolean[][] estObstacle;
+    private Graphe g;
 
     public MoveOuvrier(int x, int y)
     {
@@ -19,6 +20,7 @@ public abstract class MoveOuvrier implements FourmisMove {
     public void randomDirection(Graphe g, Object o, Reine r)
     {
         Ouvrier ouvrier = (Ouvrier)o; // Comme on sait que o est une instance de Ouvrier, on le cast
+        this.g = g;
         this.estObstacle = g.getEstObstacle();
 
         AretesOuvrier aretes = new AretesOuvrier(g, this.x, this.y);
@@ -78,6 +80,12 @@ public abstract class MoveOuvrier implements FourmisMove {
             ouvrier.getListXRetour().remove(ouvrier.getListXRetour().size()-1);
             ouvrier.getListYRetour().remove(ouvrier.getListYRetour().size()-1);
         }
+    }
+
+    public String noeudVoisin(Ouvrier ouvrier)
+    {
+        Aretes arr = new Aretes(this.g, ouvrier.getX(), ouvrier.getY());
+        return arr.noeudVoisin(ouvrier);
     }
 
     public int getX() {
