@@ -4,22 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="47cd6ad5-e8f1-43de-aae4-65f52ffc0fb8" name="Default Changelist" comment="Test V2">
+    <list default="true" id="47cd6ad5-e8f1-43de-aae4-65f52ffc0fb8" name="Default Changelist" comment="V1 complètement refait">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/V1/javaClass/AntFacade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/V1/javaClass/AntFacade.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/V1/javaClass/Aretes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/V1/javaClass/Aretes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/V1/javaClass/FourmisMove.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/V1/javaClass/FourmisMove.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/V1/javaClass/Graphe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/V1/javaClass/Graphe.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/V1/javaClass/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/V1/javaClass/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/V1/javaClass/Noeud.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/V1/javaClass/Noeud.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/V1/javaClass/Soldat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/V1/javaClass/Soldat.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/V1/javaTest/AretesTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/V1/javaTest/AretesTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/V1/javaTest/ColonieTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/V1/javaTest/ColonieTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/V1/javaTest/FourmiMoveTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/V1/javaTest/FourmiMoveTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/V1/javaTest/FourmiSoldatTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/V1/javaTest/FourmiSoldatTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/V1/javaTest/GrapheTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/V1/javaTest/GrapheTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/V1/javaTest/SoldatTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/V1/javaTest/SoldatTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/V2/javaTest/FourmiSoldatTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/V2/javaTest/FourmiSoldatTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/V1/javaClass/Reine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/V1/javaClass/Reine.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -246,14 +234,7 @@
       <workItem from="1621978617824" duration="1395000" />
       <workItem from="1622037710168" duration="10977000" />
       <workItem from="1622052463786" duration="1912000" />
-      <workItem from="1622054786653" duration="11945000" />
-    </task>
-    <task id="LOCAL-00010" summary="MAJ DCC">
-      <created>1620208866325</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1620208866325</updated>
+      <workItem from="1622054786653" duration="12562000" />
     </task>
     <task id="LOCAL-00011" summary="Creation Diagramme Sequence">
       <created>1620290228593</created>
@@ -591,7 +572,14 @@
       <option name="project" value="LOCAL" />
       <updated>1622045876494</updated>
     </task>
-    <option name="localTasksCounter" value="59" />
+    <task id="LOCAL-00059" summary="V1 complètement refait">
+      <created>1622066927073</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1622066927074</updated>
+    </task>
+    <option name="localTasksCounter" value="60" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -610,7 +598,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Ouvrier deplace Pheromone" />
     <MESSAGE value="MAJ Pheromone + JavaDoc" />
     <MESSAGE value="Code fonctionnel Ouvrier allé/retour" />
     <MESSAGE value="Fix bug deplacement Ouvrier" />
@@ -635,7 +622,8 @@
     <MESSAGE value="MAJ Historique + DCC + DS" />
     <MESSAGE value="MAJ Historique" />
     <MESSAGE value="Test V2" />
-    <option name="LAST_COMMIT_MESSAGE" value="Test V2" />
+    <MESSAGE value="V1 complètement refait" />
+    <option name="LAST_COMMIT_MESSAGE" value="V1 complètement refait" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

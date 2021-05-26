@@ -29,7 +29,6 @@ public class Reine implements Fourmis {
         setY(y);
         this.colonie = new Colonie();
         this.graphe = g;
-        System.out.println("-NAISSANCE REINE-");
     }
 
     /**
@@ -47,7 +46,6 @@ public class Reine implements Fourmis {
         {
             Soldat soldat = new Soldat(this.x, this.y, colonie, graphe);
             theSoldiers.add(soldat);
-            System.out.println("-NAISSANCE SOLDAT n°" + (i+1) + "-");
         }
     }
 

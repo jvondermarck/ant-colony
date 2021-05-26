@@ -17,7 +17,7 @@ public class Aretes {
      * @param g         le Graphe où se trouve la fourmis
      * @param xPosition la position X où se trouve la fourmis
      * @param yPosition la position Y où se trouve la fourmis
-     * @return le nouveau noeud où la fourmis se déplacera
+     * @return le Noeud où la fourmis se déplacera
      */
     public static Noeud rechercheAretes(Graphe g, int xPosition, int yPosition)
     {
@@ -27,13 +27,12 @@ public class Aretes {
             for(int y=yPosition-1; y<=yPosition+1; y++) // On parcous la colonne cellule-1 jusqu'a la cellule+1
                 if(x == xPosition || y == yPosition) // On ne cherche pas des cellules qui se trouve à la diagonale de la position de la fourmis
                 {
-                    if(verficationNoeud(x, y, g.getRow(), g.getColumn())) // On vérfie qu'il n'est pas OutOfBands, qu'il est hors du graphe
+                    if(verficationNoeud(x, y, g)) // On vérfie qu'il n'est pas OutOfBands, qu'il est hors du graphe
                     {
-                        // On vérifie que la case n'est pas un obstacle ET On bloque la possibilité de se déplacer a la cellule de départ
+                        // On vérifie que la case n'est pas un obstacle ET on bloque la possibilité de se déplacer a la cellule de départ
                         if((g.rechercherNoeud(x,y) != g.rechercherNoeud(xPosition,yPosition)) && !g.getEstObstacle()[x][y])
-                            listNoeud.add(g.rechercherNoeud(x,y)); // On cherche les coordonnés X et Y pour avoir le noeud en question, et on l'ajoute dans la liste
+                            listNoeud.add(g.rechercherNoeud(x,y)); // On cherche les coordonnés X et Y pour avoir le Noeud en question, et on l'ajoute dans la liste
                     }
-
                 }
 
         if(listNoeud.isEmpty()) // Si la liste est vide, on ajoute directement la coordonnée X et Y de la fourmi où elle se trouve actuellement.
@@ -53,9 +52,9 @@ public class Aretes {
      * @return boolean retourne true si le noeud ne dépasse pas le graphe et qu'il est conforme
      */
 
-    private static boolean verficationNoeud(int xTab, int yTab, int row, int column) {
-        if(xTab<0 || xTab>=row)
+    private static boolean verficationNoeud(int xTab, int yTab, Graphe g) {
+        if(xTab<0 || xTab>=g.getRow())
             return false;
-        return !(yTab<0 || yTab >= column); // Si (false) = renvoie true et si (true) = renvoie false
+        return !(yTab<0 || yTab >= g.getColumn()); // Si (false) = renvoie true et si (true) = renvoie false
     }
 }
