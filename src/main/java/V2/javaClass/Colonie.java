@@ -2,8 +2,9 @@ package V2.javaClass;
 
 /**
  * La classe modifiable {@code Colonie}.
- *
- * Une colonie est
+ * <p>
+ * Une colonie a un numéro de colonie
+ * On peut savoir le nombre total de colonie
  */
 public class Colonie {
 
@@ -19,7 +20,7 @@ public class Colonie {
     private int quantityFood; // Quantité de nourriture ramené par les fourmis ouvrieres
 
     /**
-     * Instantiates a new Colonie.
+     * Instancie une nouvelle Colonie, et lui attribu un numéro.
      */
     public Colonie()
     {
@@ -82,14 +83,19 @@ public class Colonie {
         this.pheromoneParam = pheromoneParam;
     }
 
-    /**
-     * Redéfinition de la méthode toString(), on affiche le numéro de colonie, et sa quantité de nourriture stockées
+    /** toString() : redéfinition de la méthode de colonie
+     @return chaine de caractère contenant le numéro de colonie
      */
     @Override
     public String toString() {
         return "Colonie n°" + numColonie + " -> à un stock de " + quantityFood +  " nourriture stockée";
     }
 
+    /**
+     * Mettre les parametres de quantités de nourritures
+     *
+     * @param quantityFood quantité de nourriture qu'on veut ajouter à la colonie
+     */
     public void setQuantityFood(int quantityFood) {
         this.quantityFood += quantityFood;
     }

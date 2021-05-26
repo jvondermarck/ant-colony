@@ -1,13 +1,18 @@
 package V2.javaClass;
 
-import V2.javaClass.Graphe;
-
+/**
+ * La classe Noeud qui sert à une cellule particulière d'un graphe.
+ */
 public class Noeud {
-    private final int coordonneNoeud;
+    private int coordonneNoeud;
+    /**
+     * Le nombres de noeuds qu'on a crée.
+     */
     static int nombreNoeud = 0;
 
     /**
      * Constructeur Noeud qui cherche un emplacement pour créer le noeud et lui ai attribué un numero
+     *
      * @param g : un graphe
      */
     public Noeud(Graphe g)
@@ -20,8 +25,10 @@ public class Noeud {
         }
     }
 
-    /** getCoordonneeNoeud() : méthode qui renvoie le numéro de l'objet Noeud
-     @return coordonneNoeud : un entier du numero du noeud
+    /**
+     * getCoordonneeNoeud() : méthode qui renvoie le numéro de l'objet Noeud
+     *
+     * @return coordonneNoeud : un entier du numero du noeud
      */
     public int getCoordonneNoeud() {
         return coordonneNoeud;
@@ -33,5 +40,14 @@ public class Noeud {
     @Override
     public String toString() {
         return "Noeud n°" + this.coordonneNoeud;
+    }
+
+    /**
+     * Mettre une coordonnée de noeud
+     *
+     * @param coordonneNoeud l'entier où se trouve le noeud
+     */
+    public void setCoordonneNoeud(int coordonneNoeud) {
+        this.coordonneNoeud = coordonneNoeud;
     }
 }

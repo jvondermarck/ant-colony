@@ -19,14 +19,14 @@ public abstract class MoveSoldat implements FourmisMove {
         Aretes aretes = new Aretes(g, this.x, this.y);
         this.g = g;
 
-        Random rand = new Random();
+        //Random rand = new Random();
         ArrayList<Integer> listX;
         ArrayList<Integer> listY;
 
         listX = aretes.getListX();
         listY = aretes.getListY();
 
-        int alea = rand.nextInt(listX.size());
+        int alea = Aretes.rand.nextInt(listX.size());
         int nextX = listX.get(alea);
         int nextY = listY.get(alea);
 

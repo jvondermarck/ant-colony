@@ -1,7 +1,6 @@
 package V2.javaClass;
 
 import java.util.ArrayList;
-import java.util.Random;
 
 public abstract class MoveOuvrier implements FourmisMove {
 
@@ -26,14 +25,14 @@ public abstract class MoveOuvrier implements FourmisMove {
         AretesOuvrier aretes = new AretesOuvrier(g, this.x, this.y);
         aretes.paramOuvrier(ouvrier); // On cherche le ou les cellules adjacentes en fonction des cellules deja visite et des pheromones
 
-        Random rand = new Random();
+        //Random rand = new Random();
         ArrayList<Integer> listX;
         ArrayList<Integer> listY;
 
         listX = aretes.getListX();
         listY = aretes.getListY();
 
-        int alea = rand.nextInt(listX.size());
+        int alea = Aretes.rand.nextInt(listX.size());
         int nextX = listX.get(alea);
         int nextY = listY.get(alea);
 

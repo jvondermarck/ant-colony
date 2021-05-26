@@ -2,7 +2,6 @@ package V2.javaTest;
 
 import V2.javaClass.AntFacade;
 import V2.javaClass.AntFacadeController;
-import V2.javaClass.Display;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -142,15 +141,15 @@ public class FourmiOuvrierTest {
 
         int i = 0;
         int j = 2;
-        Display w = new Display( WIDTH, HEIGHT, 50 );
-        while (i < HEIGHT && !bitsets[18][0].get(3))
+        //Display w = new Display( WIDTH, HEIGHT, 50 );
+        while (i < HEIGHT)
         {
             BitSet actual = bitsets[i][j];
             boolean ouvrierPresent = actual.get(3);
             assertTrue(ouvrierPresent,
                     "bitsets[" + i + "][" + j + "] = " + bitsets[i][j]);
-            //bitsets = appli.play(1, false);
-            w.update(appli.play(1, false));
+            bitsets = appli.play(1, false);
+            //w.update(appli.play(1, false));
 
             if (i % 4 == 0 && j < WIDTH - 1)
                 j++;
@@ -160,57 +159,31 @@ public class FourmiOuvrierTest {
                 i++;
         }
         System.out.println(i + " - " + j);
-        int k = HEIGHT-1;
-        int l = 0;
-        while (k >= 0 && !bitsets[0][0].get(3))
+        // Retour
+
+        bitsets = appli.play(1, false);
+        //w.update(appli.play(1, false));
+
+        int k = HEIGHT-1; // ligne
+        int l = 2;
+        while (!bitsets[0][0].get(4))
         {
             BitSet actual = bitsets[k][l];
-            System.out.println("debut boucle " + k + " - " + l);
-            System.out.println(bitsets[k][l].get(3));
-            System.out.println(bitsets[18][1].get(3));
-            System.out.println(bitsets[18][2].get(3));
-            boolean ouvrierPresent = actual.get(3);
+            System.out.println(bitsets[k][l].get(4));
+            boolean ouvrierPresent = actual.get(4);
             assertTrue(ouvrierPresent,
                     "bitsets[" + k + "][" + l + "] = " + bitsets[k][l]);
-            //bitsets = appli.play(1, false);
-            w.update(appli.play(1, false));
+            bitsets = appli.play(1, false);
+            //w.update(appli.play(1, false));
 
-            if (k % 4 == 0 && l > WIDTH - 1)
+            if (k % 4 == 0 && l > 0)
                 l--;
-            else if (k % 4 == 2 && l < WIDTH)
+            else if (k % 4 == 2 && l<WIDTH - 1)
                 l++;
             else
                 k--;
-            System.out.println("Fin boucle " + k + " - " + l);
         }
     }
-
-
-//    @Test
-//    @DisplayName("Test ")
-//    void test6()
-//    {
-//        BitSet[][] bitsets;
-//
-//        Display w = new Display( WIDTH, HEIGHT, 50 );
-//        boolean surFourmiliere;
-//        do
-//        {
-//            bitsets = appli.play(2, false);
-//            surFourmiliere= bitsets[0][0].get(3);
-//        }
-//        while (surFourmiliere);
-//
-//        appli.putFood(HEIGHT-1,0,15);
-//        appli.setParameters(0,10,0);
-//
-//        while(!bitsets[0][0].get(3) && !bitsets[18][0].get(5))
-//        {
-//            //bitsets = appli.play(1, false);
-//            w.update(appli.play(1, false));
-//        }
-//    }
-
 
     @Test
     @DisplayName("Fourmi prend toute la nourriture d'un endroit")
@@ -276,5 +249,4 @@ public class FourmiOuvrierTest {
             assertFalse(bitsets[0][i].get(6));
         }
     }
-
 }

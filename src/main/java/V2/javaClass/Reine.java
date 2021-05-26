@@ -3,7 +3,7 @@ package V2.javaClass;
 import java.util.ArrayList;
 
 /**
- * The type Reine.
+ * Une Reine qui est unique à une seule colonie.
  */
 public class Reine implements Fourmis {
     private final Colonie colonie;
@@ -15,11 +15,11 @@ public class Reine implements Fourmis {
     private final ArrayList<Ouvrier> theWorkers = new ArrayList<>();
 
     /**
-     * Instantiates a new Reine.
+     * Crée une nouvelle Reine. Cette reine créera sa propre colonie.
      *
-     * @param x the x
-     * @param y the y
-     * @param g the g
+     * @param x sa coordonnée X (ligne) où elle sera affecté sur le graphe
+     * @param y sa coordonnée Y (colonne) où elle sera affecté sur le graphe
+     * @param g le graphe où réside la reine
      */
     public Reine(int x, int y, Graphe g)
     {
@@ -36,9 +36,9 @@ public class Reine implements Fourmis {
 
 
     /**
-     * Give birth for Soldiers.
+     * La reine donne naissance a un ou des soldats.
      *
-     * @param amount the amount
+     * @param amount le nombre de soldat que l'on veut créer
      */
     public void giveBirthSoldier(int amount)
     {
@@ -55,9 +55,9 @@ public class Reine implements Fourmis {
     }
 
     /**
-     * Give birth for workers.
+     * La reine donne naissance a un ou des ouvriers.
      *
-     * @param amount the amount
+     * @param amount le nombre de soldat que l'on veut créer
      */
     public void giveBirthWorker(int amount)
     {
@@ -69,6 +69,13 @@ public class Reine implements Fourmis {
         }
     }
 
+    /**
+     * Mettre des parametres à la colonie dde la fourmilière
+     *
+     * @param evaporationParam le temps d'evaporation
+     * @param foodParam        la quantite de nourriture qu une fourmis peut stocker
+     * @param pheromoneParam   la quantite de pheromones qu'elle libere sur les cellules
+     */
     public void setParametreColonie(int evaporationParam, int foodParam, int pheromoneParam)
     {
         this.colonie.setFoodParam(foodParam);
@@ -77,7 +84,7 @@ public class Reine implements Fourmis {
     }
 
     /**
-     * Gets the soldiers.
+     * Recevoir la liste de tous les soldats que la reine aura fait naitre
      *
      * @return une liste de soldats
      */
@@ -85,20 +92,36 @@ public class Reine implements Fourmis {
         return theSoldiers;
     }
 
+    /**
+     * Recevoir la liste de tous les ouvriers que la reine aura fait naitre
+     *
+     * @return une liste d'ouveiers
+     */
     public ArrayList<Ouvrier> getTheWorkers() {
         return theWorkers;
     }
 
+    /**
+     * Mettre la coordonné x
+     */
     @Override
     public void setX(int x) {
         this.x = x;
     }
 
+    /**
+     * Mettre la coordonné y
+     */
     @Override
     public void setY(int y) {
         this.y = y;
     }
 
+    /**
+     * Recevoir sa colonie où elle réside.
+     *
+     * @return le numéro de sa colonie
+     */
     public Colonie getColonie() {
         return colonie;
     }

@@ -1,7 +1,7 @@
 package V2.javaTest;
-import V2.javaClass.AntFacade;
-import V2.javaClass.*;
 
+import V1.javaClass.AntFacade;
+import V1.javaClass.AntFacadeController;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
