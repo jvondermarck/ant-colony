@@ -8,7 +8,6 @@ public class Soldat extends FourmisMove {
     private final Graphe graphe;
     private static int nombreSoldat = 0;
     private final int numeroSoldat;
-    private Noeud positionActuel;
 
     /**
      * Crée un nouveau Soldat.

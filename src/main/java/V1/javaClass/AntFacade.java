@@ -15,7 +15,6 @@ public class AntFacade implements AntFacadeController {
     private Reine reine;
     private int width; // Largueur
     private int height; // Hauteur
-    private final long sleepingTime; // Vitesse de repos entre chaque seconde de durée
 
     private int xColonie, yColonie;
 
@@ -24,18 +23,8 @@ public class AntFacade implements AntFacadeController {
      */
     public AntFacade()
     {
-        this.sleepingTime = 500;
     }
 
-    /**
-     * Instantiates a new Ant facade où l'utilisateur indique sa propre vitesse de jeu.
-     *
-     * @param temps la vitesse auquel se déroulera le jeu (déplacement des fourmis)
-     */
-    public AntFacade(int temps)
-    {
-        this.sleepingTime = temps;
-    }
 
     @Override
     public void createGrid(int width, int height) {
@@ -87,28 +76,21 @@ public class AntFacade implements AntFacadeController {
     @Override
     public BitSet[][] play(int duration, boolean record)
     {
-        try{
-            for(int i = 0 ;i < duration; i++)
-            {
-                for(int y=0;y<height;y++){
-                    for(int x=0;x<width;x++)
-                    {
-                        this.grid[y][x].clear(2); // Effacer emplacement Soldat de duration-1
-                    }
-                }
-
-                for(Soldat s : this.theSoldiers){
-                    s.randomDirection(this.graphe); // On cherche toutes les aretes adjacentes
-                    this.grid[s.getX()][s.getY()].set(2); // On met en jaune la case
-                    s.recherchePositionActuel(s.getX(), s.getY()); // On cherche le numéro du noeud où il se trouve
-                    System.out.println(s); // On affiche sa position, son numéro de soldat, et sa colonie
-                }
-                Thread.sleep(this.sleepingTime);
-            }
-        }
-        catch (InterruptedException e)
+        for(int i = 0 ;i < duration; i++)
         {
-            e.printStackTrace();
+            for(int y=0;y<height;y++){
+                for(int x=0;x<width;x++)
+                {
+                    this.grid[y][x].clear(2); // Effacer emplacement Soldat de duration-1
+                }
+            }
+
+            for(Soldat s : this.theSoldiers){
+                s.randomDirection(this.graphe); // On cherche toutes les aretes adjacentes, et on lui attribue un nouveau Noeud
+                this.grid[s.getX()][s.getY()].set(2); // On met en jaune la case
+                //System.out.println(s); // On affiche sa position, son numéro de soldat, et sa colonie
+            }
+            //Thread.sleep(this.sleepingTime);
         }
         return this.grid;
     }

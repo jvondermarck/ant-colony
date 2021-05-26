@@ -6,63 +6,43 @@ import java.util.*;
  */
 public class Aretes {
 
-    private final int[][] tab;
-    private final Boolean[][] estObstacle;
-    private final int x;
-    private final int y;
-    private final ArrayList<Integer> listX = new ArrayList<>();
-    private final ArrayList<Integer> listY = new ArrayList<>();
-
     /**
-     * Instancie la classe Aretes. Elle permet de faire changer de noeud une fourmi.
-     *
-     * @param g le Graphe qui permet de prendre le tableau 2D du Graphe avec ses cellules
-     * @param x la coordonnée X (ligne) où se trouve la fourmis à déplacer
-     * @param y la coordonnée Y (colonne) où se trouve la fourmis à déplacer
+     * Qui permet de choisir aléatoirement un noeud
      */
-    public Aretes(Graphe g, int x, int y)
-    {
-        this.tab = g.getTaille();
-        this.estObstacle = g.getEstObstacle();
-        this.x = x;
-        this.y = y;
-        rechercheAretes();
-    }
+    static Random random = new Random();
 
     /**
      * Recherche aretes adjacentes en effuctant des tests de validités.
+     *
+     * @param g         le Graphe où se trouve la fourmis
+     * @param xPosition la position X où se trouve la fourmis
+     * @param yPosition la position Y où se trouve la fourmis
+     * @return le nouveau noeud où la fourmis se déplacera
      */
-    public void rechercheAretes()
+    public static Noeud rechercheAretes(Graphe g, int xPosition, int yPosition)
     {
-        int xTab = 0;
-        int yTab = 0;
+        ArrayList<Noeud> listNoeud = new ArrayList<>(); // On crée une list de Noeud adjacents susceptibles, où un Noeud sera tiré aléatoirement
 
-        for (int i = 0; i < tab.length; ++i)
-        {
-            for(int j = 0; j < tab[i].length; ++j)
-            {
-                if(tab[i][j] == tab[this.x][this.y]) // On va mettre dans 2 variables les coordonnées de X et Y
+        for(int x=xPosition-1; x<=xPosition+1; x++) // On parcous la ligne cellule-1 jusqu'a la cellule+1
+            for(int y=yPosition-1; y<=yPosition+1; y++) // On parcous la colonne cellule-1 jusqu'a la cellule+1
+                if(x == xPosition || y == yPosition) // On ne cherche pas des cellules qui se trouve à la diagonale de la position de la fourmis
                 {
-                    xTab = i;
-                    yTab = j;
-                }
-            }
-        }
-        for(int x=xTab-1; x<=xTab+1; x++) // On parcous la ligne cellule-1 jusqu'a la cellule+1
-            for(int y=yTab-1; y<=yTab+1; y++) // On parcous la colonne cellule-1 jusqu'a la cellule+1
-                if(x == xTab || y == yTab) // Ce qui fait un +, on cherche pas les cellules adjacentes sur la diagonales
-                {
-                    if(verficationNoeud(x, y)) // On vérfie qu'il n'est pas OutOfBands, qu'il est hors du graphe
-                        // On vérifie que la case n'est pas un obstacle
-                        if((tab[x][y] != tab[xTab][yTab]) && !estObstacle[x][y]) // On bloque la possibilité de se déplacer a la cellule de départ
-                            ajouterAretes(x, y);
+                    if(verficationNoeud(x, y, g.getRow(), g.getColumn())) // On vérfie qu'il n'est pas OutOfBands, qu'il est hors du graphe
+                    {
+                        // On vérifie que la case n'est pas un obstacle ET On bloque la possibilité de se déplacer a la cellule de départ
+                        if((g.rechercherNoeud(x,y) != g.rechercherNoeud(xPosition,yPosition)) && !g.getEstObstacle()[x][y])
+                            listNoeud.add(g.rechercherNoeud(x,y)); // On cherche les coordonnés X et Y pour avoir le noeud en question, et on l'ajoute dans la liste
+                    }
+
                 }
 
-
-        if(listX.isEmpty() && listY.isEmpty())
+        if(listNoeud.isEmpty()) // Si la liste est vide, on ajoute directement la coordonnée X et Y de la fourmi où elle se trouve actuellement.
         {
-            listX.add(xTab);
-            listY.add(yTab);
+            return g.rechercherNoeud(xPosition,yPosition);
+        } else // Si la liste est pas vide, on va tirer aléatoirement dans la liste de Noeud, un noeud au pif
+        {
+            int indexRand = random.nextInt(listNoeud.size()); // indexRand qui est l'index auquel on va prendre le nouveau noeud de la liste
+            return listNoeud.get(indexRand); // On retourne le noeud à l'index(indexRand) de la liste de Noeuds adjacents
         }
     }
 
@@ -73,39 +53,9 @@ public class Aretes {
      * @return boolean retourne true si le noeud ne dépasse pas le graphe et qu'il est conforme
      */
 
-    private boolean verficationNoeud(int xTab, int yTab) {
-        if(xTab<0 || xTab>=tab.length)
+    private static boolean verficationNoeud(int xTab, int yTab, int row, int column) {
+        if(xTab<0 || xTab>=row)
             return false;
-        return !(yTab<0 || yTab >= tab[0].length); // Si (false) = renvoie true et si (true) = renvoie false
-        // tab[0] = car on regarde les colonnes, non pas les lignes
-    }
-
-    /**
-     * ajouterAretes ajoute la cellule qui a validé tous les tests dans les deux listes, on ajoute les deux coordonnées dans deux listes différentes
-     * @param xTab la coordonnée X (ligne) à ajouter dans la listeX
-     * @param yTab la coordonnée Y (colonne) à ajouter dans la listeY
-     */
-
-    private void ajouterAretes(int xTab, int yTab) {
-        listX.add(xTab); // On ajoute la coordonnée de la ligne dans la 1er liste
-        listY.add(yTab); // On ajoute la coordonnée de la colonne dans la 2e liste
-    }
-
-    /**
-     * Recupère la listeX qui contient les coordonnées des lignes de toutes les cellules adjacentes.
-     *
-     * @return the list x
-     */
-    public ArrayList<Integer> getListX() {
-        return listX;
-    }
-
-    /**
-     * Recupère la listeX qui contient les coordonnées des colonnes de toutes les cellules adjacentes.
-     *
-     * @return the list y
-     */
-    public ArrayList<Integer> getListY() {
-        return listY;
+        return !(yTab<0 || yTab >= column); // Si (false) = renvoie true et si (true) = renvoie false
     }
 }

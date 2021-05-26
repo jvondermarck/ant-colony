@@ -1,14 +1,23 @@
 package V1.javaClass;
 import java.util.ArrayList;
-import java.util.Random;
 
 /**
  * La classe FourmisMove utilisé uniquement par des fourmis qui on le droit de se déplacer {@code Figure}.
  * <p>
  */
 public abstract class FourmisMove implements Fourmis {
-    private int x;
-    private int y;
+    /**
+     *  La position X de la fourmi sur la colonie
+     */
+    protected int x;
+    /**
+     * La position Y de la fourmi sur la colonie
+     */
+    protected int y;
+    /**
+     * Le noeud où se trouve la fourmis
+     */
+    protected Noeud positionActuel;
 
     /**
      * Définit la fourmi comme fourmi qui peut se déplacer et prend ses coordonnées.
@@ -23,27 +32,19 @@ public abstract class FourmisMove implements Fourmis {
 
     /**
      * Cette méthode cherche la future cellule où se déplacera la fourmi ouvrière.
-     * Et tire de facon aléatoire en prenant toutes les précautions possibles qui sont les obstacles, sa nouvelle destination
+     * Et tire de facon aléatoire en prenant toutes les précautions possibles qui sont les obstacles
      *
      * @param g le graphe où se trouve la fourmi.
      */
     public void randomDirection(Graphe g)
     {
-        Aretes aretes = new Aretes(g, this.x, this.y);
+        // On cherche le nouveau Noeud de la fourmis
+        this.positionActuel = Aretes.rechercheAretes(g, this.x, this.y);
 
-        Random rand = new Random();
-        ArrayList<Integer> listX;
-        ArrayList<Integer> listY;
-
-        listX = aretes.getListX();
-        listY = aretes.getListY();
-
-        int alea = rand.nextInt(listX.size());
-        int nextX = listX.get(alea);
-        int nextY = listY.get(alea);
-
-        this.x = nextX;
-        this.y = nextY;
+        // Grace au noeud trouvé, on cherche sa coordonnée X et Y, qui permettra de chercher son prochain Noeud, etc...
+        ArrayList<Integer> coord = g.rechercherCoord(this.positionActuel);
+        setX(coord.get(0)); // La coordonnée X se situe à l'indice 0 de la liste renvoyé
+        setY(coord.get(1)); // La coordonnée Y se situe à l'indice 1 de la liste renvoyé
     }
 
     /**

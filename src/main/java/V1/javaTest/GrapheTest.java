@@ -23,7 +23,7 @@ public class GrapheTest {
     @BeforeEach
     void setUp() {
         g = new Graphe(WIDTH, HEIGHT);
-        taille = g.getTaille();
+        //taille = g.getTaille();
     }
 
     @Test

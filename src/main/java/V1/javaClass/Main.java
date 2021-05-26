@@ -2,7 +2,7 @@ package V1.javaClass;
 public class Main {
     public static void main(String[] args)
     {
-        MyOwnTest(new AntFacade(500)); // Surcharger le constructeur pour augmenter le temps ou le diminuer
+        MyOwnTest(new AntFacade()); // Surcharger le constructeur pour augmenter le temps ou le diminuer
     }
 
     public static void MyOwnTest(AntFacadeController controller)

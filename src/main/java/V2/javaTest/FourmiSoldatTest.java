@@ -21,7 +21,7 @@ public class FourmiSoldatTest
     @BeforeEach
     void setUp()
     {
-        appli = new AntFacade(0);
+        appli = new AntFacade();
         appli.createGrid(WIDTH, HEIGHT);
         appli.createColony(0,0);
 
