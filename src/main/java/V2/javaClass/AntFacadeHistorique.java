@@ -113,7 +113,7 @@ public class AntFacadeHistorique {
         for(Ouvrier o : theWorkers)
         {
             fw.write("\t| " + o.toString() + "   \n");
-            fw.write("\t| " + o.noeudVoisin(o) + " \n");
+            fw.write("\t| " + o.noeudVoisin() + " \n");
         }
 
         fw.write("\t| -------------------------------------------------------------------------------------------------------------------------------------------------|\n");
@@ -124,7 +124,7 @@ public class AntFacadeHistorique {
         for(Soldat s : theSoldiers)
         {
             fw.write("\t|  " + s.toString() + " \n");
-            fw.write("\t| " + s.noeudVoisin(s) + " \n");
+            fw.write("\t| " + s.noeudVoisin() + " \n");
         }
         fw.write("\t| -------------------------------------------------------------------------------------------------------------------------------------------------|\n");
     }

@@ -145,7 +145,7 @@ public class AntFacade implements AntFacadeController {
                 if(this.theSoldiers != null)
                 {
                     for(Soldat s : this.theSoldiers){
-                        s.randomDirection(this.graphe, s, reine); // On cherche toutes les aretes adjacentes
+                        s.randomDirection(this.graphe); // On cherche toutes les aretes adjacentes
                         this.grid[s.getX()][s.getY()].set(2); // On met en jaune la case
                         s.recherchePositionActuel(s.getX(), s.getY()); // On cherche le numéro du noeud où il se trouve
                         System.out.println(s); // On affiche sa position, son numéro de soldat, et sa colonie
@@ -157,7 +157,7 @@ public class AntFacade implements AntFacadeController {
                     for(Ouvrier o : this.theWorkers){
                         if(o.isEtatRetour() && !o.doitRetravailler()) // Si elle retourne a la fourmiliere
                         {
-                            o.cheminRetour(o); // On fait le chemin inverse
+                            o.cheminRetour(); // On fait le chemin inverse
                             this.grid[o.getX()][o.getY()].set(4); // On met son état en mode fourmis retour
                             // On ne doit pas poser des pheromones sur la fourmiliere et sur la nourriture
                             if(!this.grid[xColonie][yColonie].get(4) && !graphe.getEstNourriture()[o.getX()][o.getY()])
@@ -166,10 +166,9 @@ public class AntFacade implements AntFacadeController {
                             }
                         } else
                         { // Si elle cherche de la nourritire
-                            o.randomDirection(this.graphe, o, reine); // On cherche toutes les aretes adjacentes
+                            o.randomDirection(this.graphe); // On cherche toutes les aretes adjacentes
                             this.grid[o.getX()][o.getY()].set(3); // On met en jaune la case
                         }
-                        o.recherchePositionActuel(o.getX(), o.getY()); // On cherche le numéro du noeud où il se trouve
                         System.out.println(o); // On affiche sa position, son numéro de soldat, et sa colonie
                     }
                 }

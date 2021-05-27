@@ -5,7 +5,7 @@ public class Main {
     {
         //utilisationInterface();
         //utilisationSansInterface();
-        MyOwnTest(new AntFacade(1000));
+        MyOwnTest(new AntFacade(300));
     }
 
     /*
@@ -16,7 +16,7 @@ public class Main {
     public static void MyOwnTest(AntFacadeController controller)
     {
         controller.createGrid( 6,6 );
-        controller.createColony( 3,3 );
+        controller.createColony( 2,2 );
 
 //        controller.putObstacle( 1,1 );
 //        controller.putObstacle( 3,0 );
@@ -30,14 +30,14 @@ public class Main {
         controller.putFood(1,4,15);
         controller.putFood(2,5,15);
         controller.putFood(5,3,15);
-        controller.setParameters(5,20,10);
+        controller.setParameters(1,20,10);
 
         controller.createWorkers(3);
         controller.createSoldiers( 3);
 
         Display w = new Display( 6, 6, 40 );
         controller.setAntFile("TraceFourmis.csv");
-        for( int i = 0; i < 30; i++)
+        for( int i = 0; i < 10; i++)
             w.update( controller.play( 1, true ) );
     }
 

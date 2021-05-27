@@ -22,7 +22,6 @@ public class GrapheTest {
     @BeforeEach
     void setUp() {
         g = new Graphe(WIDTH, HEIGHT);
-        taille = g.getTaille();
     }
 
     @Test
@@ -30,9 +29,9 @@ public class GrapheTest {
     {
         int num = 1;
 
-        for (int i=0; i<taille.length; i++)
+        for (int i=0; i<g.getRow(); i++)
         {
-            for (int j=0; j<taille[i].length; j++)
+            for (int j=0; j<g.getColumn(); j++)
             {
                 int actual = taille[i][j];
                 if (num == taille[i][j])

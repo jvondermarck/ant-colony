@@ -18,7 +18,7 @@ public class Main {
         controller.createSoldiers( 5 );
 
         Display w = new Display( 20, 20, 50 );
-        for( int i = 0; i < 30; i++)
+        for( int i = 0; i < 50; i++)
             w.update( controller.play( 1, false ) );
 
     }

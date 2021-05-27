@@ -2,6 +2,7 @@ package V2.javaTest;
 
 import V2.javaClass.AntFacade;
 import V2.javaClass.AntFacadeController;
+import V2.javaClass.Display;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -158,7 +159,6 @@ public class FourmiOuvrierTest {
             else
                 i++;
         }
-        System.out.println(i + " - " + j);
         // Retour
 
         bitsets = appli.play(1, false);

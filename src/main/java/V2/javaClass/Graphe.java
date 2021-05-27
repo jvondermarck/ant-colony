@@ -7,17 +7,16 @@ import java.util.ArrayList;
  */
 public class Graphe
 {
-    private int[][] taille; // Tableau où se trouve tous les emplacements des cellules du graphe (vide)
-    private Boolean[][] estObstacle; // Tableau où se trouve les emplacements des cellules qui contient des noeuds
-    private Boolean[][] estNourriture; // Tableau où se trouve les emplacements des cellules qui contient de la nourriture
-    private int[][] quantityFood; // Quandtite de nourriture dans chaque cellule
+    private boolean[][] estObstacle; // Tableau où se trouve les emplacements des cellules qui contient des noeuds
+    private boolean[][] estNourriture; // Tableau où se trouve les emplacements des cellules qui contient de la nourriture
+    private final int[][] quantityFood; // Quandtite de nourriture dans chaque cellule
     private int [][] quantityPheromone; // Quantité de pheromone dans chaque cellule
 
-    private int airGraphe; // Air du rectangle
-    private int longueur;
-    private int largueur;
+    private final int airGraphe; // Air du rectangle
+    private final int row; // Le nombre de lignes du graphe
+    private final int column; // Le nombre de colonnes du graphe
     private int nbrNoeudDansGraphe; // Pour savoir le nbr de Noeud total que présentent le graphe
-    private final ArrayList<Noeud> theNoeud = new ArrayList<>();
+    private final Noeud[][] theNoeud; // Un tableau de Noeud qui permet de savoir a une coordonné X et Y, le numéro du noeud
 
     /**
      * Crée un Graphe en fonction de sa longueur et largueur.
@@ -32,21 +31,15 @@ public class Graphe
         if(longueur<0 || largueur <0)
             throw new NumberFormatException("Votre valeur est négative, veuillez inscrire que des nombres positifs");
 
-        try {
-            this.longueur = longueur;
-            this.largueur = largueur;
-
-            this.taille = new int[longueur][largueur];
-            this.estObstacle = new Boolean[longueur][largueur];
-            this.estNourriture = new Boolean[longueur][largueur];
-            this.quantityFood = new int[longueur][largueur];
-            this.quantityPheromone = new int[longueur][largueur];
-            this.airGraphe = longueur*largueur;
-            creationEmplacementNoeud(); // On crée les emplacements de cellules sur le graphes (créer des cellules)
-        } catch(RuntimeException ex)
-        {
-            System.out.println("Le format entrée est incorect, veuillez réssayer.");
-        }
+        this.theNoeud = new Noeud[longueur][largueur];
+        this.estObstacle = new boolean[longueur][largueur];
+        this.estNourriture = new boolean[longueur][largueur];
+        this.quantityFood = new int[longueur][largueur];
+        this.quantityPheromone = new int[longueur][largueur];
+        this.airGraphe = longueur*largueur;
+        this.column = largueur;
+        this.row = longueur;
+        creationEmplacementNoeud(); // On crée les emplacements de cellules sur le graphes (créer des cellules)
     }
 
     /**
@@ -54,47 +47,21 @@ public class Graphe
      */
     public void creationEmplacementNoeud()
     {
-        int numeroCellule = 1;
-        for (int i = 0; i < taille.length; ++i)
+        int numeroCellule;
+        for (int i = 0; i < this.row; ++i)
         {
-            for(int j = 0; j < taille[i].length; ++j)
+            for(int j = 0; j < this.column; ++j)
             {
-                taille[i][j] = numeroCellule; // On ajoute sur cette cellule son numéro
-                estObstacle[i][j] = true; // On dit que cette cellule est pas encore prise par un noeud (vu qu'on est à l'étape de création seulement) = donc que c'est un obstacle
                 estNourriture[i][j] = false; // Au début on a aucune cellule qui contient de la nourriture
                 quantityFood[i][j] = 0; // On dit que au début on a une quantité de 0 comme nourriture
                 quantityPheromone[i][j] = 0; // On dit que au début on a une quantité de 0 comme pheromone
-                numeroCellule++; // On incrémente de 1 pour que la prochaine cellule aie un nbr différent de celle d'avant
 
                 // On va créer le Noeud
-                Noeud noeud = new Noeud(Graphe.this);
-                theNoeud.add(noeud);
+                numeroCellule =  i*this.column + j + 1; // Le numéro du noeud qu'on va attribuer au noeud
+                Noeud noeud = new Noeud(Graphe.this, numeroCellule); // On crée une instance du noeud a la cellule en question, avec son numéro
+                this.theNoeud[i][j] =  noeud; // On stock ce noeud dans un tableau de Noeud
             }
         }
-        System.out.println("-NOEUD CRÉES dans Graphe: " + Noeud.nombreNoeud);
-    }
-
-    /**
-     * On s'occupe d'attribuer à un noued, une cellule non prise sur le Graphe
-     * Cette méthode sera appelée dans la classe Noeud.
-     *
-     * @return l 'emplacement du noeud
-     */
-    public int getEmplacementNoeud()
-    {
-        for (int i = 0; i < taille.length; ++i)
-        {
-            for(int j = 0; j < taille[i].length; ++j)
-            {
-                if(estObstacle[i][j]) // Si faux (si cellule ne contient deja pas un noeud, alors on cree un nouveau emplacement)
-                {
-                    estObstacle[i][j] = false; // On modifie l'état de la cellule en disant qu'elle est occupé par un noeud, donc que c'est plus un obstacle
-                    this.nbrNoeudDansGraphe++; // On compte le nombre de case qu'on a dans notre graphe pour éviter qu'on créer + de noeud que de cellules
-                    return taille[i][j]; // On retourne l'emplacement du noeud (le numéro de cellule où se trouve le noeud)
-                }
-            }
-        }
-        return 0;
     }
 
     /**
@@ -106,19 +73,40 @@ public class Graphe
      */
     public Noeud rechercherNoeud(int x, int y)
     {
-        for (int[] ints : this.taille) {
-            for (int anInt : ints) {
-                if (anInt == taille[x][y]) {
-                    for (Noeud n : this.theNoeud) {
-                        int numero = n.getCoordonneNoeud();
-                        if (numero == taille[x][y]) {
-                            return n;
-                        }
-                    }
+        for (int i = 0; i < this.row; i++)
+        {
+            for(int j = 0; j < this.column; j++)
+            {
+                if (this.theNoeud[i][j] == this.theNoeud[x][y]) // On regarde si le numéro du Noeud correspond bien à celui qu'on cherche
+                {
+                    return this.theNoeud[x][y];
                 }
             }
         }
         return null;
+    }
+
+    /**
+     * Rechercher la coordonnée X et Y en ayant seulement comme information son Noeud
+     *
+     * @param n le noeud où se trouve la fourmis
+     * @return une liste d'entier avec en indice 0 sa coordonné X et sa coordonné Y en indice 1
+     */
+    public ArrayList<Integer> rechercherCoord(Noeud n)
+    {
+        ArrayList<Integer> coord = new ArrayList<>();
+        for (int i = 0; i < this.row; i++)
+        {
+            for(int j = 0; j < this.column; j++)
+            {
+                if(n == rechercherNoeud(i,j)) // On va mettre dans 2 variables les coordonnées de X et Y
+                {
+                    coord.add(i);
+                    coord.add(j);
+                }
+            }
+        }
+        return coord;
     }
 
     /**
@@ -149,20 +137,11 @@ public class Graphe
     }
 
     /**
-     * Récuperer le tableau d'entiers à deux dimensions qui est le Graphe en lui-meme
-     *
-     * @return un tableau d'entiers à deux dimensions
-     */
-    public int[][] getTaille() {
-        return taille;
-    }
-
-    /**
      * Récuperer le tableau de boolean à deux dimensions qui indique où se trouve les obstacles
      *
      * @return the boolean [ ] [ ]
      */
-    public Boolean[][] getEstObstacle() {
+    public boolean[][] getEstObstacle() {
         return estObstacle;
     }
 
@@ -171,7 +150,7 @@ public class Graphe
      *
      * @return the boolean [ ] [ ]
      */
-    public Boolean[][] getEstNourriture() {
+    public boolean[][] getEstNourriture() {
         return estNourriture;
     }
 
@@ -212,21 +191,21 @@ public class Graphe
     }
 
     /**
-     * Gets longueur du graphe.
+     * Retourne le nombre de ligne du graphe
      *
-     * @return the longueur
+     * @return le nombre de ligne du graphe
      */
-    public int getLongueur() {
-        return longueur;
+    public int getRow() {
+        return row;
     }
 
     /**
-     * Gets largueur du graphe.
+     * Retourne le nombre de colonne du graphe
      *
-     * @return the largueur du graphe
+     * @return le nombre de colonne du graphe
      */
-    public int getLargueur() {
-        return largueur;
+    public int getColumn() {
+        return column;
     }
 
     /**
@@ -243,7 +222,7 @@ public class Graphe
      *
      * @param estNourriture le tableau boolean à deux dimensions concernant la nourriture
      */
-    public void setEstNourriture(Boolean[][] estNourriture) {
+    public void setEstNourriture(boolean[][] estNourriture) {
         this.estNourriture = estNourriture;
     }
 
@@ -252,7 +231,7 @@ public class Graphe
      *
      * @param estObstacle le tableau boolean à deux dimensions concernant les obstacles
      */
-    public void setEstObstacle(Boolean[][] estObstacle) {
+    public void setEstObstacle(boolean[][] estObstacle) {
         this.estObstacle = estObstacle;
     }
 }

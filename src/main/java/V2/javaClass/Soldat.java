@@ -5,10 +5,8 @@ package V2.javaClass;
  */
 public class Soldat extends MoveSoldat {
     private final Colonie colonie;
-    private final Graphe graphe;
     private static int nombreSoldat = 0;
-    private final int numeroSoldat;
-    private Noeud positionActuel;
+    private Graphe g;
 
     /**
      * Crée un nouveau Soldat.
@@ -21,9 +19,9 @@ public class Soldat extends MoveSoldat {
     public Soldat(int x, int y, Colonie colonie, Graphe graphe) {
         super(x,y);
         this.colonie = colonie;
-        this.graphe = graphe;
         nombreSoldat = nombreSoldat+1;
         this.numeroSoldat = nombreSoldat;
+        this.g = graphe;
         recherchePositionActuel(x, y);
     }
 
@@ -35,7 +33,7 @@ public class Soldat extends MoveSoldat {
      */
     public void recherchePositionActuel(int ligne, int colonne)
     {
-        positionActuel = graphe.rechercherNoeud(ligne, colonne);
+        this.positionActuel = this.g.rechercherNoeud(ligne, colonne);
     }
 
     /**
