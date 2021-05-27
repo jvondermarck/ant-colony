@@ -6,10 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="47cd6ad5-e8f1-43de-aae4-65f52ffc0fb8" name="Default Changelist" comment="V1 complètement refait">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/V1/javaClass/Aretes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/V2/essai/Aretes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/V1/javaClass/FourmisMove.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/V1/javaClass/FourmisMove.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/V1/javaClass/Reine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/V1/javaClass/Reine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/V1/javaTest/AretesTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/V1/javaTest/AretesTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/V1/javaClass/Graphe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/V1/javaClass/Graphe.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/V1/javaClass/Noeud.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/V1/javaClass/Noeud.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/V1/javaTest/NoeudTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/V1/javaTest/NoeudTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,15 +83,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -161,8 +158,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.FourmiSoldatTest" />
-        <item itemvalue="JUnit.FourmiMoveTest" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.FourmiMoveTest" />
         <item itemvalue="JUnit.SoldatTest" />
         <item itemvalue="JUnit.FourmiMoveTest.randomDirectionV2" />
       </list>
@@ -239,14 +236,10 @@
       <workItem from="1622037710168" duration="10977000" />
       <workItem from="1622052463786" duration="1912000" />
       <workItem from="1622054786653" duration="12610000" />
-      <workItem from="1622097152888" duration="8807000" />
-    </task>
-    <task id="LOCAL-00012" summary="MAJ DS Iteration">
-      <created>1620316441838</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1620316441838</updated>
+      <workItem from="1622097152888" duration="8830000" />
+      <workItem from="1622122330679" duration="121000" />
+      <workItem from="1622129843846" duration="319000" />
+      <workItem from="1622133601914" duration="1274000" />
     </task>
     <task id="LOCAL-00013" summary="MAJ de zéro">
       <created>1620768709548</created>
@@ -584,7 +577,14 @@
       <option name="project" value="LOCAL" />
       <updated>1622067464153</updated>
     </task>
-    <option name="localTasksCounter" value="61" />
+    <task id="LOCAL-00061" summary="V1 complètement refait">
+      <created>1622109170977</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1622109170978</updated>
+    </task>
+    <option name="localTasksCounter" value="62" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

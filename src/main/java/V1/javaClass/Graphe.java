@@ -6,12 +6,10 @@ import java.util.ArrayList;
  */
 public class Graphe
 {
-    private final int[][] numeroNoeud; // Tableau où se trouve tous les numéros de chaque cellule (chaque noeud)
     private boolean[][] estObstacle; // Tableau où se trouve les emplacements des cellules qui contient des noeuds
-
     private final int airGraphe; // Air du rectangle
     private int nbrNoeudDansGraphe; // Pour savoir le nbr de Noeud total que présentent le graphe
-    private final ArrayList<Noeud> theNoeud = new ArrayList<>();
+    private final Noeud[][] theNoeud; // Un tableau de Noeud qui permet de savoir a une coordonné X et Y, le numéro du noeud
 
     private final int row; // Le nombre de lignes du graphe
     private final int column; // Le nombre de colonnes du graphe
@@ -29,8 +27,8 @@ public class Graphe
         if(longueur<0 || largueur <0)
             throw new NumberFormatException("Votre valeur est négative, veuillez inscrire que des nombres positifs");
 
-        this.numeroNoeud = new int[longueur][largueur];
         this.estObstacle = new boolean[longueur][largueur];
+        this.theNoeud = new Noeud[longueur][largueur];
         this.airGraphe = longueur*largueur;
         this.column = largueur;
         this.row = longueur;
@@ -43,44 +41,17 @@ public class Graphe
      */
     public void creationEmplacementNoeud()
     {
-        int numeroCellule = 1;
+        int numeroCellule;
         for (int i = 0; i < this.row; ++i)
         {
             for(int j = 0; j < this.column; ++j)
             {
-                numeroNoeud[i][j] = numeroCellule; // On ajoute sur cette cellule son numéro
-                numeroCellule++; // On incrémente de 1 pour que la prochaine cellule aie un nbr différent de celle d'avant
-                estObstacle[i][j] = true; // On dit que cette cellule est pas encore prise par un noeud (vu qu'on est à l'étape de création seulement) = donc que c'est un obstacle
-
                 // On va créer le Noeud
-                Noeud noeud = new Noeud(Graphe.this);
-                theNoeud.add(noeud);
+                numeroCellule =  i*this.column + j + 1; // Le numéro du noeud qu'on va attribuer au noeud
+                Noeud noeud = new Noeud(Graphe.this, numeroCellule); // On crée une instance du noeud a la cellule en question, avec son numéro
+                this.theNoeud[i][j] =  noeud; // On stock ce noeud dans un tableau de Noeud
             }
         }
-        //System.out.println("-NOEUD CRÉES dans Graphe: " + Noeud.nombreNoeud);
-    }
-
-    /**
-     * On s'occupe d'attribuer à un noued, une cellule non prise sur le Graphe
-     * Cette méthode sera appelée dans la classe Noeud.
-     *
-     * @return l'emplacement du noeud (qui se placera sur le graphe)
-     */
-    public int getEmplacementNoeud()
-    {
-        for (int i = 0; i < this.row; ++i)
-        {
-            for(int j = 0; j < this.column; ++j)
-            {
-                if(estObstacle[i][j]) // Si faux (si cellule ne contient deja pas un noeud, alors on cree un nouveau emplacement)
-                {
-                    estObstacle[i][j] = false; // On modifie l'état de la cellule en disant qu'elle est occupé par un noeud, donc que c'est plus un obstacle
-                    this.nbrNoeudDansGraphe++; // On compte le nombre de case qu'on a dans notre graphe pour éviter qu'on créer + de noeud que de cellules
-                    return numeroNoeud[i][j]; // On retourne l'emplacement du noeud (le numéro de cellule où se trouve le noeud)
-                }
-            }
-        }
-        return 0;
     }
 
     /**
@@ -96,16 +67,9 @@ public class Graphe
         {
             for(int j = 0; j < this.column; j++)
             {
-                if (numeroNoeud[i][j] == numeroNoeud[x][y]) // On regarde si le numéro du Noeud correspond bien à celui qu'on cherche
+                if (this.theNoeud[i][j] == this.theNoeud[x][y]) // On regarde si le numéro du Noeud correspond bien à celui qu'on cherche
                 {
-                    for (Noeud n : this.theNoeud) // On parcours chaque noeud qu'on a dans le graphe
-                    {
-                        int numero = n.getCoordonneNoeud();
-                        if (numero == numeroNoeud[x][y])
-                        {
-                            return n;
-                        }
-                    }
+                    return this.theNoeud[x][y];
                 }
             }
         }
@@ -144,15 +108,6 @@ public class Graphe
     public void mettreObstacle(int row, int column)
     {
         this.estObstacle[row][column] = true;
-    }
-
-    /**
-     * Récuperer le tableau d'entiers à deux dimensions qui est le Graphe en lui-meme
-     *
-     * @return un tableau d'entiers à deux dimensions
-     */
-    public int[][] getNumeroNoeud() {
-        return numeroNoeud;
     }
 
     /**

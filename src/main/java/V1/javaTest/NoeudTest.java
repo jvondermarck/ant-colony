@@ -44,7 +44,7 @@ public class NoeudTest {
     {
         try
         {
-            Noeud n = new Noeud(g);
+            Noeud n = new Noeud(g,6);
             fail("Noeud crée hors champs du graphe");
         }
         catch (IndexOutOfBoundsException exception)
