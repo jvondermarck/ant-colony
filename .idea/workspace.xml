@@ -6,8 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="47cd6ad5-e8f1-43de-aae4-65f52ffc0fb8" name="Default Changelist" comment="V1 complètement refait">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/V1/javaClass/Aretes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/V1/javaClass/Aretes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/V1/javaClass/Aretes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/V2/essai/Aretes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/V1/javaClass/FourmisMove.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/V1/javaClass/FourmisMove.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/V1/javaClass/Reine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/V1/javaClass/Reine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/V1/javaTest/AretesTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/V1/javaTest/AretesTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,7 +76,7 @@
       <module name="fourmis" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="V1.javaClass.*" />
+          <option name="PATTERN" value="V2.essai.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -82,13 +84,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -234,14 +238,8 @@
       <workItem from="1621978617824" duration="1395000" />
       <workItem from="1622037710168" duration="10977000" />
       <workItem from="1622052463786" duration="1912000" />
-      <workItem from="1622054786653" duration="12562000" />
-    </task>
-    <task id="LOCAL-00011" summary="Creation Diagramme Sequence">
-      <created>1620290228593</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1620290228593</updated>
+      <workItem from="1622054786653" duration="12610000" />
+      <workItem from="1622097152888" duration="8807000" />
     </task>
     <task id="LOCAL-00012" summary="MAJ DS Iteration">
       <created>1620316441838</created>
@@ -579,7 +577,14 @@
       <option name="project" value="LOCAL" />
       <updated>1622066927074</updated>
     </task>
-    <option name="localTasksCounter" value="60" />
+    <task id="LOCAL-00060" summary="V1 complètement refait">
+      <created>1622067464153</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1622067464153</updated>
+    </task>
+    <option name="localTasksCounter" value="61" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
