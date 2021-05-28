@@ -1,16 +1,22 @@
 package V2.javaClass;
 
+import java.util.ArrayList;
+import java.util.Random;
+
 /**
  * La classe Soldat qui se promène dans le Graphe en évitant des obstacles.
  */
-public class Soldat extends MoveSoldat {
-    private final Colonie colonie;
-    private static int nombreSoldat = 0;
-    private final Graphe g;
-    /**
-     * The Numero soldat.
-     */
-    private final int numeroSoldat;
+public class Soldat extends FourmisMove {
+    private final Colonie colonie; // La colonie de la fourmi
+    private static int nombreSoldat = 0; // Le nombre de soldat
+    private int x; // La position X de la fourmi sur la colonie
+    private int y; // La position Y de la fourmi sur la colonie
+    private final Graphe g; // Le graphe g de la fourmis
+    private Noeud positionActuel; // Le noeud où se trouve la fourmis
+    private final ArrayList<Noeud> listNoeud = new ArrayList<>(); // On crée une list de Noeud adjacents susceptibles, où un Noeud sera tiré aléatoirement
+    private boolean record; // Record sert a mettre dans la liste de Noeud le noeud qui est un obstacle, il sert pour le fichier de rapport
+    private final Random random = new Random(); //  Qui permet de choisir aléatoirement un noeud dans une liste de Noeuds adjacents à la fourmi.
+    private final int numeroSoldat; // The Numero soldat.
 
     /**
      * Crée un nouveau Soldat.
@@ -21,7 +27,6 @@ public class Soldat extends MoveSoldat {
      * @param graphe  le graphe où le soldat réside
      */
     public Soldat(int x, int y, Colonie colonie, Graphe graphe) {
-        super(x,y, graphe);
         this.colonie = colonie;
         nombreSoldat = nombreSoldat+1;
         this.numeroSoldat = nombreSoldat;
@@ -37,7 +42,22 @@ public class Soldat extends MoveSoldat {
      */
     public void recherchePositionActuel(int ligne, int colonne)
     {
-        setPositionActuel(this.g.rechercherNoeud(ligne, colonne));
+        this.positionActuel = (this.g.rechercherNoeud(ligne, colonne));
+    }
+
+    /**
+     * Permet grace à une liste de Noeud adjcacents à la fourmis, de trouver un nouvelle emplacement
+     */
+    public void randomDirection()
+    {
+        // On cherche le nouveau Noeud de la fourmis
+        rechercheAretes(this.x, this.y, this.g);
+        this.positionActuel = randomNoeud();
+
+        // Grace au noeud trouvé, on cherche sa coordonnée X et Y, qui permettra de chercher son prochain Noeud, etc...
+        ArrayList<Integer> coord = g.rechercherCoord(this.positionActuel);
+        setX(coord.get(0)); // La coordonnée X se situe à l'indice 0 de la liste renvoyé
+        setY(coord.get(1)); // La coordonnée Y se situe à l'indice 1 de la liste renvoyé
     }
 
     /**
@@ -49,7 +69,58 @@ public class Soldat extends MoveSoldat {
         return "Soldat n°" + numeroSoldat + "  | " + this.colonie.toString() + " | " + getPositionActuel();
     }
 
+    /**
+     * Gets numero soldat.
+     *
+     * @return the numero soldat
+     */
     public int getNumeroSoldat() {
         return numeroSoldat;
+    }
+
+    /**
+     * Gets position actuel.
+     *
+     * @return the position actuel
+     */
+    public Noeud getPositionActuel() {
+        return positionActuel;
+    }
+
+    /**
+     * Sets position actuel.
+     *
+     * @param positionActuel the position actuel
+     */
+    public void setPositionActuel(Noeud positionActuel) {
+        this.positionActuel = positionActuel;
+    }
+
+    /**
+     * Recevoir la coordonnée X (ligne).
+     *
+     * @return the x
+     */
+    public int getX() {
+        return this.x;
+    }
+
+    /**
+     * Recevoir la coordonnée Y (colonne).
+     *
+     * @return the y
+     */
+    public int getY() {
+        return y;
+    }
+
+    @Override
+    public void setX(int x) {
+        this.x = x;
+    }
+
+    @Override
+    public void setY(int y) {
+        this.y = y;
     }
 }

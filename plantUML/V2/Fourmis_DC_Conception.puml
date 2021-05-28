@@ -147,31 +147,17 @@ package "Diagramme de Classe de Conception V2 " <<Folder>> {
       +getColonie(): Colonie
   }
 
-  interface FourmisMove <<interface>> #lightgreen;line:green {
-      +randomDirection()
-      +getX(x:Integer);
-      +getY(y:Integer);
-  }
+  abstract class FourmisMove #lightgreen;line:green {
+     -listNoeud: ArrayList<Noeud>
+     -random: Random
+     -record: boolean
 
-  abstract class MoveSoldat #gold;line:goldenrod {
-      #x: Integer
-      #y: Integer
-      #graphe: Graphe
-      #positionActuel: Noeud
-      #numeroSoldat: Integer
-      -listNoeud: ArrayList<Noeud>
-      -random: Random
-      -record: boolean
-
-      <<Create>>MoveSoldat(x:Integer, y:Integer, g:Graphe)
       +randomDirection()
       -rechercheAretes(x:Integer, y:Integer)
       -verficationNoeud(x:Integer, y:Integer)
-      +noeudVoisin(): String
-      +getX(x:Integer);
-      +getY(y:Integer);
-      +setX(x:Integer);
-      +setY(y:Integer);
+      +randomNoeud()
+      +noeudVoisin(o:Object, g:Graphe): String
+      +getListNoeud(): ArrayList<Noeud>
   }
 
     class Soldat #mediumpurple;line:darkviolet {
@@ -184,76 +170,86 @@ package "Diagramme de Classe de Conception V2 " <<Folder>> {
     }
 
   abstract class MoveOuvrier #gold;line:goldenrod  {
-       #x: Integer
-       #y: Integer
-       #graphe: Graphe
-       #positionActuel: Noeud
-       #numeroOuvrier: Integer
+       -x: Integer
+       -y: Integer
+       -graphe: Graphe
+       -positionActuel: Noeud
        -listNoeud: ArrayList<Noeud>
-       #listNoeudRetour: ArrayList<Noeud>
-       #aVisite[*][*]: Boolean
-       #etatRetour:Boolean
-       #quantityFoodTaken: Integer
-       #colonie: Colonie
-       #positionActuel: Noeud
+       -listNoeudRetour: ArrayList<Noeud>
+       -aVisite[*][*]: Boolean
+       -etatRetour:Boolean
+       -quantityFoodTaken: Integer
+       -colonie: Colonie
+       -positionActuel: Noeud
        -random: Random
        -record: boolean
        -estObstacle: Boolean[*][*]
 
-      <<Create>>MoveOuvrier(x:Integer, y:Integer)
-      {redefined}+randomDirection()
-      -rechercheAretes(x:Integer, y:Integer)
-      -verficationNoeud(x:Integer, y:Integer)
+      <<Create>>MoveOuvrier(x:Integer, y:Integer, c:Colonie, g:Graphe)
+      +randomDirection()
       +cheminRetour()
       -paramOuvrier()
       -rechercheBestPheromone(x:Integer, y:Integer)
       -rechercheAucunPheromone(droitPassage: Boolean):Boolean
       -rechercheToutVisite(ouvrier:Ouvrier): Boolean
-      +noeudVoisin(): String
+      +isEtatRetour(): Boolean
+      +getListNoeudRetour(): ArrayList<Noeud>
+      +getQuantityFoodTaken(): Integer
+      +getPositionActuel(): Noeud
+      +setListNoeudRetour()
+      +setaVisite(x:Integer, y:Integer, bool:Boolean)
+      +setEtatRetour(etatRetour: Boolean)
+      +setQuantityFoodTaken(quantityFoodTaken: Integer)
+      +setPositionActuel(position:Noeud)
       +getX(): Integer
       +getY(): Integer
-      {redefined}+setX(x:Integer)
-      {redefined}+setY(y:Integer)
+      +setX(x:Integer)
+      +setY(y:Integer)
   }
 
    class Ouvrier #mediumpurple;line:darkviolet {
         -{static} nombreOuvrier = 0: Integer
+        -numeroWorker: Integer
+        -colonie: Colonie
+        -g: Graphe
 
         <<Create>>Ouvrier(x:Integer, y:Integer, c:Colonie, g:Graphe)
         +recherchePositionActuel(ligne:Integer, colonne:Integer)
         +doitRetravailler(): Boolean
         {redefined} +toString(): String
+        +getNumeroWorker()
     }
 }
 
 
 AntFacadeController <|.. AntFacade : <<implements>>
-AntFacade .up.|> Graphe : <<instantiate>>
+AntFacade ..|> Graphe : <<instantiate>>
 AntFacade ..|> Reine : <<instantiate>>
 
-Graphe "1" *--> "1..*" Noeud : contient
+Graphe "1" *-right-> "1..*" Noeud : contient
 
 Reine "1" *-> "1" Colonie : appartient
 Noeud "1" *--> "0..*\t" Fourmis : comporte
 
 Fourmis <|.. Reine : <<implements>>
-Fourmis <|.. FourmisMove : <<extends>>
+Fourmis <|.. FourmisMove : <<implements>>
 
-FourmisMove <|.. MoveOuvrier : \n\n<<implements>>
-FourmisMove <|.. MoveSoldat : <<implements>>
+FourmisMove <|.. MoveOuvrier : \n\n<<extends>>
+FourmisMove <|.. Soldat : \n\n<<extends>>
 
-MoveSoldat <|-- Soldat : <<extends>>
 MoveOuvrier <|-- Ouvrier : <<extends>>
 Reine "1" o--> "1..*" Soldat : donne naissance
 Reine "1" o--> "1..*" Ouvrier : donne naissance
 
-AntFacade ..> Soldat : <<use>>
-AntFacade ..> Ouvrier : <<use>>
-MoveSoldat ..> Reine : <<use>>
-MoveOuvrier ..> Reine : <<use>>
 Ouvrier ..> Colonie : <<use>>
 Soldat ..> Colonie : <<use>>
+Ouvrier ..> Graphe : <<use>>
+Soldat ..> Graphe : <<use>>
+FourmisMove ..> Noeud : <<use>>
+FourmisMove ..> Graphe : <<use>>
+MoveOuvrier ..> Noeud : <<use>>
+MoveOuvrier ..> Graphe : <<use>>
 AntFacade "1" o--> "1" AntFacadeHistorique : sauvegarde
-AntFacadeHistorique .right.> Soldat : <<use>>
-AntFacadeHistorique .right.> Ouvrier : <<use>>
+AntFacadeHistorique ..> Soldat : <<use>>
+AntFacadeHistorique ..> Ouvrier : <<use>>
 @enduml

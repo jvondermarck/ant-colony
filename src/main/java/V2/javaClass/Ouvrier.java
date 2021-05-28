@@ -1,5 +1,6 @@
 package V2.javaClass;
 
+
 /**
  * The type Ouvrier.
  */

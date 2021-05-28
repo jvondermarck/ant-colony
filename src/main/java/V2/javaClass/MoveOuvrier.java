@@ -4,53 +4,21 @@ import java.util.ArrayList;
 import java.util.Random;
 
 /**
- * The type Move ouvrier qui s'occupe de faire déplacer la fourmi
+ * The type Move ouvrier qui s'occupe de faire déplacer la fourmi ouvriere avec des criteres bien spéciaux (phéromones et noeud deja visite)
  */
 public abstract class MoveOuvrier extends FourmisMove {
 
-    /**
-     * La coordonné X (ligne)
-     */
-    private int x;
-    /**
-     *  La coordonné Y (colonne)
-     */
-    private int y;
-
+    private int x; // La coordonné X (ligne)
+    private int y; // La coordonné Y (colonne)
     private final boolean[][] estObstacle; //Tableau boolean 2D pour savoir si une cellule est un obstacle
-    /**
-     * Le graphe g.
-     */
-    private Graphe g;
-
+    private final Graphe g; // Le graphe g.
     private ArrayList<Noeud> listNoeud = new ArrayList<>(); // On crée une list de Noeud adjacents susceptibles, où un Noeud sera tiré aléatoirement
-
-    /**
-     * La liste de noeuds que la fourmi devra utiliser pour retrouver son chemin
-     */
-    private ArrayList<Noeud> listNoeudRetour = new ArrayList<>();
-    /**
-     * True : si il a deja visité une cellule
-     */
-    private boolean[][] aVisite;
-    /**
-     * Savoir si elle est a l'aller ou retour
-     */
-    private boolean etatRetour;
-    /**
-     * Quantité de nourriture prise par la fourmis
-     */
-    private int quantityFoodTaken;
-    /**
-     * La colonie
-     */
-    private final Colonie colonie;
-
-    /**
-     * Le noeud où se trouve la fourmis
-     */
-    private Noeud positionActuel;
-
+    private final ArrayList<Noeud> listNoeudRetour = new ArrayList<>(); // La liste de noeuds que la fourmi devra utiliser pour retrouver son chemin
+    private final boolean[][] aVisite; // True : si il a deja visité une cellule
+    private boolean etatRetour; // Savoir si elle est a l'aller ou retour
+    private int quantityFoodTaken; // Quantité de nourriture prise par la fourmis
+    private final Colonie colonie; // La colonie
+    private Noeud positionActuel; // Le noeud où se trouve la fourmis
     private final Random random = new Random(); //Qui permet de choisir aléatoirement un noeud dans une liste de Noeuds adjacents à la fourmi.
     private boolean record; // Record sert a mettre rechercheAretes() le noeud qui est un obstacle, on l'ajoutera dans la liste de Noeud pour le fichier en .CSV
 
@@ -62,6 +30,7 @@ public abstract class MoveOuvrier extends FourmisMove {
      * @param colonie the colonie
      * @param g       the graphe
      */
+
     public MoveOuvrier(int x, int y, Colonie colonie, Graphe g) {
         setX(x);
         setY(y);
@@ -112,7 +81,6 @@ public abstract class MoveOuvrier extends FourmisMove {
             listNoeudRetour.remove(listNoeudRetour.size() - 1);
         }
     }
-
 
     /**
      * Methode qui sert uniquement a la fourmis Ouvriere en fonction des noeuds visités, et des phéromones

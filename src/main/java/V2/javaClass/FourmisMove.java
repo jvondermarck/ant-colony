@@ -46,11 +46,6 @@ public abstract class FourmisMove implements Fourmis {
         {
             listNoeud.add(positionActuel);
         }
-//        } else // Si la liste est pas vide, on va tirer aléatoirement dans la liste de Noeud --> un noeud bien précis
-//        {
-//            int indexRand = random.nextInt(listNoeud.size()); // indexRand qui est l'index auquel on va prendre le nouveau noeud de la liste
-//            return listNoeud.get(indexRand); // On retourne la nouvelle position du Nooeud à l'index(-->indexRand) de la liste de Noeuds adjacents
-//        }
     }
 
     public Noeud randomNoeud()
