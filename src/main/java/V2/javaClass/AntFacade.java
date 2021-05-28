@@ -4,6 +4,9 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.BitSet;
 
+/**
+ * AntFacade qui implémente AntFacadeController
+ */
 public class AntFacade implements AntFacadeController {
     private BitSet[][] grid;
     private Graphe graphe;
@@ -17,12 +20,24 @@ public class AntFacade implements AntFacadeController {
     private final long sleepingTime; // Vitesse de repos entre chaque seconde de durée
 
     private int xColonie, yColonie;
+    /**
+     * La classe qui servira à creer le fichier en .CSV.
+     */
     AntFacadeHistorique antHisto;
 
+    /**
+     * Instantiates a new Ant facade.
+     */
     public AntFacade()
     {
         this.sleepingTime = 500;
     }
+
+    /**
+     * Instantiates a new Ant facade.
+     *
+     * @param temps the temps
+     */
     public AntFacade(int temps)
     {
         this.sleepingTime = temps;
@@ -145,10 +160,9 @@ public class AntFacade implements AntFacadeController {
                 if(this.theSoldiers != null)
                 {
                     for(Soldat s : this.theSoldiers){
-                        s.randomDirection(this.graphe); // On cherche toutes les aretes adjacentes
-                        this.grid[s.getX()][s.getY()].set(2); // On met en jaune la case
-                        s.recherchePositionActuel(s.getX(), s.getY()); // On cherche le numéro du noeud où il se trouve
-                        System.out.println(s); // On affiche sa position, son numéro de soldat, et sa colonie
+                        s.randomDirection(); // On cherche toutes les aretes adjacentes
+                        this.grid[s.getX()][s.getY()].set(2);
+                        //System.out.println(s); // On affiche sa position, son numéro de soldat, et sa colonie
                     }
                 }
 
@@ -165,11 +179,11 @@ public class AntFacade implements AntFacadeController {
                                 graphe.getQuantityPheromone()[o.getX()][o.getY()] = reine.getColonie().getPheromoneParam(); // On pose des phéromones
                             }
                         } else
-                        { // Si elle cherche de la nourritire
-                            o.randomDirection(this.graphe); // On cherche toutes les aretes adjacentes
+                        { // Si elle cherche de la nourriture
+                            o.randomDirection(); // On cherche toutes les aretes adjacentes
                             this.grid[o.getX()][o.getY()].set(3); // On met en jaune la case
                         }
-                        System.out.println(o); // On affiche sa position, son numéro de soldat, et sa colonie
+                        //System.out.println(o); // On affiche sa position, son numéro de soldat, et sa colonie
                     }
                 }
 
@@ -212,6 +226,6 @@ public class AntFacade implements AntFacadeController {
 
     @Override
     public void setAntFile(String antLogFile) {
-        antHisto = new AntFacadeHistorique(width, height, grid, antLogFile);
+        antHisto = new AntFacadeHistorique(width, height, grid, antLogFile, graphe);
     }
 }

@@ -22,9 +22,7 @@ loop i<taille.length
     loop i<taille[i].length
         ' ---------NOEUD--------------
             create "n:Noeud"
-            graphe --> "n:Noeud" : <<Create>> Noeud(g)
-            graphe <- "n:Noeud"++ #FFBBBB: getEmplacementNoeud(n)
-                return noeud
+            graphe --> "n:Noeud" : <<Create>> Noeud(g, numNoeud)
     end
 end
 return

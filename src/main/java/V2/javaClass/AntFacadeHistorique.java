@@ -8,6 +8,9 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.BitSet;
 
+/**
+ * The type Ant facade historique.
+ */
 public class AntFacadeHistorique {
 
     private final int width;
@@ -16,13 +19,23 @@ public class AntFacadeHistorique {
     private FileWriter fw;
     private File fLog;
     private int durationPlay;
+    private Graphe graphe;
 
-    public AntFacadeHistorique(int width, int height, BitSet[][] grid, String antLogFile)
+    /**
+     * Instantiates a new Ant facade historique.
+     *
+     * @param width      the width
+     * @param height     the height
+     * @param grid       the grid
+     * @param antLogFile the ant log file
+     */
+    public AntFacadeHistorique(int width, int height, BitSet[][] grid, String antLogFile, Graphe graphe)
     {
         this.grid = grid;
         this.height = height;
         this.width = width;
         this.durationPlay = 0;
+        this.graphe = graphe;
 
         try {
             this.fLog = new File(antLogFile);
@@ -36,6 +49,11 @@ public class AntFacadeHistorique {
         }
     }
 
+    /**
+     * Start file.
+     *
+     * @throws IOException the io exception
+     */
     public void startFile() throws IOException {
         if(this.durationPlay == 0)
         {
@@ -82,6 +100,14 @@ public class AntFacadeHistorique {
         }
     }
 
+    /**
+     * Iteration.
+     *
+     * @param grid        the grid
+     * @param theWorkers  the the workers
+     * @param theSoldiers the the soldiers
+     * @throws IOException the io exception
+     */
     public void iteration(BitSet[][] grid, ArrayList<Ouvrier> theWorkers, ArrayList<Soldat> theSoldiers) throws IOException {
         fw = new FileWriter(fLog,true);
         durationPlay++;
@@ -113,7 +139,7 @@ public class AntFacadeHistorique {
         for(Ouvrier o : theWorkers)
         {
             fw.write("\t| " + o.toString() + "   \n");
-            fw.write("\t| " + o.noeudVoisin() + " \n");
+            fw.write("\t| " + o.noeudVoisin(o, graphe) + " \n");
         }
 
         fw.write("\t| -------------------------------------------------------------------------------------------------------------------------------------------------|\n");
@@ -124,11 +150,16 @@ public class AntFacadeHistorique {
         for(Soldat s : theSoldiers)
         {
             fw.write("\t|  " + s.toString() + " \n");
-            fw.write("\t| " + s.noeudVoisin() + " \n");
+            fw.write("\t| " + s.noeudVoisin(s, graphe) + " \n");
         }
         fw.write("\t| -------------------------------------------------------------------------------------------------------------------------------------------------|\n");
     }
 
+    /**
+     * Close file.
+     *
+     * @throws IOException the io exception
+     */
     public void closeFile() throws IOException {
         fw.close();
     }

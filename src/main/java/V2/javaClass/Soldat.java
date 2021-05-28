@@ -6,7 +6,11 @@ package V2.javaClass;
 public class Soldat extends MoveSoldat {
     private final Colonie colonie;
     private static int nombreSoldat = 0;
-    private Graphe g;
+    private final Graphe g;
+    /**
+     * The Numero soldat.
+     */
+    private final int numeroSoldat;
 
     /**
      * Crée un nouveau Soldat.
@@ -17,7 +21,7 @@ public class Soldat extends MoveSoldat {
      * @param graphe  le graphe où le soldat réside
      */
     public Soldat(int x, int y, Colonie colonie, Graphe graphe) {
-        super(x,y);
+        super(x,y, graphe);
         this.colonie = colonie;
         nombreSoldat = nombreSoldat+1;
         this.numeroSoldat = nombreSoldat;
@@ -33,7 +37,7 @@ public class Soldat extends MoveSoldat {
      */
     public void recherchePositionActuel(int ligne, int colonne)
     {
-        this.positionActuel = this.g.rechercherNoeud(ligne, colonne);
+        setPositionActuel(this.g.rechercherNoeud(ligne, colonne));
     }
 
     /**
@@ -42,25 +46,10 @@ public class Soldat extends MoveSoldat {
      */
     @Override
     public String toString() {
-        return "Soldat n°" + numeroSoldat + "  | " + this.colonie.toString() + " | " + this.positionActuel;
+        return "Soldat n°" + numeroSoldat + "  | " + this.colonie.toString() + " | " + getPositionActuel();
     }
 
-    /**
-     * Avoir le numero du soldat
-     *
-     * @return the numero soldat
-     */
     public int getNumeroSoldat() {
         return numeroSoldat;
     }
-
-    /**
-     * On retourne le Noeud où se trouve le soldat
-     *
-     * @return la position du noeud
-     */
-    public Noeud getPositionActuel() {
-        return positionActuel;
-    }
-
 }

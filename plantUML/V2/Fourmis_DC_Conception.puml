@@ -22,21 +22,21 @@ package "Diagramme de Classe de Conception V2 " <<Folder>> {
   }
 
   class Graphe #lightcoral;line.bold {
-      -taille[*][*]: Integer
       -estObstacle[*][*]: Boolean
       -estNourriture[*][*]: Boolean
       -quantityFood[*][*]: Integer
       -quantityPheromone[*][*]: Integer
       -airGraphe:Integer
-      -longueur: Integer
-      -largueur: Integer
+      -row: Integer
+      -column: Integer
       -nbrNoeudDansGraphe:Integer
-      -theNoeud: ArrayList<Noeud>
+      -theNoeud[*][*]: Noeud
 
       <<Create>>Graphe(longueur, largueur)
       +CreationEmplacement();
-      +getEmplacementNoeud(): Integer
       +rechercherNoeud(x:Integer, y:Integer) : Noeud
+      +rechercherCoord(n: Noeud)
+      +gestionNourriture(x:Integer, y:Integer, c:Colonie): Integer
       +mettreObstacle(row:Integer, colomn:Integer)
       +mettreNourriture(row:Integer, colomn:Integer, quantity: Integer)
       +getAirGraphe(): Integer
@@ -75,8 +75,9 @@ package "Diagramme de Classe de Conception V2 " <<Folder>> {
       -coordonneeNoeud: Integer
       +{static} nombreNoeud: 0: Integer
 
-      <<Create>>Noeud(g:Graphe)
+      <<Create>>Noeud(g:Graphe, numeroNoeud:Integer)
       +getCoordonneNoeud()
+      +setCoordonneNoeud(coord:Integer)
       +toString(): String
   }
 
@@ -114,39 +115,11 @@ package "Diagramme de Classe de Conception V2 " <<Folder>> {
         -fw: FileWriter
 
         <<Create>>AntFacadeHistorique(width:Integer,
-          height:Integer, grid:BitSet[*][*], antLogFile:String)
+         height:Integer, grid:BitSet[*][*], antLogFile:String)
         +startFile()
         +iteration(grid:BitSet[*][*], theWorkers:ArrayList<Ouvrier>,
          theSoldiers:ArrayList<Soldat>)
         +closeFile()
-    }
-
-  class Aretes #burlywood {
-      -tab[*][*]: Integer
-      -estObstacle[*][*]: Boolean
-      -x: Integer
-      -y: Integer
-      -listX: ArrayList<Integer>
-      -listY: ArrayList<Integer>
-      -graphe: Graphe
-
-      <<Create>>Aretes(g:Graphe, x:Integer, y:Integer)
-      +rechercheAretes()
-      +ajouterAretes(x:Integer, y:Integer)
-      +verficationNoeud(x:Integer, y:Integer):Boolean
-      +noeudVoisin(o:Object): String
-      +getListX(): ArrayList<Integer>
-      +getListY(): ArrayList<Integer>
-  }
-
-  class AretesOuvrier #burlywood {
-        -aVisite[*][*]: Boolean
-
-        <<Create>>AretesOuvrier(g:Graphe, x:Integer, y:Integer)
-        +paramOuvrier(ouvrier:Ouvrier)
-        +rechercheBestPheromone(x:Integer, y:Integer): Boolean
-        +rechercheAucunPheromone(droitPassage: Boolean):Boolean
-        +rechercheToutVisite(ouvrier:Ouvrier): Boolean
     }
 
   interface Fourmis <<interface>> #lightgreen;line:green {
@@ -160,6 +133,7 @@ package "Diagramme de Classe de Conception V2 " <<Folder>> {
       -colonie: Colonie
       -graphe: Graphe
       -theSoldiers: ArrayList<Soldat>
+      -theWorkers: ArrayList<Ouvrier>
 
       <<Create>>Reine(x:Integer, y:Integer, g:Graphe)
       +giveBirth(amount:Integer)
@@ -168,84 +142,87 @@ package "Diagramme de Classe de Conception V2 " <<Folder>> {
       foodParam:Integer, pheromoneParam:Integer)
       +getTheSoldiers(): ArrayList<Soldat>
       +getTheWorkers(): ArrayList<Ouvrier>
-      {abstract} +setX(x:Integer)
-      {abstract} +setY(y:Integer)
+      +setX(x:Integer)
+      +setY(y:Integer)
       +getColonie(): Colonie
   }
 
   interface FourmisMove <<interface>> #lightgreen;line:green {
-      +randomDirection(graphe: Graphe)
+      +randomDirection()
       +getX(x:Integer);
       +getY(y:Integer);
   }
 
   abstract class MoveSoldat #gold;line:goldenrod {
-      -x: Integer
-      -y: Integer
+      #x: Integer
+      #y: Integer
+      #graphe: Graphe
+      #positionActuel: Noeud
+      #numeroSoldat: Integer
+      -listNoeud: ArrayList<Noeud>
+      -random: Random
+      -record: boolean
 
-      <<Create>>MoveSoldat(x:Integer, y:Integer)
-      {abstract} +randomDirection(graphe: Graphe, o: Object, r: Reine)
-      +noeudVoisin(soldat:Soldat): String
+      <<Create>>MoveSoldat(x:Integer, y:Integer, g:Graphe)
+      +randomDirection()
+      -rechercheAretes(x:Integer, y:Integer)
+      -verficationNoeud(x:Integer, y:Integer)
+      +noeudVoisin(): String
       +getX(x:Integer);
       +getY(y:Integer);
-      {abstract} +setX(x:Integer);
-      {abstract} +setY(y:Integer);
+      +setX(x:Integer);
+      +setY(y:Integer);
   }
+
+    class Soldat #mediumpurple;line:darkviolet {
+        -{static} nombreSoldat = 0: Integer
+        -colonie: Colonie
+
+        <<Create>>Soldat(x:Integer, y:Integer, c:Colonie, g:Graphe)
+        +recherchePositionActuel(ligne:Integer, colonne:Integer)
+        {redefined} +toString(): String
+    }
 
   abstract class MoveOuvrier #gold;line:goldenrod  {
-      -x: Integer
-      -y: Integer
-      -estObstacle: Boolean[*][*]
+       #x: Integer
+       #y: Integer
+       #graphe: Graphe
+       #positionActuel: Noeud
+       #numeroOuvrier: Integer
+       -listNoeud: ArrayList<Noeud>
+       #listNoeudRetour: ArrayList<Noeud>
+       #aVisite[*][*]: Boolean
+       #etatRetour:Boolean
+       #quantityFoodTaken: Integer
+       #colonie: Colonie
+       #positionActuel: Noeud
+       -random: Random
+       -record: boolean
+       -estObstacle: Boolean[*][*]
 
       <<Create>>MoveOuvrier(x:Integer, y:Integer)
-      {abstract} +randomDirection(graphe: Graphe, o: Object, r: Reine)
-      +cheminRetour(ouvrier:Ouvrier)
-      +noeudVoisin(ouvrier:Ouvrier): String
-      +getX(x:Integer);
-      +getY(y:Integer);
-      {abstract} +setX(x:Integer);
-      {abstract} +setY(y:Integer);
-  }
-
-  class Soldat #mediumpurple;line:darkviolet {
-      -colonie: Colonie
-      -graphe: Graphe
-      -positionActuel: Noeud
-      -{static} nombreSoldat = 0: Integer
-      -numeroSoldat: Integer
-
-      <<Create>>Soldat(x:Integer, y:Integer, c:Colonie, g:Graphe)
-      +recherchePositionActuel(ligne:Integer, colonne:Integer)
-      {abstract} +toString(): String
+      {redefined}+randomDirection()
+      -rechercheAretes(x:Integer, y:Integer)
+      -verficationNoeud(x:Integer, y:Integer)
+      +cheminRetour()
+      -paramOuvrier()
+      -rechercheBestPheromone(x:Integer, y:Integer)
+      -rechercheAucunPheromone(droitPassage: Boolean):Boolean
+      -rechercheToutVisite(ouvrier:Ouvrier): Boolean
+      +noeudVoisin(): String
+      +getX(): Integer
+      +getY(): Integer
+      {redefined}+setX(x:Integer)
+      {redefined}+setY(y:Integer)
   }
 
    class Ouvrier #mediumpurple;line:darkviolet {
-        -aVisite[*][*]: Boolean
-        -listXRetour: ArrayList<Integer>
-        -listYRetour: ArrayList<Integer>
-        -etatRetour:Boolean
-        -quantityFoodTaken: Integer
-        -colonie: Colonie
-        -graphe: Graphe
-        -positionActuel: Noeud
         -{static} nombreOuvrier = 0: Integer
-        -numeroOuvrier: Integer
-        -xColinie: Integer
-        -yColonie: Integer
 
         <<Create>>Ouvrier(x:Integer, y:Integer, c:Colonie, g:Graphe)
         +recherchePositionActuel(ligne:Integer, colonne:Integer)
         +doitRetravailler(): Boolean
-
-        {abstract} +toString(): String
-        +getaVisite(): Boolean[*][*]
-        +setaVisite(aVisite: Boolean[*][*])
-        +getListXRetour(): ArrayList<Integer>
-        +getListYRetour(): ArrayList<Integer>
-        +isEtatRetour(): Boolean
-        +isEtatRetour(): Noeud
-        +setEtatRetour(etatRetour: Boolean)
-        +setQuantityFoodTaken(quantityFoodTaken: Boolean)
+        {redefined} +toString(): String
     }
 }
 
@@ -262,10 +239,6 @@ Noeud "1" *--> "0..*\t" Fourmis : comporte
 Fourmis <|.. Reine : <<implements>>
 Fourmis <|.. FourmisMove : <<extends>>
 
-Aretes <|-- AretesOuvrier : <<extends>>
-Aretes <.. MoveSoldat : <<use>>
-AretesOuvrier <.. MoveOuvrier : <<use>>
-
 FourmisMove <|.. MoveOuvrier : \n\n<<implements>>
 FourmisMove <|.. MoveSoldat : <<implements>>
 
@@ -276,9 +249,6 @@ Reine "1" o--> "1..*" Ouvrier : donne naissance
 
 AntFacade ..> Soldat : <<use>>
 AntFacade ..> Ouvrier : <<use>>
-Aretes .up.> Graphe : <<use>>
-AretesOuvrier .up.> Graphe : <<use>>
-AretesOuvrier ..> Ouvrier : <<use>>
 MoveSoldat ..> Reine : <<use>>
 MoveOuvrier ..> Reine : <<use>>
 Ouvrier ..> Colonie : <<use>>
@@ -286,6 +256,4 @@ Soldat ..> Colonie : <<use>>
 AntFacade "1" o--> "1" AntFacadeHistorique : sauvegarde
 AntFacadeHistorique .right.> Soldat : <<use>>
 AntFacadeHistorique .right.> Ouvrier : <<use>>
-Aretes ..> Ouvrier : <<use>>
-Aretes ..> Soldat : <<use>>
 @enduml

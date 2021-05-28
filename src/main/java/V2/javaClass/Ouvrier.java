@@ -1,96 +1,80 @@
 package V2.javaClass;
 
-
+/**
+ * The type Ouvrier.
+ */
 public class Ouvrier extends MoveOuvrier {
-    protected final Colonie colonie;
-    protected static int nombreOuvrier = 0;
+    /**
+     * The constant nombreOuvrier.
+     */
+    private static int nombreOuvrier = 0;
+    /**
+     * Le numéro de l'ouvrier
+     */
+    private final int numeroWorker;
+    private final Colonie colonie;
+    private final Graphe g;
 
-    private Graphe g;
-
+    /**
+     * Instantiates a new Ouvrier.
+     *
+     * @param x       the x
+     * @param y       the y
+     * @param colonie the colonie
+     * @param graphe  the graphe
+     */
     public Ouvrier(int x, int y, Colonie colonie, Graphe graphe)
     {
-        super(x,y,colonie);
-        this.colonie = colonie;
+        super(x,y,colonie, graphe);
         nombreOuvrier = nombreOuvrier+1;
         this.numeroWorker = nombreOuvrier;
-        this.quantityFoodTaken = 0;
+        this.colonie = colonie;
         this.g = graphe;
         recherchePositionActuel(x, y);
-
-
-        this.etatRetour = false;
-
-        this.aVisite = new boolean[graphe.getRow()][graphe.getColumn()];
-        for (int i = 0; i < graphe.getRow(); ++i)
-        {
-            for(int j = 0; j < graphe.getColumn(); ++j)
-            {
-                aVisite[i][j] = false; // On dit au début qu'il a rien visité
-            }
-        }
-
-        this.aVisite[x][y] = true;
-        this.listNoeudRetour.add(g.rechercherNoeud(x,y));
-
-        //this.aVisite[2][3] = true;
+        setaVisite(x, y, true); // Apres son premier déplacement, il ne pourra pas retourner à sa colonie vu qu'il peut pas aller sur les noeuds deja visite
+        setListNoeudRetour(g.rechercherNoeud(x,y)); // Et on ajoute directement dans une liste, la liste de noeud qui servira à l'ouvriere de connaitre son chemin
     }
 
     /**
      * On recherche le numéro du Noeud où se trouve le soldat
-     * @param ligne numéro de la ligne où se trouve le noeud
+     *
+     * @param ligne   numéro de la ligne où se trouve le noeud
      * @param colonne numéro de la colonne où se trouve le noeud
      */
     public void recherchePositionActuel(int ligne, int colonne)
     {
-        positionActuel = this.g.rechercherNoeud(ligne, colonne);
+        setPositionActuel(this.g.rechercherNoeud(ligne, colonne));
     }
 
-    // Pour savoir si sa liste est vide ca veut dire qu'elle est a la fourmiliere, donc elle doit repartir chercher a manger
+    /**
+     * Si la liste est vide, ca veut dire qu'elle est a la fourmiliere, donc elle doit repartir chercher a manger
+     *
+     * @return the boolean
+     */
     public boolean doitRetravailler()
     {
-        if(listNoeudRetour.isEmpty()) // Si liste est vide
+        if(getListNoeudRetour().isEmpty()) // Si liste est vide
         {
-            etatRetour = false; // Elle va denouveau travailler et rechercher à manger
-            this.colonie.setQuantityFood(quantityFoodTaken);
+            setEtatRetour(false); // Elle va denouveau travailler et rechercher à manger
+            this.colonie.setQuantityFood(getQuantityFoodTaken());
             for (int i = 0; i < g.getRow(); ++i)
             {
                 for(int j = 0; j < g.getColumn(); ++j)
                 {
-                    aVisite[i][j] = false; // On dit au début qu'il a rien visité
+                    setaVisite(i, j, false); // On dit au début qu'il a rien visité
                 }
             }
             // Comme on recommence tout a zero, on re-initialise tout
-            aVisite[x][y] = true;
-            this.listNoeudRetour.add(g.rechercherNoeud(x,y));
-            quantityFoodTaken = 0;
-            System.out.println(colonie); // On affiche l'état de la colonie
+            setaVisite(getX(), getY(), true);
+            setListNoeudRetour(g.rechercherNoeud(getX(),getY()));
+            setQuantityFoodTaken(0);
         }
-        return !etatRetour;
+        return !isEtatRetour();
     }
 
     @Override
     public String toString() {
-        return "Ouvrier n°" + numeroWorker + " | " + this.colonie.toString() + " | " + this.positionActuel + " | Transporte : " + quantityFoodTaken + " kg de nourriture | Retourne à la colonie : " + etatRetour;
-    }
-
-    public void setaVisite(boolean[][] aVisite) {
-        this.aVisite = aVisite;
-    }
-
-    public boolean isEtatRetour() {
-        return etatRetour;
-    }
-
-    public void setEtatRetour(boolean etatRetour) {
-        this.etatRetour = etatRetour;
-    }
-
-    public void setQuantityFoodTaken(int quantityFoodTaken) {
-        this.quantityFoodTaken = quantityFoodTaken;
-    }
-
-    public Noeud getPositionActuel() {
-        return positionActuel;
+        return "Ouvrier n°" + numeroWorker + " | " + this.colonie.toString() + " | " + getPositionActuel() + " | Transporte : " + getQuantityFoodTaken() + " kg de nourriture | Retourne à la colonie : " + isEtatRetour();
     }
 
     public int getNumeroWorker() {

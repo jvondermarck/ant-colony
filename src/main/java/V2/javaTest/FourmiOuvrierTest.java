@@ -169,7 +169,6 @@ public class FourmiOuvrierTest {
         while (!bitsets[0][0].get(4))
         {
             BitSet actual = bitsets[k][l];
-            System.out.println(bitsets[k][l].get(4));
             boolean ouvrierPresent = actual.get(4);
             assertTrue(ouvrierPresent,
                     "bitsets[" + k + "][" + l + "] = " + bitsets[k][l]);

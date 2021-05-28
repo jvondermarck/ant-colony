@@ -39,7 +39,7 @@ public class FourmiDeplacementTest {
     @Test
     void test1()
     {
-        ouvrier.randomDirection(graphe);
+        ouvrier.randomDirection();
         Noeud expected = graphe.rechercherNoeud(1,1);
         ouvrier.recherchePositionActuel(ouvrier.getX(), ouvrier.getY());
         Noeud actual = ouvrier.getPositionActuel();
@@ -53,7 +53,7 @@ public class FourmiDeplacementTest {
         Noeud actual = null;
         for(int i=0; i<2; i++)
         {
-            ouvrier.randomDirection(graphe);
+            ouvrier.randomDirection();
             ouvrier.recherchePositionActuel(ouvrier.getX(), ouvrier.getY());
             actual = ouvrier.getPositionActuel();
         }

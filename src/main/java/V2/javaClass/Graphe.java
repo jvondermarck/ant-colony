@@ -137,6 +137,29 @@ public class Graphe
     }
 
     /**
+     * Gestion nourriture int.
+     *
+     * @param x       la coordonné X ligne
+     * @param y       la coordonné Y ligne
+     * @param colonie La colonie de la fourmis
+     * @return un entier qui détient la quantité de nourriture que la fourmi va prendre sur elle
+     */
+    public int gestionNourriture(int x, int y, Colonie colonie)
+    {
+        int quantityFoodTaken; // Quantité de nourriture que la fourmi va prendre à une coordonnée X et Y
+        if (quantityFood[x][y] >= colonie.getFoodParam()) // Si ya + a manger que la fourmis va prendre
+        {
+            quantityFoodTaken = colonie.getFoodParam(); // On prend que la quantite de nourriture qu'on lui a indiqué
+            quantityFood[x][y] -= colonie.getFoodParam();
+        } else {
+            quantityFoodTaken = quantityFood[x][y]; // On prend la nourriture qu'il reste, donc sa sera inferieur a ce qu'elle doit prendre de base
+            quantityFood[x][y] = 0; // On met a 0 le nbr de nourriture vu que la fourmis a tout pris
+            estNourriture[x][y] = false; // Vu que la quantité de noruriture est null, on dit que la case ne contient plus de nourriture
+        }
+        return quantityFoodTaken;
+    }
+
+    /**
      * Récuperer le tableau de boolean à deux dimensions qui indique où se trouve les obstacles
      *
      * @return the boolean [ ] [ ]
@@ -218,7 +241,7 @@ public class Graphe
     }
 
     /**
-     * Mettre de ka nourriture a une cellule donné
+     * Mettre de la nourriture a une cellule donné
      *
      * @param estNourriture le tableau boolean à deux dimensions concernant la nourriture
      */
