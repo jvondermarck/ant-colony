@@ -4,11 +4,10 @@ import java.util.ArrayList;
 import java.util.Random;
 
 /**
- * L'interface FourmisMove
- *
+ * La classe Abstraite FourmisMove qui recherche tous les noeuds adjacents à la fourmis en faisant gaffe aux obstacles
  */
 
-public abstract class FourmisMove implements Fourmis {
+public abstract class FourmisMove implements IFourmisMove {
 
     private final ArrayList<Noeud> listNoeud = new ArrayList<>(); // On crée une list de Noeud adjacents susceptibles, où un Noeud sera tiré aléatoirement
     private boolean record; // Record sert a mettre dans la liste de Noeud le noeud qui est un obstacle, il sert pour le fichier de rapport
@@ -49,15 +48,9 @@ public abstract class FourmisMove implements Fourmis {
     }
 
     public Noeud randomNoeud()
-    {
-        if(listNoeud.isEmpty()) // Si la liste est vide, on ajoute directement la coordonnée X et Y de la fourmi où elle se trouve actuellement.
-        {
-            return null;
-        } else // Si la liste est pas vide, on va tirer aléatoirement dans la liste de Noeud --> un noeud bien précis
-        {
-            int indexRand = random.nextInt(listNoeud.size()); // indexRand qui est l'index auquel on va prendre le nouveau noeud de la liste
-            return listNoeud.get(indexRand); // On retourne la nouvelle position du Nooeud à l'index(-->indexRand) de la liste de Noeuds adjacents
-        }
+    {   // Si la liste est pas vide, on va tirer aléatoirement dans la liste de Noeud --> un noeud bien précis
+        int indexRand = random.nextInt(listNoeud.size()); // indexRand qui est l'index auquel on va prendre le nouveau noeud de la liste
+        return listNoeud.get(indexRand); // On retourne la nouvelle position du Nooeud à l'index(-->indexRand) de la liste de Noeuds adjacents
     }
 
     /**
@@ -138,5 +131,3 @@ public abstract class FourmisMove implements Fourmis {
         return listNoeud;
     }
 }
-
-// Comme cette interface extends l'interface Fourmis, on est pas obligé de remettre les méthodes de l'interface Fourmis

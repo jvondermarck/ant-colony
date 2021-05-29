@@ -59,4 +59,22 @@ public class NoeudTest {
         }
     }
 
+    @Test
+    @DisplayName("getCoordonneNoeud()")
+    void getCoordonneNoeud()
+    {
+        Noeud n = g.rechercherNoeud(0,2);
+        assertEquals(3, n.getCoordonneNoeud());
+    }
+
+    @Test
+    @DisplayName("setCoordonneNoeud()")
+    void setCoordonneNoeud()
+    {
+        Noeud n = g.rechercherNoeud(0,2);
+        n.setCoordonneNoeud(67);
+        assertEquals(67, n.getCoordonneNoeud());
+    }
+
+
 }

@@ -5,6 +5,7 @@ import java.util.Random;
 
 /**
  * The type Move ouvrier qui s'occupe de faire déplacer la fourmi ouvriere avec des criteres bien spéciaux (phéromones et noeud deja visite)
+ * Elle reprend les noeuds adjacents trouvés grace à la classe FourmisMove, et MoveOuvrier applique ses propres critères de déplacement pour la fourmi ouvrière
  */
 public abstract class MoveOuvrier extends FourmisMove {
 
@@ -20,7 +21,7 @@ public abstract class MoveOuvrier extends FourmisMove {
     private final Colonie colonie; // La colonie
     private Noeud positionActuel; // Le noeud où se trouve la fourmis
     private final Random random = new Random(); //Qui permet de choisir aléatoirement un noeud dans une liste de Noeuds adjacents à la fourmi.
-    private boolean record; // Record sert a mettre rechercheAretes() le noeud qui est un obstacle, on l'ajoutera dans la liste de Noeud pour le fichier en .CSV
+    private boolean record; // Record sert a mettre dans rechercheAretes() le noeud qui est un obstacle, on l'ajoutera exeptionnelement dans la liste de Noeud pour le fichier en .CSV
 
     /**
      * Instantiates a new Move ouvrier.
@@ -30,7 +31,6 @@ public abstract class MoveOuvrier extends FourmisMove {
      * @param colonie the colonie
      * @param g       the graphe
      */
-
     public MoveOuvrier(int x, int y, Colonie colonie, Graphe g) {
         setX(x);
         setY(y);
@@ -44,7 +44,7 @@ public abstract class MoveOuvrier extends FourmisMove {
     {
         // On cherche le nouveau Noeud de la fourmis
         rechercheAretes(this.x, this.y, g); // On recherche toutes les cellules adjacentes à la fourmi.
-        this.listNoeud = getListNoeud();
+        this.listNoeud = getListNoeud(); // On récupère la liste de Noeud adjacents trouvés dans la classe FourmisMove
         this.positionActuel = paramOuvrier(); // On cherche le ou les cellules adjacentes en fonction des cellules deja visites et des pheromones
 
         // Grace au noeud trouvé, on cherche sa coordonnée X et Y, qui permettra de chercher son prochain Noeud, etc...
@@ -56,26 +56,27 @@ public abstract class MoveOuvrier extends FourmisMove {
         if (g.getEstNourriture()[this.x][this.y]) // Si au nouvelle emplacement de la fourmis il y a de la nourriture
         {
             etatRetour = true; // Elle va devoir retourner sur la fourmilière ramener la nourriture
-            quantityFoodTaken = g.gestionNourriture(this.x, this.y, this.colonie); // Cette méthode va renvoyer la quantité de nourriture de la fourmi.
+            quantityFoodTaken = g.gestionNourriture(this.x, this.y, this.colonie); // Cette méthode va renvoyer la quantité de nourriture de la fourmi qu'elle va transporter.
         } else {
             listNoeudRetour.add(positionActuel); // Si l'ouvrier est pas sur la cellule où se trouve de la nourriture, on ajoute ses coordonnés dans la liste pour le chemin retour
         }
     }
 
     /**
-     * Chemin retour qui fait le chemin inverse que la fourmi a emprunté au cours de sa recherche de nourriture
+     * Chemin retour qui fait le chemin inverse que la fourmi a emprunté au cours de sa recherche de nourriture.
+     * Cette méthode est utilisé quand la fourmi a trouvé de la nourriture, et qu'elle doit retrouver les emplacements des Noeuds qu'elle aura parcouru
      */
     public void cheminRetour() {
-        ArrayList<Integer> coord = g.rechercherCoord(listNoeudRetour.get(listNoeudRetour.size() - 1));
+        ArrayList<Integer> coord = g.rechercherCoord(listNoeudRetour.get(listNoeudRetour.size() - 1)); // Vu qu'on retourne en arrière, on prend le Noeud antérieur
         int coordListXRetour = coord.get(0);
         int coordListYRetour = coord.get(1);
 
         // On vérifie que la future coordonnée de retour n'est pas un obstacle
-        if (etatRetour && !this.estObstacle[coordListXRetour][coordListYRetour]) // Si il retourne bien à la base
+        if (etatRetour && !this.estObstacle[coordListXRetour][coordListYRetour]) // Si il retourne bien à la colonie
         {
             this.x = coordListXRetour; // on prend sa derniere coordonnée enrengistré
             this.y = coordListYRetour;
-            this.positionActuel = listNoeudRetour.get(listNoeudRetour.size() - 1);
+            this.positionActuel = listNoeudRetour.get(listNoeudRetour.size() - 1); // On enrengistre le Noeud où elle se trouve
 
             // On va supprimer le dernier élement de la liste de Noeud
             listNoeudRetour.remove(listNoeudRetour.size() - 1);
@@ -89,12 +90,12 @@ public abstract class MoveOuvrier extends FourmisMove {
      */
     public Noeud paramOuvrier()
     {
-        boolean droitDePasssage = rechercheToutVisite(); // si true (à déja visités toutes les cellules adjacentes), on autorise a se deplacer aléatoirement
+        boolean droitDePasssage = rechercheToutVisite(); // si true (à déja visités toutes les cellules adjacentes), on l'autorise a se deplacer aléatoirement à nouveau
 
-        // Si rechercheAucunPheromone = false = ca veut dire que ya au moins une cellule qui contient au min 1 pheromone, donc on execute cette condition
+        // Si rechercheAucunPheromone = false = ca veut dire que ya au moins une cellule qui contient au minimum 1 pheromone, donc on execute cette condition
         if (!rechercheAucunPheromone(droitDePasssage))
         {
-            rechercheBestPheromone(droitDePasssage);
+            rechercheBestPheromone(droitDePasssage); // On recherche le Noeud en question qui contient le meilleure taux de phéromones
         }
         else { // Si il n'y a aucun phéromone ou que c'est que des cellules déja visités :
             for (int i = 0; i < listNoeud.size(); i++)
@@ -102,7 +103,7 @@ public abstract class MoveOuvrier extends FourmisMove {
                 ArrayList<Integer> coord = g.rechercherCoord(listNoeud.get(i));
                 int xCoord = coord.get(0);
                 int yCoord = coord.get(1);
-                if (aVisite[xCoord][yCoord]) // Si on a visité la cellule
+                if (aVisite[xCoord][yCoord] && !droitDePasssage) // Si on a visité la cellule et Si droitPassage = true --> on veut pas enlever tous les noeuds avec list.Remove, vu qu'il a tout visite et qu'il a le droit de se déplacer dans tte les cellules adjacentes
                 {
                     listNoeud.remove(i); // On supprime la coordonnée de X du tableau pour pas que la fourmis se deplace sur cette cellule
                     i = 0; // On recomence la boucle vu qu'on supprime un élement de la liste avec la variable i
@@ -193,38 +194,85 @@ public abstract class MoveOuvrier extends FourmisMove {
         // si on a 4 cellules adjacentes, et que les 4 ont deja étaient visités, on renvoie true
     }
 
+    /**
+     * Is etat retour boolean.
+     *
+     * @return the boolean
+     */
     public boolean isEtatRetour() {
         return etatRetour;
     }
 
+    /**
+     * Gets list noeud retour.
+     *
+     * @return the list noeud retour
+     */
     public ArrayList<Noeud> getListNoeudRetour() {
         return listNoeudRetour;
     }
 
+    /**
+     * Gets quantity food taken.
+     *
+     * @return the quantity food taken
+     */
     public int getQuantityFoodTaken() {
         return quantityFoodTaken;
     }
 
+    /**
+     * Gets position actuel.
+     *
+     * @return the position actuel
+     */
     public Noeud getPositionActuel() {
         return positionActuel;
     }
 
+    /**
+     * Sets list noeud retour.
+     *
+     * @param listNoeudRetour the list noeud retour
+     */
     public void setListNoeudRetour(Noeud listNoeudRetour) {
         this.listNoeudRetour.add(positionActuel);
     }
 
+    /**
+     * Sets visite.
+     *
+     * @param x    the x
+     * @param y    the y
+     * @param bool the bool
+     */
     public void setaVisite(int x, int y, boolean bool) {
         this.aVisite[x][y] = bool;
     }
 
+    /**
+     * Sets etat retour.
+     *
+     * @param etatRetour the etat retour
+     */
     public void setEtatRetour(boolean etatRetour) {
         this.etatRetour = etatRetour;
     }
 
+    /**
+     * Sets quantity food taken.
+     *
+     * @param quantityFoodTaken the quantity food taken
+     */
     public void setQuantityFoodTaken(int quantityFoodTaken) {
         this.quantityFoodTaken = quantityFoodTaken;
     }
 
+    /**
+     * Sets position actuel.
+     *
+     * @param positionActuel the position actuel
+     */
     public void setPositionActuel(Noeud positionActuel) {
         this.positionActuel = positionActuel;
     }

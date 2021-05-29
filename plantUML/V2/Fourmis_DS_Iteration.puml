@@ -146,9 +146,16 @@ loop i<duration
     ' ---------Déplacer Ouvrier--------------
     alt this.theWorkers != null
         loop Ouvrier o : "mo:MoveOuvrier"
+        ant --> "s:Soldat"++ #lightcoral: doitRetravailler()
+            return
+        ant --> "s:Soldat"++ #lightcoral
+            create "mo:MoveOuvrier"
+            "s:Soldat" --> "mo:MoveOuvrier"++ #FFBBBB: isEtatRetour()
+            return
+        return
         alt o.isEtatRetour() && !o.doitRetravailler()
             ant -> "o:Ouvrier"++ #lightcoral
-            create "mo:MoveOuvrier"
+
             "o:Ouvrier"  -> "mo:MoveOuvrier"++ #FFBBBB : cheminRetour(ouvrier)
             return
             return

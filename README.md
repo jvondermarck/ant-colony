@@ -53,10 +53,10 @@
 
 - (Decouper une interface en plusieurs interfaces afin d'éviter la casse)
 - L'interface Fourmis doit servir à la Reine et aux fourmis qui se déplacent. Alors que
-  l'interface FourmisMove doit servir seulement aux fourmis ouvrières et soldats.
+  l'interface IFourmisMove doit servir seulement aux fourmis ouvrières et soldats.
 - Ces deux interfaces permettent de spécifier des caractéristiques différentes aux différentes fourmis.
 - Cela évite que la classe Reine aie des méthodes inutiles (écritent pour des fourmis qui se déplacent)
-- Si l'interface FourmisMove change, la classe Reine ne sera pas affecté.
+- Si l'interface IFourmisMove change, la classe Reine ne sera pas affecté.
 
 5. **Dependency Inversion P.**
 
@@ -80,11 +80,11 @@
 2. **Protection des Variations**
 
 - Nous avons chosit de mettre la classe Fourmis en une interface, afin de la protéger du reste du modèle.
-- Nous avons aussi chosit de mettre la classe FourmisMove en une interface pour obliger toutes les fourmis
+- Nous avons aussi chosit de mettre la classe IFourmisMove en une interface pour obliger toutes les fourmis
   qui peuvent se déplacer d'utiliser les méthodes obligatoires pour qu'elles puissent se déplacer.
 - Nous venons de le voir, concernant les 3 types de fourmis il était claires que ces 3 fourmis aller demander certaines
   méthodes nécessaires et différentes l'une d'entre elles, c'est pour cela que cette partie était un peu instable vu qu'elles varient.
-  Nous les avons protégés en faisant une interface Fourmis et FourmisMove.
+  Nous les avons protégés en faisant une interface Fourmis et IFourmisMove.
 
 3. **Faible couplage**
 

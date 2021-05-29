@@ -1,7 +1,6 @@
 package V2.javaClass;
 
 import java.util.ArrayList;
-import java.util.Random;
 
 /**
  * La classe Soldat qui se promène dans le Graphe en évitant des obstacles.
@@ -13,9 +12,6 @@ public class Soldat extends FourmisMove {
     private int y; // La position Y de la fourmi sur la colonie
     private final Graphe g; // Le graphe g de la fourmis
     private Noeud positionActuel; // Le noeud où se trouve la fourmis
-    private final ArrayList<Noeud> listNoeud = new ArrayList<>(); // On crée une list de Noeud adjacents susceptibles, où un Noeud sera tiré aléatoirement
-    private boolean record; // Record sert a mettre dans la liste de Noeud le noeud qui est un obstacle, il sert pour le fichier de rapport
-    private final Random random = new Random(); //  Qui permet de choisir aléatoirement un noeud dans une liste de Noeuds adjacents à la fourmi.
     private final int numeroSoldat; // The Numero soldat.
 
     /**
@@ -43,6 +39,10 @@ public class Soldat extends FourmisMove {
     public void recherchePositionActuel(int ligne, int colonne)
     {
         this.positionActuel = (this.g.rechercherNoeud(ligne, colonne));
+        // Grace au noeud trouvé, on cherche sa coordonnée X et Y, qui permettra de chercher son prochain Noeud, etc...
+        ArrayList<Integer> coord = g.rechercherCoord(this.positionActuel);
+        setX(coord.get(0)); // La coordonnée X se situe à l'indice 0 de la liste renvoyé
+        setY(coord.get(1)); // La coordonnée Y se situe à l'indice 1 de la liste renvoyé
     }
 
     /**

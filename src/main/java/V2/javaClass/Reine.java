@@ -33,7 +33,6 @@ public class Reine implements Fourmis {
         this.graphe = g;
     }
 
-
     /**
      * La reine donne naissance a un ou des soldats.
      *

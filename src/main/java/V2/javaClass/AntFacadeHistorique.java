@@ -19,7 +19,7 @@ public class AntFacadeHistorique {
     private FileWriter fw;
     private File fLog;
     private int durationPlay;
-    private Graphe graphe;
+    private final Graphe graphe;
 
     /**
      * Instantiates a new Ant facade historique.
@@ -40,7 +40,7 @@ public class AntFacadeHistorique {
         try {
             this.fLog = new File(antLogFile);
             boolean bool = fLog.delete();
-            System.out.println("File deleted: "+ bool);
+            //System.out.println("File deleted: "+ bool);
             boolean sucess = fLog.createNewFile();
         } catch (IOException e)
         {
@@ -117,7 +117,7 @@ public class AntFacadeHistorique {
         fw.write("\n");
         fw.write("\n|-----------------------------------------------------------------------------------------------------------------------------------------------------|");
         fw.write("\n|-----------------------------------------------------------------------------------------------------------------------------------------------------|");
-        fw.write("\n|                                                                 ITÉRATION n°"+durationPlay+"                                                                       |\n");
+        fw.write("\n|                                                                 ITÉRATION n°"+durationPlay+"                                                                      |\n");
         fw.write("|-----------------------------------------------------------------------------------------------------------------------------------------------------|\n");
         fw.write("|-----------------------------------------------------------------------------------------------------------------------------------------------------|");
         fw.write("\n\t|-----------------------------|");

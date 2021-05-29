@@ -8,6 +8,8 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 public class GrapheTest {
@@ -17,11 +19,11 @@ public class GrapheTest {
     Graphe g;
     Soldat s;
     Colonie c;
-    int[][] taille;
 
     @BeforeEach
     void setUp() {
         g = new Graphe(WIDTH, HEIGHT);
+        c = new Colonie();
     }
 
     @Test
@@ -33,10 +35,10 @@ public class GrapheTest {
         {
             for (int j=0; j<g.getColumn(); j++)
             {
-                int actual = taille[i][j];
-                if (num == taille[i][j])
+                Noeud n = g.rechercherNoeud(i,j);
+                if (num == n.getCoordonneNoeud())
                 {
-                    assertEquals(num, actual);
+                    assertEquals(num, n.getCoordonneNoeud());
                 }
             }
         }
@@ -103,12 +105,104 @@ public class GrapheTest {
     }
 
     @Test
-    @DisplayName("Mettre de la nourriture")
+    @DisplayName("mettreNourriture()")
     void mettreNourriture2()
     {
         g.mettreNourriture(0,3,23);
         assertEquals(23,g.getQuantityFood()[0][3]);
     }
+
+    @Test
+    @DisplayName("rechercherCoord(Noeud)")
+    void rechercherCoord()
+    {
+        ArrayList<Integer> coord = g.rechercherCoord(g.rechercherNoeud(1,2));
+        if(coord.get(0) == 1 && coord.get(1) == 2)
+        {
+            assertTrue(true);
+        }
+    }
+
+    @Test
+    @DisplayName("gestionNourriture(x,y,c)")
+    void gestionNourriture()
+    {
+        int[][] food = g.getQuantityFood();
+        food[1][2] = 100;
+        g.setQuantityFood(food);
+        c.setFoodParam(5);
+        int quantite = g.gestionNourriture(1,2, c);
+        assertEquals(95, g.getQuantityFood()[1][2]);
+    }
+
+    @Test
+    @DisplayName("getEstObstacle()")
+    void getEstObstacle()
+    {
+        boolean[][] bool = g.getEstObstacle();
+        bool[1][2] = true;
+        g.setEstObstacle(bool);
+        assertTrue(g.getEstObstacle()[1][2]);
+    }
+
+    @Test
+    @DisplayName("getEstNourriture()")
+    void getEstNourriture()
+    {
+        boolean[][] bool = g.getEstNourriture();
+        bool[1][2] = true;
+        g.setEstNourriture(bool);
+        assertTrue(g.getEstNourriture()[1][2]);
+    }
+
+    @Test
+    @DisplayName("getQuantityFood()")
+    void getQuantityFood()
+    {
+        int[][] bool = g.getQuantityFood();
+        bool[1][2] = 1234;
+        g.setQuantityFood(bool);
+        assertEquals(1234, g.getQuantityFood()[1][2]);
+    }
+
+    @Test
+    @DisplayName("getQuantityPheromone()")
+    void getQuantityPheromone()
+    {
+        int[][] bool = g.getQuantityPheromone();
+        bool[1][2] = 1234;
+        g.setQuantityPheromone(bool);
+        assertEquals(1234, g.getQuantityPheromone()[1][2]);
+    }
+
+    @Test
+    @DisplayName("getAirGraphe()")
+    void getAirGraphe()
+    {
+        assertEquals(247, g.getAirGraphe());
+    }
+
+    @Test
+    @DisplayName("getNbrNoeudDansGraphe()")
+    void getNbrNoeudDansGraphe()
+    {
+        assertEquals(247, g.getNbrNoeudDansGraphe());
+    }
+
+    @Test
+    @DisplayName("getRow()")
+    void getRow()
+    {
+        assertEquals(WIDTH, g.getRow());
+    }
+
+    @Test
+    @DisplayName("getColumn()")
+    void getColumn()
+    {
+        assertEquals(HEIGHT, g.getColumn());
+    }
+
 
 
 

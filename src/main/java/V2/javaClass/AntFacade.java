@@ -11,19 +11,17 @@ public class AntFacade implements AntFacadeController {
     private BitSet[][] grid;
     private Graphe graphe;
 
-    private ArrayList<Soldat> theSoldiers;
-    private ArrayList<Ouvrier> theWorkers;
+    private ArrayList<Soldat> theSoldiers; // La liste de tous les soldats crées qui permettra de les faire déplacer
+    private ArrayList<Ouvrier> theWorkers; // La liste de tous les ouvriers crées qui permettra de les faire déplacer
 
-    private Reine reine;
+    private Reine reine; // La reine qui va s'occuper de gérer la colonie
     private int width; // Largueur
     private int height; // Hauteur
     private final long sleepingTime; // Vitesse de repos entre chaque seconde de durée
 
-    private int xColonie, yColonie;
-    /**
-     * La classe qui servira à creer le fichier en .CSV.
-     */
-    AntFacadeHistorique antHisto;
+    private int xColonie, yColonie; // Permet d'avoir la coordonnée
+    private Noeud colonieCoord; // Coordonnée de la colonie
+    private AntFacadeHistorique antHisto; // La classe qui servira à creer le fichier en .CSV.
 
     /**
      * Instantiates a new Ant facade.
@@ -76,11 +74,10 @@ public class AntFacade implements AntFacadeController {
 
     @Override
     public void createColony(int row, int column) {
-        this.xColonie = row;
+        this.xColonie = row; // Coordonnée de la colonie
         this.yColonie = column;
         this.grid[row][column].set(0); // car : cells[i][j].get(0) --> fourmilière "F"
         reine = new Reine(row, column, graphe); // On a juste une colonie = une reine
-        //this.theColonies.add(new Reine(row,column));
     }
 
     @Override
@@ -147,8 +144,8 @@ public class AntFacade implements AntFacadeController {
                                 {
                                     tabQuantityPheromone[x][y] -= nbEvaporation;
                                     graphe.setQuantityPheromone(tabQuantityPheromone);
-                                } else {
-                                    tabQuantityPheromone[x][y] = 0;
+                                } else { // Si la quantité est < a la quantité de stockage de la fourmi, elle prend ce qu'il reste
+                                    tabQuantityPheromone[x][y] = 0; // Vu que la fourmi a tout pris la nourriture, il reste plus rien
                                     graphe.setQuantityPheromone(tabQuantityPheromone);
                                     this.grid[x][y].clear(6); // On efface sur l'affichage la nourriture
                                 }
@@ -160,7 +157,7 @@ public class AntFacade implements AntFacadeController {
                 if(this.theSoldiers != null)
                 {
                     for(Soldat s : this.theSoldiers){
-                        s.randomDirection(); // On cherche toutes les aretes adjacentes
+                        s.randomDirection(); // On cherche toutes les aretes adjacentes de la fourmi soldat
                         this.grid[s.getX()][s.getY()].set(2);
                         //System.out.println(s); // On affiche sa position, son numéro de soldat, et sa colonie
                     }
@@ -171,7 +168,7 @@ public class AntFacade implements AntFacadeController {
                     for(Ouvrier o : this.theWorkers){
                         if(o.isEtatRetour() && !o.doitRetravailler()) // Si elle retourne a la fourmiliere
                         {
-                            o.cheminRetour(); // On fait le chemin inverse
+                            o.cheminRetour(); // On fait le chemin inverse de son parcours initial
                             this.grid[o.getX()][o.getY()].set(4); // On met son état en mode fourmis retour
                             // On ne doit pas poser des pheromones sur la fourmiliere et sur la nourriture
                             if(!this.grid[xColonie][yColonie].get(4) && !graphe.getEstNourriture()[o.getX()][o.getY()])
@@ -188,7 +185,7 @@ public class AntFacade implements AntFacadeController {
                 }
 
                 if(record){
-                    antHisto.iteration(this.grid, this.theWorkers, this.theSoldiers); // On va créer l'affichage de l'íteration qui s'est passé
+                    antHisto.iteration(this.grid, this.theWorkers, this.theSoldiers); // On va créer l'affichage de l'íteration qui vient de se passer
                 }
 
                 Thread.sleep(this.sleepingTime);
@@ -226,6 +223,6 @@ public class AntFacade implements AntFacadeController {
 
     @Override
     public void setAntFile(String antLogFile) {
-        antHisto = new AntFacadeHistorique(width, height, grid, antLogFile, graphe);
+        antHisto = new AntFacadeHistorique(width, height, grid, antLogFile, graphe); // On instancie la classe AntFacadeHistorique
     }
 }

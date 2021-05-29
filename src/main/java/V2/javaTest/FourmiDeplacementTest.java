@@ -31,8 +31,6 @@ public class FourmiDeplacementTest {
         graphe.mettreNourriture(2,2,10);
         graphe.getQuantityPheromone()[0][1] = 2;
         graphe.getQuantityPheromone()[1][2] = 1;
-
-
     }
 
     @DisplayName("Premier déplacement de la fourmi : (1,1)")

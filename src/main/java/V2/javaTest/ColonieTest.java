@@ -41,11 +41,59 @@ class ColonieTest {
     }
 
     @Test
-    @DisplayName("Quantité de nourriture de la colonie")
+    @DisplayName("setQuantityFood()")
     void test2()
     {
         r.getColonie().setQuantityFood(15);
-        assertEquals("Colonie n°3 -> à un stock de 15 nourriture stockée", r.getColonie().toString());
+        assertEquals("Colonie n°5 -> à un stock de 15 nourriture stockée", r.getColonie().toString());
+    }
+
+    @Test
+    @DisplayName("getEvaporationParam()")
+    void getEvaporationParam()
+    {
+        r.setParametreColonie(5,5,5);
+        assertEquals(5, r.getColonie().getEvaporationParam());
+    }
+
+    @Test
+    @DisplayName("getFoodParam()")
+    void getFoodParam()
+    {
+        r.setParametreColonie(5,55,5);
+        assertEquals(55, r.getColonie().getFoodParam());
+    }
+
+    @Test
+    @DisplayName("getPheromoneParam()")
+    void getPheromoneParam()
+    {
+        r.setParametreColonie(533,55,0);
+        assertEquals(0, r.getColonie().getPheromoneParam());
+    }
+
+    @Test
+    @DisplayName("setEvaporationParam()")
+    void setEvaporationParam()
+    {
+        r.getColonie().setEvaporationParam(678);
+        assertEquals(678, r.getColonie().getEvaporationParam());
+    }
+
+    @Test
+    @DisplayName("setFoodParam()")
+    void setFoodParam()
+    {
+        r.getColonie().setFoodParam(67548);
+        assertEquals(67548, r.getColonie().getFoodParam());
+    }
+
+    @Test
+    @DisplayName("setPheromoneParam()")
+    void setPheromoneParam()
+    {
+        r.getColonie().setPheromoneParam(8);
+        assertEquals(8, r.getColonie().getPheromoneParam());
     }
 
 }

@@ -13,7 +13,8 @@ public class Noeud {
     /**
      * Constructeur Noeud qui cherche un emplacement pour créer le noeud et lui ai attribué un numero
      *
-     * @param g : un graphe
+     * @param g           : un graphe
+     * @param numeroNoeud le numero du noeud
      */
     public Noeud(Graphe g, int numeroNoeud)
     {

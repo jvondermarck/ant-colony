@@ -1,14 +1,10 @@
 package V2.javaClass;
 
 /**
- * La classe modifiable {@code Colonie}.
- * <p>
  * Une colonie a un numéro de colonie
  * On peut savoir le nombre total de colonie
  */
 public class Colonie {
-
-
     private static int nombreColonie = 0;
     private final int numColonie;
 

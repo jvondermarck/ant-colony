@@ -1,6 +1,8 @@
 package V2.javaClass;
 
 
+import java.util.ArrayList;
+
 /**
  * The type Ouvrier.
  */
@@ -45,6 +47,10 @@ public class Ouvrier extends MoveOuvrier {
     public void recherchePositionActuel(int ligne, int colonne)
     {
         setPositionActuel(this.g.rechercherNoeud(ligne, colonne));
+        // Grace au noeud trouvé, on cherche sa coordonnée X et Y, qui permettra de chercher son prochain Noeud, etc...
+        ArrayList<Integer> coord = g.rechercherCoord(getPositionActuel());
+        setX(coord.get(0)); // La coordonnée X se situe à l'indice 0 de la liste renvoyé
+        setY(coord.get(1)); // La coordonnée Y se situe à l'indice 1 de la liste renvoyé
     }
 
     /**
@@ -66,9 +72,9 @@ public class Ouvrier extends MoveOuvrier {
                 }
             }
             // Comme on recommence tout a zero, on re-initialise tout
-            setaVisite(getX(), getY(), true);
-            setListNoeudRetour(g.rechercherNoeud(getX(),getY()));
-            setQuantityFoodTaken(0);
+            setaVisite(getX(), getY(), true); // On dit qu'elle a visité la colonie pour qu'au prochain déplacement elle aille pas au meme endroit
+            setListNoeudRetour(g.rechercherNoeud(getX(),getY())); // On ajoute deja dans la liste de retour, la coordonnée de la colonie
+            setQuantityFoodTaken(0); // On met a 0 le nbr de nourriture que la fourmi transporte
         }
         return !isEtatRetour();
     }
@@ -78,6 +84,11 @@ public class Ouvrier extends MoveOuvrier {
         return "Ouvrier n°" + numeroWorker + " | " + this.colonie.toString() + " | " + getPositionActuel() + " | Transporte : " + getQuantityFoodTaken() + " kg de nourriture | Retourne à la colonie : " + isEtatRetour();
     }
 
+    /**
+     * Gets numero worker.
+     *
+     * @return the numero worker
+     */
     public int getNumeroWorker() {
         return numeroWorker;
     }

@@ -9,7 +9,7 @@ public class Graphe
 {
     private boolean[][] estObstacle; // Tableau où se trouve les emplacements des cellules qui contient des noeuds
     private boolean[][] estNourriture; // Tableau où se trouve les emplacements des cellules qui contient de la nourriture
-    private final int[][] quantityFood; // Quandtite de nourriture dans chaque cellule
+    private int[][] quantityFood; // Quandtite de nourriture dans chaque cellule
     private int [][] quantityPheromone; // Quantité de pheromone dans chaque cellule
 
     private final int airGraphe; // Air du rectangle
@@ -60,6 +60,7 @@ public class Graphe
                 numeroCellule =  i*this.column + j + 1; // Le numéro du noeud qu'on va attribuer au noeud
                 Noeud noeud = new Noeud(Graphe.this, numeroCellule); // On crée une instance du noeud a la cellule en question, avec son numéro
                 this.theNoeud[i][j] =  noeud; // On stock ce noeud dans un tableau de Noeud
+                nbrNoeudDansGraphe++;
             }
         }
     }
@@ -193,6 +194,14 @@ public class Graphe
      */
     public int[][] getQuantityPheromone() {
         return quantityPheromone;
+    }
+
+    /**
+     * Un tableau 2D pour la quantité de nourriture
+     * @param quantityFood le tableau 2D quantité de nourriture
+     */
+    public void setQuantityFood(int[][] quantityFood) {
+        this.quantityFood = quantityFood;
     }
 
     /**

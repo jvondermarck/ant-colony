@@ -10,8 +10,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.fail;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class ReineTest {
 
@@ -86,6 +85,40 @@ public class ReineTest {
         {
             fail("Exception de mauvais type : "
                     + exception.getClass().getSimpleName());
+        }
+    }
+
+    @Test
+    @DisplayName("getTheSoldiers()")
+    void getTheSoldiers()
+    {
+        r.giveBirthSoldier(3);
+        assertEquals(3, r.getTheSoldiers().size());
+    }
+
+    @Test
+    @DisplayName("getTheWorkers()")
+    void getTheWorkers()
+    {
+        r.giveBirthWorker(5);
+        assertEquals(5, r.getTheWorkers().size());
+    }
+
+    @Test
+    @DisplayName("getColonie()")
+    void getColonie()
+    {
+        assertEquals("Colonie n°8 -> à un stock de 0 nourriture stockée", r.getColonie().toString());
+    }
+
+    @Test
+    @DisplayName("setParametreColonie()")
+    void setParametreColonie()
+    {
+        r.setParametreColonie(3,4,5);
+        if(r.getColonie().getEvaporationParam() == 3 && r.getColonie().getFoodParam() == 4 && r.getColonie().getPheromoneParam() == 5)
+        {
+            assertTrue(true);
         }
     }
 }

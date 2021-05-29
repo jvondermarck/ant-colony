@@ -22,34 +22,36 @@ package "Diagramme de Classe de Conception V2 " <<Folder>> {
   }
 
   class Graphe #lightcoral;line.bold {
-      -estObstacle[*][*]: Boolean
-      -estNourriture[*][*]: Boolean
-      -quantityFood[*][*]: Integer
-      -quantityPheromone[*][*]: Integer
+      -estObstacle: boolean[*][*]
+      -estNourriture: boolean[*][*]
+      -quantityFood: Integer[*][*]
+      -quantityPheromone: Integer[*][*]
       -airGraphe:Integer
       -row: Integer
       -column: Integer
       -nbrNoeudDansGraphe:Integer
-      -theNoeud[*][*]: Noeud
+      -theNoeud: Noeud[*][*]
 
       <<Create>>Graphe(longueur, largueur)
       +CreationEmplacement();
       +rechercherNoeud(x:Integer, y:Integer) : Noeud
-      +rechercherCoord(n: Noeud)
+      +rechercherCoord(n: Noeud): ArrayList<Integer>
       +gestionNourriture(x:Integer, y:Integer, c:Colonie): Integer
       +mettreObstacle(row:Integer, colomn:Integer)
       +mettreNourriture(row:Integer, colomn:Integer, quantity: Integer)
+
       +getAirGraphe(): Integer
       +getNbrNoeudDansGraphe(): Integer
-      +getTaille(): Integer
-      +getEstObstacle(): Boolean[*][*]
-      +getEstNourriture(): Boolean[*][*]
+      +getEstObstacle(): boolean[*][*]
+      +getEstNourriture(): boolean[*][*]
       +getQuantityFood(): Integer
       +getQuantityPheromone(): Integer
-      +getLongueur(): Integer
-      +getLargueur(): Integer
+      +getRow(): Integer
+      +getColumn(): Integer
+      +setQuantityFood(quantityFood: Integer[*][*])
       +setQuantityPheromone(quantityPheromone: Integer[*][*])
-      +setEstNourriture(estNourriture: Boolean[*][*])
+      +setEstNourriture(estNourriture: boolean[*][*])
+      +setEstObstacle(estObstacle: boolean[*][*])
   }
 
   class Colonie #burlywood {
@@ -91,7 +93,6 @@ package "Diagramme de Classe de Conception V2 " <<Folder>> {
       -height: Integer
       -xColonie: Integer
       -yColonie: Integer
-      -sleepingTime: Long
       -antHisto: AntFacadeHistorique
 
       {abstract}  +setParameters(evaporationParam:Integer,
@@ -113,9 +114,10 @@ package "Diagramme de Classe de Conception V2 " <<Folder>> {
         -durationPlay: Integer
         -fLog: File
         -fw: FileWriter
+        -graphe: Graphe
 
         <<Create>>AntFacadeHistorique(width:Integer,
-         height:Integer, grid:BitSet[*][*], antLogFile:String)
+         height:Integer, grid:BitSet[*][*], antLogFile:String, g:Graphe)
         +startFile()
         +iteration(grid:BitSet[*][*], theWorkers:ArrayList<Ouvrier>,
          theSoldiers:ArrayList<Soldat>)
@@ -136,7 +138,7 @@ package "Diagramme de Classe de Conception V2 " <<Folder>> {
       -theWorkers: ArrayList<Ouvrier>
 
       <<Create>>Reine(x:Integer, y:Integer, g:Graphe)
-      +giveBirth(amount:Integer)
+      +giveBirthSoldier(amount:Integer)
       +giveBirthWorker(amount:Integer)
       +setParameters(evaporationParam:Integer,
       foodParam:Integer, pheromoneParam:Integer)
@@ -147,13 +149,17 @@ package "Diagramme de Classe de Conception V2 " <<Folder>> {
       +getColonie(): Colonie
   }
 
+  interface IFourmisMove <<interface>> #lightgreen;line:green {
+        +randomDirection()
+        +noeudVoisin(o:Object, g:Graphe): String
+    }
+
   abstract class FourmisMove #lightgreen;line:green {
      -listNoeud: ArrayList<Noeud>
      -random: Random
      -record: boolean
 
-      +randomDirection()
-      -rechercheAretes(x:Integer, y:Integer)
+      +rechercheAretes(x:Integer, y:Integer)
       -verficationNoeud(x:Integer, y:Integer)
       +randomNoeud()
       +noeudVoisin(o:Object, g:Graphe): String
@@ -163,10 +169,23 @@ package "Diagramme de Classe de Conception V2 " <<Folder>> {
     class Soldat #mediumpurple;line:darkviolet {
         -{static} nombreSoldat = 0: Integer
         -colonie: Colonie
+        -x: Integer
+        -y: Integer
+        -g: Graphe
+        -positionActuel: Noeud
+        -numeroSoldat: Integer
 
         <<Create>>Soldat(x:Integer, y:Integer, c:Colonie, g:Graphe)
         +recherchePositionActuel(ligne:Integer, colonne:Integer)
+        +randomDirection()
         {redefined} +toString(): String
+        +getNumeroSoldat(): Integer
+        +getPositionActuel(): Noeud
+        +setPositionActuel(n:Noeud)
+        +getX(): Integer
+        +getY(): Integer
+        {redefined}+setX(x:Integer)
+        {redefined}+setY(x:Integer)
     }
 
   abstract class MoveOuvrier #gold;line:goldenrod  {
@@ -176,28 +195,27 @@ package "Diagramme de Classe de Conception V2 " <<Folder>> {
        -positionActuel: Noeud
        -listNoeud: ArrayList<Noeud>
        -listNoeudRetour: ArrayList<Noeud>
-       -aVisite[*][*]: Boolean
-       -etatRetour:Boolean
+       -aVisite: boolean[*][*]
+       -etatRetour:boolean
        -quantityFoodTaken: Integer
        -colonie: Colonie
-       -positionActuel: Noeud
        -random: Random
        -record: boolean
-       -estObstacle: Boolean[*][*]
+       -estObstacle: boolean[*][*]
 
       <<Create>>MoveOuvrier(x:Integer, y:Integer, c:Colonie, g:Graphe)
       +randomDirection()
       +cheminRetour()
-      -paramOuvrier()
+      +paramOuvrier()
       -rechercheBestPheromone(x:Integer, y:Integer)
-      -rechercheAucunPheromone(droitPassage: Boolean):Boolean
-      -rechercheToutVisite(ouvrier:Ouvrier): Boolean
-      +isEtatRetour(): Boolean
+      -rechercheAucunPheromone(droitPassage: boolean):boolean
+      -rechercheToutVisite(ouvrier:Ouvrier): boolean
+      +isEtatRetour(): boolean
       +getListNoeudRetour(): ArrayList<Noeud>
       +getQuantityFoodTaken(): Integer
       +getPositionActuel(): Noeud
       +setListNoeudRetour()
-      +setaVisite(x:Integer, y:Integer, bool:Boolean)
+      +setaVisite(x:Integer, y:Integer, bool:boolean)
       +setEtatRetour(etatRetour: Boolean)
       +setQuantityFoodTaken(quantityFoodTaken: Integer)
       +setPositionActuel(position:Noeud)
@@ -219,37 +237,42 @@ package "Diagramme de Classe de Conception V2 " <<Folder>> {
         {redefined} +toString(): String
         +getNumeroWorker()
     }
+
 }
 
+    AntFacadeController <|.. AntFacade : <<implements>>
+    AntFacade .right.|> Graphe : <<instantiate>>
+    AntFacade ..|> Reine : <<instantiate>>
+    AntFacade ..|> AntFacadeHistorique : <<instantiate>>
 
-AntFacadeController <|.. AntFacade : <<implements>>
-AntFacade ..|> Graphe : <<instantiate>>
-AntFacade ..|> Reine : <<instantiate>>
+    Graphe "1" *-right-> "1..*" Noeud : contient
 
-Graphe "1" *-right-> "1..*" Noeud : contient
+    Reine "1" *-> "1" Colonie : appartient
+    Noeud "1" *--> "0..*\t" Fourmis : comporte
 
-Reine "1" *-> "1" Colonie : appartient
-Noeud "1" *--> "0..*\t" Fourmis : comporte
+    Fourmis <|.. Reine : <<implements>>
+    Fourmis <|.. IFourmisMove : <<extends>>
 
-Fourmis <|.. Reine : <<implements>>
-Fourmis <|.. FourmisMove : <<implements>>
+    IFourmisMove <|..FourmisMove : <<implements>>
+    FourmisMove <|.. MoveOuvrier : \n\n<<extends>>
+    FourmisMove <|.. Soldat : \n\n<<extends>>
 
-FourmisMove <|.. MoveOuvrier : \n\n<<extends>>
-FourmisMove <|.. Soldat : \n\n<<extends>>
+    MoveOuvrier <|-- Ouvrier : <<extends>>
+    Reine "1" o--> "1..*" Soldat : donne naissance
+    Reine "1" o--> "1..*" Ouvrier : donne naissance
 
-MoveOuvrier <|-- Ouvrier : <<extends>>
-Reine "1" o--> "1..*" Soldat : donne naissance
-Reine "1" o--> "1..*" Ouvrier : donne naissance
+    Ouvrier ..> Colonie : <<use>>
+    Reine ..> Graphe : <<use>>
+    Soldat ..> Colonie : <<use>>
+    Ouvrier ..> Graphe : <<use>>
+    Soldat ..> Graphe : <<use>>
+    FourmisMove ..> Noeud : <<use>>
+    FourmisMove ..> Graphe : <<use>>
+    MoveOuvrier ..> Noeud : <<use>>
+    MoveOuvrier ..> Graphe : <<use>>
+    AntFacadeHistorique ..> Soldat : <<use>>
+    AntFacadeHistorique ..> Ouvrier : <<use>>
 
-Ouvrier ..> Colonie : <<use>>
-Soldat ..> Colonie : <<use>>
-Ouvrier ..> Graphe : <<use>>
-Soldat ..> Graphe : <<use>>
-FourmisMove ..> Noeud : <<use>>
-FourmisMove ..> Graphe : <<use>>
-MoveOuvrier ..> Noeud : <<use>>
-MoveOuvrier ..> Graphe : <<use>>
-AntFacade "1" o--> "1" AntFacadeHistorique : sauvegarde
-AntFacadeHistorique ..> Soldat : <<use>>
-AntFacadeHistorique ..> Ouvrier : <<use>>
+
+
 @enduml
