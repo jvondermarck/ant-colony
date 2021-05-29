@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="47cd6ad5-e8f1-43de-aae4-65f52ffc0fb8" name="Default Changelist" comment="JavaDoc" />
+    <list default="true" id="47cd6ad5-e8f1-43de-aae4-65f52ffc0fb8" name="Default Changelist" comment="JavaDoc l" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -242,49 +242,7 @@
       <workItem from="1622205279376" duration="15067000" />
       <workItem from="1622224849484" duration="1914000" />
       <workItem from="1622226795375" duration="4669000" />
-      <workItem from="1622292513493" duration="20512000" />
-    </task>
-    <task id="LOCAL-00022" summary="(Correction Bug rapport)">
-      <created>1621068530791</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1621068530791</updated>
-    </task>
-    <task id="LOCAL-00023" summary="Modif de re-lecture">
-      <created>1621072777334</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1621072777334</updated>
-    </task>
-    <task id="LOCAL-00024" summary="Test Unitaire + Fix bug">
-      <created>1621119641130</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1621119641130</updated>
-    </task>
-    <task id="LOCAL-00025" summary="Test Unitaire + Fix bug">
-      <created>1621119647623</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1621119647623</updated>
-    </task>
-    <task id="LOCAL-00026" summary="Images Vectorielles">
-      <created>1621188404135</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1621188404135</updated>
-    </task>
-    <task id="LOCAL-00027" summary="Images Vectorielles">
-      <created>1621195525625</created>
-      <option name="number" value="00027" />
-      <option name="presentableId" value="LOCAL-00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1621195525625</updated>
+      <workItem from="1622292513493" duration="20735000" />
     </task>
     <task id="LOCAL-00028" summary="MAJ">
       <created>1621241650873</created>
@@ -587,7 +545,49 @@
       <option name="project" value="LOCAL" />
       <updated>1622315162490</updated>
     </task>
-    <option name="localTasksCounter" value="71" />
+    <task id="LOCAL-00071" summary="JavaDoc">
+      <created>1622315219839</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1622315219839</updated>
+    </task>
+    <task id="LOCAL-00072" summary="JavaDoc">
+      <created>1622315223353</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1622315223353</updated>
+    </task>
+    <task id="LOCAL-00073" summary="JavaDoc">
+      <created>1622315233483</created>
+      <option name="number" value="00073" />
+      <option name="presentableId" value="LOCAL-00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1622315233483</updated>
+    </task>
+    <task id="LOCAL-00074" summary="JavaDoc">
+      <created>1622315235282</created>
+      <option name="number" value="00074" />
+      <option name="presentableId" value="LOCAL-00074" />
+      <option name="project" value="LOCAL" />
+      <updated>1622315235282</updated>
+    </task>
+    <task id="LOCAL-00075" summary="JavaDoc">
+      <created>1622315240484</created>
+      <option name="number" value="00075" />
+      <option name="presentableId" value="LOCAL-00075" />
+      <option name="project" value="LOCAL" />
+      <updated>1622315240484</updated>
+    </task>
+    <task id="LOCAL-00076" summary="JavaDoc l">
+      <created>1622315244740</created>
+      <option name="number" value="00076" />
+      <option name="presentableId" value="LOCAL-00076" />
+      <option name="project" value="LOCAL" />
+      <updated>1622315244740</updated>
+    </task>
+    <option name="localTasksCounter" value="77" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -606,7 +606,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="JavaDoc + Tests V1" />
     <MESSAGE value="Changements Majeurs (Java+UML+Bug) V1&amp;2" />
     <MESSAGE value="JavaDoc V2" />
     <MESSAGE value="Test Unitaires + Fix bug" />
@@ -631,7 +630,8 @@
     <MESSAGE value="V2 MAJ UML + Rapport" />
     <MESSAGE value="V2 MAJ Java + UML" />
     <MESSAGE value="JavaDoc" />
-    <option name="LAST_COMMIT_MESSAGE" value="JavaDoc" />
+    <MESSAGE value="JavaDoc l" />
+    <option name="LAST_COMMIT_MESSAGE" value="JavaDoc l" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
