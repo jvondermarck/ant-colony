@@ -14,17 +14,17 @@ participant "Graphe:g" as graphe #lightcoral
 ' ---------GRAPHE--------------
 ant -> ant++ #lightgreen : createGrid(width, height)
     ant --> graphe++ #lightcoral : <<Create>> Graphe(width, height)
-return
-return
-
-graphe -> graphe++ #lightcoral : creationEmplacementNoeud()
-loop i<taille.length
-    loop i<taille[i].length
-        ' ---------NOEUD--------------
-            create "n:Noeud"
-            graphe --> "n:Noeud" : <<Create>> Noeud(g, numNoeud)
-    end
-end
+        graphe -> graphe++ #lightcoral : creationEmplacementNoeud()
+        loop i<taille.length
+            loop i<taille[i].length
+                ' ---------NOEUD--------------
+                    create "n:Noeud"
+                    graphe --> "n:Noeud"++ #FFBBBB: <<Create>> Noeud(g, numNoeud)
+                        return
+            end
+        end
+        return
+    return
 return
 
 ant -> ant++ #lightgreen : putObstacle(x,y)
@@ -40,7 +40,8 @@ return
 ' ---------AntFacade Historique--------------
 ant -> ant++ #lightgreen : setAntFile(antLogFile)
     create "antHisto:AntFacadeHistorique"
-    ant -> "antHisto:AntFacadeHistorique" : <<Create>> AntFacadeHistorique(width,height, grid, antLogFile)
+    ant -> "antHisto:AntFacadeHistorique" ++ #FFBBBB: <<Create>> AntFacadeHistorique(width,height, grid, antLogFile)
+        return
 return
 
 
@@ -48,12 +49,14 @@ return
 ' ---------REINE--------------
 ant -> ant++ #lightgreen : createColony(x, y)
 create "r:Reine"
-    ant --> "r:Reine" : <<Create>> Reine(x,y,g)
-return
+    ant --> "r:Reine"++ #FFBBBB : <<Create>> Reine(x,y,g)
 
-' ---------COLONIE--------------
-create "c:Colonie"
-"r:Reine" --> "c:Colonie" : <<Create>> Colonie()
+        ' ---------COLONIE--------------
+        create "c:Colonie"
+        "r:Reine" --> "c:Colonie"++ #FFBBBB: <<Create>> Colonie()
+            return
+return
+return
 
 ant -> ant++ #lightgreen : setParameters(evapaParam,foodParam,pheroParam)
     ant -> "r:Reine"++ #lightcoral : setParametreColonie(evapaParam,foodParam,pheroParam)
@@ -71,7 +74,8 @@ ant -> ant++ #lightgreen : createSoldiers(amount)
     loop i<amount
         ' ---------SOLDAT--------------
         create "s:Soldat"
-        "r:Reine" --> "s:Soldat" : <<Create>> Soldat(x,y,c,g)
+        "r:Reine" --> "s:Soldat"++ #FFBBBB: <<Create>> Soldat(x,y,c,g)
+            return
     end
 return
 return
@@ -81,13 +85,14 @@ ant -> ant++ #lightgreen : createWorkers(amount)
     loop i<amount
         ' ---------OUVRIER--------------
         create "o:Ouvrier"
-        "r:Reine" --> "o:Ouvrier" : <<Create>> Ouvrier(x,y,c,g)
+        "r:Reine" --> "o:Ouvrier"++ #FFBBBB : <<Create>> Ouvrier(x,y,c,g)
+            return
     end
 return
 return
 
 == Déclenchement des itérations ==
-ant -> ant++ #RoyalBlue : play(time, false)
+ant -> ant++ #RoyalBlue : play(time, true)
 alt record == true
     ant --> "antHisto:AntFacadeHistorique"++ #DeepSkyBlue : startFile()
     return
@@ -98,12 +103,14 @@ loop i<duration
     loop x<height
         loop y<width
             alt nbEvaporation!=0
-                alt tabQuantityPheromone[x][y] >= nbEvaporation
-                    ant --> graphe++ #FFBBBB : setQuantityPheromone(tabQuantityPheromone)
-                    return
-                else sinon
-                    ant --> graphe++ #FFBBBB : setQuantityPheromone(tabQuantityPheromone)
-                    return
+                alt i % nbEvaporation == 0
+                    alt tabQuantityPheromone[x][y] >= nbEvaporation
+                        ant --> graphe++ #FFBBBB : setQuantityPheromone(tabQuantityPheromone)
+                        return
+                    else sinon
+                        ant --> graphe++ #FFBBBB : setQuantityPheromone(tabQuantityPheromone)
+                        return
+                    end
                 end
             end
         end
@@ -118,8 +125,16 @@ loop i<duration
                 "s:Soldat" -> "s:Soldat"++ #FFBBBB: randomDirection()
                     ' ---------ARETES--------------
                     create "ms:FourmisMove"
-                    "s:Soldat" --> "ms:FourmisMove"++ #FFBBBB : rechercheAretes(x,y,g)
-                        return
+                    "s:Soldat" --> "ms:FourmisMove"++ #lightcoral : rechercheAretes(x,y,g)
+                        loop x<=xPosition+1
+                            loop y<=yPosition+1
+                                alt x == xPosition || y == yPosition
+                                     "ms:FourmisMove" --> "ms:FourmisMove"++ #FFBBBB : verficationNoeud(x, y, g)
+                                    return
+                                end
+                            end
+                        end
+                    return
                 "s:Soldat" --> "ms:FourmisMove"++ #DarkSalmon : randomNoeud()
                 return
             return
@@ -143,8 +158,16 @@ loop i<duration
             "o:Ouvrier" -> "mo:MoveOuvrier"++ #FFBBBB : randomDirection()
              ' ---------ARETES OUVRIER--------------
                  create "ms2:FourmisMove"
-                 "mo:MoveOuvrier" --> "ms2:FourmisMove"++ : rechercheAretes(x,y,g)
-                    return
+                 "mo:MoveOuvrier" --> "ms2:FourmisMove"++ #lightcoral : rechercheAretes(x,y,g)
+                    loop x<=xPosition+1
+                        loop y<=yPosition+1
+                            alt x == xPosition || y == yPosition
+                                 "ms2:FourmisMove" --> "ms2:FourmisMove"++ #FFBBBB : verficationNoeud(x, y, g)
+                                return
+                            end
+                        end
+                    end
+                 return
                  "mo:MoveOuvrier" --> "mo:MoveOuvrier"++ #DarkSalmon: paramOuvrier(ouvrier)
                      "mo:MoveOuvrier" --> "mo:MoveOuvrier"++ #FFBBBB : rechercheToutVisite(ouvrier)
                          return
@@ -170,7 +193,7 @@ loop i<duration
                 return
                 "antHisto:AntFacadeHistorique" --> "mo:MoveOuvrier"++ #DeepSkyBlue: noeudVoisin(ouvrier)
                 create "ms3:FourmisMove"
-                "mo:MoveOuvrier" --> "ms3:FourmisMove"++ : rechercheAretes(x,y,graphe)
+                "mo:MoveOuvrier" --> "ms3:FourmisMove"++ #DeepSkyBlue : rechercheAretes(x,y,graphe)
                 return
                 "mo:MoveOuvrier" --> "ms3:FourmisMove"++ #DeepSkyBlue: noeudVoisin(ouvrier)
                 return
@@ -179,9 +202,9 @@ loop i<duration
             loop Soldat s : theSoldiers
                 "antHisto:AntFacadeHistorique" --> "s:Soldat"++ #DeepSkyBlue : toString()
                 return
+                "antHisto:AntFacadeHistorique" --> "mo:MoveOuvrier"++ #DeepSkyBlue: noeudVoisin(soldat, graphe)
                 create "ms4:FourmisMove"
-                "antHisto:AntFacadeHistorique" --> "ms4:FourmisMove"++ #DeepSkyBlue: noeudVoisin(soldat, graphe)
-                "mo:MoveOuvrier" --> "ms4:FourmisMove"++ : rechercheAretes(x,y,graphe)
+                "mo:MoveOuvrier" --> "ms4:FourmisMove"++ #DeepSkyBlue : rechercheAretes(x,y,graphe)
                 return
                 "mo:MoveOuvrier" --> "ms4:FourmisMove"++ #DeepSkyBlue: noeudVoisin(soldat, graphe)
                 return

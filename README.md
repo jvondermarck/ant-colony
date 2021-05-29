@@ -16,43 +16,37 @@
 
 - La classe Colonie **crée** une colonie.
 - La classe Noeud **crée** un noeud.
-- La classe MoveOuvrier **cherche** une nouvelle position pour l'ouvrier.
-- La classe MoveSoldat **cherche** une nouvelle position pour le soldat.
+- La classe FourmisMove **cherche** les noeuds adjacents à la fourmi.
 
 2. **Open Closed P.**
 
-- La classe Aretes est ouverte à l'extension, mais fermée aux modifications.
-  La classe AretesOuvrier hérite de la classe Aretes, sans changer son code.
+- La classe FourmisMove est ouverte à l'extension, mais fermée aux modifications.
+  La classe MoveOuvrier hérite de la classe FourmisMove, sans changer son code.
   Celle-ci permet d'ajouter de nouvelles méthodes qui sont seulement utiler par des fourmis
   ouvrière.
-- La classe MoveOuvrier est ouverte à l'extension, mais fermée aux modifications.
-  La classe Ouvrier hérite de la classe MoveOuvrier, sans changer son code.
-  Si dans une autre version nous voulons ajouter une autre catégorie d'ouvriers, nous pourrons 
+- La classe Soldat hérite de la classe FourmisMove, sans changer son code. 
+- La classe Ouvrier hérite de la classe MoveOuvrier, sans changer son code.
+  Si dans une autre version nous voulons ajouter une autre catégorie d'ouvriers, nous pourrons
   encore hériter de MoveOuvrier.
-- La classe MoveSoldat est ouverte à l'extension, mais fermée aux modifications.
-  La classe Soldat hérite de la classe MoveSoldat, sans changer son code.
-  Si dans une autre version nous voulons ajouter une autre catégorie de soldats, nous pourrons
-  encore hériter de MoveSoldat.
   
 3. **Liskov Substitution P.**
 
 - Une reine doit rester dans le noeud où elle réside de base.
-  Comparé au soldat qui nait dans le noeud où est la Reine, mais celui-ci doit
+  Comparé au soldat et à l'ouvrier qui nait dans le noeud où est la Reine, mais celui-ci doit
   pouvoir se déplacer, comparé à la reine qui ne doit pas se promener dans le graphe.
 - C'est pour-cela que nous avons créé une interface Fourmis où il y a Reine qui implémente 
-  cette interface, et une deuxieème interface qui hérite de cette interface qui est FourmisMove
+  cette interface, et une classe Abstraite qui implémente de cette interface qui est FourmisMove
 - Au vu des grandes différences de fonctions entre une fourmi Soldat et Ouvrière, nous avons 
-  décidé de créer des classes qui implémente cette interface, FourmisMove, qui se dénomme
-  MoveOuvrier et MoveSoldat.
-- MoveOuvrier fait déplacer des soldats de facons aléatoires en évitant des obstacles en utilsant la classe Aretes.
+  décidé de créer une sous-classe de FourmisMove, qui se dénomme
+  MoveOuvrier.
+- FourmisMove fait déplacer des soldats de facons aléatoires en évitant des obstacles en utilsant la classe Aretes.
 - Alors que MoveOuvrier fait déplacer des ouvriers qui ne doivent pas retourner sur leur pas
   antérieur, ils doivent chercher à manger et suivre les phéromones et en lacher, donc tout ceci 
-  est réalisé grâce à la class AretesOuvrier qui hérite de la classe Aretes, cette sous-classe
+  est réalisé grâce à la class MoveOuvrier qui hérite de la classe FourmisMove, cette sous-classe
   permet d'utiliser des méthodes spécifiques à des ouvriers, ce qui bloque l'àccès aux Soldats
-  et à la Reine.
-- C'est pour cela que la classe Soldat hérite de la classe FourmisMove, pour qu'il
-  y ait que le soldat qui puisse changer de direction, et qu'on bloque l'accès
-  à la reine de changer de noeud.
+  et à la Reine. En bref, FourmisMove permet de donner la liste de tous les noeuds adjacents de la
+  fourmis ouvrière et MoveOuvrier fait déplacer la fourmi en fonction de toutes les méthodes de déplacement
+  spécifiques à une fourmi ouvrière.
 
 
 4. **Interface Segregation P.**
@@ -66,7 +60,7 @@
 
 5. **Dependency Inversion P.**
 
-- La classe MoveOuvrier et MoveSoldat sont des classes abstraites, ce qui fait que la classe
+- La classe FourmisMove et MoveOuvrier sont des classes abstraites, ce qui fait que la classe
   Soldat et Ouvrier qui hérite de ces classes, dependent plutôt d'une abstraction que de types concrets.
 - Ces deux abstractions permettent d'être plus stables que les types concrets.
 
@@ -77,11 +71,11 @@
 
 1. **Expert en Information**
 
-- Nous donnons la responsabilité à la classe Aretes, qui détient l'information
+- Nous donnons la responsabilité à la classe FourmisMove, qui détient l'information
   pour réaliser la recherche des Aretes adjacentes du noeud auquel se trouve la Fourmi.
-- Nous donnons la responsabilité à la classe AretesOuvrier, qui détient l'information
+- Nous donnons la responsabilité à la classe MoveOuvrier, qui détient l'information
   pour réaliser la recherche des Aretes adjacentes pour l'ouvrier en fonction des phéromones et des noeuds déjà
-  visités. Cette classe à besoin de l'information des aretes adjacentes au départ de la classe Aretes.
+  visités. Cette classe à besoin de l'information des aretes adjacentes (au départ) de la classe FourmisMove.
 
 2. **Protection des Variations**
 
@@ -106,53 +100,50 @@
 4. **Forte cohésion**
 
 - Quels objects doivent prendre la responsabilité de :
-  - Chercher les arêtes adjacentes des fourmis soldats : **Classe Aretes**
-  - Prendre les résultats des listes de coordonnées X et Y de la classe Aretes : **Classe AretesOuvrier**
-  - Chercher les arêtes adjacentes des fourmis ouvrières : **Classe AretesOuvrier**
-  - Prendre les résultats de la coordonnée X et Y : **Classe FourmisMove**
-  - Chercher le numéro du nouveau noeud : **Classe Graphe**
-  - Déplacer les fourmis soldats : **Classe MoveSoldats**
+  - Chercher les arêtes adjacentes des fourmis soldats : **Classe FourmisMove**
+  - Prendre les résultats de la liste de Noeud de la classe FourmisMove : **Classe MoveOuvrier**
+  - Chercher les arêtes adjacentes des fourmis ouvrières : **Classe MoveOuvrier**
+  - Crée des noeuds : **Classe Graphe**
+  - Déplacer les fourmis soldats : **Classe FourmisMove**
   - Déplacer les fourmis ouvrières : **Classe MoveOuvrier**
 - Ces classes sont donc cohésives.
 
 5. **Créateur**
 
-- Quel objet doit prendre la responsabilité de créer les soldats sur la fourmilière ?
+- Quel objet doit prendre la responsabilité de créer les soldats et des ouvriers sur la fourmilière ?
   Réponse : La classe Reine doit prendre cette responsabilité car c'est elle qui
-  détient toutes les informations nécessaires à la création d'un soldat.
-- Il n'est pas possible de créer des soldats sans reine, donc il faut d'abord une reine
-  pour créer des soldats.
+  détient toutes les informations nécessaires à la création d'un soldat et d'un ouvrier.
+- Il n'est pas possible de créer des soldats ou des ouvriers sans reine, donc il faut d'abord une reine
+  pour créer des soldats/ouvriers.
 
 6. **Contrôleur**
 
 - Quel est le contrôleur pour l'application Fourmilière ?
   La réponse est la classe AntFacade, qui s'occupe de traiter toutes les méthodes
   nécessaires pour traiter les requêtes de l'utilisateur.
-- Cette classe s'occupe dans la version 1 : de créer une Grille, de mettre des obstacles,
-  de créer une colonie, et de faire jouer les fourmis afin qu'elles puissent se déplacer sur
-  le graphe.
+- Cette classe s'occupe dans la version 2 : de créer une Grille, de mettre des obstacles,
+  de créer une colonie, de mettre de la nourriture, des parametres concernant les phéromones d'une colonie, 
+  de creer des soldats et des ouvriers, de faire jouer les fourmis afin qu'elles puissent se déplacer sur
+  le graphe, et de créer un fichier en .CSV l'historique des mouivements des foumis et des noeuds adjacents
 
 7. **Polymorphisme**
 
-- Utilisation du polymorphisme pour la classe Ouvrière, car nous appelons la méthode de la classe FourmisSoldat
-  pour la faire déplacer grâce à l'objet de la classe Ouvrier.
-- Utilisation du polymorphisme pour la classe Soldat, car nous appelons la méthode de la classe FourmisSoldat
-  pour la faire déplacer grâce à l'objet de la classe Soldat.
-- Utilisation du polymorphisme pour la classe AretesOuvrier, car elle hérite des listes de coordonnées X et Y
-  de la classe Aretes.
-- La classe Reine, Soldat, Ouvrier, redéfinissent la méthode toStrimg() qui permettent de mieux les identifier.
+- Utilisation du polymorphisme pour la classe AntFacadeHistorique, car nous appelons la méthode de la classe FourmisMove
+  avec la méthode noeudVoisin() pour afficher dans une chaine de charactère des noeuds adjacents à la fourmi (soldat et ouvriere) a 
+  grâce à l'objet de la classe Ouvrier et Solddat.
+- La classe Reine, Soldat, Ouvrier, redéfinissent la méthode toString() qui permettent de mieux les identifier.
   L'avantage c'est qu'elles formennt une forte cohésion : les sous-classes définissent leur propre comportement.
 
 8. **Indirection**
 
-- Utilisation d'une classe Abstrait MoveSoldat et MoveOuvrier, qui permet aux fourmis Soldat et
+- Utilisation d'une classe Abstrait MoveOuvrier, qui permet aux fourmis
   Ouvrières de dépendre d'un comportement (qui est de les faire déplacer), et non d'une implémentation.
-- Ceci perme de diminuer le couplage entre les différents objets qui sont les classes Ouvrier et Soldat qui hérite
-  de la classe MoveSoldat (pour le soldat) et MoveOuvrier (pour l'ouvrier).
+- Ceci perme de diminuer le couplage entre les différents objets qui la classe Ouvrier qui hérite
+  de la classe MoveOuvrier.
 
 9. **Invention Pure**
 
-- On veut enrengistrer les traces des états successifs de chaque fourmi. A quelle classe assigner cette responsabilité ?
+- On veut enrengistrer les traces des états successifs de chaque fourmi. À quelle classe assigner cette responsabilité ?
 - L'expert en information c'est la classe AntFacade qui possède l'information de la grille avec son BitSet par exemple.
 - Mais, donner la responsabilité des enrengistrements des etats succesifs de la grille à AntFacade -->
   diminue la cohésion et couple la classe au système de fichier...
@@ -161,7 +152,6 @@
   - Cette classe est une invention pure, elle aura une unique responsabilité qui est d'afficher l'historique de la grille
   - Elle aura plus de chance d'être réutilisé et elle peut être utilisé dans d'autres classes 
   - Elle a un impact minimal sur la cohésion et le couplage de AntFacade
-  - Cette classe connaitra juste l'êtat dut BitSet et les dimensions de la grille.
 
 <hr />
 <hr />
