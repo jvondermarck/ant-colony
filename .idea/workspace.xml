@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="47cd6ad5-e8f1-43de-aae4-65f52ffc0fb8" name="Default Changelist" comment="V2 MAJ Java + UML" />
+    <list default="true" id="47cd6ad5-e8f1-43de-aae4-65f52ffc0fb8" name="Default Changelist" comment="JavaDoc" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -242,28 +242,7 @@
       <workItem from="1622205279376" duration="15067000" />
       <workItem from="1622224849484" duration="1914000" />
       <workItem from="1622226795375" duration="4669000" />
-      <workItem from="1622292513493" duration="20207000" />
-    </task>
-    <task id="LOCAL-00019" summary="Menage">
-      <created>1620908031485</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1620908031486</updated>
-    </task>
-    <task id="LOCAL-00020" summary="Correction Bug Aretes Java + Refont UML DC et DS">
-      <created>1621029176616</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1621029176616</updated>
-    </task>
-    <task id="LOCAL-00021" summary="MAJ Rapport + Les 3 UML">
-      <created>1621068417895</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1621068417895</updated>
+      <workItem from="1622292513493" duration="20512000" />
     </task>
     <task id="LOCAL-00022" summary="(Correction Bug rapport)">
       <created>1621068530791</created>
@@ -587,7 +566,28 @@
       <option name="project" value="LOCAL" />
       <updated>1622314548047</updated>
     </task>
-    <option name="localTasksCounter" value="68" />
+    <task id="LOCAL-00068" summary="JavaDoc">
+      <created>1622315148297</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1622315148297</updated>
+    </task>
+    <task id="LOCAL-00069" summary="JavaDoc">
+      <created>1622315158289</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1622315158289</updated>
+    </task>
+    <task id="LOCAL-00070" summary="JavaDoc">
+      <created>1622315162490</created>
+      <option name="number" value="00070" />
+      <option name="presentableId" value="LOCAL-00070" />
+      <option name="project" value="LOCAL" />
+      <updated>1622315162490</updated>
+    </task>
+    <option name="localTasksCounter" value="71" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -606,7 +606,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Différence V1/V2" />
     <MESSAGE value="JavaDoc + Tests V1" />
     <MESSAGE value="Changements Majeurs (Java+UML+Bug) V1&amp;2" />
     <MESSAGE value="JavaDoc V2" />
@@ -631,7 +630,8 @@
     <MESSAGE value="V2 MAJ grosse modif" />
     <MESSAGE value="V2 MAJ UML + Rapport" />
     <MESSAGE value="V2 MAJ Java + UML" />
-    <option name="LAST_COMMIT_MESSAGE" value="V2 MAJ Java + UML" />
+    <MESSAGE value="JavaDoc" />
+    <option name="LAST_COMMIT_MESSAGE" value="JavaDoc" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
