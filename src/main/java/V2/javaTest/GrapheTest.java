@@ -202,10 +202,6 @@ public class GrapheTest {
     {
         assertEquals(HEIGHT, g.getColumn());
     }
-
-
-
-
 }
 
 
