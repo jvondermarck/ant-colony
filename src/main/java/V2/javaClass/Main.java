@@ -3,7 +3,7 @@ package V2.javaClass;
 public class Main {
     public static void main(String[] args)
     {
-        MyOwnTest(new AntFacade(500));
+        MyOwnTest(new AntFacade());
     }
 
     public static void MyOwnTest(AntFacadeController controller)
@@ -11,10 +11,10 @@ public class Main {
         controller.createGrid( 6,6 );
         controller.createColony( 2,2 );
 
-//        controller.putObstacle( 1,1 );
-//        controller.putObstacle( 3,0 );
-//        controller.putObstacle( 3,1 );
-//        controller.putObstacle( 3,2 );
+        controller.putObstacle( 1,1 );
+        controller.putObstacle( 3,0 );
+        controller.putObstacle( 3,1 );
+        controller.putObstacle( 3,2 );
 //        controller.putObstacle( 2,3 );
 //        controller.putObstacle( 3,4 );
 //        controller.putObstacle( 3,5 );
