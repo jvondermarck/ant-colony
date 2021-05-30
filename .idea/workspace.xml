@@ -4,13 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="47cd6ad5-e8f1-43de-aae4-65f52ffc0fb8" name="Default Changelist" comment="MAJ Java">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TraceFourmis.csv" beforeDir="false" afterPath="$PROJECT_DIR$/TraceFourmis.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/V2/javaClass/AntFacade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/V2/javaClass/AntFacade.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/V2/javaClass/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/V2/javaClass/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/V2/javaTest/FourmiOuvrierTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/V2/javaTest/FourmiOuvrierTest.java" afterDir="false" />
-    </list>
+    <list default="true" id="47cd6ad5-e8f1-43de-aae4-65f52ffc0fb8" name="Default Changelist" comment="MAJ Java" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -251,14 +245,7 @@
       <workItem from="1622315408023" duration="242000" />
       <workItem from="1622363770879" duration="1814000" />
       <workItem from="1622385228219" duration="912000" />
-      <workItem from="1622389590054" duration="2289000" />
-    </task>
-    <task id="LOCAL-00032" summary="MAJ Pheromone + JavaDoc">
-      <created>1621333897485</created>
-      <option name="number" value="00032" />
-      <option name="presentableId" value="LOCAL-00032" />
-      <option name="project" value="LOCAL" />
-      <updated>1621333897485</updated>
+      <workItem from="1622389590054" duration="2474000" />
     </task>
     <task id="LOCAL-00033" summary="Code fonctionnel Ouvrier allé/retour">
       <created>1621350840022</created>
@@ -596,7 +583,14 @@
       <option name="project" value="LOCAL" />
       <updated>1622391652492</updated>
     </task>
-    <option name="localTasksCounter" value="81" />
+    <task id="LOCAL-00081" summary="MAJ Java">
+      <created>1622392047697</created>
+      <option name="number" value="00081" />
+      <option name="presentableId" value="LOCAL-00081" />
+      <option name="project" value="LOCAL" />
+      <updated>1622392047697</updated>
+    </task>
+    <option name="localTasksCounter" value="82" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

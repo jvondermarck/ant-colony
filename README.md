@@ -1,4 +1,4 @@
-# Fourmis - Rapport du projet A22 et P21
+# Fourmis - Rapport du projet A22
 ![A22](https://static.vecteezy.com/ti/vecteur-libre/t2/373734-fourmis-et-trou-rouge-feu-gratuit-vectoriel.jpg)
 
 **Réalisation du projet** :
