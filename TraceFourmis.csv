@@ -4,7 +4,7 @@
 						|---------------------------------------------------------------------------------------------------|
 						|                 Fichier d'historique des etats succesifs du systeme de fourmis                    |
 						|---------------------------------------------------------------------------------------------------|
-						|                    Lancement de la colonie de fourmis : 2021-05-29 20:31                          |
+						|                    Lancement de la colonie de fourmis : 2021-05-30 10:48                          |
 						|---------------------------------------------------------------------------------------------------|
 						| Petit mémo :                                                                                      |
 						| ............                                                                                      |
@@ -42,37 +42,37 @@
 	|      Etat du Graphe         |
 	|-----------------------------|
 	| {5} {} {} {} {} {} 
-	| {} {1} {3} {} {5} {} 
-	| {} {2} {0} {1} {} {5} 
-	| {1} {1} {1} {} {1} {1} 
+	| {} {} {2} {} {5} {} 
+	| {} {3} {0} {} {} {5} 
+	| {} {} {2} {} {} {} 
 	| {} {} {} {} {} {} 
 	| {} {} {} {5} {} {} 
 
 	|-----------------------------|
 	|  Etat des fourmis ouvrières |
 	|-----------------------------| -------------------------------------------------------------------------------------------------------------------|
-	| Ouvrier n°1 | Colonie n°1 -> à un stock de 0 nourriture stockée | Noeud n°9 | Transporte : 0 kg de nourriture | Retourne à la colonie : false   
-	| 	 --> Ouvrier n°1 | Voisin n°1 se trouve au Noeud n°Noeud n°3 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°2 se trouve au Noeud n°Noeud n°8 - est un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°3 se trouve au Noeud n°Noeud n°10 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°4 se trouve au Noeud n°Noeud n°15 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
+	| Ouvrier n°1 | Colonie n°1 -> à un stock de 0 nourriture stockée | Noeud n°14 | Transporte : 0 kg de nourriture | Retourne à la colonie : false   
+	| 	 --> Ouvrier n°1 | Voisin n°1 se trouve au Noeud n°Noeud n°8 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
+	|                      Voisin n°2 se trouve au Noeud n°Noeud n°13 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
+	|                      Voisin n°3 se trouve au Noeud n°Noeud n°15 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
+	|                      Voisin n°4 se trouve au Noeud n°Noeud n°20 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
 	| -------------------------------------------------------------------------------------------------------------------------------------------------| 
 	| -------------------------------------------------------------------------------------------------------------------------------------------------|
 
 	|-----------------------------|
 	|  Etat des fourmis soldats   |
 	|-----------------------------| -------------------------------------------------------------------------------------------------------------------|
-	|  Soldat n°1  | Colonie n°1 -> à un stock de 0 nourriture stockée | Noeud n°14 
-	| 	 --> Soldat n°1 |  Voisin n°1 se trouve au Noeud n°Noeud n°8 - est un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°2 se trouve au Noeud n°Noeud n°13 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°3 se trouve au Noeud n°Noeud n°15 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°4 se trouve au Noeud n°Noeud n°20 - est un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
+	|  Soldat n°1  | Colonie n°1 -> à un stock de 0 nourriture stockée | Noeud n°21 
+	| 	 --> Soldat n°1 |  Voisin n°1 se trouve au Noeud n°Noeud n°15 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
+	|                      Voisin n°2 se trouve au Noeud n°Noeud n°20 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
+	|                      Voisin n°3 se trouve au Noeud n°Noeud n°22 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
+	|                      Voisin n°4 se trouve au Noeud n°Noeud n°27 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
 	| -------------------------------------------------------------------------------------------------------------------------------------------------| 
-	|  Soldat n°2  | Colonie n°1 -> à un stock de 0 nourriture stockée | Noeud n°14 
-	| 	 --> Soldat n°2 |  Voisin n°1 se trouve au Noeud n°Noeud n°8 - est un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°2 se trouve au Noeud n°Noeud n°13 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°3 se trouve au Noeud n°Noeud n°15 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°4 se trouve au Noeud n°Noeud n°20 - est un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
+	|  Soldat n°2  | Colonie n°1 -> à un stock de 0 nourriture stockée | Noeud n°9 
+	| 	 --> Soldat n°2 |  Voisin n°1 se trouve au Noeud n°Noeud n°3 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
+	|                      Voisin n°2 se trouve au Noeud n°Noeud n°8 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
+	|                      Voisin n°3 se trouve au Noeud n°Noeud n°10 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
+	|                      Voisin n°4 se trouve au Noeud n°Noeud n°15 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
 	| -------------------------------------------------------------------------------------------------------------------------------------------------| 
 	| -------------------------------------------------------------------------------------------------------------------------------------------------|
 
@@ -85,36 +85,37 @@
 	|-----------------------------|
 	|      Etat du Graphe         |
 	|-----------------------------|
-	| {5} {} {3} {} {} {} 
-	| {} {1} {} {} {5} {} 
-	| {2} {} {0, 2} {1} {} {5} 
-	| {1} {1} {1} {} {1} {1} 
+	| {5} {} {} {} {} {} 
+	| {} {} {} {} {5} {} 
+	| {3} {} {0, 2} {} {} {5} 
+	| {} {2} {} {} {} {} 
 	| {} {} {} {} {} {} 
 	| {} {} {} {5} {} {} 
 
 	|-----------------------------|
 	|  Etat des fourmis ouvrières |
 	|-----------------------------| -------------------------------------------------------------------------------------------------------------------|
-	| Ouvrier n°1 | Colonie n°1 -> à un stock de 0 nourriture stockée | Noeud n°3 | Transporte : 0 kg de nourriture | Retourne à la colonie : false   
-	| 	 --> Ouvrier n°1 | Voisin n°1 se trouve au Noeud n°Noeud n°2 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°2 se trouve au Noeud n°Noeud n°4 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°3 se trouve au Noeud n°Noeud n°9 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
+	| Ouvrier n°1 | Colonie n°1 -> à un stock de 0 nourriture stockée | Noeud n°13 | Transporte : 0 kg de nourriture | Retourne à la colonie : false   
+	| 	 --> Ouvrier n°1 | Voisin n°1 se trouve au Noeud n°Noeud n°7 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
+	|                      Voisin n°2 se trouve au Noeud n°Noeud n°14 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
+	|                      Voisin n°3 se trouve au Noeud n°Noeud n°19 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
 	| -------------------------------------------------------------------------------------------------------------------------------------------------| 
 	| -------------------------------------------------------------------------------------------------------------------------------------------------|
 
 	|-----------------------------|
 	|  Etat des fourmis soldats   |
 	|-----------------------------| -------------------------------------------------------------------------------------------------------------------|
-	|  Soldat n°1  | Colonie n°1 -> à un stock de 0 nourriture stockée | Noeud n°15 
-	| 	 --> Soldat n°1 |  Voisin n°1 se trouve au Noeud n°Noeud n°9 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°2 se trouve au Noeud n°Noeud n°14 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°3 se trouve au Noeud n°Noeud n°16 - est un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°4 se trouve au Noeud n°Noeud n°21 - est un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
+	|  Soldat n°1  | Colonie n°1 -> à un stock de 0 nourriture stockée | Noeud n°20 
+	| 	 --> Soldat n°1 |  Voisin n°1 se trouve au Noeud n°Noeud n°14 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
+	|                      Voisin n°2 se trouve au Noeud n°Noeud n°19 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
+	|                      Voisin n°3 se trouve au Noeud n°Noeud n°21 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
+	|                      Voisin n°4 se trouve au Noeud n°Noeud n°26 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
 	| -------------------------------------------------------------------------------------------------------------------------------------------------| 
-	|  Soldat n°2  | Colonie n°1 -> à un stock de 0 nourriture stockée | Noeud n°13 
-	| 	 --> Soldat n°2 |  Voisin n°1 se trouve au Noeud n°Noeud n°7 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
+	|  Soldat n°2  | Colonie n°1 -> à un stock de 0 nourriture stockée | Noeud n°15 
+	| 	 --> Soldat n°2 |  Voisin n°1 se trouve au Noeud n°Noeud n°9 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
 	|                      Voisin n°2 se trouve au Noeud n°Noeud n°14 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°3 se trouve au Noeud n°Noeud n°19 - est un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
+	|                      Voisin n°3 se trouve au Noeud n°Noeud n°16 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
+	|                      Voisin n°4 se trouve au Noeud n°Noeud n°21 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
 	| -------------------------------------------------------------------------------------------------------------------------------------------------| 
 	| -------------------------------------------------------------------------------------------------------------------------------------------------|
 
@@ -127,36 +128,37 @@
 	|-----------------------------|
 	|      Etat du Graphe         |
 	|-----------------------------|
-	| {5} {3} {} {} {} {} 
-	| {2} {1} {} {} {5} {} 
-	| {} {2} {0} {1} {} {5} 
-	| {1} {1} {1} {} {1} {1} 
+	| {5} {} {} {} {} {} 
+	| {} {} {} {} {5} {} 
+	| {} {2} {0} {} {} {5} 
+	| {3} {} {2} {} {} {} 
 	| {} {} {} {} {} {} 
 	| {} {} {} {5} {} {} 
 
 	|-----------------------------|
 	|  Etat des fourmis ouvrières |
 	|-----------------------------| -------------------------------------------------------------------------------------------------------------------|
-	| Ouvrier n°1 | Colonie n°1 -> à un stock de 0 nourriture stockée | Noeud n°2 | Transporte : 0 kg de nourriture | Retourne à la colonie : false   
-	| 	 --> Ouvrier n°1 | Voisin n°1 se trouve au Noeud n°Noeud n°1 - est pas un obstacle -  contient : 15kg de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°2 se trouve au Noeud n°Noeud n°3 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°3 se trouve au Noeud n°Noeud n°8 - est un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
+	| Ouvrier n°1 | Colonie n°1 -> à un stock de 0 nourriture stockée | Noeud n°19 | Transporte : 0 kg de nourriture | Retourne à la colonie : false   
+	| 	 --> Ouvrier n°1 | Voisin n°1 se trouve au Noeud n°Noeud n°13 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
+	|                      Voisin n°2 se trouve au Noeud n°Noeud n°20 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
+	|                      Voisin n°3 se trouve au Noeud n°Noeud n°25 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
 	| -------------------------------------------------------------------------------------------------------------------------------------------------| 
 	| -------------------------------------------------------------------------------------------------------------------------------------------------|
 
 	|-----------------------------|
 	|  Etat des fourmis soldats   |
 	|-----------------------------| -------------------------------------------------------------------------------------------------------------------|
-	|  Soldat n°1  | Colonie n°1 -> à un stock de 0 nourriture stockée | Noeud n°14 
-	| 	 --> Soldat n°1 |  Voisin n°1 se trouve au Noeud n°Noeud n°8 - est un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
+	|  Soldat n°1  | Colonie n°1 -> à un stock de 0 nourriture stockée | Noeud n°21 
+	| 	 --> Soldat n°1 |  Voisin n°1 se trouve au Noeud n°Noeud n°15 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
+	|                      Voisin n°2 se trouve au Noeud n°Noeud n°20 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
+	|                      Voisin n°3 se trouve au Noeud n°Noeud n°22 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
+	|                      Voisin n°4 se trouve au Noeud n°Noeud n°27 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
+	| -------------------------------------------------------------------------------------------------------------------------------------------------| 
+	|  Soldat n°2  | Colonie n°1 -> à un stock de 0 nourriture stockée | Noeud n°14 
+	| 	 --> Soldat n°2 |  Voisin n°1 se trouve au Noeud n°Noeud n°8 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
 	|                      Voisin n°2 se trouve au Noeud n°Noeud n°13 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
 	|                      Voisin n°3 se trouve au Noeud n°Noeud n°15 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°4 se trouve au Noeud n°Noeud n°20 - est un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	| -------------------------------------------------------------------------------------------------------------------------------------------------| 
-	|  Soldat n°2  | Colonie n°1 -> à un stock de 0 nourriture stockée | Noeud n°7 
-	| 	 --> Soldat n°2 |  Voisin n°1 se trouve au Noeud n°Noeud n°1 - est pas un obstacle -  contient : 15kg de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°2 se trouve au Noeud n°Noeud n°8 - est un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°3 se trouve au Noeud n°Noeud n°13 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
+	|                      Voisin n°4 se trouve au Noeud n°Noeud n°20 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
 	| -------------------------------------------------------------------------------------------------------------------------------------------------| 
 	| -------------------------------------------------------------------------------------------------------------------------------------------------|
 
@@ -169,34 +171,38 @@
 	|-----------------------------|
 	|      Etat du Graphe         |
 	|-----------------------------|
-	| {2, 3, 5} {} {} {} {} {} 
-	| {} {1} {} {} {5} {} 
-	| {} {} {0, 2} {1} {} {5} 
-	| {1} {1} {1} {} {1} {1} 
-	| {} {} {} {} {} {} 
+	| {5} {} {} {} {} {} 
+	| {} {} {} {} {5} {} 
+	| {} {} {0} {} {} {5} 
+	| {} {2, 3} {} {} {} {} 
+	| {} {} {2} {} {} {} 
 	| {} {} {} {5} {} {} 
 
 	|-----------------------------|
 	|  Etat des fourmis ouvrières |
 	|-----------------------------| -------------------------------------------------------------------------------------------------------------------|
-	| Ouvrier n°1 | Colonie n°1 -> à un stock de 0 nourriture stockée | Noeud n°1 | Transporte : 15 kg de nourriture | Retourne à la colonie : true   
-	| 	 --> Ouvrier n°1 | Voisin n°1 se trouve au Noeud n°Noeud n°2 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°2 se trouve au Noeud n°Noeud n°7 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
+	| Ouvrier n°1 | Colonie n°1 -> à un stock de 0 nourriture stockée | Noeud n°20 | Transporte : 0 kg de nourriture | Retourne à la colonie : false   
+	| 	 --> Ouvrier n°1 | Voisin n°1 se trouve au Noeud n°Noeud n°14 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
+	|                      Voisin n°2 se trouve au Noeud n°Noeud n°19 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
+	|                      Voisin n°3 se trouve au Noeud n°Noeud n°21 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
+	|                      Voisin n°4 se trouve au Noeud n°Noeud n°26 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
 	| -------------------------------------------------------------------------------------------------------------------------------------------------| 
 	| -------------------------------------------------------------------------------------------------------------------------------------------------|
 
 	|-----------------------------|
 	|  Etat des fourmis soldats   |
 	|-----------------------------| -------------------------------------------------------------------------------------------------------------------|
-	|  Soldat n°1  | Colonie n°1 -> à un stock de 0 nourriture stockée | Noeud n°15 
-	| 	 --> Soldat n°1 |  Voisin n°1 se trouve au Noeud n°Noeud n°9 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°2 se trouve au Noeud n°Noeud n°14 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°3 se trouve au Noeud n°Noeud n°16 - est un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°4 se trouve au Noeud n°Noeud n°21 - est un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
+	|  Soldat n°1  | Colonie n°1 -> à un stock de 0 nourriture stockée | Noeud n°27 
+	| 	 --> Soldat n°1 |  Voisin n°1 se trouve au Noeud n°Noeud n°21 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
+	|                      Voisin n°2 se trouve au Noeud n°Noeud n°26 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
+	|                      Voisin n°3 se trouve au Noeud n°Noeud n°28 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
+	|                      Voisin n°4 se trouve au Noeud n°Noeud n°33 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
 	| -------------------------------------------------------------------------------------------------------------------------------------------------| 
-	|  Soldat n°2  | Colonie n°1 -> à un stock de 0 nourriture stockée | Noeud n°1 
-	| 	 --> Soldat n°2 |  Voisin n°1 se trouve au Noeud n°Noeud n°2 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°2 se trouve au Noeud n°Noeud n°7 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
+	|  Soldat n°2  | Colonie n°1 -> à un stock de 0 nourriture stockée | Noeud n°20 
+	| 	 --> Soldat n°2 |  Voisin n°1 se trouve au Noeud n°Noeud n°14 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
+	|                      Voisin n°2 se trouve au Noeud n°Noeud n°19 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
+	|                      Voisin n°3 se trouve au Noeud n°Noeud n°21 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
+	|                      Voisin n°4 se trouve au Noeud n°Noeud n°26 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
 	| -------------------------------------------------------------------------------------------------------------------------------------------------| 
 	| -------------------------------------------------------------------------------------------------------------------------------------------------|
 
@@ -209,36 +215,36 @@
 	|-----------------------------|
 	|      Etat du Graphe         |
 	|-----------------------------|
-	| {} {2, 4} {} {} {} {} 
-	| {} {1} {2} {} {5} {} 
-	| {} {} {0} {1} {} {5} 
-	| {1} {1} {1} {} {1} {1} 
-	| {} {} {} {} {} {} 
-	| {} {} {} {5} {} {} 
+	| {5} {} {} {} {} {} 
+	| {} {} {} {} {5} {} 
+	| {} {} {0} {} {} {5} 
+	| {2} {} {} {} {} {} 
+	| {} {3} {} {} {} {} 
+	| {} {} {2} {5} {} {} 
 
 	|-----------------------------|
 	|  Etat des fourmis ouvrières |
 	|-----------------------------| -------------------------------------------------------------------------------------------------------------------|
-	| Ouvrier n°1 | Colonie n°1 -> à un stock de 0 nourriture stockée | Noeud n°2 | Transporte : 15 kg de nourriture | Retourne à la colonie : true   
-	| 	 --> Ouvrier n°1 | Voisin n°1 se trouve au Noeud n°Noeud n°1 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°2 se trouve au Noeud n°Noeud n°3 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°3 se trouve au Noeud n°Noeud n°8 - est un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
+	| Ouvrier n°1 | Colonie n°1 -> à un stock de 0 nourriture stockée | Noeud n°26 | Transporte : 0 kg de nourriture | Retourne à la colonie : false   
+	| 	 --> Ouvrier n°1 | Voisin n°1 se trouve au Noeud n°Noeud n°20 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
+	|                      Voisin n°2 se trouve au Noeud n°Noeud n°25 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
+	|                      Voisin n°3 se trouve au Noeud n°Noeud n°27 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
+	|                      Voisin n°4 se trouve au Noeud n°Noeud n°32 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
 	| -------------------------------------------------------------------------------------------------------------------------------------------------| 
 	| -------------------------------------------------------------------------------------------------------------------------------------------------|
 
 	|-----------------------------|
 	|  Etat des fourmis soldats   |
 	|-----------------------------| -------------------------------------------------------------------------------------------------------------------|
-	|  Soldat n°1  | Colonie n°1 -> à un stock de 0 nourriture stockée | Noeud n°9 
-	| 	 --> Soldat n°1 |  Voisin n°1 se trouve au Noeud n°Noeud n°3 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°2 se trouve au Noeud n°Noeud n°8 - est un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°3 se trouve au Noeud n°Noeud n°10 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°4 se trouve au Noeud n°Noeud n°15 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
+	|  Soldat n°1  | Colonie n°1 -> à un stock de 0 nourriture stockée | Noeud n°33 
+	| 	 --> Soldat n°1 |  Voisin n°1 se trouve au Noeud n°Noeud n°27 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
+	|                      Voisin n°2 se trouve au Noeud n°Noeud n°32 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
+	|                      Voisin n°3 se trouve au Noeud n°Noeud n°34 - est pas un obstacle -  contient : 15kg de nourriture -  et n'a pas de phéromones
 	| -------------------------------------------------------------------------------------------------------------------------------------------------| 
-	|  Soldat n°2  | Colonie n°1 -> à un stock de 0 nourriture stockée | Noeud n°2 
-	| 	 --> Soldat n°2 |  Voisin n°1 se trouve au Noeud n°Noeud n°1 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°2 se trouve au Noeud n°Noeud n°3 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°3 se trouve au Noeud n°Noeud n°8 - est un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
+	|  Soldat n°2  | Colonie n°1 -> à un stock de 0 nourriture stockée | Noeud n°19 
+	| 	 --> Soldat n°2 |  Voisin n°1 se trouve au Noeud n°Noeud n°13 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
+	|                      Voisin n°2 se trouve au Noeud n°Noeud n°20 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
+	|                      Voisin n°3 se trouve au Noeud n°Noeud n°25 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
 	| -------------------------------------------------------------------------------------------------------------------------------------------------| 
 	| -------------------------------------------------------------------------------------------------------------------------------------------------|
 
@@ -251,34 +257,36 @@
 	|-----------------------------|
 	|      Etat du Graphe         |
 	|-----------------------------|
-	| {2} {6} {2, 4} {} {} {} 
-	| {} {1} {} {} {5} {} 
-	| {} {} {0} {1} {} {5} 
-	| {1} {1} {1} {} {1} {1} 
+	| {5} {} {} {} {} {} 
+	| {} {} {} {} {5} {} 
+	| {} {} {0} {} {} {5} 
+	| {} {2} {} {} {} {} 
 	| {} {} {} {} {} {} 
-	| {} {} {} {5} {} {} 
+	| {} {3} {} {2, 5} {} {} 
 
 	|-----------------------------|
 	|  Etat des fourmis ouvrières |
 	|-----------------------------| -------------------------------------------------------------------------------------------------------------------|
-	| Ouvrier n°1 | Colonie n°1 -> à un stock de 0 nourriture stockée | Noeud n°3 | Transporte : 15 kg de nourriture | Retourne à la colonie : true   
-	| 	 --> Ouvrier n°1 | Voisin n°1 se trouve au Noeud n°Noeud n°2 - est pas un obstacle -  n'a pas de nourriture -  contient : 9 phéromones.
-	|                      Voisin n°2 se trouve au Noeud n°Noeud n°4 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°3 se trouve au Noeud n°Noeud n°9 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
+	| Ouvrier n°1 | Colonie n°1 -> à un stock de 0 nourriture stockée | Noeud n°32 | Transporte : 0 kg de nourriture | Retourne à la colonie : false   
+	| 	 --> Ouvrier n°1 | Voisin n°1 se trouve au Noeud n°Noeud n°26 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
+	|                      Voisin n°2 se trouve au Noeud n°Noeud n°31 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
+	|                      Voisin n°3 se trouve au Noeud n°Noeud n°33 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
 	| -------------------------------------------------------------------------------------------------------------------------------------------------| 
 	| -------------------------------------------------------------------------------------------------------------------------------------------------|
 
 	|-----------------------------|
 	|  Etat des fourmis soldats   |
 	|-----------------------------| -------------------------------------------------------------------------------------------------------------------|
-	|  Soldat n°1  | Colonie n°1 -> à un stock de 0 nourriture stockée | Noeud n°3 
-	| 	 --> Soldat n°1 |  Voisin n°1 se trouve au Noeud n°Noeud n°2 - est pas un obstacle -  n'a pas de nourriture -  contient : 9 phéromones.
-	|                      Voisin n°2 se trouve au Noeud n°Noeud n°4 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°3 se trouve au Noeud n°Noeud n°9 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
+	|  Soldat n°1  | Colonie n°1 -> à un stock de 0 nourriture stockée | Noeud n°34 
+	| 	 --> Soldat n°1 |  Voisin n°1 se trouve au Noeud n°Noeud n°28 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
+	|                      Voisin n°2 se trouve au Noeud n°Noeud n°33 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
+	|                      Voisin n°3 se trouve au Noeud n°Noeud n°35 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
 	| -------------------------------------------------------------------------------------------------------------------------------------------------| 
-	|  Soldat n°2  | Colonie n°1 -> à un stock de 0 nourriture stockée | Noeud n°1 
-	| 	 --> Soldat n°2 |  Voisin n°1 se trouve au Noeud n°Noeud n°2 - est pas un obstacle -  n'a pas de nourriture -  contient : 9 phéromones.
-	|                      Voisin n°2 se trouve au Noeud n°Noeud n°7 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
+	|  Soldat n°2  | Colonie n°1 -> à un stock de 0 nourriture stockée | Noeud n°20 
+	| 	 --> Soldat n°2 |  Voisin n°1 se trouve au Noeud n°Noeud n°14 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
+	|                      Voisin n°2 se trouve au Noeud n°Noeud n°19 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
+	|                      Voisin n°3 se trouve au Noeud n°Noeud n°21 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
+	|                      Voisin n°4 se trouve au Noeud n°Noeud n°26 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
 	| -------------------------------------------------------------------------------------------------------------------------------------------------| 
 	| -------------------------------------------------------------------------------------------------------------------------------------------------|
 
@@ -291,36 +299,34 @@
 	|-----------------------------|
 	|      Etat du Graphe         |
 	|-----------------------------|
-	| {} {2, 6} {6} {} {} {} 
-	| {} {1} {4} {} {5} {} 
-	| {} {} {0} {1} {} {5} 
-	| {1} {1} {1} {} {1} {1} 
+	| {5} {} {} {} {} {} 
+	| {} {} {} {} {5} {} 
+	| {} {} {0} {} {} {5} 
+	| {2} {} {} {} {} {} 
 	| {} {} {} {} {} {} 
-	| {} {} {} {5} {} {} 
+	| {3} {} {2} {5} {} {} 
 
 	|-----------------------------|
 	|  Etat des fourmis ouvrières |
 	|-----------------------------| -------------------------------------------------------------------------------------------------------------------|
-	| Ouvrier n°1 | Colonie n°1 -> à un stock de 0 nourriture stockée | Noeud n°9 | Transporte : 15 kg de nourriture | Retourne à la colonie : true   
-	| 	 --> Ouvrier n°1 | Voisin n°1 se trouve au Noeud n°Noeud n°3 - est pas un obstacle -  n'a pas de nourriture -  contient : 9 phéromones.
-	|                      Voisin n°2 se trouve au Noeud n°Noeud n°8 - est un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°3 se trouve au Noeud n°Noeud n°10 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°4 se trouve au Noeud n°Noeud n°15 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
+	| Ouvrier n°1 | Colonie n°1 -> à un stock de 0 nourriture stockée | Noeud n°31 | Transporte : 0 kg de nourriture | Retourne à la colonie : false   
+	| 	 --> Ouvrier n°1 | Voisin n°1 se trouve au Noeud n°Noeud n°25 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
+	|                      Voisin n°2 se trouve au Noeud n°Noeud n°32 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
 	| -------------------------------------------------------------------------------------------------------------------------------------------------| 
 	| -------------------------------------------------------------------------------------------------------------------------------------------------|
 
 	|-----------------------------|
 	|  Etat des fourmis soldats   |
 	|-----------------------------| -------------------------------------------------------------------------------------------------------------------|
-	|  Soldat n°1  | Colonie n°1 -> à un stock de 0 nourriture stockée | Noeud n°2 
-	| 	 --> Soldat n°1 |  Voisin n°1 se trouve au Noeud n°Noeud n°1 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°2 se trouve au Noeud n°Noeud n°3 - est pas un obstacle -  n'a pas de nourriture -  contient : 9 phéromones.
-	|                      Voisin n°3 se trouve au Noeud n°Noeud n°8 - est un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
+	|  Soldat n°1  | Colonie n°1 -> à un stock de 0 nourriture stockée | Noeud n°33 
+	| 	 --> Soldat n°1 |  Voisin n°1 se trouve au Noeud n°Noeud n°27 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
+	|                      Voisin n°2 se trouve au Noeud n°Noeud n°32 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
+	|                      Voisin n°3 se trouve au Noeud n°Noeud n°34 - est pas un obstacle -  contient : 15kg de nourriture -  et n'a pas de phéromones
 	| -------------------------------------------------------------------------------------------------------------------------------------------------| 
-	|  Soldat n°2  | Colonie n°1 -> à un stock de 0 nourriture stockée | Noeud n°2 
-	| 	 --> Soldat n°2 |  Voisin n°1 se trouve au Noeud n°Noeud n°1 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°2 se trouve au Noeud n°Noeud n°3 - est pas un obstacle -  n'a pas de nourriture -  contient : 9 phéromones.
-	|                      Voisin n°3 se trouve au Noeud n°Noeud n°8 - est un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
+	|  Soldat n°2  | Colonie n°1 -> à un stock de 0 nourriture stockée | Noeud n°19 
+	| 	 --> Soldat n°2 |  Voisin n°1 se trouve au Noeud n°Noeud n°13 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
+	|                      Voisin n°2 se trouve au Noeud n°Noeud n°20 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
+	|                      Voisin n°3 se trouve au Noeud n°Noeud n°25 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
 	| -------------------------------------------------------------------------------------------------------------------------------------------------| 
 	| -------------------------------------------------------------------------------------------------------------------------------------------------|
 
@@ -333,36 +339,36 @@
 	|-----------------------------|
 	|      Etat du Graphe         |
 	|-----------------------------|
-	| {} {6} {2, 6} {} {} {} 
-	| {} {1} {6} {} {5} {} 
-	| {} {} {0, 4} {1} {} {5} 
-	| {1} {1} {1} {} {1} {1} 
-	| {} {} {} {} {} {} 
-	| {} {} {} {5} {} {} 
+	| {5} {} {} {} {} {} 
+	| {} {} {} {} {5} {} 
+	| {} {} {0} {} {} {5} 
+	| {} {2} {} {} {} {} 
+	| {3} {} {} {} {} {} 
+	| {} {2} {} {5} {} {} 
 
 	|-----------------------------|
 	|  Etat des fourmis ouvrières |
 	|-----------------------------| -------------------------------------------------------------------------------------------------------------------|
-	| Ouvrier n°1 | Colonie n°1 -> à un stock de 0 nourriture stockée | Noeud n°15 | Transporte : 15 kg de nourriture | Retourne à la colonie : true   
-	| 	 --> Ouvrier n°1 | Voisin n°1 se trouve au Noeud n°Noeud n°9 - est pas un obstacle -  n'a pas de nourriture -  contient : 9 phéromones.
-	|                      Voisin n°2 se trouve au Noeud n°Noeud n°14 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°3 se trouve au Noeud n°Noeud n°16 - est un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°4 se trouve au Noeud n°Noeud n°21 - est un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
+	| Ouvrier n°1 | Colonie n°1 -> à un stock de 0 nourriture stockée | Noeud n°25 | Transporte : 0 kg de nourriture | Retourne à la colonie : false   
+	| 	 --> Ouvrier n°1 | Voisin n°1 se trouve au Noeud n°Noeud n°19 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
+	|                      Voisin n°2 se trouve au Noeud n°Noeud n°26 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
+	|                      Voisin n°3 se trouve au Noeud n°Noeud n°31 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
 	| -------------------------------------------------------------------------------------------------------------------------------------------------| 
 	| -------------------------------------------------------------------------------------------------------------------------------------------------|
 
 	|-----------------------------|
 	|  Etat des fourmis soldats   |
 	|-----------------------------| -------------------------------------------------------------------------------------------------------------------|
-	|  Soldat n°1  | Colonie n°1 -> à un stock de 0 nourriture stockée | Noeud n°3 
-	| 	 --> Soldat n°1 |  Voisin n°1 se trouve au Noeud n°Noeud n°2 - est pas un obstacle -  n'a pas de nourriture -  contient : 7 phéromones.
-	|                      Voisin n°2 se trouve au Noeud n°Noeud n°4 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°3 se trouve au Noeud n°Noeud n°9 - est pas un obstacle -  n'a pas de nourriture -  contient : 9 phéromones.
+	|  Soldat n°1  | Colonie n°1 -> à un stock de 0 nourriture stockée | Noeud n°32 
+	| 	 --> Soldat n°1 |  Voisin n°1 se trouve au Noeud n°Noeud n°26 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
+	|                      Voisin n°2 se trouve au Noeud n°Noeud n°31 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
+	|                      Voisin n°3 se trouve au Noeud n°Noeud n°33 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
 	| -------------------------------------------------------------------------------------------------------------------------------------------------| 
-	|  Soldat n°2  | Colonie n°1 -> à un stock de 0 nourriture stockée | Noeud n°3 
-	| 	 --> Soldat n°2 |  Voisin n°1 se trouve au Noeud n°Noeud n°2 - est pas un obstacle -  n'a pas de nourriture -  contient : 7 phéromones.
-	|                      Voisin n°2 se trouve au Noeud n°Noeud n°4 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°3 se trouve au Noeud n°Noeud n°9 - est pas un obstacle -  n'a pas de nourriture -  contient : 9 phéromones.
+	|  Soldat n°2  | Colonie n°1 -> à un stock de 0 nourriture stockée | Noeud n°20 
+	| 	 --> Soldat n°2 |  Voisin n°1 se trouve au Noeud n°Noeud n°14 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
+	|                      Voisin n°2 se trouve au Noeud n°Noeud n°19 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
+	|                      Voisin n°3 se trouve au Noeud n°Noeud n°21 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
+	|                      Voisin n°4 se trouve au Noeud n°Noeud n°26 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
 	| -------------------------------------------------------------------------------------------------------------------------------------------------| 
 	| -------------------------------------------------------------------------------------------------------------------------------------------------|
 
@@ -375,37 +381,33 @@
 	|-----------------------------|
 	|      Etat du Graphe         |
 	|-----------------------------|
-	| {} {2, 6} {6} {} {} {} 
-	| {} {1} {2, 3, 6} {} {5} {} 
-	| {} {} {0} {1} {} {5} 
-	| {1} {1} {1} {} {1} {1} 
+	| {5} {} {} {} {} {} 
+	| {} {} {} {} {5} {} 
+	| {} {} {0} {} {} {5} 
+	| {2} {} {} {} {} {} 
 	| {} {} {} {} {} {} 
-	| {} {} {} {5} {} {} 
+	| {2, 3} {} {} {5} {} {} 
 
 	|-----------------------------|
 	|  Etat des fourmis ouvrières |
 	|-----------------------------| -------------------------------------------------------------------------------------------------------------------|
-	| Ouvrier n°1 | Colonie n°1 -> à un stock de 15 nourriture stockée | Noeud n°9 | Transporte : 0 kg de nourriture | Retourne à la colonie : false   
-	| 	 --> Ouvrier n°1 | Voisin n°1 se trouve au Noeud n°Noeud n°3 - est pas un obstacle -  n'a pas de nourriture -  contient : 7 phéromones.
-	|                      Voisin n°2 se trouve au Noeud n°Noeud n°8 - est un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°3 se trouve au Noeud n°Noeud n°10 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°4 se trouve au Noeud n°Noeud n°15 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
+	| Ouvrier n°1 | Colonie n°1 -> à un stock de 0 nourriture stockée | Noeud n°31 | Transporte : 0 kg de nourriture | Retourne à la colonie : false   
+	| 	 --> Ouvrier n°1 | Voisin n°1 se trouve au Noeud n°Noeud n°25 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
+	|                      Voisin n°2 se trouve au Noeud n°Noeud n°32 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
 	| -------------------------------------------------------------------------------------------------------------------------------------------------| 
 	| -------------------------------------------------------------------------------------------------------------------------------------------------|
 
 	|-----------------------------|
 	|  Etat des fourmis soldats   |
 	|-----------------------------| -------------------------------------------------------------------------------------------------------------------|
-	|  Soldat n°1  | Colonie n°1 -> à un stock de 15 nourriture stockée | Noeud n°2 
-	| 	 --> Soldat n°1 |  Voisin n°1 se trouve au Noeud n°Noeud n°1 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°2 se trouve au Noeud n°Noeud n°3 - est pas un obstacle -  n'a pas de nourriture -  contient : 7 phéromones.
-	|                      Voisin n°3 se trouve au Noeud n°Noeud n°8 - est un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
+	|  Soldat n°1  | Colonie n°1 -> à un stock de 0 nourriture stockée | Noeud n°31 
+	| 	 --> Soldat n°1 |  Voisin n°1 se trouve au Noeud n°Noeud n°25 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
+	|                      Voisin n°2 se trouve au Noeud n°Noeud n°32 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
 	| -------------------------------------------------------------------------------------------------------------------------------------------------| 
-	|  Soldat n°2  | Colonie n°1 -> à un stock de 15 nourriture stockée | Noeud n°9 
-	| 	 --> Soldat n°2 |  Voisin n°1 se trouve au Noeud n°Noeud n°3 - est pas un obstacle -  n'a pas de nourriture -  contient : 7 phéromones.
-	|                      Voisin n°2 se trouve au Noeud n°Noeud n°8 - est un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°3 se trouve au Noeud n°Noeud n°10 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°4 se trouve au Noeud n°Noeud n°15 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
+	|  Soldat n°2  | Colonie n°1 -> à un stock de 0 nourriture stockée | Noeud n°19 
+	| 	 --> Soldat n°2 |  Voisin n°1 se trouve au Noeud n°Noeud n°13 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
+	|                      Voisin n°2 se trouve au Noeud n°Noeud n°20 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
+	|                      Voisin n°3 se trouve au Noeud n°Noeud n°25 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
 	| -------------------------------------------------------------------------------------------------------------------------------------------------| 
 	| -------------------------------------------------------------------------------------------------------------------------------------------------|
 
@@ -418,35 +420,35 @@
 	|-----------------------------|
 	|      Etat du Graphe         |
 	|-----------------------------|
-	| {2} {6} {3, 6} {} {} {} 
-	| {} {1} {6} {2} {5} {} 
-	| {} {} {0} {1} {} {5} 
-	| {1} {1} {1} {} {1} {1} 
+	| {5} {} {} {} {} {} 
+	| {} {} {} {} {5} {} 
+	| {} {} {0} {} {} {5} 
 	| {} {} {} {} {} {} 
-	| {} {} {} {5} {} {} 
+	| {2} {} {} {} {} {} 
+	| {} {2, 3} {} {5} {} {} 
 
 	|-----------------------------|
 	|  Etat des fourmis ouvrières |
 	|-----------------------------| -------------------------------------------------------------------------------------------------------------------|
-	| Ouvrier n°1 | Colonie n°1 -> à un stock de 15 nourriture stockée | Noeud n°3 | Transporte : 0 kg de nourriture | Retourne à la colonie : false   
-	| 	 --> Ouvrier n°1 | Voisin n°1 se trouve au Noeud n°Noeud n°2 - est pas un obstacle -  n'a pas de nourriture -  contient : 5 phéromones.
-	|                      Voisin n°2 se trouve au Noeud n°Noeud n°4 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°3 se trouve au Noeud n°Noeud n°9 - est pas un obstacle -  n'a pas de nourriture -  contient : 7 phéromones.
+	| Ouvrier n°1 | Colonie n°1 -> à un stock de 0 nourriture stockée | Noeud n°32 | Transporte : 0 kg de nourriture | Retourne à la colonie : false   
+	| 	 --> Ouvrier n°1 | Voisin n°1 se trouve au Noeud n°Noeud n°26 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
+	|                      Voisin n°2 se trouve au Noeud n°Noeud n°31 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
+	|                      Voisin n°3 se trouve au Noeud n°Noeud n°33 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
 	| -------------------------------------------------------------------------------------------------------------------------------------------------| 
 	| -------------------------------------------------------------------------------------------------------------------------------------------------|
 
 	|-----------------------------|
 	|  Etat des fourmis soldats   |
 	|-----------------------------| -------------------------------------------------------------------------------------------------------------------|
-	|  Soldat n°1  | Colonie n°1 -> à un stock de 15 nourriture stockée | Noeud n°1 
-	| 	 --> Soldat n°1 |  Voisin n°1 se trouve au Noeud n°Noeud n°2 - est pas un obstacle -  n'a pas de nourriture -  contient : 5 phéromones.
-	|                      Voisin n°2 se trouve au Noeud n°Noeud n°7 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
+	|  Soldat n°1  | Colonie n°1 -> à un stock de 0 nourriture stockée | Noeud n°32 
+	| 	 --> Soldat n°1 |  Voisin n°1 se trouve au Noeud n°Noeud n°26 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
+	|                      Voisin n°2 se trouve au Noeud n°Noeud n°31 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
+	|                      Voisin n°3 se trouve au Noeud n°Noeud n°33 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
 	| -------------------------------------------------------------------------------------------------------------------------------------------------| 
-	|  Soldat n°2  | Colonie n°1 -> à un stock de 15 nourriture stockée | Noeud n°10 
-	| 	 --> Soldat n°2 |  Voisin n°1 se trouve au Noeud n°Noeud n°4 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°2 se trouve au Noeud n°Noeud n°9 - est pas un obstacle -  n'a pas de nourriture -  contient : 7 phéromones.
-	|                      Voisin n°3 se trouve au Noeud n°Noeud n°11 - est pas un obstacle -  contient : 15kg de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°4 se trouve au Noeud n°Noeud n°16 - est un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
+	|  Soldat n°2  | Colonie n°1 -> à un stock de 0 nourriture stockée | Noeud n°25 
+	| 	 --> Soldat n°2 |  Voisin n°1 se trouve au Noeud n°Noeud n°19 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
+	|                      Voisin n°2 se trouve au Noeud n°Noeud n°26 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
+	|                      Voisin n°3 se trouve au Noeud n°Noeud n°31 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
 	| -------------------------------------------------------------------------------------------------------------------------------------------------| 
 	| -------------------------------------------------------------------------------------------------------------------------------------------------|
 
@@ -459,35 +461,36 @@
 	|-----------------------------|
 	|      Etat du Graphe         |
 	|-----------------------------|
-	| {} {2, 3, 6} {6} {2} {} {} 
-	| {} {1} {6} {} {5} {} 
-	| {} {} {0} {1} {} {5} 
-	| {1} {1} {1} {} {1} {1} 
+	| {5} {} {} {} {} {} 
+	| {} {} {} {} {5} {} 
+	| {} {} {0} {} {} {5} 
 	| {} {} {} {} {} {} 
-	| {} {} {} {5} {} {} 
+	| {} {2} {} {} {} {} 
+	| {} {} {2, 3} {5} {} {} 
 
 	|-----------------------------|
 	|  Etat des fourmis ouvrières |
 	|-----------------------------| -------------------------------------------------------------------------------------------------------------------|
-	| Ouvrier n°1 | Colonie n°1 -> à un stock de 15 nourriture stockée | Noeud n°2 | Transporte : 0 kg de nourriture | Retourne à la colonie : false   
-	| 	 --> Ouvrier n°1 | Voisin n°1 se trouve au Noeud n°Noeud n°1 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°2 se trouve au Noeud n°Noeud n°3 - est pas un obstacle -  n'a pas de nourriture -  contient : 5 phéromones.
-	|                      Voisin n°3 se trouve au Noeud n°Noeud n°8 - est un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
+	| Ouvrier n°1 | Colonie n°1 -> à un stock de 0 nourriture stockée | Noeud n°33 | Transporte : 0 kg de nourriture | Retourne à la colonie : false   
+	| 	 --> Ouvrier n°1 | Voisin n°1 se trouve au Noeud n°Noeud n°27 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
+	|                      Voisin n°2 se trouve au Noeud n°Noeud n°32 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
+	|                      Voisin n°3 se trouve au Noeud n°Noeud n°34 - est pas un obstacle -  contient : 15kg de nourriture -  et n'a pas de phéromones
 	| -------------------------------------------------------------------------------------------------------------------------------------------------| 
 	| -------------------------------------------------------------------------------------------------------------------------------------------------|
 
 	|-----------------------------|
 	|  Etat des fourmis soldats   |
 	|-----------------------------| -------------------------------------------------------------------------------------------------------------------|
-	|  Soldat n°1  | Colonie n°1 -> à un stock de 15 nourriture stockée | Noeud n°2 
-	| 	 --> Soldat n°1 |  Voisin n°1 se trouve au Noeud n°Noeud n°1 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°2 se trouve au Noeud n°Noeud n°3 - est pas un obstacle -  n'a pas de nourriture -  contient : 5 phéromones.
-	|                      Voisin n°3 se trouve au Noeud n°Noeud n°8 - est un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
+	|  Soldat n°1  | Colonie n°1 -> à un stock de 0 nourriture stockée | Noeud n°33 
+	| 	 --> Soldat n°1 |  Voisin n°1 se trouve au Noeud n°Noeud n°27 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
+	|                      Voisin n°2 se trouve au Noeud n°Noeud n°32 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
+	|                      Voisin n°3 se trouve au Noeud n°Noeud n°34 - est pas un obstacle -  contient : 15kg de nourriture -  et n'a pas de phéromones
 	| -------------------------------------------------------------------------------------------------------------------------------------------------| 
-	|  Soldat n°2  | Colonie n°1 -> à un stock de 15 nourriture stockée | Noeud n°4 
-	| 	 --> Soldat n°2 |  Voisin n°1 se trouve au Noeud n°Noeud n°3 - est pas un obstacle -  n'a pas de nourriture -  contient : 5 phéromones.
-	|                      Voisin n°2 se trouve au Noeud n°Noeud n°5 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°3 se trouve au Noeud n°Noeud n°10 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
+	|  Soldat n°2  | Colonie n°1 -> à un stock de 0 nourriture stockée | Noeud n°26 
+	| 	 --> Soldat n°2 |  Voisin n°1 se trouve au Noeud n°Noeud n°20 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
+	|                      Voisin n°2 se trouve au Noeud n°Noeud n°25 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
+	|                      Voisin n°3 se trouve au Noeud n°Noeud n°27 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
+	|                      Voisin n°4 se trouve au Noeud n°Noeud n°32 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
 	| -------------------------------------------------------------------------------------------------------------------------------------------------| 
 	| -------------------------------------------------------------------------------------------------------------------------------------------------|
 
@@ -500,33 +503,35 @@
 	|-----------------------------|
 	|      Etat du Graphe         |
 	|-----------------------------|
-	| {2, 3} {6} {6} {} {2} {} 
-	| {} {1} {6} {} {5} {} 
-	| {} {} {0} {1} {} {5} 
-	| {1} {1} {1} {} {1} {1} 
+	| {5} {} {} {} {} {} 
+	| {} {} {} {} {5} {} 
+	| {} {} {0} {} {} {5} 
 	| {} {} {} {} {} {} 
-	| {} {} {} {5} {} {} 
+	| {2} {} {} {} {} {} 
+	| {} {} {} {2, 3, 5} {} {} 
 
 	|-----------------------------|
 	|  Etat des fourmis ouvrières |
 	|-----------------------------| -------------------------------------------------------------------------------------------------------------------|
-	| Ouvrier n°1 | Colonie n°1 -> à un stock de 15 nourriture stockée | Noeud n°1 | Transporte : 0 kg de nourriture | Retourne à la colonie : false   
-	| 	 --> Ouvrier n°1 | Voisin n°1 se trouve au Noeud n°Noeud n°2 - est pas un obstacle -  n'a pas de nourriture -  contient : 3 phéromones.
-	|                      Voisin n°2 se trouve au Noeud n°Noeud n°7 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
+	| Ouvrier n°1 | Colonie n°1 -> à un stock de 0 nourriture stockée | Noeud n°34 | Transporte : 15 kg de nourriture | Retourne à la colonie : true   
+	| 	 --> Ouvrier n°1 | Voisin n°1 se trouve au Noeud n°Noeud n°28 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
+	|                      Voisin n°2 se trouve au Noeud n°Noeud n°33 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
+	|                      Voisin n°3 se trouve au Noeud n°Noeud n°35 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
 	| -------------------------------------------------------------------------------------------------------------------------------------------------| 
 	| -------------------------------------------------------------------------------------------------------------------------------------------------|
 
 	|-----------------------------|
 	|  Etat des fourmis soldats   |
 	|-----------------------------| -------------------------------------------------------------------------------------------------------------------|
-	|  Soldat n°1  | Colonie n°1 -> à un stock de 15 nourriture stockée | Noeud n°1 
-	| 	 --> Soldat n°1 |  Voisin n°1 se trouve au Noeud n°Noeud n°2 - est pas un obstacle -  n'a pas de nourriture -  contient : 3 phéromones.
-	|                      Voisin n°2 se trouve au Noeud n°Noeud n°7 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
+	|  Soldat n°1  | Colonie n°1 -> à un stock de 0 nourriture stockée | Noeud n°34 
+	| 	 --> Soldat n°1 |  Voisin n°1 se trouve au Noeud n°Noeud n°28 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
+	|                      Voisin n°2 se trouve au Noeud n°Noeud n°33 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
+	|                      Voisin n°3 se trouve au Noeud n°Noeud n°35 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
 	| -------------------------------------------------------------------------------------------------------------------------------------------------| 
-	|  Soldat n°2  | Colonie n°1 -> à un stock de 15 nourriture stockée | Noeud n°5 
-	| 	 --> Soldat n°2 |  Voisin n°1 se trouve au Noeud n°Noeud n°4 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°2 se trouve au Noeud n°Noeud n°6 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°3 se trouve au Noeud n°Noeud n°11 - est pas un obstacle -  contient : 15kg de nourriture -  et n'a pas de phéromones
+	|  Soldat n°2  | Colonie n°1 -> à un stock de 0 nourriture stockée | Noeud n°25 
+	| 	 --> Soldat n°2 |  Voisin n°1 se trouve au Noeud n°Noeud n°19 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
+	|                      Voisin n°2 se trouve au Noeud n°Noeud n°26 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
+	|                      Voisin n°3 se trouve au Noeud n°Noeud n°31 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
 	| -------------------------------------------------------------------------------------------------------------------------------------------------| 
 	| -------------------------------------------------------------------------------------------------------------------------------------------------|
 
@@ -539,35 +544,35 @@
 	|-----------------------------|
 	|      Etat du Graphe         |
 	|-----------------------------|
-	| {} {2, 6} {6} {2} {} {} 
-	| {3} {1} {6} {} {5} {} 
-	| {} {} {0} {1} {} {5} 
-	| {1} {1} {1} {} {1} {1} 
+	| {5} {} {} {} {} {} 
+	| {} {} {} {} {5} {} 
+	| {} {} {0} {} {} {5} 
+	| {2} {} {} {} {} {} 
 	| {} {} {} {} {} {} 
-	| {} {} {} {5} {} {} 
+	| {} {} {2, 4} {} {} {} 
 
 	|-----------------------------|
 	|  Etat des fourmis ouvrières |
 	|-----------------------------| -------------------------------------------------------------------------------------------------------------------|
-	| Ouvrier n°1 | Colonie n°1 -> à un stock de 15 nourriture stockée | Noeud n°7 | Transporte : 0 kg de nourriture | Retourne à la colonie : false   
-	| 	 --> Ouvrier n°1 | Voisin n°1 se trouve au Noeud n°Noeud n°1 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°2 se trouve au Noeud n°Noeud n°8 - est un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°3 se trouve au Noeud n°Noeud n°13 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
+	| Ouvrier n°1 | Colonie n°1 -> à un stock de 0 nourriture stockée | Noeud n°33 | Transporte : 15 kg de nourriture | Retourne à la colonie : true   
+	| 	 --> Ouvrier n°1 | Voisin n°1 se trouve au Noeud n°Noeud n°27 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
+	|                      Voisin n°2 se trouve au Noeud n°Noeud n°32 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
+	|                      Voisin n°3 se trouve au Noeud n°Noeud n°34 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
 	| -------------------------------------------------------------------------------------------------------------------------------------------------| 
 	| -------------------------------------------------------------------------------------------------------------------------------------------------|
 
 	|-----------------------------|
 	|  Etat des fourmis soldats   |
 	|-----------------------------| -------------------------------------------------------------------------------------------------------------------|
-	|  Soldat n°1  | Colonie n°1 -> à un stock de 15 nourriture stockée | Noeud n°2 
-	| 	 --> Soldat n°1 |  Voisin n°1 se trouve au Noeud n°Noeud n°1 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°2 se trouve au Noeud n°Noeud n°3 - est pas un obstacle -  n'a pas de nourriture -  contient : 3 phéromones.
-	|                      Voisin n°3 se trouve au Noeud n°Noeud n°8 - est un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
+	|  Soldat n°1  | Colonie n°1 -> à un stock de 0 nourriture stockée | Noeud n°33 
+	| 	 --> Soldat n°1 |  Voisin n°1 se trouve au Noeud n°Noeud n°27 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
+	|                      Voisin n°2 se trouve au Noeud n°Noeud n°32 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
+	|                      Voisin n°3 se trouve au Noeud n°Noeud n°34 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
 	| -------------------------------------------------------------------------------------------------------------------------------------------------| 
-	|  Soldat n°2  | Colonie n°1 -> à un stock de 15 nourriture stockée | Noeud n°4 
-	| 	 --> Soldat n°2 |  Voisin n°1 se trouve au Noeud n°Noeud n°3 - est pas un obstacle -  n'a pas de nourriture -  contient : 3 phéromones.
-	|                      Voisin n°2 se trouve au Noeud n°Noeud n°5 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°3 se trouve au Noeud n°Noeud n°10 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
+	|  Soldat n°2  | Colonie n°1 -> à un stock de 0 nourriture stockée | Noeud n°19 
+	| 	 --> Soldat n°2 |  Voisin n°1 se trouve au Noeud n°Noeud n°13 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
+	|                      Voisin n°2 se trouve au Noeud n°Noeud n°20 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
+	|                      Voisin n°3 se trouve au Noeud n°Noeud n°25 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
 	| -------------------------------------------------------------------------------------------------------------------------------------------------| 
 	| -------------------------------------------------------------------------------------------------------------------------------------------------|
 
@@ -580,34 +585,36 @@
 	|-----------------------------|
 	|      Etat du Graphe         |
 	|-----------------------------|
-	| {2} {6} {6} {} {2} {} 
-	| {} {1} {6} {} {5} {} 
-	| {3} {} {0} {1} {} {5} 
-	| {1} {1} {1} {} {1} {1} 
+	| {5} {} {} {} {} {} 
+	| {} {} {} {} {5} {} 
+	| {} {} {0} {} {} {5} 
+	| {} {2} {} {} {} {} 
 	| {} {} {} {} {} {} 
-	| {} {} {} {5} {} {} 
+	| {} {2, 4} {6} {} {} {} 
 
 	|-----------------------------|
 	|  Etat des fourmis ouvrières |
 	|-----------------------------| -------------------------------------------------------------------------------------------------------------------|
-	| Ouvrier n°1 | Colonie n°1 -> à un stock de 15 nourriture stockée | Noeud n°13 | Transporte : 0 kg de nourriture | Retourne à la colonie : false   
-	| 	 --> Ouvrier n°1 | Voisin n°1 se trouve au Noeud n°Noeud n°7 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°2 se trouve au Noeud n°Noeud n°14 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°3 se trouve au Noeud n°Noeud n°19 - est un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
+	| Ouvrier n°1 | Colonie n°1 -> à un stock de 0 nourriture stockée | Noeud n°32 | Transporte : 15 kg de nourriture | Retourne à la colonie : true   
+	| 	 --> Ouvrier n°1 | Voisin n°1 se trouve au Noeud n°Noeud n°26 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
+	|                      Voisin n°2 se trouve au Noeud n°Noeud n°31 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
+	|                      Voisin n°3 se trouve au Noeud n°Noeud n°33 - est pas un obstacle -  n'a pas de nourriture -  contient : 9 phéromones.
 	| -------------------------------------------------------------------------------------------------------------------------------------------------| 
 	| -------------------------------------------------------------------------------------------------------------------------------------------------|
 
 	|-----------------------------|
 	|  Etat des fourmis soldats   |
 	|-----------------------------| -------------------------------------------------------------------------------------------------------------------|
-	|  Soldat n°1  | Colonie n°1 -> à un stock de 15 nourriture stockée | Noeud n°1 
-	| 	 --> Soldat n°1 |  Voisin n°1 se trouve au Noeud n°Noeud n°2 - est pas un obstacle -  n'a pas de nourriture -  contient : 1 phéromones.
-	|                      Voisin n°2 se trouve au Noeud n°Noeud n°7 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
+	|  Soldat n°1  | Colonie n°1 -> à un stock de 0 nourriture stockée | Noeud n°32 
+	| 	 --> Soldat n°1 |  Voisin n°1 se trouve au Noeud n°Noeud n°26 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
+	|                      Voisin n°2 se trouve au Noeud n°Noeud n°31 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
+	|                      Voisin n°3 se trouve au Noeud n°Noeud n°33 - est pas un obstacle -  n'a pas de nourriture -  contient : 9 phéromones.
 	| -------------------------------------------------------------------------------------------------------------------------------------------------| 
-	|  Soldat n°2  | Colonie n°1 -> à un stock de 15 nourriture stockée | Noeud n°5 
-	| 	 --> Soldat n°2 |  Voisin n°1 se trouve au Noeud n°Noeud n°4 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°2 se trouve au Noeud n°Noeud n°6 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°3 se trouve au Noeud n°Noeud n°11 - est pas un obstacle -  contient : 15kg de nourriture -  et n'a pas de phéromones
+	|  Soldat n°2  | Colonie n°1 -> à un stock de 0 nourriture stockée | Noeud n°20 
+	| 	 --> Soldat n°2 |  Voisin n°1 se trouve au Noeud n°Noeud n°14 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
+	|                      Voisin n°2 se trouve au Noeud n°Noeud n°19 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
+	|                      Voisin n°3 se trouve au Noeud n°Noeud n°21 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
+	|                      Voisin n°4 se trouve au Noeud n°Noeud n°26 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
 	| -------------------------------------------------------------------------------------------------------------------------------------------------| 
 	| -------------------------------------------------------------------------------------------------------------------------------------------------|
 
@@ -620,37 +627,35 @@
 	|-----------------------------|
 	|      Etat du Graphe         |
 	|-----------------------------|
-	| {} {6} {6} {} {} {} 
-	| {2} {1} {6} {} {2, 5} {} 
-	| {} {3} {0} {1} {} {5} 
-	| {1} {1} {1} {} {1} {1} 
-	| {} {} {} {} {} {} 
-	| {} {} {} {5} {} {} 
+	| {5} {} {} {} {} {} 
+	| {} {} {} {} {5} {} 
+	| {} {} {0} {} {} {5} 
+	| {2} {} {} {} {} {} 
+	| {} {2} {} {} {} {} 
+	| {4} {6} {6} {} {} {} 
 
 	|-----------------------------|
 	|  Etat des fourmis ouvrières |
 	|-----------------------------| -------------------------------------------------------------------------------------------------------------------|
-	| Ouvrier n°1 | Colonie n°1 -> à un stock de 15 nourriture stockée | Noeud n°14 | Transporte : 0 kg de nourriture | Retourne à la colonie : false   
-	| 	 --> Ouvrier n°1 | Voisin n°1 se trouve au Noeud n°Noeud n°8 - est un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°2 se trouve au Noeud n°Noeud n°13 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°3 se trouve au Noeud n°Noeud n°15 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°4 se trouve au Noeud n°Noeud n°20 - est un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
+	| Ouvrier n°1 | Colonie n°1 -> à un stock de 0 nourriture stockée | Noeud n°31 | Transporte : 15 kg de nourriture | Retourne à la colonie : true   
+	| 	 --> Ouvrier n°1 | Voisin n°1 se trouve au Noeud n°Noeud n°25 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
+	|                      Voisin n°2 se trouve au Noeud n°Noeud n°32 - est pas un obstacle -  n'a pas de nourriture -  contient : 9 phéromones.
 	| -------------------------------------------------------------------------------------------------------------------------------------------------| 
 	| -------------------------------------------------------------------------------------------------------------------------------------------------|
 
 	|-----------------------------|
 	|  Etat des fourmis soldats   |
 	|-----------------------------| -------------------------------------------------------------------------------------------------------------------|
-	|  Soldat n°1  | Colonie n°1 -> à un stock de 15 nourriture stockée | Noeud n°7 
-	| 	 --> Soldat n°1 |  Voisin n°1 se trouve au Noeud n°Noeud n°1 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°2 se trouve au Noeud n°Noeud n°8 - est un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°3 se trouve au Noeud n°Noeud n°13 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
+	|  Soldat n°1  | Colonie n°1 -> à un stock de 0 nourriture stockée | Noeud n°26 
+	| 	 --> Soldat n°1 |  Voisin n°1 se trouve au Noeud n°Noeud n°20 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
+	|                      Voisin n°2 se trouve au Noeud n°Noeud n°25 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
+	|                      Voisin n°3 se trouve au Noeud n°Noeud n°27 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
+	|                      Voisin n°4 se trouve au Noeud n°Noeud n°32 - est pas un obstacle -  n'a pas de nourriture -  contient : 9 phéromones.
 	| -------------------------------------------------------------------------------------------------------------------------------------------------| 
-	|  Soldat n°2  | Colonie n°1 -> à un stock de 15 nourriture stockée | Noeud n°11 
-	| 	 --> Soldat n°2 |  Voisin n°1 se trouve au Noeud n°Noeud n°5 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°2 se trouve au Noeud n°Noeud n°10 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°3 se trouve au Noeud n°Noeud n°12 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°4 se trouve au Noeud n°Noeud n°17 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
+	|  Soldat n°2  | Colonie n°1 -> à un stock de 0 nourriture stockée | Noeud n°19 
+	| 	 --> Soldat n°2 |  Voisin n°1 se trouve au Noeud n°Noeud n°13 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
+	|                      Voisin n°2 se trouve au Noeud n°Noeud n°20 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
+	|                      Voisin n°3 se trouve au Noeud n°Noeud n°25 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
 	| -------------------------------------------------------------------------------------------------------------------------------------------------| 
 	| -------------------------------------------------------------------------------------------------------------------------------------------------|
 
@@ -663,36 +668,36 @@
 	|-----------------------------|
 	|      Etat du Graphe         |
 	|-----------------------------|
-	| {} {} {6} {} {} {} 
-	| {} {1} {6} {} {5} {} 
-	| {2, 3} {} {0} {1} {2} {5} 
-	| {1} {1} {1} {} {1} {1} 
-	| {} {} {} {} {} {} 
-	| {} {} {} {5} {} {} 
+	| {5} {} {} {} {} {} 
+	| {} {} {} {} {5} {} 
+	| {} {} {0} {} {} {5} 
+	| {} {2} {} {} {} {} 
+	| {2, 4} {} {} {} {} {} 
+	| {6} {6} {6} {} {} {} 
 
 	|-----------------------------|
 	|  Etat des fourmis ouvrières |
 	|-----------------------------| -------------------------------------------------------------------------------------------------------------------|
-	| Ouvrier n°1 | Colonie n°1 -> à un stock de 15 nourriture stockée | Noeud n°13 | Transporte : 0 kg de nourriture | Retourne à la colonie : false   
-	| 	 --> Ouvrier n°1 | Voisin n°1 se trouve au Noeud n°Noeud n°7 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°2 se trouve au Noeud n°Noeud n°14 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°3 se trouve au Noeud n°Noeud n°19 - est un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
+	| Ouvrier n°1 | Colonie n°1 -> à un stock de 0 nourriture stockée | Noeud n°25 | Transporte : 15 kg de nourriture | Retourne à la colonie : true   
+	| 	 --> Ouvrier n°1 | Voisin n°1 se trouve au Noeud n°Noeud n°19 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
+	|                      Voisin n°2 se trouve au Noeud n°Noeud n°26 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
+	|                      Voisin n°3 se trouve au Noeud n°Noeud n°31 - est pas un obstacle -  n'a pas de nourriture -  contient : 9 phéromones.
 	| -------------------------------------------------------------------------------------------------------------------------------------------------| 
 	| -------------------------------------------------------------------------------------------------------------------------------------------------|
 
 	|-----------------------------|
 	|  Etat des fourmis soldats   |
 	|-----------------------------| -------------------------------------------------------------------------------------------------------------------|
-	|  Soldat n°1  | Colonie n°1 -> à un stock de 15 nourriture stockée | Noeud n°13 
-	| 	 --> Soldat n°1 |  Voisin n°1 se trouve au Noeud n°Noeud n°7 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°2 se trouve au Noeud n°Noeud n°14 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°3 se trouve au Noeud n°Noeud n°19 - est un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
+	|  Soldat n°1  | Colonie n°1 -> à un stock de 0 nourriture stockée | Noeud n°20 
+	| 	 --> Soldat n°1 |  Voisin n°1 se trouve au Noeud n°Noeud n°14 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
+	|                      Voisin n°2 se trouve au Noeud n°Noeud n°19 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
+	|                      Voisin n°3 se trouve au Noeud n°Noeud n°21 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
+	|                      Voisin n°4 se trouve au Noeud n°Noeud n°26 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
 	| -------------------------------------------------------------------------------------------------------------------------------------------------| 
-	|  Soldat n°2  | Colonie n°1 -> à un stock de 15 nourriture stockée | Noeud n°17 
-	| 	 --> Soldat n°2 |  Voisin n°1 se trouve au Noeud n°Noeud n°11 - est pas un obstacle -  contient : 15kg de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°2 se trouve au Noeud n°Noeud n°16 - est un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°3 se trouve au Noeud n°Noeud n°18 - est pas un obstacle -  contient : 15kg de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°4 se trouve au Noeud n°Noeud n°23 - est un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
+	|  Soldat n°2  | Colonie n°1 -> à un stock de 0 nourriture stockée | Noeud n°25 
+	| 	 --> Soldat n°2 |  Voisin n°1 se trouve au Noeud n°Noeud n°19 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
+	|                      Voisin n°2 se trouve au Noeud n°Noeud n°26 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
+	|                      Voisin n°3 se trouve au Noeud n°Noeud n°31 - est pas un obstacle -  n'a pas de nourriture -  contient : 9 phéromones.
 	| -------------------------------------------------------------------------------------------------------------------------------------------------| 
 	| -------------------------------------------------------------------------------------------------------------------------------------------------|
 
@@ -705,37 +710,35 @@
 	|-----------------------------|
 	|      Etat du Graphe         |
 	|-----------------------------|
-	| {} {} {} {} {} {} 
-	| {} {1} {6} {} {5} {} 
-	| {} {2, 3} {0} {1} {} {2, 5} 
-	| {1} {1} {1} {} {1} {1} 
-	| {} {} {} {} {} {} 
-	| {} {} {} {5} {} {} 
+	| {5} {} {} {} {} {} 
+	| {} {} {} {} {5} {} 
+	| {} {} {0} {} {} {5} 
+	| {2} {} {} {} {} {} 
+	| {6} {2} {} {} {} {} 
+	| {4, 6} {6} {6} {} {} {} 
 
 	|-----------------------------|
 	|  Etat des fourmis ouvrières |
 	|-----------------------------| -------------------------------------------------------------------------------------------------------------------|
-	| Ouvrier n°1 | Colonie n°1 -> à un stock de 15 nourriture stockée | Noeud n°14 | Transporte : 0 kg de nourriture | Retourne à la colonie : false   
-	| 	 --> Ouvrier n°1 | Voisin n°1 se trouve au Noeud n°Noeud n°8 - est un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°2 se trouve au Noeud n°Noeud n°13 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°3 se trouve au Noeud n°Noeud n°15 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°4 se trouve au Noeud n°Noeud n°20 - est un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
+	| Ouvrier n°1 | Colonie n°1 -> à un stock de 0 nourriture stockée | Noeud n°31 | Transporte : 15 kg de nourriture | Retourne à la colonie : true   
+	| 	 --> Ouvrier n°1 | Voisin n°1 se trouve au Noeud n°Noeud n°25 - est pas un obstacle -  n'a pas de nourriture -  contient : 9 phéromones.
+	|                      Voisin n°2 se trouve au Noeud n°Noeud n°32 - est pas un obstacle -  n'a pas de nourriture -  contient : 7 phéromones.
 	| -------------------------------------------------------------------------------------------------------------------------------------------------| 
 	| -------------------------------------------------------------------------------------------------------------------------------------------------|
 
 	|-----------------------------|
 	|  Etat des fourmis soldats   |
 	|-----------------------------| -------------------------------------------------------------------------------------------------------------------|
-	|  Soldat n°1  | Colonie n°1 -> à un stock de 15 nourriture stockée | Noeud n°14 
-	| 	 --> Soldat n°1 |  Voisin n°1 se trouve au Noeud n°Noeud n°8 - est un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°2 se trouve au Noeud n°Noeud n°13 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°3 se trouve au Noeud n°Noeud n°15 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°4 se trouve au Noeud n°Noeud n°20 - est un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
+	|  Soldat n°1  | Colonie n°1 -> à un stock de 0 nourriture stockée | Noeud n°26 
+	| 	 --> Soldat n°1 |  Voisin n°1 se trouve au Noeud n°Noeud n°20 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
+	|                      Voisin n°2 se trouve au Noeud n°Noeud n°25 - est pas un obstacle -  n'a pas de nourriture -  contient : 9 phéromones.
+	|                      Voisin n°3 se trouve au Noeud n°Noeud n°27 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
+	|                      Voisin n°4 se trouve au Noeud n°Noeud n°32 - est pas un obstacle -  n'a pas de nourriture -  contient : 7 phéromones.
 	| -------------------------------------------------------------------------------------------------------------------------------------------------| 
-	|  Soldat n°2  | Colonie n°1 -> à un stock de 15 nourriture stockée | Noeud n°18 
-	| 	 --> Soldat n°2 |  Voisin n°1 se trouve au Noeud n°Noeud n°12 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°2 se trouve au Noeud n°Noeud n°17 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°3 se trouve au Noeud n°Noeud n°24 - est un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
+	|  Soldat n°2  | Colonie n°1 -> à un stock de 0 nourriture stockée | Noeud n°19 
+	| 	 --> Soldat n°2 |  Voisin n°1 se trouve au Noeud n°Noeud n°13 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
+	|                      Voisin n°2 se trouve au Noeud n°Noeud n°20 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
+	|                      Voisin n°3 se trouve au Noeud n°Noeud n°25 - est pas un obstacle -  n'a pas de nourriture -  contient : 9 phéromones.
 	| -------------------------------------------------------------------------------------------------------------------------------------------------| 
 	| -------------------------------------------------------------------------------------------------------------------------------------------------|
 
@@ -748,549 +751,35 @@
 	|-----------------------------|
 	|      Etat du Graphe         |
 	|-----------------------------|
-	| {} {} {} {} {} {} 
-	| {} {1} {} {} {5} {} 
-	| {3} {} {0, 2} {1} {2} {5} 
-	| {1} {1} {1} {} {1} {1} 
-	| {} {} {} {} {} {} 
-	| {} {} {} {5} {} {} 
+	| {5} {} {} {} {} {} 
+	| {} {} {} {} {5} {} 
+	| {} {} {0} {} {} {5} 
+	| {} {2} {} {} {} {} 
+	| {2, 6} {} {} {} {} {} 
+	| {6} {4, 6} {6} {} {} {} 
 
 	|-----------------------------|
 	|  Etat des fourmis ouvrières |
 	|-----------------------------| -------------------------------------------------------------------------------------------------------------------|
-	| Ouvrier n°1 | Colonie n°1 -> à un stock de 15 nourriture stockée | Noeud n°13 | Transporte : 0 kg de nourriture | Retourne à la colonie : false   
-	| 	 --> Ouvrier n°1 | Voisin n°1 se trouve au Noeud n°Noeud n°7 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°2 se trouve au Noeud n°Noeud n°14 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°3 se trouve au Noeud n°Noeud n°19 - est un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
+	| Ouvrier n°1 | Colonie n°1 -> à un stock de 0 nourriture stockée | Noeud n°32 | Transporte : 15 kg de nourriture | Retourne à la colonie : true   
+	| 	 --> Ouvrier n°1 | Voisin n°1 se trouve au Noeud n°Noeud n°26 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
+	|                      Voisin n°2 se trouve au Noeud n°Noeud n°31 - est pas un obstacle -  n'a pas de nourriture -  contient : 9 phéromones.
+	|                      Voisin n°3 se trouve au Noeud n°Noeud n°33 - est pas un obstacle -  n'a pas de nourriture -  contient : 5 phéromones.
 	| -------------------------------------------------------------------------------------------------------------------------------------------------| 
 	| -------------------------------------------------------------------------------------------------------------------------------------------------|
 
 	|-----------------------------|
 	|  Etat des fourmis soldats   |
 	|-----------------------------| -------------------------------------------------------------------------------------------------------------------|
-	|  Soldat n°1  | Colonie n°1 -> à un stock de 15 nourriture stockée | Noeud n°15 
-	| 	 --> Soldat n°1 |  Voisin n°1 se trouve au Noeud n°Noeud n°9 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°2 se trouve au Noeud n°Noeud n°14 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°3 se trouve au Noeud n°Noeud n°16 - est un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°4 se trouve au Noeud n°Noeud n°21 - est un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
+	|  Soldat n°1  | Colonie n°1 -> à un stock de 0 nourriture stockée | Noeud n°25 
+	| 	 --> Soldat n°1 |  Voisin n°1 se trouve au Noeud n°Noeud n°19 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
+	|                      Voisin n°2 se trouve au Noeud n°Noeud n°26 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
+	|                      Voisin n°3 se trouve au Noeud n°Noeud n°31 - est pas un obstacle -  n'a pas de nourriture -  contient : 9 phéromones.
 	| -------------------------------------------------------------------------------------------------------------------------------------------------| 
-	|  Soldat n°2  | Colonie n°1 -> à un stock de 15 nourriture stockée | Noeud n°17 
-	| 	 --> Soldat n°2 |  Voisin n°1 se trouve au Noeud n°Noeud n°11 - est pas un obstacle -  contient : 15kg de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°2 se trouve au Noeud n°Noeud n°16 - est un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°3 se trouve au Noeud n°Noeud n°18 - est pas un obstacle -  contient : 15kg de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°4 se trouve au Noeud n°Noeud n°23 - est un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	| -------------------------------------------------------------------------------------------------------------------------------------------------| 
-	| -------------------------------------------------------------------------------------------------------------------------------------------------|
-
-
-|-----------------------------------------------------------------------------------------------------------------------------------------------------|
-|-----------------------------------------------------------------------------------------------------------------------------------------------------|
-|                                                                 ITÉRATION n°19                                                                      |
-|-----------------------------------------------------------------------------------------------------------------------------------------------------|
-|-----------------------------------------------------------------------------------------------------------------------------------------------------|
-	|-----------------------------|
-	|      Etat du Graphe         |
-	|-----------------------------|
-	| {} {} {} {} {} {} 
-	| {3} {1} {2} {} {2, 5} {} 
-	| {} {} {0} {1} {} {5} 
-	| {1} {1} {1} {} {1} {1} 
-	| {} {} {} {} {} {} 
-	| {} {} {} {5} {} {} 
-
-	|-----------------------------|
-	|  Etat des fourmis ouvrières |
-	|-----------------------------| -------------------------------------------------------------------------------------------------------------------|
-	| Ouvrier n°1 | Colonie n°1 -> à un stock de 15 nourriture stockée | Noeud n°7 | Transporte : 0 kg de nourriture | Retourne à la colonie : false   
-	| 	 --> Ouvrier n°1 | Voisin n°1 se trouve au Noeud n°Noeud n°1 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°2 se trouve au Noeud n°Noeud n°8 - est un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°3 se trouve au Noeud n°Noeud n°13 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	| -------------------------------------------------------------------------------------------------------------------------------------------------| 
-	| -------------------------------------------------------------------------------------------------------------------------------------------------|
-
-	|-----------------------------|
-	|  Etat des fourmis soldats   |
-	|-----------------------------| -------------------------------------------------------------------------------------------------------------------|
-	|  Soldat n°1  | Colonie n°1 -> à un stock de 15 nourriture stockée | Noeud n°9 
-	| 	 --> Soldat n°1 |  Voisin n°1 se trouve au Noeud n°Noeud n°3 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°2 se trouve au Noeud n°Noeud n°8 - est un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°3 se trouve au Noeud n°Noeud n°10 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°4 se trouve au Noeud n°Noeud n°15 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	| -------------------------------------------------------------------------------------------------------------------------------------------------| 
-	|  Soldat n°2  | Colonie n°1 -> à un stock de 15 nourriture stockée | Noeud n°11 
-	| 	 --> Soldat n°2 |  Voisin n°1 se trouve au Noeud n°Noeud n°5 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°2 se trouve au Noeud n°Noeud n°10 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°3 se trouve au Noeud n°Noeud n°12 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°4 se trouve au Noeud n°Noeud n°17 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	| -------------------------------------------------------------------------------------------------------------------------------------------------| 
-	| -------------------------------------------------------------------------------------------------------------------------------------------------|
-
-
-|-----------------------------------------------------------------------------------------------------------------------------------------------------|
-|-----------------------------------------------------------------------------------------------------------------------------------------------------|
-|                                                                 ITÉRATION n°20                                                                      |
-|-----------------------------------------------------------------------------------------------------------------------------------------------------|
-|-----------------------------------------------------------------------------------------------------------------------------------------------------|
-	|-----------------------------|
-	|      Etat du Graphe         |
-	|-----------------------------|
-	| {} {} {} {} {} {} 
-	| {} {1} {} {2} {5} {} 
-	| {3} {} {0} {1} {} {5} 
-	| {1} {1} {1} {} {1} {1} 
-	| {} {} {} {} {} {} 
-	| {} {} {} {5} {} {} 
-
-	|-----------------------------|
-	|  Etat des fourmis ouvrières |
-	|-----------------------------| -------------------------------------------------------------------------------------------------------------------|
-	| Ouvrier n°1 | Colonie n°1 -> à un stock de 15 nourriture stockée | Noeud n°13 | Transporte : 0 kg de nourriture | Retourne à la colonie : false   
-	| 	 --> Ouvrier n°1 | Voisin n°1 se trouve au Noeud n°Noeud n°7 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°2 se trouve au Noeud n°Noeud n°14 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°3 se trouve au Noeud n°Noeud n°19 - est un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	| -------------------------------------------------------------------------------------------------------------------------------------------------| 
-	| -------------------------------------------------------------------------------------------------------------------------------------------------|
-
-	|-----------------------------|
-	|  Etat des fourmis soldats   |
-	|-----------------------------| -------------------------------------------------------------------------------------------------------------------|
-	|  Soldat n°1  | Colonie n°1 -> à un stock de 15 nourriture stockée | Noeud n°10 
-	| 	 --> Soldat n°1 |  Voisin n°1 se trouve au Noeud n°Noeud n°4 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°2 se trouve au Noeud n°Noeud n°9 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°3 se trouve au Noeud n°Noeud n°11 - est pas un obstacle -  contient : 15kg de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°4 se trouve au Noeud n°Noeud n°16 - est un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	| -------------------------------------------------------------------------------------------------------------------------------------------------| 
-	|  Soldat n°2  | Colonie n°1 -> à un stock de 15 nourriture stockée | Noeud n°10 
-	| 	 --> Soldat n°2 |  Voisin n°1 se trouve au Noeud n°Noeud n°4 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°2 se trouve au Noeud n°Noeud n°9 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°3 se trouve au Noeud n°Noeud n°11 - est pas un obstacle -  contient : 15kg de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°4 se trouve au Noeud n°Noeud n°16 - est un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	| -------------------------------------------------------------------------------------------------------------------------------------------------| 
-	| -------------------------------------------------------------------------------------------------------------------------------------------------|
-
-
-|-----------------------------------------------------------------------------------------------------------------------------------------------------|
-|-----------------------------------------------------------------------------------------------------------------------------------------------------|
-|                                                                 ITÉRATION n°21                                                                      |
-|-----------------------------------------------------------------------------------------------------------------------------------------------------|
-|-----------------------------------------------------------------------------------------------------------------------------------------------------|
-	|-----------------------------|
-	|      Etat du Graphe         |
-	|-----------------------------|
-	| {} {} {} {} {} {} 
-	| {3} {1} {2} {} {2, 5} {} 
-	| {} {} {0} {1} {} {5} 
-	| {1} {1} {1} {} {1} {1} 
-	| {} {} {} {} {} {} 
-	| {} {} {} {5} {} {} 
-
-	|-----------------------------|
-	|  Etat des fourmis ouvrières |
-	|-----------------------------| -------------------------------------------------------------------------------------------------------------------|
-	| Ouvrier n°1 | Colonie n°1 -> à un stock de 15 nourriture stockée | Noeud n°7 | Transporte : 0 kg de nourriture | Retourne à la colonie : false   
-	| 	 --> Ouvrier n°1 | Voisin n°1 se trouve au Noeud n°Noeud n°1 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°2 se trouve au Noeud n°Noeud n°8 - est un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°3 se trouve au Noeud n°Noeud n°13 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	| -------------------------------------------------------------------------------------------------------------------------------------------------| 
-	| -------------------------------------------------------------------------------------------------------------------------------------------------|
-
-	|-----------------------------|
-	|  Etat des fourmis soldats   |
-	|-----------------------------| -------------------------------------------------------------------------------------------------------------------|
-	|  Soldat n°1  | Colonie n°1 -> à un stock de 15 nourriture stockée | Noeud n°9 
-	| 	 --> Soldat n°1 |  Voisin n°1 se trouve au Noeud n°Noeud n°3 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°2 se trouve au Noeud n°Noeud n°8 - est un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°3 se trouve au Noeud n°Noeud n°10 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°4 se trouve au Noeud n°Noeud n°15 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	| -------------------------------------------------------------------------------------------------------------------------------------------------| 
-	|  Soldat n°2  | Colonie n°1 -> à un stock de 15 nourriture stockée | Noeud n°11 
-	| 	 --> Soldat n°2 |  Voisin n°1 se trouve au Noeud n°Noeud n°5 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°2 se trouve au Noeud n°Noeud n°10 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°3 se trouve au Noeud n°Noeud n°12 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°4 se trouve au Noeud n°Noeud n°17 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	| -------------------------------------------------------------------------------------------------------------------------------------------------| 
-	| -------------------------------------------------------------------------------------------------------------------------------------------------|
-
-
-|-----------------------------------------------------------------------------------------------------------------------------------------------------|
-|-----------------------------------------------------------------------------------------------------------------------------------------------------|
-|                                                                 ITÉRATION n°22                                                                      |
-|-----------------------------------------------------------------------------------------------------------------------------------------------------|
-|-----------------------------------------------------------------------------------------------------------------------------------------------------|
-	|-----------------------------|
-	|      Etat du Graphe         |
-	|-----------------------------|
-	| {} {} {} {} {} {} 
-	| {} {1} {} {2} {5} {} 
-	| {3} {} {0} {1} {2} {5} 
-	| {1} {1} {1} {} {1} {1} 
-	| {} {} {} {} {} {} 
-	| {} {} {} {5} {} {} 
-
-	|-----------------------------|
-	|  Etat des fourmis ouvrières |
-	|-----------------------------| -------------------------------------------------------------------------------------------------------------------|
-	| Ouvrier n°1 | Colonie n°1 -> à un stock de 15 nourriture stockée | Noeud n°13 | Transporte : 0 kg de nourriture | Retourne à la colonie : false   
-	| 	 --> Ouvrier n°1 | Voisin n°1 se trouve au Noeud n°Noeud n°7 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°2 se trouve au Noeud n°Noeud n°14 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°3 se trouve au Noeud n°Noeud n°19 - est un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	| -------------------------------------------------------------------------------------------------------------------------------------------------| 
-	| -------------------------------------------------------------------------------------------------------------------------------------------------|
-
-	|-----------------------------|
-	|  Etat des fourmis soldats   |
-	|-----------------------------| -------------------------------------------------------------------------------------------------------------------|
-	|  Soldat n°1  | Colonie n°1 -> à un stock de 15 nourriture stockée | Noeud n°10 
-	| 	 --> Soldat n°1 |  Voisin n°1 se trouve au Noeud n°Noeud n°4 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°2 se trouve au Noeud n°Noeud n°9 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°3 se trouve au Noeud n°Noeud n°11 - est pas un obstacle -  contient : 15kg de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°4 se trouve au Noeud n°Noeud n°16 - est un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	| -------------------------------------------------------------------------------------------------------------------------------------------------| 
-	|  Soldat n°2  | Colonie n°1 -> à un stock de 15 nourriture stockée | Noeud n°17 
-	| 	 --> Soldat n°2 |  Voisin n°1 se trouve au Noeud n°Noeud n°11 - est pas un obstacle -  contient : 15kg de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°2 se trouve au Noeud n°Noeud n°16 - est un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°3 se trouve au Noeud n°Noeud n°18 - est pas un obstacle -  contient : 15kg de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°4 se trouve au Noeud n°Noeud n°23 - est un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	| -------------------------------------------------------------------------------------------------------------------------------------------------| 
-	| -------------------------------------------------------------------------------------------------------------------------------------------------|
-
-
-|-----------------------------------------------------------------------------------------------------------------------------------------------------|
-|-----------------------------------------------------------------------------------------------------------------------------------------------------|
-|                                                                 ITÉRATION n°23                                                                      |
-|-----------------------------------------------------------------------------------------------------------------------------------------------------|
-|-----------------------------------------------------------------------------------------------------------------------------------------------------|
-	|-----------------------------|
-	|      Etat du Graphe         |
-	|-----------------------------|
-	| {} {} {} {} {} {} 
-	| {3} {1} {} {} {2, 5} {} 
-	| {} {} {0} {1} {} {5} 
-	| {1} {1} {1} {} {1} {1} 
-	| {} {} {} {} {} {} 
-	| {} {} {} {5} {} {} 
-
-	|-----------------------------|
-	|  Etat des fourmis ouvrières |
-	|-----------------------------| -------------------------------------------------------------------------------------------------------------------|
-	| Ouvrier n°1 | Colonie n°1 -> à un stock de 15 nourriture stockée | Noeud n°7 | Transporte : 0 kg de nourriture | Retourne à la colonie : false   
-	| 	 --> Ouvrier n°1 | Voisin n°1 se trouve au Noeud n°Noeud n°1 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°2 se trouve au Noeud n°Noeud n°8 - est un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°3 se trouve au Noeud n°Noeud n°13 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	| -------------------------------------------------------------------------------------------------------------------------------------------------| 
-	| -------------------------------------------------------------------------------------------------------------------------------------------------|
-
-	|-----------------------------|
-	|  Etat des fourmis soldats   |
-	|-----------------------------| -------------------------------------------------------------------------------------------------------------------|
-	|  Soldat n°1  | Colonie n°1 -> à un stock de 15 nourriture stockée | Noeud n°11 
-	| 	 --> Soldat n°1 |  Voisin n°1 se trouve au Noeud n°Noeud n°5 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°2 se trouve au Noeud n°Noeud n°10 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°3 se trouve au Noeud n°Noeud n°12 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°4 se trouve au Noeud n°Noeud n°17 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	| -------------------------------------------------------------------------------------------------------------------------------------------------| 
-	|  Soldat n°2  | Colonie n°1 -> à un stock de 15 nourriture stockée | Noeud n°11 
-	| 	 --> Soldat n°2 |  Voisin n°1 se trouve au Noeud n°Noeud n°5 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°2 se trouve au Noeud n°Noeud n°10 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°3 se trouve au Noeud n°Noeud n°12 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°4 se trouve au Noeud n°Noeud n°17 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	| -------------------------------------------------------------------------------------------------------------------------------------------------| 
-	| -------------------------------------------------------------------------------------------------------------------------------------------------|
-
-
-|-----------------------------------------------------------------------------------------------------------------------------------------------------|
-|-----------------------------------------------------------------------------------------------------------------------------------------------------|
-|                                                                 ITÉRATION n°24                                                                      |
-|-----------------------------------------------------------------------------------------------------------------------------------------------------|
-|-----------------------------------------------------------------------------------------------------------------------------------------------------|
-	|-----------------------------|
-	|      Etat du Graphe         |
-	|-----------------------------|
-	| {} {} {} {} {2} {} 
-	| {} {1} {} {} {5} {} 
-	| {3} {} {0} {1} {2} {5} 
-	| {1} {1} {1} {} {1} {1} 
-	| {} {} {} {} {} {} 
-	| {} {} {} {5} {} {} 
-
-	|-----------------------------|
-	|  Etat des fourmis ouvrières |
-	|-----------------------------| -------------------------------------------------------------------------------------------------------------------|
-	| Ouvrier n°1 | Colonie n°1 -> à un stock de 15 nourriture stockée | Noeud n°13 | Transporte : 0 kg de nourriture | Retourne à la colonie : false   
-	| 	 --> Ouvrier n°1 | Voisin n°1 se trouve au Noeud n°Noeud n°7 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°2 se trouve au Noeud n°Noeud n°14 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°3 se trouve au Noeud n°Noeud n°19 - est un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	| -------------------------------------------------------------------------------------------------------------------------------------------------| 
-	| -------------------------------------------------------------------------------------------------------------------------------------------------|
-
-	|-----------------------------|
-	|  Etat des fourmis soldats   |
-	|-----------------------------| -------------------------------------------------------------------------------------------------------------------|
-	|  Soldat n°1  | Colonie n°1 -> à un stock de 15 nourriture stockée | Noeud n°5 
-	| 	 --> Soldat n°1 |  Voisin n°1 se trouve au Noeud n°Noeud n°4 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°2 se trouve au Noeud n°Noeud n°6 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°3 se trouve au Noeud n°Noeud n°11 - est pas un obstacle -  contient : 15kg de nourriture -  et n'a pas de phéromones
-	| -------------------------------------------------------------------------------------------------------------------------------------------------| 
-	|  Soldat n°2  | Colonie n°1 -> à un stock de 15 nourriture stockée | Noeud n°17 
-	| 	 --> Soldat n°2 |  Voisin n°1 se trouve au Noeud n°Noeud n°11 - est pas un obstacle -  contient : 15kg de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°2 se trouve au Noeud n°Noeud n°16 - est un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°3 se trouve au Noeud n°Noeud n°18 - est pas un obstacle -  contient : 15kg de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°4 se trouve au Noeud n°Noeud n°23 - est un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	| -------------------------------------------------------------------------------------------------------------------------------------------------| 
-	| -------------------------------------------------------------------------------------------------------------------------------------------------|
-
-
-|-----------------------------------------------------------------------------------------------------------------------------------------------------|
-|-----------------------------------------------------------------------------------------------------------------------------------------------------|
-|                                                                 ITÉRATION n°25                                                                      |
-|-----------------------------------------------------------------------------------------------------------------------------------------------------|
-|-----------------------------------------------------------------------------------------------------------------------------------------------------|
-	|-----------------------------|
-	|      Etat du Graphe         |
-	|-----------------------------|
-	| {} {} {} {} {} {2} 
-	| {} {1} {} {} {2, 5} {} 
-	| {} {3} {0} {1} {} {5} 
-	| {1} {1} {1} {} {1} {1} 
-	| {} {} {} {} {} {} 
-	| {} {} {} {5} {} {} 
-
-	|-----------------------------|
-	|  Etat des fourmis ouvrières |
-	|-----------------------------| -------------------------------------------------------------------------------------------------------------------|
-	| Ouvrier n°1 | Colonie n°1 -> à un stock de 15 nourriture stockée | Noeud n°14 | Transporte : 0 kg de nourriture | Retourne à la colonie : false   
-	| 	 --> Ouvrier n°1 | Voisin n°1 se trouve au Noeud n°Noeud n°8 - est un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°2 se trouve au Noeud n°Noeud n°13 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°3 se trouve au Noeud n°Noeud n°15 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°4 se trouve au Noeud n°Noeud n°20 - est un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	| -------------------------------------------------------------------------------------------------------------------------------------------------| 
-	| -------------------------------------------------------------------------------------------------------------------------------------------------|
-
-	|-----------------------------|
-	|  Etat des fourmis soldats   |
-	|-----------------------------| -------------------------------------------------------------------------------------------------------------------|
-	|  Soldat n°1  | Colonie n°1 -> à un stock de 15 nourriture stockée | Noeud n°6 
-	| 	 --> Soldat n°1 |  Voisin n°1 se trouve au Noeud n°Noeud n°5 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°2 se trouve au Noeud n°Noeud n°12 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	| -------------------------------------------------------------------------------------------------------------------------------------------------| 
-	|  Soldat n°2  | Colonie n°1 -> à un stock de 15 nourriture stockée | Noeud n°11 
-	| 	 --> Soldat n°2 |  Voisin n°1 se trouve au Noeud n°Noeud n°5 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°2 se trouve au Noeud n°Noeud n°10 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°3 se trouve au Noeud n°Noeud n°12 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°4 se trouve au Noeud n°Noeud n°17 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	| -------------------------------------------------------------------------------------------------------------------------------------------------| 
-	| -------------------------------------------------------------------------------------------------------------------------------------------------|
-
-
-|-----------------------------------------------------------------------------------------------------------------------------------------------------|
-|-----------------------------------------------------------------------------------------------------------------------------------------------------|
-|                                                                 ITÉRATION n°26                                                                      |
-|-----------------------------------------------------------------------------------------------------------------------------------------------------|
-|-----------------------------------------------------------------------------------------------------------------------------------------------------|
-	|-----------------------------|
-	|      Etat du Graphe         |
-	|-----------------------------|
-	| {} {} {} {} {} {} 
-	| {} {1} {} {} {5} {2} 
-	| {} {} {0, 3} {1} {2} {5} 
-	| {1} {1} {1} {} {1} {1} 
-	| {} {} {} {} {} {} 
-	| {} {} {} {5} {} {} 
-
-	|-----------------------------|
-	|  Etat des fourmis ouvrières |
-	|-----------------------------| -------------------------------------------------------------------------------------------------------------------|
-	| Ouvrier n°1 | Colonie n°1 -> à un stock de 15 nourriture stockée | Noeud n°15 | Transporte : 0 kg de nourriture | Retourne à la colonie : false   
-	| 	 --> Ouvrier n°1 | Voisin n°1 se trouve au Noeud n°Noeud n°9 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°2 se trouve au Noeud n°Noeud n°14 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°3 se trouve au Noeud n°Noeud n°16 - est un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°4 se trouve au Noeud n°Noeud n°21 - est un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	| -------------------------------------------------------------------------------------------------------------------------------------------------| 
-	| -------------------------------------------------------------------------------------------------------------------------------------------------|
-
-	|-----------------------------|
-	|  Etat des fourmis soldats   |
-	|-----------------------------| -------------------------------------------------------------------------------------------------------------------|
-	|  Soldat n°1  | Colonie n°1 -> à un stock de 15 nourriture stockée | Noeud n°12 
-	| 	 --> Soldat n°1 |  Voisin n°1 se trouve au Noeud n°Noeud n°6 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°2 se trouve au Noeud n°Noeud n°11 - est pas un obstacle -  contient : 15kg de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°3 se trouve au Noeud n°Noeud n°18 - est pas un obstacle -  contient : 15kg de nourriture -  et n'a pas de phéromones
-	| -------------------------------------------------------------------------------------------------------------------------------------------------| 
-	|  Soldat n°2  | Colonie n°1 -> à un stock de 15 nourriture stockée | Noeud n°17 
-	| 	 --> Soldat n°2 |  Voisin n°1 se trouve au Noeud n°Noeud n°11 - est pas un obstacle -  contient : 15kg de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°2 se trouve au Noeud n°Noeud n°16 - est un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°3 se trouve au Noeud n°Noeud n°18 - est pas un obstacle -  contient : 15kg de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°4 se trouve au Noeud n°Noeud n°23 - est un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	| -------------------------------------------------------------------------------------------------------------------------------------------------| 
-	| -------------------------------------------------------------------------------------------------------------------------------------------------|
-
-
-|-----------------------------------------------------------------------------------------------------------------------------------------------------|
-|-----------------------------------------------------------------------------------------------------------------------------------------------------|
-|                                                                 ITÉRATION n°27                                                                      |
-|-----------------------------------------------------------------------------------------------------------------------------------------------------|
-|-----------------------------------------------------------------------------------------------------------------------------------------------------|
-	|-----------------------------|
-	|      Etat du Graphe         |
-	|-----------------------------|
-	| {} {} {} {} {} {} 
-	| {} {1} {} {} {2, 5} {} 
-	| {} {3} {0} {1} {} {2, 5} 
-	| {1} {1} {1} {} {1} {1} 
-	| {} {} {} {} {} {} 
-	| {} {} {} {5} {} {} 
-
-	|-----------------------------|
-	|  Etat des fourmis ouvrières |
-	|-----------------------------| -------------------------------------------------------------------------------------------------------------------|
-	| Ouvrier n°1 | Colonie n°1 -> à un stock de 15 nourriture stockée | Noeud n°14 | Transporte : 0 kg de nourriture | Retourne à la colonie : false   
-	| 	 --> Ouvrier n°1 | Voisin n°1 se trouve au Noeud n°Noeud n°8 - est un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°2 se trouve au Noeud n°Noeud n°13 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°3 se trouve au Noeud n°Noeud n°15 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°4 se trouve au Noeud n°Noeud n°20 - est un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	| -------------------------------------------------------------------------------------------------------------------------------------------------| 
-	| -------------------------------------------------------------------------------------------------------------------------------------------------|
-
-	|-----------------------------|
-	|  Etat des fourmis soldats   |
-	|-----------------------------| -------------------------------------------------------------------------------------------------------------------|
-	|  Soldat n°1  | Colonie n°1 -> à un stock de 15 nourriture stockée | Noeud n°11 
-	| 	 --> Soldat n°1 |  Voisin n°1 se trouve au Noeud n°Noeud n°5 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°2 se trouve au Noeud n°Noeud n°10 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°3 se trouve au Noeud n°Noeud n°12 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°4 se trouve au Noeud n°Noeud n°17 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	| -------------------------------------------------------------------------------------------------------------------------------------------------| 
-	|  Soldat n°2  | Colonie n°1 -> à un stock de 15 nourriture stockée | Noeud n°18 
-	| 	 --> Soldat n°2 |  Voisin n°1 se trouve au Noeud n°Noeud n°12 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°2 se trouve au Noeud n°Noeud n°17 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°3 se trouve au Noeud n°Noeud n°24 - est un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	| -------------------------------------------------------------------------------------------------------------------------------------------------| 
-	| -------------------------------------------------------------------------------------------------------------------------------------------------|
-
-
-|-----------------------------------------------------------------------------------------------------------------------------------------------------|
-|-----------------------------------------------------------------------------------------------------------------------------------------------------|
-|                                                                 ITÉRATION n°28                                                                      |
-|-----------------------------------------------------------------------------------------------------------------------------------------------------|
-|-----------------------------------------------------------------------------------------------------------------------------------------------------|
-	|-----------------------------|
-	|      Etat du Graphe         |
-	|-----------------------------|
-	| {} {} {} {} {} {} 
-	| {} {1} {} {2} {5} {} 
-	| {3} {} {0} {1} {2} {5} 
-	| {1} {1} {1} {} {1} {1} 
-	| {} {} {} {} {} {} 
-	| {} {} {} {5} {} {} 
-
-	|-----------------------------|
-	|  Etat des fourmis ouvrières |
-	|-----------------------------| -------------------------------------------------------------------------------------------------------------------|
-	| Ouvrier n°1 | Colonie n°1 -> à un stock de 15 nourriture stockée | Noeud n°13 | Transporte : 0 kg de nourriture | Retourne à la colonie : false   
-	| 	 --> Ouvrier n°1 | Voisin n°1 se trouve au Noeud n°Noeud n°7 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°2 se trouve au Noeud n°Noeud n°14 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°3 se trouve au Noeud n°Noeud n°19 - est un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	| -------------------------------------------------------------------------------------------------------------------------------------------------| 
-	| -------------------------------------------------------------------------------------------------------------------------------------------------|
-
-	|-----------------------------|
-	|  Etat des fourmis soldats   |
-	|-----------------------------| -------------------------------------------------------------------------------------------------------------------|
-	|  Soldat n°1  | Colonie n°1 -> à un stock de 15 nourriture stockée | Noeud n°10 
-	| 	 --> Soldat n°1 |  Voisin n°1 se trouve au Noeud n°Noeud n°4 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°2 se trouve au Noeud n°Noeud n°9 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°3 se trouve au Noeud n°Noeud n°11 - est pas un obstacle -  contient : 15kg de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°4 se trouve au Noeud n°Noeud n°16 - est un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	| -------------------------------------------------------------------------------------------------------------------------------------------------| 
-	|  Soldat n°2  | Colonie n°1 -> à un stock de 15 nourriture stockée | Noeud n°17 
-	| 	 --> Soldat n°2 |  Voisin n°1 se trouve au Noeud n°Noeud n°11 - est pas un obstacle -  contient : 15kg de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°2 se trouve au Noeud n°Noeud n°16 - est un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°3 se trouve au Noeud n°Noeud n°18 - est pas un obstacle -  contient : 15kg de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°4 se trouve au Noeud n°Noeud n°23 - est un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	| -------------------------------------------------------------------------------------------------------------------------------------------------| 
-	| -------------------------------------------------------------------------------------------------------------------------------------------------|
-
-
-|-----------------------------------------------------------------------------------------------------------------------------------------------------|
-|-----------------------------------------------------------------------------------------------------------------------------------------------------|
-|                                                                 ITÉRATION n°29                                                                      |
-|-----------------------------------------------------------------------------------------------------------------------------------------------------|
-|-----------------------------------------------------------------------------------------------------------------------------------------------------|
-	|-----------------------------|
-	|      Etat du Graphe         |
-	|-----------------------------|
-	| {} {} {} {} {} {} 
-	| {} {1} {} {} {2, 5} {} 
-	| {} {3} {0} {1} {} {5} 
-	| {1} {1} {1} {} {1} {1} 
-	| {} {} {} {} {} {} 
-	| {} {} {} {5} {} {} 
-
-	|-----------------------------|
-	|  Etat des fourmis ouvrières |
-	|-----------------------------| -------------------------------------------------------------------------------------------------------------------|
-	| Ouvrier n°1 | Colonie n°1 -> à un stock de 15 nourriture stockée | Noeud n°14 | Transporte : 0 kg de nourriture | Retourne à la colonie : false   
-	| 	 --> Ouvrier n°1 | Voisin n°1 se trouve au Noeud n°Noeud n°8 - est un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°2 se trouve au Noeud n°Noeud n°13 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°3 se trouve au Noeud n°Noeud n°15 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°4 se trouve au Noeud n°Noeud n°20 - est un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	| -------------------------------------------------------------------------------------------------------------------------------------------------| 
-	| -------------------------------------------------------------------------------------------------------------------------------------------------|
-
-	|-----------------------------|
-	|  Etat des fourmis soldats   |
-	|-----------------------------| -------------------------------------------------------------------------------------------------------------------|
-	|  Soldat n°1  | Colonie n°1 -> à un stock de 15 nourriture stockée | Noeud n°11 
-	| 	 --> Soldat n°1 |  Voisin n°1 se trouve au Noeud n°Noeud n°5 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°2 se trouve au Noeud n°Noeud n°10 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°3 se trouve au Noeud n°Noeud n°12 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°4 se trouve au Noeud n°Noeud n°17 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	| -------------------------------------------------------------------------------------------------------------------------------------------------| 
-	|  Soldat n°2  | Colonie n°1 -> à un stock de 15 nourriture stockée | Noeud n°11 
-	| 	 --> Soldat n°2 |  Voisin n°1 se trouve au Noeud n°Noeud n°5 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°2 se trouve au Noeud n°Noeud n°10 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°3 se trouve au Noeud n°Noeud n°12 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°4 se trouve au Noeud n°Noeud n°17 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	| -------------------------------------------------------------------------------------------------------------------------------------------------| 
-	| -------------------------------------------------------------------------------------------------------------------------------------------------|
-
-
-|-----------------------------------------------------------------------------------------------------------------------------------------------------|
-|-----------------------------------------------------------------------------------------------------------------------------------------------------|
-|                                                                 ITÉRATION n°30                                                                      |
-|-----------------------------------------------------------------------------------------------------------------------------------------------------|
-|-----------------------------------------------------------------------------------------------------------------------------------------------------|
-	|-----------------------------|
-	|      Etat du Graphe         |
-	|-----------------------------|
-	| {} {} {} {} {2} {} 
-	| {} {1} {} {} {5} {2} 
-	| {3} {} {0} {1} {} {5} 
-	| {1} {1} {1} {} {1} {1} 
-	| {} {} {} {} {} {} 
-	| {} {} {} {5} {} {} 
-
-	|-----------------------------|
-	|  Etat des fourmis ouvrières |
-	|-----------------------------| -------------------------------------------------------------------------------------------------------------------|
-	| Ouvrier n°1 | Colonie n°1 -> à un stock de 15 nourriture stockée | Noeud n°13 | Transporte : 0 kg de nourriture | Retourne à la colonie : false   
-	| 	 --> Ouvrier n°1 | Voisin n°1 se trouve au Noeud n°Noeud n°7 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°2 se trouve au Noeud n°Noeud n°14 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°3 se trouve au Noeud n°Noeud n°19 - est un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	| -------------------------------------------------------------------------------------------------------------------------------------------------| 
-	| -------------------------------------------------------------------------------------------------------------------------------------------------|
-
-	|-----------------------------|
-	|  Etat des fourmis soldats   |
-	|-----------------------------| -------------------------------------------------------------------------------------------------------------------|
-	|  Soldat n°1  | Colonie n°1 -> à un stock de 15 nourriture stockée | Noeud n°5 
-	| 	 --> Soldat n°1 |  Voisin n°1 se trouve au Noeud n°Noeud n°4 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°2 se trouve au Noeud n°Noeud n°6 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°3 se trouve au Noeud n°Noeud n°11 - est pas un obstacle -  contient : 15kg de nourriture -  et n'a pas de phéromones
-	| -------------------------------------------------------------------------------------------------------------------------------------------------| 
-	|  Soldat n°2  | Colonie n°1 -> à un stock de 15 nourriture stockée | Noeud n°12 
-	| 	 --> Soldat n°2 |  Voisin n°1 se trouve au Noeud n°Noeud n°6 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°2 se trouve au Noeud n°Noeud n°11 - est pas un obstacle -  contient : 15kg de nourriture -  et n'a pas de phéromones
-	|                      Voisin n°3 se trouve au Noeud n°Noeud n°18 - est pas un obstacle -  contient : 15kg de nourriture -  et n'a pas de phéromones
+	|  Soldat n°2  | Colonie n°1 -> à un stock de 0 nourriture stockée | Noeud n°20 
+	| 	 --> Soldat n°2 |  Voisin n°1 se trouve au Noeud n°Noeud n°14 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
+	|                      Voisin n°2 se trouve au Noeud n°Noeud n°19 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
+	|                      Voisin n°3 se trouve au Noeud n°Noeud n°21 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
+	|                      Voisin n°4 se trouve au Noeud n°Noeud n°26 - est pas un obstacle -  n'a pas de nourriture -  et n'a pas de phéromones
 	| -------------------------------------------------------------------------------------------------------------------------------------------------| 
 	| -------------------------------------------------------------------------------------------------------------------------------------------------|

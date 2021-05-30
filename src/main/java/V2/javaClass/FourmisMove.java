@@ -49,8 +49,17 @@ public abstract class FourmisMove implements IFourmisMove {
 
     public Noeud randomNoeud()
     {   // Si la liste est pas vide, on va tirer aléatoirement dans la liste de Noeud --> un noeud bien précis
-        int indexRand = random.nextInt(listNoeud.size()); // indexRand qui est l'index auquel on va prendre le nouveau noeud de la liste
+        int indexRand = probabilityLaw(listNoeud.size(), random); // indexRand qui est l'index auquel on va prendre le nouveau noeud de la liste
         return listNoeud.get(indexRand); // On retourne la nouvelle position du Nooeud à l'index(-->indexRand) de la liste de Noeuds adjacents
+    }
+
+    public int probabilityLaw(int n, Random r)
+    {
+        int k = 1 + r.nextInt( n*(n+1)/2 );
+        for( int i=1;  i <= n; i++ )
+            if( k <= i*(i+1)/2 )
+                return i-1;
+        return 0;
     }
 
     /**

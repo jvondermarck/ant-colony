@@ -116,7 +116,7 @@ public abstract class MoveOuvrier extends FourmisMove {
             return this.positionActuel;
         } else // Si la liste est pas vide, on va tirer aléatoirement dans la liste de Noeud --> un noeud bien précis
         {
-            int indexRand = random.nextInt(listNoeud.size()); // indexRand qui est l'index auquel on va prendre le nouveau noeud de la liste
+            int indexRand = probabilityLaw(listNoeud.size(), random); // indexRand qui est l'index auquel on va prendre le nouveau noeud de la liste
             return listNoeud.get(indexRand); // On retourne la nouvelle position du Nooeud à l'index(-->indexRand) de la liste de Noeuds adjacents
         }
     }

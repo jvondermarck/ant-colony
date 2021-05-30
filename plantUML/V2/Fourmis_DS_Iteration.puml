@@ -136,6 +136,8 @@ loop i<duration
                         end
                     return
                 "s:Soldat" --> "ms:FourmisMove"++ #DarkSalmon : randomNoeud()
+                 "ms:FourmisMove" --> "ms:FourmisMove"++ #FFBBBB: probabilityLaw(n,rand)
+                 return
                 return
             return
         end
@@ -175,6 +177,10 @@ loop i<duration
                         end
                     end
                  return
+                 "mo:MoveOuvrier" --> "ms2:FourmisMove"++ #FFBBBB: getListNoeud()
+                    return
+                 "mo:MoveOuvrier" --> graphe++ #FFBBBB: rechercherCoord(positionActuel)
+                    return
                  "mo:MoveOuvrier" --> "mo:MoveOuvrier"++ #DarkSalmon: paramOuvrier(ouvrier)
                      "mo:MoveOuvrier" --> "mo:MoveOuvrier"++ #FFBBBB : rechercheToutVisite(ouvrier)
                          return
@@ -184,8 +190,17 @@ loop i<duration
                                 return
                          end
                     return
+                    "mo:MoveOuvrier" --> "ms2:FourmisMove"++ #FFBBBB: probabilityLaw(n,rand)
+                    return
                 return
+                    "mo:MoveOuvrier" --> graphe++ #FFBBBB: getEstNourriture()
+                        return
+                    alt (g.getEstNourriture()[this.x][this.y])
+                        "mo:MoveOuvrier" --> graphe++ #FFBBBB: gestionNourriture(x,y,colonie)
+                        return
+                    end
             return
+
         end
     end
     return

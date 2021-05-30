@@ -11,13 +11,13 @@ public class Main {
         controller.createGrid( 6,6 );
         controller.createColony( 2,2 );
 
-        controller.putObstacle( 1,1 );
-        controller.putObstacle( 3,0 );
-        controller.putObstacle( 3,1 );
-        controller.putObstacle( 3,2 );
-        controller.putObstacle( 2,3 );
-        controller.putObstacle( 3,4 );
-        controller.putObstacle( 3,5 );
+//        controller.putObstacle( 1,1 );
+//        controller.putObstacle( 3,0 );
+//        controller.putObstacle( 3,1 );
+//        controller.putObstacle( 3,2 );
+//        controller.putObstacle( 2,3 );
+//        controller.putObstacle( 3,4 );
+//        controller.putObstacle( 3,5 );
 
         controller.putFood(0,0,15);
         controller.putFood(1,4,15);

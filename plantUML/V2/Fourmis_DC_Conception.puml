@@ -162,6 +162,7 @@ package "Diagramme de Classe de Conception V2 " <<Folder>> {
       +rechercheAretes(x:Integer, y:Integer)
       -verficationNoeud(x:Integer, y:Integer)
       +randomNoeud()
+      +probabilityLaw(n, rand)
       +noeudVoisin(o:Object, g:Graphe): String
       +getListNoeud(): ArrayList<Noeud>
   }
