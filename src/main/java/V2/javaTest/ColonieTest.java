@@ -45,7 +45,7 @@ class ColonieTest {
     void test2()
     {
         r.getColonie().setQuantityFood(15);
-        assertEquals("Colonie n°5 -> à un stock de 15 nourriture stockée", r.getColonie().toString());
+        assertEquals("Colonie n°1 -> à un stock de 15 nourriture stockée", r.getColonie().toString());
     }
 
     @Test

@@ -10,8 +10,7 @@ import org.junit.jupiter.api.Test;
 import java.io.OutputStream;
 import java.io.PrintStream;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class FourmiDeplacementTest {
 
@@ -42,7 +41,6 @@ public class FourmiDeplacementTest {
     {
         ouvrier.randomDirection();
         Noeud expected = graphe.rechercherNoeud(1,1);
-        ouvrier.recherchePositionActuel(ouvrier.getX(), ouvrier.getY());
         Noeud actual = ouvrier.getPositionActuel();
         assertEquals(expected, actual);
     }
@@ -55,7 +53,6 @@ public class FourmiDeplacementTest {
         for(int i=0; i<2; i++)
         {
             ouvrier.randomDirection();
-            ouvrier.recherchePositionActuel(ouvrier.getX(), ouvrier.getY());
             actual = ouvrier.getPositionActuel();
         }
 
@@ -63,9 +60,9 @@ public class FourmiDeplacementTest {
         Noeud n2 = graphe.rechercherNoeud(1,2);
         Noeud n3 = graphe.rechercherNoeud(2,1);
 
-        if(actual != n1 && actual != n2 && actual != n3)
+        if(actual != n1 || actual == n2 || actual == n3)
         {
-            assertFalse(false);
+            fail();
         }
     }
 

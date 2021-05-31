@@ -26,10 +26,8 @@ package "Diagramme de Classe de Conception V2 " <<Folder>> {
       -estNourriture: boolean[*][*]
       -quantityFood: Integer[*][*]
       -quantityPheromone: Integer[*][*]
-      -airGraphe:Integer
       -row: Integer
       -column: Integer
-      -nbrNoeudDansGraphe:Integer
       -theNoeud: Noeud[*][*]
 
       <<Create>>Graphe(longueur, largueur)
@@ -40,8 +38,6 @@ package "Diagramme de Classe de Conception V2 " <<Folder>> {
       +mettreObstacle(row:Integer, colomn:Integer)
       +mettreNourriture(row:Integer, colomn:Integer, quantity: Integer)
 
-      +getAirGraphe(): Integer
-      +getNbrNoeudDansGraphe(): Integer
       +getEstObstacle(): boolean[*][*]
       +getEstNourriture(): boolean[*][*]
       +getQuantityFood(): Integer
@@ -55,7 +51,6 @@ package "Diagramme de Classe de Conception V2 " <<Folder>> {
   }
 
   class Colonie #burlywood {
-      -{static} nombreColonie = 0:Integer
       -numColonie:Integer
       -evaporationParam: Integer
       -foodParam: Integer
@@ -75,7 +70,6 @@ package "Diagramme de Classe de Conception V2 " <<Folder>> {
 
   class Noeud #burlywood {
       -coordonneeNoeud: Integer
-      +{static} nombreNoeud: 0: Integer
 
       <<Create>>Noeud(g:Graphe, numeroNoeud:Integer)
       +getCoordonneNoeud()
@@ -246,10 +240,10 @@ package "Diagramme de Classe de Conception V2 " <<Folder>> {
     AntFacade ..|> Reine : <<instantiate>>
     AntFacade ..|> AntFacadeHistorique : <<instantiate>>
 
-    Graphe "1" *-right-> "1..*" Noeud : contient
+    Graphe "1" *-right-> "1..*" Noeud : > contient
 
-    Reine "1" *-> "1" Colonie : appartient
-    Noeud "1" *--> "0..*\t" Fourmis : comporte
+    Reine "1" *-> "1" Colonie : > appartient
+    Noeud "1" *--> "0..*\t" Fourmis : > comporte
 
     Fourmis <|.. Reine : <<implements>>
     Fourmis <|.. IFourmisMove : <<extends>>
@@ -259,8 +253,8 @@ package "Diagramme de Classe de Conception V2 " <<Folder>> {
     FourmisMove <|.. Soldat : \n\n<<extends>>
 
     MoveOuvrier <|-- Ouvrier : <<extends>>
-    Reine "1" o--> "1..*" Soldat : donne naissance
-    Reine "1" o--> "1..*" Ouvrier : donne naissance
+    Reine "1" o--> "1..*" Soldat : > donne naissance
+    Reine "1" o--> "1..*" Ouvrier : > donne naissance
 
     Ouvrier ..> Colonie : <<use>>
     Reine ..> Graphe : <<use>>

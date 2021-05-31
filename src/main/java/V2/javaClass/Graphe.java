@@ -11,11 +11,8 @@ public class Graphe
     private boolean[][] estNourriture; // Tableau où se trouve les emplacements des cellules qui contient de la nourriture
     private int[][] quantityFood; // Quandtite de nourriture dans chaque cellule
     private int [][] quantityPheromone; // Quantité de pheromone dans chaque cellule
-
-    private final int airGraphe; // Air du rectangle
     private final int row; // Le nombre de lignes du graphe
     private final int column; // Le nombre de colonnes du graphe
-    private int nbrNoeudDansGraphe; // Pour savoir le nbr de Noeud total que présentent le graphe
     private final Noeud[][] theNoeud; // Un tableau de Noeud qui permet de savoir a une coordonné X et Y, le numéro du noeud
 
     /**
@@ -36,7 +33,6 @@ public class Graphe
         this.estNourriture = new boolean[longueur][largueur];
         this.quantityFood = new int[longueur][largueur];
         this.quantityPheromone = new int[longueur][largueur];
-        this.airGraphe = longueur*largueur;
         this.column = largueur;
         this.row = longueur;
         creationEmplacementNoeud(); // On crée les emplacements de cellules sur le graphes (créer des cellules)
@@ -58,9 +54,8 @@ public class Graphe
 
                 // On va créer le Noeud
                 numeroCellule =  i*this.column + j + 1; // Le numéro du noeud qu'on va attribuer au noeud
-                Noeud noeud = new Noeud(Graphe.this, numeroCellule); // On crée une instance du noeud a la cellule en question, avec son numéro
+                Noeud noeud = new Noeud(numeroCellule); // On crée une instance du noeud a la cellule en question, avec son numéro
                 this.theNoeud[i][j] =  noeud; // On stock ce noeud dans un tableau de Noeud
-                nbrNoeudDansGraphe++;
             }
         }
     }
@@ -74,17 +69,7 @@ public class Graphe
      */
     public Noeud rechercherNoeud(int x, int y)
     {
-        for (int i = 0; i < this.row; i++)
-        {
-            for(int j = 0; j < this.column; j++)
-            {
-                if (this.theNoeud[i][j] == this.theNoeud[x][y]) // On regarde si le numéro du Noeud correspond bien à celui qu'on cherche
-                {
-                    return this.theNoeud[x][y];
-                }
-            }
-        }
-        return null;
+        return this.theNoeud[x][y];
     }
 
     /**
@@ -202,24 +187,6 @@ public class Graphe
      */
     public void setQuantityFood(int[][] quantityFood) {
         this.quantityFood = quantityFood;
-    }
-
-    /**
-     * Récuperer les dimensions du graphe
-     *
-     * @return l 'air du graphe
-     */
-    public int getAirGraphe() {
-        return airGraphe;
-    }
-
-    /**
-     * Récuperer le nombre de noeuds que le graphe à crée.
-     *
-     * @return le nombre de noeuds
-     */
-    public int getNbrNoeudDansGraphe() {
-        return nbrNoeudDansGraphe;
     }
 
     /**

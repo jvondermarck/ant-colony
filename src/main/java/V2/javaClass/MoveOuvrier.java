@@ -22,6 +22,7 @@ public abstract class MoveOuvrier extends FourmisMove {
     private Noeud positionActuel; // Le noeud où se trouve la fourmis
     private final Random random = new Random(); //Qui permet de choisir aléatoirement un noeud dans une liste de Noeuds adjacents à la fourmi.
     private boolean record; // Record sert a mettre dans rechercheAretes() le noeud qui est un obstacle, on l'ajoutera exeptionnelement dans la liste de Noeud pour le fichier en .CSV
+    private final int[][] quantityPheromone;
 
     /**
      * Instantiates a new Move ouvrier.
@@ -38,6 +39,7 @@ public abstract class MoveOuvrier extends FourmisMove {
         this.g = g;
         this.estObstacle = g.getEstObstacle();
         this.aVisite = new boolean[g.getRow()][g.getColumn()];
+        this.quantityPheromone = g.getQuantityPheromone();
     }
 
     public void randomDirection()
@@ -101,9 +103,7 @@ public abstract class MoveOuvrier extends FourmisMove {
             for (int i = 0; i < listNoeud.size(); i++)
             {
                 ArrayList<Integer> coord = g.rechercherCoord(listNoeud.get(i));
-                int xCoord = coord.get(0);
-                int yCoord = coord.get(1);
-                if (aVisite[xCoord][yCoord] && !droitDePasssage) // Si on a visité la cellule et Si droitPassage = true --> on veut pas enlever tous les noeuds avec list.Remove, vu qu'il a tout visite et qu'il a le droit de se déplacer dans tte les cellules adjacentes
+                if (aVisite[coord.get(0)][coord.get(1)] && !droitDePasssage) // Si on a visité la cellule et Si droitPassage = true --> on veut pas enlever tous les noeuds avec list.Remove, vu qu'il a tout visite et qu'il a le droit de se déplacer dans tte les cellules adjacentes
                 {
                     listNoeud.remove(i); // On supprime la coordonnée de X du tableau pour pas que la fourmis se deplace sur cette cellule
                     i = 0; // On recomence la boucle vu qu'on supprime un élement de la liste avec la variable i
@@ -128,7 +128,6 @@ public abstract class MoveOuvrier extends FourmisMove {
     {
         Noeud bestPheromone = null; // Le noeud qui va contenir le + de phéromone
         int bestQuantity = 0; // Cette variable servira pour savoir si un noeud à une + grande quantité de phéromone qu'un autre
-        int[][] quantityPheromone = g.getQuantityPheromone();
 
         for(int i=0; i<listNoeud.size(); i++)
         {
@@ -153,7 +152,6 @@ public abstract class MoveOuvrier extends FourmisMove {
     {
         int quantityNull = 0;
         int nbFois = 0;
-        int [][] quantityPheromone = g.getQuantityPheromone();
 
         for(int i=0; i<listNoeud.size(); i++)
         {
@@ -165,7 +163,7 @@ public abstract class MoveOuvrier extends FourmisMove {
                     nbFois++;
                 }
             } else {
-                nbFois++; // Si la cellule a deja etait visité, on incremente quand meme de 1, car on dit que comme on peut pas la visiter, ya plus de pheromone
+                nbFois++; // Si la cellule a deja etait visité, on incremente quand meme de 1, car on dit que comme on peut pas la visiter, ya pas de pheromone
             }
         }
 

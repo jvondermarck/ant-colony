@@ -5,24 +5,13 @@ package V1.javaClass;
  */
 public class Noeud {
     private int coordonneNoeud;
-    /**
-     * Le nombres de noeuds qu'on a crée.
-     */
-    static int nombreNoeud = 0;
 
     /**
      * Constructeur Noeud qui cherche un emplacement pour créer le noeud et lui ai attribué un numero
-     *
-     * @param g : le graphe où se trouve le noeud
      */
-    public Noeud(Graphe g, int numeroNoeud)
+    public Noeud(int numeroNoeud)
     {
-        if(g.getNbrNoeudDansGraphe() >= g.getAirGraphe()) // Si le nbr de noeud déjà crée est >= au nbr max de cellule possibles, on lance une erreur
-            throw new IndexOutOfBoundsException("Vous avez crée trop de noeud");
-        else {
-            this.coordonneNoeud = numeroNoeud;
-            nombreNoeud++;
-        }
+        this.coordonneNoeud = numeroNoeud;
     }
 
     /**

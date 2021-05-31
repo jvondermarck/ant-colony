@@ -9,33 +9,29 @@ hide enum methods
 
 package "Diagramme de Classe d'Analyse V2 " <<Folder>> {
   interface AntFacadeController <<interface>> #pink ##[bold]red {
+
   }
 
   class Graphe #lightcoral;line.bold {
-      taille
       estObstacle
       estNourriture
       quantityFood
       quantityPheromone
-      airGraphe
-      longueur
-      largueur
-      nbrNoeudDansGraphe
+      row
+      column
       theNoeud
   }
 
   class Colonie #burlywood {
-      nombreColonie
-      numColonie:Integer
-      evaporationParam: Integer
-      foodParam: Integer
-      pheromoneParam: Integer
+      numColonie
+      evaporationParam
+      foodParam
+      pheromoneParam
       quantityFood
   }
 
   class Noeud #burlywood {
       coordonneeNoeud
-      nombreNoeud
   }
 
   class AntFacade #back:Wheat;line.bold {
@@ -48,7 +44,6 @@ package "Diagramme de Classe d'Analyse V2 " <<Folder>> {
       height
       xColonie
       yColonie
-      sleepingTime
       antHisto
   }
 
@@ -57,22 +52,9 @@ package "Diagramme de Classe d'Analyse V2 " <<Folder>> {
         width
         height
         durationPlay
-        fLog: File
+        fLog
         fw
-    }
-
-  class Aretes #burlywood {
-      tab
-      estObstacle
-      x
-      y
-      listX
-      listY
-      graphe
-  }
-
-  class AretesOuvrier #burlywood {
-        aVisite
+        graphe
     }
 
   interface Fourmis <<interface>> #lightgreen;line:green {
@@ -84,82 +66,86 @@ package "Diagramme de Classe d'Analyse V2 " <<Folder>> {
       colonie
       graphe
       theSoldiers
+      theWorkers
   }
 
-  interface FourmisMove <<interface>> #lightgreen;line:green {
+  interface IFourmisMove <<interface>> #lightgreen;line:green {
+
+    }
+
+  abstract class FourmisMove #lightgreen;line:green {
+     listNoeud
+     random
+     record
   }
 
-  abstract class MoveSoldat #gold;line:goldenrod {
-      x
-      y
-  }
+    class Soldat #mediumpurple;line:darkviolet {
+        nombreSoldat
+        colonie
+        x
+        y
+        g
+        positionActuel
+        numeroSoldat
+    }
 
   abstract class MoveOuvrier #gold;line:goldenrod  {
-      x
-      y
-      estObstacle
-  }
-
-  class Soldat #mediumpurple;line:darkviolet {
-      colonie
-      graphe
-      positionActuel
-      nombreSoldat
-      numeroSoldat
+       x
+       y
+       graphe
+       positionActuel
+       listNoeud
+       listNoeudRetour
+       aVisite
+       etatRetour
+       quantityFoodTaken
+       colonie
+       random
+       record
+       estObstacle
   }
 
    class Ouvrier #mediumpurple;line:darkviolet {
-        aVisite
-        listXRetour
-        listYRetour
-        etatRetour
-        quantityFoodTaken
-        colonie
-        graphe
-        positionActuel
         nombreOuvrier
-        numeroOuvrier
-        xColinie
-        yColonie
+        colonie
+        g
     }
+
 }
 
+    AntFacadeController <|.. AntFacade : <<implements>>
+    AntFacade .right.|> Graphe : <<instantiate>>
+    AntFacade ..|> Reine : <<instantiate>>
+    AntFacade ..|> AntFacadeHistorique : <<instantiate>>
 
-AntFacadeController <|.. AntFacade : <<implements>>
-AntFacade .up.|> Graphe : <<instantiate>>
-AntFacade ..|> Reine : <<instantiate>>
+    Graphe "1" *-right-> "1..*" Noeud : > contient
 
-Graphe  *--> Noeud : contient
+    Reine "1" *-> "1" Colonie : > appartient
+    Noeud "1" *--> "0..*\t" Fourmis : > comporte
 
-Reine  *-> Colonie : appartient
-Noeud  o-->  Fourmis : comporte
+    Fourmis <|.. Reine : <<implements>>
+    Fourmis <|.. IFourmisMove : <<extends>>
 
-Fourmis <|.. Reine : <<implements>>
-Fourmis <|.. FourmisMove : <<extends>>
+    IFourmisMove <|..FourmisMove : <<implements>>
+    FourmisMove <|.. MoveOuvrier : \n\n<<extends>>
+    FourmisMove <|.. Soldat : \n\n<<extends>>
 
-Aretes <|-- AretesOuvrier : <<extends>>
-Aretes <.. MoveSoldat : <<use>>
-AretesOuvrier <.. MoveOuvrier : <<use>>
+    MoveOuvrier <|-- Ouvrier : <<extends>>
+    Reine "1" o--> "1..*" Soldat : > donne naissance
+    Reine "1" o--> "1..*" Ouvrier : > donne naissance
 
-FourmisMove <|.. MoveOuvrier : \n\n<<implements>>
-FourmisMove <|.. MoveSoldat : <<implements>>
+    Ouvrier ..> Colonie : <<use>>
+    Reine ..> Graphe : <<use>>
+    Soldat ..> Colonie : <<use>>
+    Ouvrier ..> Graphe : <<use>>
+    Soldat ..> Graphe : <<use>>
+    FourmisMove ..> Noeud : <<use>>
+    FourmisMove ..> Graphe : <<use>>
+    MoveOuvrier ..> Noeud : <<use>>
+    MoveOuvrier ..> Graphe : <<use>>
+    AntFacadeHistorique ..> Soldat : <<use>>
+    AntFacadeHistorique ..> Ouvrier : <<use>>
 
-MoveSoldat <|-- Soldat : <<extends>>
-MoveOuvrier <|-- Ouvrier : <<extends>>
-Reine  *-->  Soldat : donne naissance
-Reine  *-->  Ouvrier : donne naissance
 
-AntFacade ..> Soldat : <<use>>
-AntFacade ..> Ouvrier : <<use>>
-Aretes .up.> Graphe : <<use>>
-AretesOuvrier .up.> Graphe : <<use>>
-AretesOuvrier ..> Ouvrier : <<use>>
-MoveSoldat ..> Reine : <<use>>
-MoveOuvrier ..> Reine : <<use>>
-Ouvrier ..> Colonie : <<use>>
-Soldat ..> Colonie : <<use>>
-AntFacade o--> AntFacadeHistorique : sauvegarde
-AntFacadeHistorique .right.> Soldat : <<use>>
-AntFacadeHistorique .right.> Ouvrier : <<use>>
 
 @enduml

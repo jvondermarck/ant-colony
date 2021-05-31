@@ -7,7 +7,6 @@ import java.util.ArrayList;
 public class Graphe
 {
     private boolean[][] estObstacle; // Tableau où se trouve les emplacements des cellules qui contient des noeuds
-    private final int airGraphe; // Air du rectangle
     private int nbrNoeudDansGraphe; // Pour savoir le nbr de Noeud total que présentent le graphe
     private final Noeud[][] theNoeud; // Un tableau de Noeud qui permet de savoir a une coordonné X et Y, le numéro du noeud
 
@@ -29,7 +28,6 @@ public class Graphe
 
         this.estObstacle = new boolean[longueur][largueur];
         this.theNoeud = new Noeud[longueur][largueur];
-        this.airGraphe = longueur*largueur;
         this.column = largueur;
         this.row = longueur;
         creationEmplacementNoeud(); // On crée les emplacements de cellules sur le graphes (créer des cellules)
@@ -48,7 +46,7 @@ public class Graphe
             {
                 // On va créer le Noeud
                 numeroCellule =  i*this.column + j + 1; // Le numéro du noeud qu'on va attribuer au noeud
-                Noeud noeud = new Noeud(Graphe.this, numeroCellule); // On crée une instance du noeud a la cellule en question, avec son numéro
+                Noeud noeud = new Noeud(numeroCellule); // On crée une instance du noeud a la cellule en question, avec son numéro
                 this.theNoeud[i][j] =  noeud; // On stock ce noeud dans un tableau de Noeud
             }
         }
@@ -63,17 +61,7 @@ public class Graphe
      */
     public Noeud rechercherNoeud(int x, int y)
     {
-        for (int i = 0; i < this.row; i++)
-        {
-            for(int j = 0; j < this.column; j++)
-            {
-                if (this.theNoeud[i][j] == this.theNoeud[x][y]) // On regarde si le numéro du Noeud correspond bien à celui qu'on cherche
-                {
-                    return this.theNoeud[x][y];
-                }
-            }
-        }
-        return null;
+        return this.theNoeud[x][y];
     }
 
     /**
@@ -117,24 +105,6 @@ public class Graphe
      */
     public boolean[][] getEstObstacle() {
         return estObstacle;
-    }
-
-    /**
-     * Récuperer les dimensions du graphe
-     *
-     * @return l 'air du graphe
-     */
-    public int getAirGraphe() {
-        return airGraphe;
-    }
-
-    /**
-     * Récuperer le nombre de noeuds que le graphe à crée.
-     *
-     * @return le nombre de noeuds
-     */
-    public int getNbrNoeudDansGraphe() {
-        return nbrNoeudDansGraphe;
     }
 
     /**

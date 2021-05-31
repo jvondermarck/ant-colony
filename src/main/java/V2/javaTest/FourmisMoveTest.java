@@ -5,8 +5,9 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import java.util.Random;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 public class FourmisMoveTest {
     static final int WIDTH = 13;
@@ -44,6 +45,25 @@ public class FourmisMoveTest {
         if(expected1 == actual || expected2 == actual)
         {
             assertTrue(true);
+        }
+    }
+
+    @Test
+    @DisplayName("probabilityLaw()")
+    void probabilityLaw() {
+        Random rand = new Random();
+        int index = s.probabilityLaw(0, rand);
+        assertEquals(0, index);
+    }
+
+    @Test
+    @DisplayName("probabilityLaw2()")
+    void probabilityLaw2() {
+        Random rand = new Random();
+        int index = s.probabilityLaw(6, rand);
+        if(index <0 || index>6)
+        {
+            fail();
         }
     }
 

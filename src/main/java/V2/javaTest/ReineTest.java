@@ -108,7 +108,7 @@ public class ReineTest {
     @DisplayName("getColonie()")
     void getColonie()
     {
-        assertEquals("Colonie n°8 -> à un stock de 0 nourriture stockée", r.getColonie().toString());
+        assertEquals("Colonie n°1 -> à un stock de 0 nourriture stockée", r.getColonie().toString());
     }
 
     @Test

@@ -50,7 +50,7 @@ public class OuvrierTest {
     @DisplayName("toString()")
     @Test
     void testToString() {
-        assertEquals("Ouvrier n°2 | Colonie n°2 -> à un stock de 0 nourriture stockée | Noeud n°1 | Transporte : 0 kg de nourriture | Retourne à la colonie : false", s.toString());
+        assertEquals("Ouvrier n°2 | Colonie n°1 -> à un stock de 0 nourriture stockée | Noeud n°1 | Transporte : 0 kg de nourriture | Retourne à la colonie : false", s.toString());
     }
 
     @DisplayName("doitRetravailler()")

@@ -19,7 +19,7 @@ ant -> ant++ #lightgreen : createGrid(width, height)
             loop i<taille[i].length
                 ' ---------NOEUD--------------
                     create "n:Noeud"
-                    graphe --> "n:Noeud"++ #FFBBBB: <<Create>> Noeud(g, numNoeud)
+                    graphe --> "n:Noeud"++ #FFBBBB: <<Create>> Noeud(numNoeud)
                         return
             end
         end

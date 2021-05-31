@@ -5,7 +5,6 @@ package V2.javaClass;
  * On peut savoir le nombre total de colonie
  */
 public class Colonie {
-    private static int nombreColonie = 0;
     private final int numColonie;
 
     // Paramètre de la fourmis
@@ -20,8 +19,7 @@ public class Colonie {
      */
     public Colonie()
     {
-        this.numColonie = nombreColonie + 1 ;
-        nombreColonie++;
+        this.numColonie = 1 ;
         this.quantityFood = 0;
     }
 

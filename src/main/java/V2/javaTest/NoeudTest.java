@@ -31,35 +31,6 @@ public class NoeudTest {
     }
 
     @Test
-    @DisplayName("Recherche du nombre de noeud total crées")
-    void nombreNoeud()
-    {
-        int expected = HEIGHT*WIDTH;
-        int actual = g.getNbrNoeudDansGraphe();
-        assertEquals(expected, actual);
-    }
-
-    @Test
-    @DisplayName("Création d'un noeud supplémentaire")
-    void insertionNoeud()
-    {
-        try
-        {
-            Noeud n = new Noeud(g,1);
-            fail("Noeud crée hors champs du graphe");
-        }
-        catch (IndexOutOfBoundsException exception)
-        {
-            // OK
-        }
-        catch (Exception exception)
-        {
-            fail("Exception de mauvais type : "
-                    + exception.getClass().getSimpleName());
-        }
-    }
-
-    @Test
     @DisplayName("getCoordonneNoeud()")
     void getCoordonneNoeud()
     {

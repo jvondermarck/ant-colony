@@ -44,8 +44,6 @@ public class GrapheTest {
         }
     }
 
-    // On ne peut pas faire un test de getEmplacementNoeud vu que c'est une méthode appelé dans creationEmplacementNoeud()
-
     @Test
     void rechercherNoeud()
     {
@@ -173,20 +171,6 @@ public class GrapheTest {
         bool[1][2] = 1234;
         g.setQuantityPheromone(bool);
         assertEquals(1234, g.getQuantityPheromone()[1][2]);
-    }
-
-    @Test
-    @DisplayName("getAirGraphe()")
-    void getAirGraphe()
-    {
-        assertEquals(247, g.getAirGraphe());
-    }
-
-    @Test
-    @DisplayName("getNbrNoeudDansGraphe()")
-    void getNbrNoeudDansGraphe()
-    {
-        assertEquals(247, g.getNbrNoeudDansGraphe());
     }
 
     @Test

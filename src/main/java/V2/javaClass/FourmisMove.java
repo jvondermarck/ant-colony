@@ -6,7 +6,6 @@ import java.util.Random;
 /**
  * La classe Abstraite FourmisMove qui recherche tous les noeuds adjacents à la fourmis en faisant gaffe aux obstacles
  */
-
 public abstract class FourmisMove implements IFourmisMove {
 
     private final ArrayList<Noeud> listNoeud = new ArrayList<>(); // On crée une list de Noeud adjacents susceptibles, où un Noeud sera tiré aléatoirement
@@ -22,6 +21,7 @@ public abstract class FourmisMove implements IFourmisMove {
      *
      * @param xPosition la position X où se trouve actuellement la fourmis
      * @param yPosition la position Y où se trouve actuellement la fourmis
+     * @param g         the g
      */
     public void rechercheAretes(int xPosition, int yPosition, Graphe g)
     {
@@ -47,18 +47,34 @@ public abstract class FourmisMove implements IFourmisMove {
         }
     }
 
+    /**
+     * Cette méthode randomNoeud() appelle la méthode probabilityLaw pour chercher un noeud.
+     *
+     * @return le noeud en question ou la fourmis va se déplacer
+     */
     public Noeud randomNoeud()
     {   // Si la liste est pas vide, on va tirer aléatoirement dans la liste de Noeud --> un noeud bien précis
         int indexRand = probabilityLaw(listNoeud.size(), random); // indexRand qui est l'index auquel on va prendre le nouveau noeud de la liste
         return listNoeud.get(indexRand); // On retourne la nouvelle position du Nooeud à l'index(-->indexRand) de la liste de Noeuds adjacents
     }
 
+    /**
+     * Probability law une méthode qui cherche grace a la taille de la liste de Noeud passé en paramètre
+     * un index de la liste qu'on va pouvoir récuperer pour prendre le Noeud en question.
+     *
+     * @param n la taille de la liste de Noeud qu'on va vouloir tirer au sort
+     * @param r une instance de la classe Random pour tirer un Noeud de facon aléatoire
+     * @return l'index en Integer
+     */
     public int probabilityLaw(int n, Random r)
     {
-        int k = 1 + r.nextInt( n*(n+1)/2 );
-        for( int i=1;  i <= n; i++ )
-            if( k <= i*(i+1)/2 )
-                return i-1;
+        if(n>1)
+        {
+            int k = 1 + r.nextInt( n*(n+1)/2 );
+            for( int i=1;  i <= n; i++ )
+                if( k <= i*(i+1)/2 )
+                    return i-1;
+        }
         return 0;
     }
 
@@ -136,6 +152,11 @@ public abstract class FourmisMove implements IFourmisMove {
         return noeudVoisin.toString();
     }
 
+    /**
+     * Gets list noeud.
+     *
+     * @return the list noeud
+     */
     public ArrayList<Noeud> getListNoeud() {
         return listNoeud;
     }

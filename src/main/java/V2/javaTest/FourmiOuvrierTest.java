@@ -159,7 +159,8 @@ public class FourmiOuvrierTest {
             else
                 i++;
         }
-        // Retour
+
+        // On s'occupe du chemin retour
 
         bitsets = appli.play(1, false);
         //w.update(appli.play(1, false));
@@ -193,14 +194,15 @@ public class FourmiOuvrierTest {
 
         BitSet[][] bitsets = appli.play(1, false);
 
-        int i = 1;
         while (bitsets[0][2].get(5))
         {
-            bitsets = appli.play(i, false);
-            i++;
+            bitsets = appli.play(1, false);
         }
 
-        assertFalse(bitsets[0][2].get(5));
+        if(bitsets[0][2].get(5))
+        {
+            fail();
+        }
     }
 
     @Test
@@ -222,7 +224,10 @@ public class FourmiOuvrierTest {
         for(int i=0; i<5; i++)
         {
             bitsets = appli.play(1, false);
-            assertFalse(bitsets[0][WIDTH-2].get(4));
+            if(bitsets[0][WIDTH-2].get(4))
+            {
+                fail();
+            }
         }
     }
 

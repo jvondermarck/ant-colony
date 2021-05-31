@@ -64,7 +64,7 @@ class SoldatTest {
     @DisplayName("toString()")
     @Test
     void testToString() {
-        assertEquals("Soldat n°2  | Colonie n°2 -> à un stock de 0 nourriture stockée | Noeud n°1", s.toString());
+        assertEquals("Soldat n°2  | Colonie n°1 -> à un stock de 0 nourriture stockée | Noeud n°1", s.toString());
     }
 
     @DisplayName("setPositionActuel()")
