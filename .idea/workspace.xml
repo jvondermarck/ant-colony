@@ -4,13 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="47cd6ad5-e8f1-43de-aae4-65f52ffc0fb8" name="Default Changelist" comment="MAJ">
+    <list default="true" id="47cd6ad5-e8f1-43de-aae4-65f52ffc0fb8" name="Default Changelist" comment="MAJ Global">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plantUML/V2/Fourmis_DC_Analyse.puml" beforeDir="false" afterPath="$PROJECT_DIR$/plantUML/V2/Fourmis_DC_Analyse.puml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plantUML/V2/Fourmis_DC_Conception.puml" beforeDir="false" afterPath="$PROJECT_DIR$/plantUML/V2/Fourmis_DC_Conception.puml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plantUML/V2/Fourmis_DS_Iteration.puml" beforeDir="false" afterPath="$PROJECT_DIR$/plantUML/V2/Fourmis_DS_Iteration.puml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/V2/javaClass/MoveOuvrier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/V2/javaClass/MoveOuvrier.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +46,7 @@
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="create.test.in.the.same.root" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/V2/javaTest" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/plantUML/V2" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="CodeWithMe" />
   </component>
@@ -74,8 +69,21 @@
       <recent name="javaTest" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.FourmiSoldatTest">
-    <configuration name="FourmiOuvrierTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.SoldatTest">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MoveOuvrierTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="fourmis" />
       <extension name="coverage">
         <pattern>
@@ -84,13 +92,13 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="V2.javaTest" />
-      <option name="MAIN_CLASS_NAME" value="V2.javaTest.FourmiOuvrierTest" />
+      <option name="MAIN_CLASS_NAME" value="V2.javaTest.MoveOuvrierTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FourmiSoldatTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="NoeudTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="fourmis" />
       <extension name="coverage">
         <pattern>
@@ -99,7 +107,7 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="V2.javaTest" />
-      <option name="MAIN_CLASS_NAME" value="V2.javaTest.FourmiSoldatTest" />
+      <option name="MAIN_CLASS_NAME" value="V2.javaTest.NoeudTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -152,11 +160,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.FourmiSoldatTest" />
-        <item itemvalue="JUnit.FourmiOuvrierTest" />
         <item itemvalue="JUnit.SoldatTest" />
         <item itemvalue="JUnit.ReineTest" />
         <item itemvalue="JUnit.OuvrierTest" />
+        <item itemvalue="JUnit.NoeudTest" />
+        <item itemvalue="JUnit.MoveOuvrierTest" />
       </list>
     </recent_temporary>
   </component>
@@ -250,14 +258,7 @@
       <workItem from="1622483585738" duration="6311000" />
       <workItem from="1622495332749" duration="604000" />
       <workItem from="1622673284332" duration="181000" />
-      <workItem from="1622708218154" duration="5786000" />
-    </task>
-    <task id="LOCAL-00035" summary="Test generate Jav Doc">
-      <created>1621415559835</created>
-      <option name="number" value="00035" />
-      <option name="presentableId" value="LOCAL-00035" />
-      <option name="project" value="LOCAL" />
-      <updated>1621415559835</updated>
+      <workItem from="1622708218154" duration="6018000" />
     </task>
     <task id="LOCAL-00036" summary="fix bug">
       <created>1621423971746</created>
@@ -595,7 +596,14 @@
       <option name="project" value="LOCAL" />
       <updated>1622487765668</updated>
     </task>
-    <option name="localTasksCounter" value="84" />
+    <task id="LOCAL-00084" summary="MAJ Global">
+      <created>1622714342479</created>
+      <option name="number" value="00084" />
+      <option name="presentableId" value="LOCAL-00084" />
+      <option name="project" value="LOCAL" />
+      <updated>1622714342479</updated>
+    </task>
+    <option name="localTasksCounter" value="85" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -614,7 +622,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Fichier Historique" />
     <MESSAGE value="Test Unitaires" />
     <MESSAGE value="Historique .CSV" />
     <MESSAGE value="DCC UML" />
@@ -639,7 +646,8 @@
     <MESSAGE value="MAJ UML" />
     <MESSAGE value="MAJ Java" />
     <MESSAGE value="MAJ" />
-    <option name="LAST_COMMIT_MESSAGE" value="MAJ" />
+    <MESSAGE value="MAJ Global" />
+    <option name="LAST_COMMIT_MESSAGE" value="MAJ Global" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

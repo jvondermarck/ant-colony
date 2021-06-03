@@ -1,0 +1,606 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="3521.25px" preserveAspectRatio="none" style="width:1387px;height:3521px;" version="1.1" viewBox="0 0 1387 3521" width="1387.5px" zoomAndPan="magnify"><defs/><g><!--MD5=[687488991b74d30f823ee36f24edca9d]
+cluster Diagramme de Classe de Conception V2 --><path d="M27.8625,7.5 L364.1125,7.5 A18.75,18.75 0 0 1 376.6125,20 L385.3625,37.0117 L1361.6125,37.0117 A12.5,12.5 0 0 1 1374.1125,49.5117 L1374.1125,3495 A12.5,12.5 0 0 1 1361.6125,3507.5 L27.8625,3507.5 A12.5,12.5 0 0 1 15.3625,3495 L15.3625,20 A12.5,12.5 0 0 1 27.8625,7.5 " fill="#FFFFFF" style="stroke:#000000;stroke-width:1.875;"/><line style="stroke:#000000;stroke-width:1.875;" x1="15.3625" x2="385.3625" y1="37.0117" y2="37.0117"/><text fill="#000000" font-family="sans-serif" font-size="17.5" font-weight="bold" lengthAdjust="spacing" textLength="348.75" x="20.3625" y="28.1665">Diagramme de Classe de Conception V2</text><!--MD5=[e5168f4970614e1706ed633636598618]
+class AntFacadeController--><rect codeLine="10" fill="#FFC0CB" height="243.1836" id="AntFacadeController" rx="12.5" ry="12.5" style="stroke:#FF0000;stroke-width:2.5;" width="346.25" x="37.2375" y="52.5"/><text fill="#000000" font-family="sans-serif" font-size="15" font-style="italic" lengthAdjust="spacing" textLength="76.25" x="172.2375" y="74.3213">«interface»</text><text fill="#000000" font-family="sans-serif" font-size="15" font-style="italic" font-weight="bold" lengthAdjust="spacing" textLength="148.75" x="135.9875" y="93.1885">AntFacadeController</text><line style="stroke:#FF0000;stroke-width:2.5;" x1="38.4875" x2="382.2375" y1="102.7344" y2="102.7344"/><line style="stroke:#FF0000;stroke-width:2.5;" x1="38.4875" x2="382.2375" y1="112.7344" y2="112.7344"/><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="257.5" x="44.7375" y="132.0081">+setParameters(evaporationParam:Integer,</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="272.5" x="44.7375" y="149.303">foodParam:Integer, pheromoneParam:Integer)</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="248.75" x="44.7375" y="166.5979">+createGrid(width:Integer, height:Integer)</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="255" x="44.7375" y="183.8928">+putObstacle(row:Integer, column:Integer)</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="331.25" x="44.7375" y="201.1877">+putFood(row:Integer, column:Integer, quantity:Integer)</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="262.5" x="44.7375" y="218.4827">+createColony(row:Integer, column:Integer)</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="193.75" x="44.7375" y="235.7776">+createSoldiers(amount:Integer)</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="196.25" x="44.7375" y="253.0725">+createWorkers(amount:Integer)</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="177.5" x="44.7375" y="270.3674">+setAntFile(antLogFile:String)</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="297.5" x="44.7375" y="287.6624">+play(duration:Integer, record:Boolean) : BitSet[][]</text><!--MD5=[af0a8305a588b84ac555c67f9d0f0fdf]
+class Graphe--><rect codeLine="23" fill="#F08080" height="483.7402" id="Graphe" rx="12.5" ry="12.5" style="stroke:#A80036;stroke-width:2.5;" width="398.75" x="523.4875" y="393.75"/><text fill="#000000" font-family="sans-serif" font-size="15" font-weight="bold" lengthAdjust="spacing" textLength="51.25" x="697.2375" y="415.5713">Graphe</text><line style="stroke:#A80036;stroke-width:2.5;" x1="524.7375" x2="920.9875" y1="425.1172" y2="425.1172"/><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="157.5" x="530.9875" y="444.3909">-estObstacle: boolean[*][*]</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="163.75" x="530.9875" y="461.6858">-estNourriture: boolean[*][*]</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="156.25" x="530.9875" y="478.9807">-quantityFood: Integer[*][*]</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="193.75" x="530.9875" y="496.2756">-quantityPheromone: Integer[*][*]</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="78.75" x="530.9875" y="513.5706">-row: Integer</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="96.25" x="530.9875" y="530.8655">-column: Integer</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="133.75" x="530.9875" y="548.1604">-theNoeud: Noeud[*][*]</text><line style="stroke:#A80036;stroke-width:2.5;" x1="524.7375" x2="920.9875" y1="556.1816" y2="556.1816"/><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="220" x="530.9875" y="575.4553">«Create»Graphe(longueur, largueur)</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="150" x="530.9875" y="592.7502">+CreationEmplacement();</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="286.25" x="530.9875" y="610.0452">+rechercherNoeud(x:Integer, y:Integer) : Noeud</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="295" x="530.9875" y="627.3401">+rechercherCoord(n: Noeud): ArrayList&lt;Integer&gt;</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="345" x="530.9875" y="644.635">+gestionNourriture(x:Integer, y:Integer, c:Colonie): Integer</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="273.75" x="530.9875" y="661.9299">+mettreObstacle(row:Integer, colomn:Integer)</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="383.75" x="530.9875" y="679.2249">+mettreNourriture(row:Integer, colomn:Integer, quantity: Integer)</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="0" x="534.7375" y="696.5198"/><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="188.75" x="530.9875" y="713.8147">+getEstObstacle(): boolean[*][*]</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="195" x="530.9875" y="731.1096">+getEstNourriture(): boolean[*][*]</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="165" x="530.9875" y="748.4045">+getQuantityFood(): Integer</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="202.5" x="530.9875" y="765.6995">+getQuantityPheromone(): Integer</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="113.75" x="530.9875" y="782.9944">+getRow(): Integer</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="128.75" x="530.9875" y="800.2893">+getColumn(): Integer</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="267.5" x="530.9875" y="817.5842">+setQuantityFood(quantityFood: Integer[*][*])</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="342.5" x="530.9875" y="834.8792">+setQuantityPheromone(quantityPheromone: Integer[*][*])</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="273.75" x="530.9875" y="852.1741">+setEstNourriture(estNourriture: boolean[*][*])</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="261.25" x="530.9875" y="869.469">+setEstObstacle(estObstacle: boolean[*][*])</text><!--MD5=[cd8a70aa33f1eb81dbb0a178e8570315]
+class Colonie--><rect codeLine="52" fill="#DEB887" height="310.791" id="Colonie" rx="12.5" ry="12.5" style="stroke:#A80036;stroke-width:1.875;" width="317.5" x="510.3625" y="3176.25"/><text fill="#000000" font-family="sans-serif" font-size="15" font-weight="bold" lengthAdjust="spacing" textLength="52.5" x="642.8625" y="3198.0713">Colonie</text><line style="stroke:#A80036;stroke-width:1.875;" x1="511.6125" x2="826.6125" y1="3207.6172" y2="3207.6172"/><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="118.75" x="517.8625" y="3226.8909">-numColonie:Integer</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="162.5" x="517.8625" y="3244.1858">-evaporationParam: Integer</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="118.75" x="517.8625" y="3261.4807">-foodParam: Integer</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="158.75" x="517.8625" y="3278.7756">-pheromoneParam: Integer</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="131.25" x="517.8625" y="3296.0706">-quantityFood: Integer</text><line style="stroke:#A80036;stroke-width:1.875;" x1="511.6125" x2="826.6125" y1="3304.0918" y2="3304.0918"/><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="108.75" x="517.8625" y="3323.3655">«Create»Colonie()</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="0" x="521.6125" y="3340.6604"/><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="193.75" x="517.8625" y="3357.9553">+getEvaporationParam(): Integer</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="152.5" x="517.8625" y="3375.2502">+getFoodParam(): Integer</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="190" x="517.8625" y="3392.5452">+getPheromoneParam(): Integer</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="302.5" x="517.8625" y="3409.8401">+setEvaporationParam(evaporationParam: Integer)</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="217.5" x="517.8625" y="3427.135">+setFoodParam(foodParam: Integer)</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="295" x="517.8625" y="3444.4299">+setPheromoneParam(pheromoneParam: Integer)</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="242.5" x="517.8625" y="3461.7249">+setQuantityFood(quantityFood: Integer)</text><text fill="#000000" font-family="sans-serif" font-size="13.75" font-style="italic" lengthAdjust="spacing" textLength="108.75" x="517.8625" y="3479.0198">+toString(): String</text><!--MD5=[a2a0c48b1c71f3706f132a6dade0ff8c]
+class Noeud--><rect codeLine="71" fill="#DEB887" height="137.8418" id="Noeud" rx="12.5" ry="12.5" style="stroke:#A80036;stroke-width:1.875;" width="311.25" x="1042.2375" y="566.875"/><text fill="#000000" font-family="sans-serif" font-size="15" font-weight="bold" lengthAdjust="spacing" textLength="45" x="1175.3625" y="588.6963">Noeud</text><line style="stroke:#A80036;stroke-width:1.875;" x1="1043.4875" x2="1352.2375" y1="598.2422" y2="598.2422"/><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="165" x="1049.7375" y="617.5159">-coordonneeNoeud: Integer</text><line style="stroke:#A80036;stroke-width:1.875;" x1="1043.4875" x2="1352.2375" y1="625.5371" y2="625.5371"/><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="296.25" x="1049.7375" y="644.8108">«Create»Noeud(g:Graphe, numeroNoeud:Integer)</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="141.25" x="1049.7375" y="662.1057">+getCoordonneNoeud()</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="221.25" x="1049.7375" y="679.4006">+setCoordonneNoeud(coord:Integer)</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="106.25" x="1049.7375" y="696.6956">+toString(): String</text><!--MD5=[29a3dacb05158a5f88c9c55a70097ca0]
+class AntFacade--><rect codeLine="80" fill="#F5DEB3" height="397.2656" id="AntFacade" rx="12.5" ry="12.5" style="stroke:#A80036;stroke-width:2.5;" width="350" x="35.3625" y="436.875"/><text fill="#000000" font-family="sans-serif" font-size="15" font-weight="bold" lengthAdjust="spacing" textLength="75" x="172.8625" y="458.6963">AntFacade</text><line style="stroke:#A80036;stroke-width:2.5;" x1="36.6125" x2="384.1125" y1="468.2422" y2="468.2422"/><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="95" x="42.8625" y="487.5159">-grid: BitSet[*][*]</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="100" x="42.8625" y="504.8108">-graphe: Graphe</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="188.75" x="42.8625" y="522.1057">-theSoldiers: ArrayList&lt;Soldat&gt;</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="198.75" x="42.8625" y="539.4006">-theWorkers: ArrayList&lt;Ouvrier&gt;</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="76.25" x="42.8625" y="556.6956">-reine: Reine</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="87.5" x="42.8625" y="573.9905">-width: Integer</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="90" x="42.8625" y="591.2854">-height: Integer</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="105" x="42.8625" y="608.5803">-xColonie: Integer</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="105" x="42.8625" y="625.8752">-yColonie: Integer</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="187.5" x="42.8625" y="643.1702">-antHisto: AntFacadeHistorique</text><line style="stroke:#A80036;stroke-width:2.5;" x1="36.6125" x2="384.1125" y1="651.1914" y2="651.1914"/><text fill="#000000" font-family="sans-serif" font-size="13.75" font-style="italic" lengthAdjust="spacing" textLength="263.75" x="42.8625" y="670.4651">+setParameters(evaporationParam:Integer,</text><text fill="#000000" font-family="sans-serif" font-size="13.75" font-style="italic" lengthAdjust="spacing" textLength="280" x="42.8625" y="687.76">foodParam:Integer, pheromoneParam:Integer)</text><text fill="#000000" font-family="sans-serif" font-size="13.75" font-style="italic" lengthAdjust="spacing" textLength="252.5" x="42.8625" y="705.0549">+createGrid(width:Integer, height:Integer)</text><text fill="#000000" font-family="sans-serif" font-size="13.75" font-style="italic" lengthAdjust="spacing" textLength="260" x="42.8625" y="722.3499">+putObstacle(row:Integer, column:Integer)</text><text fill="#000000" font-family="sans-serif" font-size="13.75" font-style="italic" lengthAdjust="spacing" textLength="335" x="42.8625" y="739.6448">+putFood(row:Integer, column:Integer, quantity:Integer)</text><text fill="#000000" font-family="sans-serif" font-size="13.75" font-style="italic" lengthAdjust="spacing" textLength="265" x="42.8625" y="756.9397">+createColony(row:Integer, column:Integer)</text><text fill="#000000" font-family="sans-serif" font-size="13.75" font-style="italic" lengthAdjust="spacing" textLength="198.75" x="42.8625" y="774.2346">+createSoldiers(amount:Integer)</text><text fill="#000000" font-family="sans-serif" font-size="13.75" font-style="italic" lengthAdjust="spacing" textLength="201.25" x="42.8625" y="791.5295">+createWorkers(amount:Integer)</text><text fill="#000000" font-family="sans-serif" font-size="13.75" font-style="italic" lengthAdjust="spacing" textLength="185" x="42.8625" y="808.8245">+setAntFile(antLogFile:String)</text><text fill="#000000" font-family="sans-serif" font-size="13.75" font-style="italic" lengthAdjust="spacing" textLength="312.5" x="42.8625" y="826.1194">+play(duration:Integer, record:Boolean) : BitSet[*][*]</text><!--MD5=[987afba12674ab6224d1208f49aa3f32]
+class AntFacadeHistorique--><rect codeLine="104" fill="#F5DEB3" height="276.2012" id="AntFacadeHistorique" rx="12.5" ry="12.5" style="stroke:#A80036;stroke-width:2.5;" width="366.25" x="82.2375" y="1702.5"/><text fill="#000000" font-family="sans-serif" font-size="15" font-weight="bold" lengthAdjust="spacing" textLength="147.5" x="191.6125" y="1724.3213">AntFacadeHistorique</text><line style="stroke:#A80036;stroke-width:2.5;" x1="83.4875" x2="447.2375" y1="1733.8672" y2="1733.8672"/><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="95" x="89.7375" y="1753.1409">-grid: BitSet[*][*]</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="87.5" x="89.7375" y="1770.4358">-width: Integer</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="90" x="89.7375" y="1787.7307">-height: Integer</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="127.5" x="89.7375" y="1805.0256">-durationPlay: Integer</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="60" x="89.7375" y="1822.3206">-fLog: File</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="86.25" x="89.7375" y="1839.6155">-fw: FileWriter</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="100" x="89.7375" y="1856.9104">-graphe: Graphe</text><line style="stroke:#A80036;stroke-width:2.5;" x1="83.4875" x2="447.2375" y1="1864.9316" y2="1864.9316"/><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="268.75" x="89.7375" y="1884.2053">«Create»AntFacadeHistorique(width:Integer,</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="351.25" x="89.7375" y="1901.5002">height:Integer, grid:BitSet[*][*], antLogFile:String, g:Graphe)</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="65" x="89.7375" y="1918.7952">+startFile()</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="347.5" x="89.7375" y="1936.0901">+iteration(grid:BitSet[*][*], theWorkers:ArrayList&lt;Ouvrier&gt;,</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="185" x="89.7375" y="1953.385">theSoldiers:ArrayList&lt;Soldat&gt;)</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="70" x="89.7375" y="1970.6799">+closeFile()</text><!--MD5=[09a5143a5308ffa6e72c5e2108347c04]
+class Fourmis--><rect codeLine="121" fill="#90EE90" height="104.8242" id="Fourmis" rx="12.5" ry="12.5" style="stroke:#008000;stroke-width:1.875;" width="117.5" x="875.3625" y="975"/><text fill="#000000" font-family="sans-serif" font-size="15" font-style="italic" lengthAdjust="spacing" textLength="76.25" x="895.9875" y="996.8213">«interface»</text><text fill="#000000" font-family="sans-serif" font-size="15" font-style="italic" font-weight="bold" lengthAdjust="spacing" textLength="58.75" x="904.7375" y="1015.6885">Fourmis</text><line style="stroke:#008000;stroke-width:1.875;" x1="876.6125" x2="991.6125" y1="1025.2344" y2="1025.2344"/><line style="stroke:#008000;stroke-width:1.875;" x1="876.6125" x2="991.6125" y1="1035.2344" y2="1035.2344"/><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="101.25" x="882.8625" y="1054.5081">+setX(x:Integer);</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="102.5" x="882.8625" y="1071.803">+setY(y:Integer);</text><!--MD5=[fb42f63e3a0f62f73f4fc52c072eeb9a]
+class Reine--><rect codeLine="126" fill="#ADD8E6" height="345.3809" id="Reine" rx="12.5" ry="12.5" style="stroke:#008000;stroke-width:1.875;" width="290" x="391.6125" y="1320"/><text fill="#000000" font-family="sans-serif" font-size="15" font-weight="bold" lengthAdjust="spacing" textLength="40" x="516.6125" y="1341.8213">Reine</text><line style="stroke:#008000;stroke-width:1.875;" x1="392.8625" x2="680.3625" y1="1351.3672" y2="1351.3672"/><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="61.25" x="399.1125" y="1370.6409">-x: Integer</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="61.25" x="399.1125" y="1387.9358">-y: Integer</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="98.75" x="399.1125" y="1405.2307">-colonie: Colonie</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="100" x="399.1125" y="1422.5256">-graphe: Graphe</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="188.75" x="399.1125" y="1439.8206">-theSoldiers: ArrayList&lt;Soldat&gt;</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="198.75" x="399.1125" y="1457.1155">-theWorkers: ArrayList&lt;Ouvrier&gt;</text><line style="stroke:#008000;stroke-width:1.875;" x1="392.8625" x2="680.3625" y1="1465.1367" y2="1465.1367"/><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="275" x="399.1125" y="1484.4104">«Create»Reine(x:Integer, y:Integer, g:Graphe)</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="200" x="399.1125" y="1501.7053">+giveBirthSoldier(amount:Integer)</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="202.5" x="399.1125" y="1519.0002">+giveBirthWorker(amount:Integer)</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="257.5" x="399.1125" y="1536.2952">+setParameters(evaporationParam:Integer,</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="272.5" x="399.1125" y="1553.5901">foodParam:Integer, pheromoneParam:Integer)</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="0" x="402.8625" y="1570.885"/><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="223.75" x="399.1125" y="1588.1799">+getTheSoldiers(): ArrayList&lt;Soldat&gt;</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="233.75" x="399.1125" y="1605.4749">+getTheWorkers(): ArrayList&lt;Ouvrier&gt;</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="97.5" x="399.1125" y="1622.7698">+setX(x:Integer)</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="166.25" x="399.1125" y="1640.0647">{redefined}+setY(y:Integer)</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="131.25" x="399.1125" y="1657.3596">+getColonie(): Colonie</text><!--MD5=[3919dc0ea9e72d54ef410bd350e8d7e8]
+class IFourmisMove--><rect codeLine="147" fill="#90EE90" height="104.8242" id="IFourmisMove" rx="12.5" ry="12.5" style="stroke:#008000;stroke-width:1.875;" width="263.75" x="729.7375" y="1177.5"/><text fill="#000000" font-family="sans-serif" font-size="15" font-style="italic" lengthAdjust="spacing" textLength="76.25" x="823.4875" y="1199.3213">«interface»</text><text fill="#000000" font-family="sans-serif" font-size="15" font-style="italic" font-weight="bold" lengthAdjust="spacing" textLength="102.5" x="810.3625" y="1218.1885">IFourmisMove</text><line style="stroke:#008000;stroke-width:1.875;" x1="730.9875" x2="992.2375" y1="1227.7344" y2="1227.7344"/><line style="stroke:#008000;stroke-width:1.875;" x1="730.9875" x2="992.2375" y1="1237.7344" y2="1237.7344"/><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="115" x="737.2375" y="1257.0081">+randomDirection()</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="248.75" x="737.2375" y="1274.303">+noeudVoisin(o:Object, g:Graphe): String</text><!--MD5=[8b4fecfb5224a79d78d7b245c69bea9b]
+class FourmisMove--><rect codeLine="152" fill="#90EE90" height="207.0215" id="FourmisMove" rx="12.5" ry="12.5" style="stroke:#008000;stroke-width:1.875;" width="263.75" x="814.7375" y="1736.875"/><text fill="#000000" font-family="sans-serif" font-size="15" font-style="italic" font-weight="bold" lengthAdjust="spacing" textLength="98.75" x="897.2375" y="1758.6963">FourmisMove</text><line style="stroke:#008000;stroke-width:1.875;" x1="815.9875" x2="1077.2375" y1="1768.2422" y2="1768.2422"/><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="177.5" x="822.2375" y="1787.5159">-listNoeud: ArrayList&lt;Noeud&gt;</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="106.25" x="822.2375" y="1804.8108">-random: Random</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="100" x="822.2375" y="1822.1057">-record: boolean</text><line style="stroke:#008000;stroke-width:1.875;" x1="815.9875" x2="1077.2375" y1="1830.127" y2="1830.127"/><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="233.75" x="822.2375" y="1849.4006">+rechercheAretes(x:Integer, y:Integer)</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="230" x="822.2375" y="1866.6956">-verficationNoeud(x:Integer, y:Integer)</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="101.25" x="822.2375" y="1883.9905">+randomNoeud()</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="148.75" x="822.2375" y="1901.2854">+probabilityLaw(n, rand)</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="248.75" x="822.2375" y="1918.5803">+noeudVoisin(o:Object, g:Graphe): String</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="213.75" x="822.2375" y="1935.8752">+getListNoeud(): ArrayList&lt;Noeud&gt;</text><!--MD5=[eaecdb4d60f1acc22a4989f71e32ee67]
+class Soldat--><rect codeLine="165" fill="#9370D8" height="379.9707" id="Soldat" rx="12.5" ry="12.5" style="stroke:#9400D3;stroke-width:1.875;" width="356.25" x="90.9875" y="2247.5"/><text fill="#000000" font-family="sans-serif" font-size="15" font-weight="bold" lengthAdjust="spacing" textLength="45" x="246.6125" y="2269.3213">Soldat</text><line style="stroke:#9400D3;stroke-width:1.875;" x1="92.2375" x2="445.9875" y1="2278.8672" y2="2278.8672"/><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" text-decoration="underline" textLength="158.75" x="98.4875" y="2298.1409">-nombreSoldat = 0: Integer</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="98.75" x="98.4875" y="2315.4358">-colonie: Colonie</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="61.25" x="98.4875" y="2332.7307">-x: Integer</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="61.25" x="98.4875" y="2350.0256">-y: Integer</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="65" x="98.4875" y="2367.3206">-g: Graphe</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="136.25" x="98.4875" y="2384.6155">-positionActuel: Noeud</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="136.25" x="98.4875" y="2401.9104">-numeroSoldat: Integer</text><line style="stroke:#9400D3;stroke-width:1.875;" x1="92.2375" x2="445.9875" y1="2409.9316" y2="2409.9316"/><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="341.25" x="98.4875" y="2429.2053">«Create»Soldat(x:Integer, y:Integer, c:Colonie, g:Graphe)</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="337.5" x="98.4875" y="2446.5002">+recherchePositionActuel(ligne:Integer, colonne:Integer)</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="115" x="98.4875" y="2463.7952">+randomDirection()</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="0" x="102.2375" y="2481.0901"/><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="177.5" x="98.4875" y="2498.385">{redefined} +toString(): String</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="168.75" x="98.4875" y="2515.6799">+getNumeroSoldat(): Integer</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="167.5" x="98.4875" y="2532.9749">+getPositionActuel(): Noeud</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="171.25" x="98.4875" y="2550.2698">+setPositionActuel(n:Noeud)</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="93.75" x="98.4875" y="2567.5647">+getX(): Integer</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="95" x="98.4875" y="2584.8596">+getY(): Integer</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="165" x="98.4875" y="2602.1545">{redefined}+setX(x:Integer)</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="166.25" x="98.4875" y="2619.4495">{redefined}+setY(x:Integer)</text><!--MD5=[3d216958cbe5f528f91bafce4c8c4d68]
+class MoveOuvrier--><rect codeLine="188" fill="#FFD700" height="639.3945" id="MoveOuvrier" rx="12.5" ry="12.5" style="stroke:#DAA520;stroke-width:1.875;" width="396.25" x="957.2375" y="2117.5"/><text fill="#000000" font-family="sans-serif" font-size="15" font-style="italic" font-weight="bold" lengthAdjust="spacing" textLength="93.75" x="1108.4875" y="2139.3213">MoveOuvrier</text><line style="stroke:#DAA520;stroke-width:1.875;" x1="958.4875" x2="1352.2375" y1="2148.8672" y2="2148.8672"/><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="61.25" x="964.7375" y="2168.1409">-x: Integer</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="61.25" x="964.7375" y="2185.4358">-y: Integer</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="100" x="964.7375" y="2202.7307">-graphe: Graphe</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="136.25" x="964.7375" y="2220.0256">-positionActuel: Noeud</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="177.5" x="964.7375" y="2237.3206">-listNoeud: ArrayList&lt;Noeud&gt;</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="217.5" x="964.7375" y="2254.6155">-listNoeudRetour: ArrayList&lt;Noeud&gt;</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="126.25" x="964.7375" y="2271.9104">-aVisite: boolean[*][*]</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="118.75" x="964.7375" y="2289.2053">-etatRetour:boolean</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="167.5" x="964.7375" y="2306.5002">-quantityFoodTaken: Integer</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="98.75" x="964.7375" y="2323.7952">-colonie: Colonie</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="106.25" x="964.7375" y="2341.0901">-random: Random</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="100" x="964.7375" y="2358.385">-record: boolean</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="157.5" x="964.7375" y="2375.6799">-estObstacle: boolean[*][*]</text><line style="stroke:#DAA520;stroke-width:1.875;" x1="958.4875" x2="1352.2375" y1="2383.7012" y2="2383.7012"/><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="381.25" x="964.7375" y="2402.9749">«Create»MoveOuvrier(x:Integer, y:Integer, c:Colonie, g:Graphe)</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="115" x="964.7375" y="2420.2698">+randomDirection()</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="100" x="964.7375" y="2437.5647">+cheminRetour()</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="100" x="964.7375" y="2454.8596">+paramOuvrier()</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="285" x="964.7375" y="2472.1545">-rechercheBestPheromone(x:Integer, y:Integer)</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="370" x="964.7375" y="2489.4495">-rechercheAucunPheromone(droitPassage: boolean):boolean</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="283.75" x="964.7375" y="2506.7444">-rechercheToutVisite(ouvrier:Ouvrier): boolean</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="0" x="968.4875" y="2524.0393"/><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="145" x="964.7375" y="2541.3342">+isEtatRetour(): boolean</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="253.75" x="964.7375" y="2558.6292">+getListNoeudRetour(): ArrayList&lt;Noeud&gt;</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="201.25" x="964.7375" y="2575.9241">+getQuantityFoodTaken(): Integer</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="167.5" x="964.7375" y="2593.219">+getPositionActuel(): Noeud</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="136.25" x="964.7375" y="2610.5139">+setListNoeudRetour()</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="273.75" x="964.7375" y="2627.8088">+setaVisite(x:Integer, y:Integer, bool:boolean)</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="217.5" x="964.7375" y="2645.1038">+setEtatRetour(etatRetour: Boolean)</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="315" x="964.7375" y="2662.3987">+setQuantityFoodTaken(quantityFoodTaken: Integer)</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="210" x="964.7375" y="2679.6936">+setPositionActuel(position:Noeud)</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="93.75" x="964.7375" y="2696.9885">+getX(): Integer</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="95" x="964.7375" y="2714.2834">+getY(): Integer</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="165" x="964.7375" y="2731.5784">{redefined}+setX(x:Integer)</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="166.25" x="964.7375" y="2748.8733">{redefined}+setY(y:Integer)</text><!--MD5=[137f942763a0ddbfb9a941d3a11ef72b]
+class Ouvrier--><rect codeLine="226" fill="#9370D8" height="224.3164" id="Ouvrier" rx="12.5" ry="12.5" style="stroke:#9400D3;stroke-width:1.875;" width="363.75" x="714.7375" y="2855"/><text fill="#000000" font-family="sans-serif" font-size="15" font-weight="bold" lengthAdjust="spacing" textLength="52.5" x="870.3625" y="2876.8213">Ouvrier</text><line style="stroke:#9400D3;stroke-width:1.875;" x1="715.9875" x2="1077.2375" y1="2886.3672" y2="2886.3672"/><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" text-decoration="underline" textLength="166.25" x="722.2375" y="2905.6409">-nombreOuvrier = 0: Integer</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="142.5" x="722.2375" y="2922.9358">-numeroWorker: Integer</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="98.75" x="722.2375" y="2940.2307">-colonie: Colonie</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="65" x="722.2375" y="2957.5256">-g: Graphe</text><line style="stroke:#9400D3;stroke-width:1.875;" x1="715.9875" x2="1077.2375" y1="2965.5469" y2="2965.5469"/><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="348.75" x="722.2375" y="2984.8206">«Create»Ouvrier(x:Integer, y:Integer, c:Colonie, g:Graphe)</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="337.5" x="722.2375" y="3002.1155">+recherchePositionActuel(ligne:Integer, colonne:Integer)</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="162.5" x="722.2375" y="3019.4104">+doitRetravailler(): Boolean</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="0" x="725.9875" y="3036.7053"/><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="177.5" x="722.2375" y="3054.0002">{redefined} +toString(): String</text><text fill="#000000" font-family="sans-serif" font-size="13.75" lengthAdjust="spacing" textLength="126.25" x="722.2375" y="3071.2952">+getNumeroWorker()</text><!--MD5=[31f0f796724236ed75d44052e95e31e3]
+reverse link AntFacadeController to AntFacade--><path codeLine="242" d="M210.3625,322.0375 C210.3625,358.475 210.3625,398.15 210.3625,436.6125 " fill="none" id="AntFacadeController-backto-AntFacade" style="stroke:#A80036;stroke-width:1.25;stroke-dasharray:7.0,7.0;"/><polygon fill="none" points="201.6125,321.7625,210.3625,296.75,219.1125,321.75,201.6125,321.7625" style="stroke:#A80036;stroke-width:1.25;"/><text fill="#000000" font-family="sans-serif" font-size="16.25" lengthAdjust="spacing" textLength="101.25" x="211.6125" y="351.8689">«implements»</text><!--MD5=[4d3c084745348fd44f5c9f1fd6e6880c]
+link AntFacade to Graphe--><path codeLine="243" d="M385.6625,635.625 C421.8625,635.625 460.475,635.625 498.1625,635.625 " fill="none" id="AntFacade-to-Graphe" style="stroke:#A80036;stroke-width:1.25;stroke-dasharray:7.0,7.0;"/><polygon fill="none" points="498.4125,626.875,523.4125,635.625,498.4125,644.375,498.4125,626.875" style="stroke:#A80036;stroke-width:1.25;"/><text fill="#000000" font-family="sans-serif" font-size="16.25" lengthAdjust="spacing" textLength="92.5" x="408.175" y="627.4939">«instantiate»</text><!--MD5=[33ff75dd7137565e0ffebd8ee96aba71]
+link AntFacade to Reine--><path codeLine="244" d="M285.825,834.5 C338.85,973.3375 409.4375,1158.2125 462.225,1296.4375 " fill="none" id="AntFacade-to-Reine" style="stroke:#A80036;stroke-width:1.25;stroke-dasharray:7.0,7.0;"/><polygon fill="none" points="470.45,1293.4625,471.2,1319.9375,454.1,1299.7,470.45,1293.4625" style="stroke:#A80036;stroke-width:1.25;"/><text fill="#000000" font-family="sans-serif" font-size="16.25" lengthAdjust="spacing" textLength="92.5" x="379.1125" y="1034.3689">«instantiate»</text><!--MD5=[8f304291b726e98d2b5af8a4761af9a6]
+link AntFacade to AntFacadeHistorique--><path codeLine="245" d="M151.9375,834.45 C121.35,962.1375 94.0375,1131.975 114.1125,1282.5 C132.2625,1418.5875 174.325,1568.55 209.5,1678.5375 " fill="none" id="AntFacade-to-AntFacadeHistorique" style="stroke:#A80036;stroke-width:1.25;stroke-dasharray:7.0,7.0;"/><polygon fill="none" points="217.85,1675.9625,217.225,1702.4375,201.2,1681.35,217.85,1675.9625" style="stroke:#A80036;stroke-width:1.25;"/><text fill="#000000" font-family="sans-serif" font-size="16.25" lengthAdjust="spacing" textLength="92.5" x="109.1125" y="1135.6189">«instantiate»</text><!--MD5=[fc576e9f977dff88ee29d4352d2f6d44]
+link Graphe to Noeud--><path codeLine="247" d="M937.2375,635.625 C937.2375,635.625 997.325,635.625 1025.5125,635.625 " fill="none" id="Graphe-Noeud" style="stroke:#A80036;stroke-width:1.25;"/><polygon fill="#A80036" points="1041.95,635.625,1030.7,630.625,1035.7,635.625,1030.7,640.625,1041.95,635.625" style="stroke:#A80036;stroke-width:1.25;"/><line style="stroke:#A80036;stroke-width:1.25;" x1="1035.7" x2="1025.7" y1="635.625" y2="635.625"/><polygon fill="#A80036" points="922.2375,635.625,929.7375,640.625,937.2375,635.625,929.7375,630.625,922.2375,635.625" style="stroke:#A80036;stroke-width:1.25;"/><polygon fill="#000000" points="956.6125,620.8447,945.3061,617.1711,945.3061,624.5184,956.6125,620.8447" style="stroke:#000000;stroke-width:1.25;"/><text fill="#000000" font-family="sans-serif" font-size="16.25" lengthAdjust="spacing" textLength="57.5" x="961.6125" y="627.4939">contient</text><text fill="#000000" font-family="sans-serif" font-size="16.25" lengthAdjust="spacing" textLength="8.75" x="932.1066" y="632.0204">1</text><text fill="#000000" font-family="sans-serif" font-size="16.25" lengthAdjust="spacing" textLength="25" x="1007.2137" y="653.0748">1..*</text><!--MD5=[c449efe8492acf6bfbec7badbb4f3553]
+link Reine to Colonie--><path codeLine="249" d="M662.4731,1679.4858 C662.4731,1679.4858 668.2625,1695.3375 670.3625,1702.5 C675.4375,1719.8125 671.6125,2745.5 669.8625,3159.8 " fill="none" id="Reine-Colonie" style="stroke:#A80036;stroke-width:1.25;"/><polygon fill="#A80036" points="669.8,3176.075,674.8494,3164.8471,669.8275,3169.8251,664.8495,3164.8031,669.8,3176.075" style="stroke:#A80036;stroke-width:1.25;"/><line style="stroke:#A80036;stroke-width:1.25;" x1="669.8275" x2="669.8625" y1="3169.8251" y2="3159.825"/><polygon fill="#A80036" points="656.8,1665.6,655.0079,1674.4339,662.4731,1679.4858,664.2651,1670.6519,656.8,1665.6" style="stroke:#A80036;stroke-width:1.25;"/><polygon fill="#000000" points="679.1437,2443.9696,682.7609,2432.6451,675.4136,2432.6818,679.1437,2443.9696" style="stroke:#000000;stroke-width:1.25;"/><text fill="#000000" font-family="sans-serif" font-size="16.25" lengthAdjust="spacing" textLength="71.25" x="690.3625" y="2444.3689">appartient</text><text fill="#000000" font-family="sans-serif" font-size="16.25" lengthAdjust="spacing" textLength="8.75" x="654.3835" y="1692.4838">1</text><text fill="#000000" font-family="sans-serif" font-size="16.25" lengthAdjust="spacing" textLength="8.75" x="660.8253" y="3162.8678">1</text><!--MD5=[aa958fc026de03b510107b351326c664]
+link Noeud to Fourmis--><path codeLine="250" d="M1143.5134,717.1195 C1143.5134,717.1195 1023.4875,894.3 978.2625,961.075 " fill="none" id="Noeud-Fourmis" style="stroke:#A80036;stroke-width:1.25;"/><polygon fill="#A80036" points="969.0125,974.7375,979.4611,968.2267,972.5173,969.5627,971.1814,962.619,969.0125,974.7375" style="stroke:#A80036;stroke-width:1.25;"/><line style="stroke:#A80036;stroke-width:1.25;" x1="972.5173" x2="978.1188" y1="969.5627" y2="961.275"/><polygon fill="#A80036" points="1151.925,704.7,1143.5793,708.1059,1143.5134,717.1195,1151.859,713.7136,1151.925,704.7" style="stroke:#A80036;stroke-width:1.25;"/><polygon fill="#000000" points="1006.8573,931.6443,1016.2398,924.3437,1010.1567,920.2231,1006.8573,931.6443" style="stroke:#000000;stroke-width:1.25;"/><text fill="#000000" font-family="sans-serif" font-size="16.25" lengthAdjust="spacing" textLength="67.5" x="1021.6125" y="933.1189">comporte</text><text fill="#000000" font-family="sans-serif" font-size="16.25" lengthAdjust="spacing" textLength="8.75" x="1136.7287" y="731.7066">1</text><text fill="#000000" font-family="sans-serif" font-size="16.25" lengthAdjust="spacing" textLength="25" x="931.4803" y="961.2623">0..*</text><!--MD5=[e3cf1bad306394dea539d877022b33d3]
+reverse link Fourmis to Reine--><path codeLine="252" d="M852.725,1066.8625 C805.225,1092.525 747.125,1130.2875 707.8625,1177.5 C672.35,1220.2 640.7375,1271.4 614.6375,1319.925 " fill="none" id="Fourmis-backto-Reine" style="stroke:#A80036;stroke-width:1.25;stroke-dasharray:7.0,7.0;"/><polygon fill="none" points="848.8375,1059.025,875.05,1055.25,856.9125,1074.55,848.8375,1059.025" style="stroke:#A80036;stroke-width:1.25;"/><text fill="#000000" font-family="sans-serif" font-size="16.25" lengthAdjust="spacing" textLength="101.25" x="770.3625" y="1135.6189">«implements»</text><!--MD5=[2ede103ab60d1c177d94c20dc675636b]
+reverse link Fourmis to IFourmisMove--><path codeLine="253" d="M906.8875,1103.8375 C898,1128.375 888.325,1155.05 880.225,1177.425 " fill="none" id="Fourmis-backto-IFourmisMove" style="stroke:#A80036;stroke-width:1.25;stroke-dasharray:7.0,7.0;"/><polygon fill="none" points="898.7,1100.775,915.4375,1080.25,915.15,1106.7375,898.7,1100.775" style="stroke:#A80036;stroke-width:1.25;"/><text fill="#000000" font-family="sans-serif" font-size="16.25" lengthAdjust="spacing" textLength="75" x="900.3625" y="1135.6189">«extends»</text><!--MD5=[362ae09f5c890a6351451a077516eda3]
+reverse link IFourmisMove to FourmisMove--><path codeLine="255" d="M869.825,1307.7375 C879.4375,1394.5375 896.4625,1540.2375 915.3625,1665 C918.8875,1688.2625 923.1,1713.2 927.2625,1736.725 " fill="none" id="IFourmisMove-backto-FourmisMove" style="stroke:#A80036;stroke-width:1.25;stroke-dasharray:7.0,7.0;"/><polygon fill="none" points="861.1125,1308.5875,867.0875,1282.7875,878.5125,1306.6875,861.1125,1308.5875" style="stroke:#A80036;stroke-width:1.25;"/><text fill="#000000" font-family="sans-serif" font-size="16.25" lengthAdjust="spacing" textLength="101.25" x="916.6125" y="1499.3689">«implements»</text><!--MD5=[4dcfc82796a01e2c99126645f92e7692]
+reverse link FourmisMove to MoveOuvrier--><path codeLine="256" d="M990.975,1968.1875 C1006.55,2012.525 1024.8125,2064.55 1043.4125,2117.4875 " fill="none" id="FourmisMove-backto-MoveOuvrier" style="stroke:#A80036;stroke-width:1.25;stroke-dasharray:7.0,7.0;"/><polygon fill="none" points="982.65,1970.875,982.6125,1944.3875,999.1625,1965.075,982.65,1970.875" style="stroke:#A80036;stroke-width:1.25;"/><text fill="#000000" font-family="sans-serif" font-size="16.25" lengthAdjust="spacing" textLength="0" x="1066.6125" y="2034.3689"/><text fill="#000000" font-family="sans-serif" font-size="16.25" lengthAdjust="spacing" textLength="0" x="1066.6125" y="2054.8083"/><text fill="#000000" font-family="sans-serif" font-size="16.25" lengthAdjust="spacing" textLength="75" x="1026.6125" y="2075.2478">«extends»</text><!--MD5=[bb79c93e53558c8686560167b2eb1187]
+reverse link FourmisMove to Soldat--><path codeLine="257" d="M792.6375,1930.95 C662.3875,2006.6375 494.8,2104.9875 481.6125,2117.5 C441.925,2155.15 405.8,2201.5 375.05,2247.0875 " fill="none" id="FourmisMove-backto-Soldat" style="stroke:#A80036;stroke-width:1.25;stroke-dasharray:7.0,7.0;"/><polygon fill="none" points="788.4,1923.2875,814.4125,1918.3,797.1875,1938.425,788.4,1923.2875" style="stroke:#A80036;stroke-width:1.25;"/><text fill="#000000" font-family="sans-serif" font-size="16.25" lengthAdjust="spacing" textLength="0" x="681.6125" y="2034.3689"/><text fill="#000000" font-family="sans-serif" font-size="16.25" lengthAdjust="spacing" textLength="0" x="681.6125" y="2054.8083"/><text fill="#000000" font-family="sans-serif" font-size="16.25" lengthAdjust="spacing" textLength="75" x="641.6125" y="2075.2478">«extends»</text><!--MD5=[94931db450b314fa6d2c1b0354bbec4a]
+reverse link MoveOuvrier to Ouvrier--><path codeLine="259" d="M987.5125,2780.525 C974.65,2806.725 962.35,2831.775 951.175,2854.525 " fill="none" id="MoveOuvrier-backto-Ouvrier" style="stroke:#A80036;stroke-width:1.25;"/><polygon fill="none" points="979.8125,2776.35,998.6875,2757.7625,995.525,2784.0625,979.8125,2776.35" style="stroke:#A80036;stroke-width:1.25;"/><text fill="#000000" font-family="sans-serif" font-size="16.25" lengthAdjust="spacing" textLength="75" x="980.3625" y="2813.1189">«extends»</text><!--MD5=[4dd316995cead153d64f897a2d940e20]
+link Reine to Soldat--><path codeLine="260" d="M523.4041,1679.9464 C523.4041,1679.9464 497.525,1882.5 470.3625,1978.75 C446.225,2064.2625 409.2,2154.5625 373.45,2232.15 " fill="none" id="Reine-Soldat" style="stroke:#A80036;stroke-width:1.25;"/><polygon fill="#A80036" points="366.5625,2246.9875,375.8348,2238.8889,369.1942,2241.3186,366.7645,2234.6781,366.5625,2246.9875" style="stroke:#A80036;stroke-width:1.25;"/><line style="stroke:#A80036;stroke-width:1.25;" x1="369.1942" x2="373.4063" y1="2241.3186" y2="2232.2438"/><polygon fill="#FFFFFF" points="524.9375,1665.025,519.197,1671.9746,523.4041,1679.9464,529.1446,1672.9968,524.9375,1665.025" style="stroke:#A80036;stroke-width:1.25;"/><polygon fill="#000000" points="523.7246,1846.8763,530.2329,1836.9278,523.1423,1835.0024,523.7246,1846.8763" style="stroke:#000000;stroke-width:1.25;"/><text fill="#000000" font-family="sans-serif" font-size="16.25" lengthAdjust="spacing" textLength="122.5" x="536.6125" y="1847.4939">donne naissance</text><text fill="#000000" font-family="sans-serif" font-size="16.25" lengthAdjust="spacing" textLength="8.75" x="515.2596" y="1692.4478">1</text><text fill="#000000" font-family="sans-serif" font-size="16.25" lengthAdjust="spacing" textLength="25" x="345.6773" y="2234.1554">1..*</text><!--MD5=[c0f094380114cccdef5d7294735e0f93]
+link Reine to Ouvrier--><path codeLine="261" d="M693.4616,1669.9889 C693.4616,1669.9889 723.35,1683.4875 734.1125,1702.5 C789.4125,1800.1625 859.2125,2537.45 885.725,2838.3375 " fill="none" id="Reine-Ouvrier" style="stroke:#A80036;stroke-width:1.25;"/><polygon fill="#A80036" points="887.1875,2854.925,891.1913,2843.2832,886.6446,2848.6986,881.2291,2844.1519,887.1875,2854.925" style="stroke:#A80036;stroke-width:1.25;"/><line style="stroke:#A80036;stroke-width:1.25;" x1="886.6446" x2="885.7625" y1="2848.6986" y2="2838.7437"/><polygon fill="#FFFFFF" points="681.875,1660.4625,684.4928,1669.0879,693.4616,1669.9889,690.8437,1661.3635,681.875,1660.4625" style="stroke:#A80036;stroke-width:1.25;"/><polygon fill="#000000" points="812.6274,2054.5118,814.4164,2042.759,807.1666,2043.952,812.6274,2054.5118" style="stroke:#000000;stroke-width:1.25;"/><text fill="#000000" font-family="sans-serif" font-size="16.25" lengthAdjust="spacing" textLength="122.5" x="822.8625" y="2054.9939">donne naissance</text><text fill="#000000" font-family="sans-serif" font-size="16.25" lengthAdjust="spacing" textLength="8.75" x="691.4612" y="1667.4527">1</text><text fill="#000000" font-family="sans-serif" font-size="16.25" lengthAdjust="spacing" textLength="25" x="860.3033" y="2841.3084">1..*</text><!--MD5=[35a2663716d3b66f4bacff2cac148b54]
+link Ouvrier to Colonie--><path codeLine="263" d="M827.125,3078.8625 C808.9,3107.8875 788.8875,3139.775 769.4,3170.825 " fill="none" id="Ouvrier-to-Colonie" style="stroke:#A80036;stroke-width:1.25;stroke-dasharray:7.0,7.0;"/><polygon fill="#A80036" points="766.025,3176.2,776.2442,3169.3348,769.3503,3170.9081,767.7771,3164.0142,766.025,3176.2" style="stroke:#A80036;stroke-width:1.25;"/><text fill="#000000" font-family="sans-serif" font-size="16.25" lengthAdjust="spacing" textLength="43.75" x="804.1125" y="3134.3689">«use»</text><!--MD5=[e52f2e922251a5509e63d15f99df82e5]
+link Reine to Graphe--><path codeLine="264" d="M561.9375,1319.4375 C577.9625,1218.5875 600.5375,1088.9625 626.6125,975 C633.4125,945.3 641.2125,914.325 649.375,883.7 " fill="none" id="Reine-to-Graphe" style="stroke:#A80036;stroke-width:1.25;stroke-dasharray:7.0,7.0;"/><polygon fill="#A80036" points="651.0125,877.575,643.2597,887.1383,649.3877,883.6101,652.9159,889.738,651.0125,877.575" style="stroke:#A80036;stroke-width:1.25;"/><text fill="#000000" font-family="sans-serif" font-size="16.25" lengthAdjust="spacing" textLength="43.75" x="627.8625" y="1034.3689">«use»</text><!--MD5=[233ebc6768b9b7a45833c04d62a107eb]
+link Soldat to Colonie--><path codeLine="265" d="M353.9375,2627.8875 C426.225,2789.0625 528.9625,3018.125 597.25,3170.4 " fill="none" id="Soldat-to-Colonie" style="stroke:#A80036;stroke-width:1.25;stroke-dasharray:7.0,7.0;"/><polygon fill="#A80036" points="599.875,3176.2375,599.85,3163.9265,597.3251,3170.5313,590.7202,3168.0064,599.875,3176.2375" style="stroke:#A80036;stroke-width:1.25;"/><text fill="#000000" font-family="sans-serif" font-size="16.25" lengthAdjust="spacing" textLength="43.75" x="554.1125" y="2973.7439">«use»</text><!--MD5=[d39f4700e995748a35ceafbeb07144cd]
+link Ouvrier to Graphe--><path codeLine="266" d="M898.1125,2854.8 C901.6125,2631.2625 911.9,2145.125 935.3625,2117.5 C987.5625,2056.05 1062.0875,2142.625 1112.8625,2080 C1190.4875,1984.2625 1065.025,1087.8 1015.3625,975 C993.425,925.1625 961.5375,877.2625 926.825,833.9625 " fill="none" id="Ouvrier-to-Graphe" style="stroke:#A80036;stroke-width:1.25;stroke-dasharray:7.0,7.0;"/><polygon fill="#A80036" points="922.575,828.7,925.7622,840.5913,926.5054,833.5594,933.5373,834.3027,922.575,828.7" style="stroke:#A80036;stroke-width:1.25;"/><text fill="#000000" font-family="sans-serif" font-size="16.25" lengthAdjust="spacing" textLength="43.75" x="1125.3625" y="1499.3689">«use»</text><!--MD5=[4664a776a043a4736ec2c584d7c55df4]
+link Soldat to Graphe--><path codeLine="267" d="M156.25,2247.3375 C82,2099.125 7.5,1887.6375 60.3625,1702.5 C149.4375,1390.5375 359.0875,1080.9 518.875,876.45 " fill="none" id="Soldat-to-Graphe" style="stroke:#A80036;stroke-width:1.25;stroke-dasharray:7.0,7.0;"/><polygon fill="#A80036" points="523.1125,871.0375,512.2415,876.8154,519.2606,875.9594,520.1166,882.9785,523.1125,871.0375" style="stroke:#A80036;stroke-width:1.25;"/><text fill="#000000" font-family="sans-serif" font-size="16.25" lengthAdjust="spacing" textLength="43.75" x="302.8625" y="1236.8689">«use»</text><!--MD5=[b7d75b6e1196e1d97cb5a05a5c818ca2]
+link FourmisMove to Noeud--><path codeLine="268" d="M1076.6375,1736.775 C1097.05,1715.125 1115.775,1690.9125 1129.1125,1665 C1294.7625,1343.2875 1241.5625,888.1 1211.9375,711.2125 " fill="none" id="FourmisMove-to-Noeud" style="stroke:#A80036;stroke-width:1.25;stroke-dasharray:7.0,7.0;"/><polygon fill="#A80036" points="1210.8,704.525,1207.7343,716.4483,1211.8362,710.6885,1217.5959,714.7904,1210.8,704.525" style="stroke:#A80036;stroke-width:1.25;"/><text fill="#000000" font-family="sans-serif" font-size="16.25" lengthAdjust="spacing" textLength="43.75" x="1244.1125" y="1135.6189">«use»</text><!--MD5=[e61972ac41694a25c0fb70e5fd0acc3d]
+link FourmisMove to Graphe--><path codeLine="269" d="M882.9125,1736.3625 C804.95,1599.7875 684.1,1348.9875 691.6125,1117.5 C694.075,1041.5 698.7375,958.8375 703.725,883.8375 " fill="none" id="FourmisMove-to-Graphe" style="stroke:#A80036;stroke-width:1.25;stroke-dasharray:7.0,7.0;"/><polygon fill="#A80036" points="704.1375,877.5375,698.4106,888.4354,703.7277,883.774,708.389,889.0912,704.1375,877.5375" style="stroke:#A80036;stroke-width:1.25;"/><text fill="#000000" font-family="sans-serif" font-size="16.25" lengthAdjust="spacing" textLength="43.75" x="692.8625" y="1135.6189">«use»</text><!--MD5=[2edec7cd06deeec0b130714159c2f9ef]
+link MoveOuvrier to Noeud--><path codeLine="270" d="M1268.2875,2117.3125 C1290.9,2029.225 1307.8625,1932.825 1307.8625,1841.875 C1307.8625,1026.25 1307.8625,1026.25 1307.8625,1026.25 C1307.8625,912.775 1264.0625,787.4625 1231.7375,710.4375 " fill="none" id="MoveOuvrier-to-Noeud" style="stroke:#A80036;stroke-width:1.25;stroke-dasharray:7.0,7.0;"/><polygon fill="#A80036" points="1229.2375,704.525,1228.995,716.8337,1231.6629,710.2852,1238.2113,712.9531,1229.2375,704.525" style="stroke:#A80036;stroke-width:1.25;"/><text fill="#000000" font-family="sans-serif" font-size="16.25" lengthAdjust="spacing" textLength="43.75" x="1309.1125" y="1236.8689">«use»</text><!--MD5=[6e5c1ece1ce9c6a5e21a9106953624ba]
+link MoveOuvrier to Graphe--><path codeLine="271" d="M1211.4125,2117.125 C1251.5875,1791.6875 1266.025,1283.5875 1050.3625,915 C1040.8875,898.8 988.2125,852.325 927.7875,801.9 " fill="none" id="MoveOuvrier-to-Graphe" style="stroke:#A80036;stroke-width:1.25;stroke-dasharray:7.0,7.0;"/><polygon fill="#A80036" points="922.675,797.6375,928.1206,808.6787,927.4778,801.6369,934.5196,800.9941,922.675,797.6375" style="stroke:#A80036;stroke-width:1.25;"/><text fill="#000000" font-family="sans-serif" font-size="16.25" lengthAdjust="spacing" textLength="43.75" x="1187.8625" y="1236.8689">«use»</text><!--MD5=[7fd2ced444de389ab8e2ba2109bedf2c]
+link AntFacadeHistorique to Soldat--><path codeLine="272" d="M266.225,1978.9875 C266.7125,2056.675 267.3375,2155.1625 267.875,2240.8125 " fill="none" id="AntFacadeHistorique-to-Soldat" style="stroke:#A80036;stroke-width:1.25;stroke-dasharray:7.0,7.0;"/><polygon fill="#A80036" points="267.925,2247.4875,272.8606,2236.2091,267.8893,2241.2376,262.8608,2236.2663,267.925,2247.4875" style="stroke:#A80036;stroke-width:1.25;"/><text fill="#000000" font-family="sans-serif" font-size="16.25" lengthAdjust="spacing" textLength="43.75" x="267.8625" y="2054.9939">«use»</text><!--MD5=[ba7a751fb838bb566afa0aeddf3235b1]
+link AntFacadeHistorique to Ouvrier--><path codeLine="273" d="M386.825,1979.05 C418.1875,2020.975 448.8125,2068.9125 469.1125,2117.5 C580.1,2383.1375 411.375,2516.6625 569.1125,2757.5 C603.4625,2809.9375 656.1125,2851.7625 709.2125,2883.75 " fill="none" id="AntFacadeHistorique-to-Ouvrier" style="stroke:#A80036;stroke-width:1.25;stroke-dasharray:7.0,7.0;"/><polygon fill="#A80036" points="714.6875,2887,707.5738,2876.9523,709.3156,2883.8054,702.4624,2885.5473,714.6875,2887" style="stroke:#A80036;stroke-width:1.25;"/><text fill="#000000" font-family="sans-serif" font-size="16.25" lengthAdjust="spacing" textLength="43.75" x="570.3625" y="2444.3689">«use»</text><!--MD5=[be243d598da46128df0fcf39da00f62b]
+@startuml
+'https://plantuml.com/class-diagram
+
+skinparam style strictuml
+skinparam classAttributeIconSize 0
+skinparam classFontStyle Bold
+skinparam roundcorner 20
+hide enum methods
+
+package "Diagramme de Classe de Conception V2 " <<Folder>> {
+  interface AntFacadeController <<interface>> #pink ##[bold]red {
+      +setParameters(evaporationParam:Integer,
+      foodParam:Integer, pheromoneParam:Integer)
+      +createGrid(width:Integer, height:Integer)
+      +putObstacle(row:Integer, column:Integer)
+      +putFood(row:Integer, column:Integer, quantity:Integer)
+      +createColony(row:Integer, column:Integer)
+      +createSoldiers(amount:Integer)
+      +createWorkers(amount:Integer)
+      +setAntFile(antLogFile:String)
+      +play(duration:Integer, record:Boolean) : BitSet[][]
+  }
+
+  class Graphe #lightcoral;line.bold {
+      -estObstacle: boolean[*][*]
+      -estNourriture: boolean[*][*]
+      -quantityFood: Integer[*][*]
+      -quantityPheromone: Integer[*][*]
+      -row: Integer
+      -column: Integer
+      -theNoeud: Noeud[*][*]
+
+      <<Create>>Graphe(longueur, largueur)
+      +CreationEmplacement();
+      +rechercherNoeud(x:Integer, y:Integer) : Noeud
+      +rechercherCoord(n: Noeud): ArrayList<Integer>
+      +gestionNourriture(x:Integer, y:Integer, c:Colonie): Integer
+      +mettreObstacle(row:Integer, colomn:Integer)
+      +mettreNourriture(row:Integer, colomn:Integer, quantity: Integer)
+
+      +getEstObstacle(): boolean[*][*]
+      +getEstNourriture(): boolean[*][*]
+      +getQuantityFood(): Integer
+      +getQuantityPheromone(): Integer
+      +getRow(): Integer
+      +getColumn(): Integer
+      +setQuantityFood(quantityFood: Integer[*][*])
+      +setQuantityPheromone(quantityPheromone: Integer[*][*])
+      +setEstNourriture(estNourriture: boolean[*][*])
+      +setEstObstacle(estObstacle: boolean[*][*])
+  }
+
+  class Colonie #burlywood {
+      -numColonie:Integer
+      -evaporationParam: Integer
+      -foodParam: Integer
+      -pheromoneParam: Integer
+      -quantityFood: Integer
+
+      <<Create>>Colonie()
+
+      +getEvaporationParam(): Integer
+      +getFoodParam(): Integer
+      +getPheromoneParam(): Integer
+      +setEvaporationParam(evaporationParam: Integer)
+      +setFoodParam(foodParam: Integer)
+      +setPheromoneParam(pheromoneParam: Integer)
+      +setQuantityFood(quantityFood: Integer)
+      {abstract} +toString(): String
+  }
+
+  class Noeud #burlywood {
+      -coordonneeNoeud: Integer
+
+      <<Create>>Noeud(g:Graphe, numeroNoeud:Integer)
+      +getCoordonneNoeud()
+      +setCoordonneNoeud(coord:Integer)
+      +toString(): String
+  }
+
+  class AntFacade #back:Wheat;line.bold {
+      -grid: BitSet[*][*]
+      -graphe: Graphe
+      -theSoldiers: ArrayList<Soldat>
+      -theWorkers: ArrayList<Ouvrier>
+      -reine: Reine
+      -width: Integer
+      -height: Integer
+      -xColonie: Integer
+      -yColonie: Integer
+      -antHisto: AntFacadeHistorique
+
+      {abstract}  +setParameters(evaporationParam:Integer,
+      {abstract}  foodParam:Integer, pheromoneParam:Integer)
+      {abstract}  +createGrid(width:Integer, height:Integer)
+      {abstract} +putObstacle(row:Integer, column:Integer)
+      {abstract}  +putFood(row:Integer, column:Integer, quantity:Integer)
+      {abstract}  +createColony(row:Integer, column:Integer)
+      {abstract}  +createSoldiers(amount:Integer)
+      {abstract}  +createWorkers(amount:Integer)
+      {abstract}  +setAntFile(antLogFile:String)
+      {abstract}  +play(duration:Integer, record:Boolean) : BitSet[*][*]
+  }
+
+    class AntFacadeHistorique #back:Wheat;line.bold {
+        -grid: BitSet[*][*]
+        -width: Integer
+        -height: Integer
+        -durationPlay: Integer
+        -fLog: File
+        -fw: FileWriter
+        -graphe: Graphe
+
+        <<Create>>AntFacadeHistorique(width:Integer,
+         height:Integer, grid:BitSet[*][*], antLogFile:String, g:Graphe)
+        +startFile()
+        +iteration(grid:BitSet[*][*], theWorkers:ArrayList<Ouvrier>,
+         theSoldiers:ArrayList<Soldat>)
+        +closeFile()
+    }
+
+  interface Fourmis <<interface>> #lightgreen;line:green {
+      +setX(x:Integer);
+      +setY(y:Integer);
+  }
+
+  class Reine #lightblue;line:green {
+      -x: Integer
+      -y: Integer
+      -colonie: Colonie
+      -graphe: Graphe
+      -theSoldiers: ArrayList<Soldat>
+      -theWorkers: ArrayList<Ouvrier>
+
+      <<Create>>Reine(x:Integer, y:Integer, g:Graphe)
+      +giveBirthSoldier(amount:Integer)
+      +giveBirthWorker(amount:Integer)
+      +setParameters(evaporationParam:Integer,
+      foodParam:Integer, pheromoneParam:Integer)
+
+      +getTheSoldiers(): ArrayList<Soldat>
+      +getTheWorkers(): ArrayList<Ouvrier>
+      +setX(x:Integer)
+      {redefined}+setY(y:Integer)
+      +getColonie(): Colonie
+  }
+
+  interface IFourmisMove <<interface>> #lightgreen;line:green {
+        +randomDirection()
+        +noeudVoisin(o:Object, g:Graphe): String
+    }
+
+  abstract class FourmisMove #lightgreen;line:green {
+     -listNoeud: ArrayList<Noeud>
+     -random: Random
+     -record: boolean
+
+      +rechercheAretes(x:Integer, y:Integer)
+      -verficationNoeud(x:Integer, y:Integer)
+      +randomNoeud()
+      +probabilityLaw(n, rand)
+      +noeudVoisin(o:Object, g:Graphe): String
+      +getListNoeud(): ArrayList<Noeud>
+  }
+
+    class Soldat #mediumpurple;line:darkviolet {
+        -{static} nombreSoldat = 0: Integer
+        -colonie: Colonie
+        -x: Integer
+        -y: Integer
+        -g: Graphe
+        -positionActuel: Noeud
+        -numeroSoldat: Integer
+
+        <<Create>>Soldat(x:Integer, y:Integer, c:Colonie, g:Graphe)
+        +recherchePositionActuel(ligne:Integer, colonne:Integer)
+        +randomDirection()
+
+        {redefined} +toString(): String
+        +getNumeroSoldat(): Integer
+        +getPositionActuel(): Noeud
+        +setPositionActuel(n:Noeud)
+        +getX(): Integer
+        +getY(): Integer
+        {redefined}+setX(x:Integer)
+        {redefined}+setY(x:Integer)
+    }
+
+  abstract class MoveOuvrier #gold;line:goldenrod  {
+       -x: Integer
+       -y: Integer
+       -graphe: Graphe
+       -positionActuel: Noeud
+       -listNoeud: ArrayList<Noeud>
+       -listNoeudRetour: ArrayList<Noeud>
+       -aVisite: boolean[*][*]
+       -etatRetour:boolean
+       -quantityFoodTaken: Integer
+       -colonie: Colonie
+       -random: Random
+       -record: boolean
+       -estObstacle: boolean[*][*]
+
+      <<Create>>MoveOuvrier(x:Integer, y:Integer, c:Colonie, g:Graphe)
+      +randomDirection()
+      +cheminRetour()
+      +paramOuvrier()
+      -rechercheBestPheromone(x:Integer, y:Integer)
+      -rechercheAucunPheromone(droitPassage: boolean):boolean
+      -rechercheToutVisite(ouvrier:Ouvrier): boolean
+
+      +isEtatRetour(): boolean
+      +getListNoeudRetour(): ArrayList<Noeud>
+      +getQuantityFoodTaken(): Integer
+      +getPositionActuel(): Noeud
+      +setListNoeudRetour()
+      +setaVisite(x:Integer, y:Integer, bool:boolean)
+      +setEtatRetour(etatRetour: Boolean)
+      +setQuantityFoodTaken(quantityFoodTaken: Integer)
+      +setPositionActuel(position:Noeud)
+      +getX(): Integer
+      +getY(): Integer
+      {redefined}+setX(x:Integer)
+      {redefined}+setY(y:Integer)
+  }
+
+   class Ouvrier #mediumpurple;line:darkviolet {
+        -{static} nombreOuvrier = 0: Integer
+        -numeroWorker: Integer
+        -colonie: Colonie
+        -g: Graphe
+
+        <<Create>>Ouvrier(x:Integer, y:Integer, c:Colonie, g:Graphe)
+        +recherchePositionActuel(ligne:Integer, colonne:Integer)
+        +doitRetravailler(): Boolean
+
+        {redefined} +toString(): String
+        +getNumeroWorker()
+    }
+
+}
+
+    AntFacadeController <|.. AntFacade : <<implements>>
+    AntFacade .right.|> Graphe : <<instantiate>>
+    AntFacade ..|> Reine : <<instantiate>>
+    AntFacade ..|> AntFacadeHistorique : <<instantiate>>
+
+    Graphe "1" *-right-> "1..*" Noeud : > contient
+
+    Reine "1" *-> "1" Colonie : > appartient
+    Noeud "1" *- -> "0..*\t" Fourmis : > comporte
+
+    Fourmis <|.. Reine : <<implements>>
+    Fourmis <|.. IFourmisMove : <<extends>>
+
+    IFourmisMove <|..FourmisMove : <<implements>>
+    FourmisMove <|.. MoveOuvrier : \n\n<<extends>>
+    FourmisMove <|.. Soldat : \n\n<<extends>>
+
+    MoveOuvrier <|- - Ouvrier : <<extends>>
+    Reine "1" o- -> "1..*" Soldat : > donne naissance
+    Reine "1" o- -> "1..*" Ouvrier : > donne naissance
+
+    Ouvrier ..> Colonie : <<use>>
+    Reine ..> Graphe : <<use>>
+    Soldat ..> Colonie : <<use>>
+    Ouvrier ..> Graphe : <<use>>
+    Soldat ..> Graphe : <<use>>
+    FourmisMove ..> Noeud : <<use>>
+    FourmisMove ..> Graphe : <<use>>
+    MoveOuvrier ..> Noeud : <<use>>
+    MoveOuvrier ..> Graphe : <<use>>
+    AntFacadeHistorique ..> Soldat : <<use>>
+    AntFacadeHistorique ..> Ouvrier : <<use>>
+
+
+
+@enduml
+
+@startuml
+
+skinparam style strictuml
+skinparam classAttributeIconSize 0
+skinparam classFontStyle Bold
+skinparam roundcorner 20
+hide enum methods
+
+package "Diagramme de Classe de Conception V2 " <<Folder>> {
+  interface AntFacadeController <<interface>> #pink ##[bold]red {
+      +setParameters(evaporationParam:Integer,
+      foodParam:Integer, pheromoneParam:Integer)
+      +createGrid(width:Integer, height:Integer)
+      +putObstacle(row:Integer, column:Integer)
+      +putFood(row:Integer, column:Integer, quantity:Integer)
+      +createColony(row:Integer, column:Integer)
+      +createSoldiers(amount:Integer)
+      +createWorkers(amount:Integer)
+      +setAntFile(antLogFile:String)
+      +play(duration:Integer, record:Boolean) : BitSet[][]
+  }
+
+  class Graphe #lightcoral;line.bold {
+      -estObstacle: boolean[*][*]
+      -estNourriture: boolean[*][*]
+      -quantityFood: Integer[*][*]
+      -quantityPheromone: Integer[*][*]
+      -row: Integer
+      -column: Integer
+      -theNoeud: Noeud[*][*]
+
+      <<Create>>Graphe(longueur, largueur)
+      +CreationEmplacement();
+      +rechercherNoeud(x:Integer, y:Integer) : Noeud
+      +rechercherCoord(n: Noeud): ArrayList<Integer>
+      +gestionNourriture(x:Integer, y:Integer, c:Colonie): Integer
+      +mettreObstacle(row:Integer, colomn:Integer)
+      +mettreNourriture(row:Integer, colomn:Integer, quantity: Integer)
+
+      +getEstObstacle(): boolean[*][*]
+      +getEstNourriture(): boolean[*][*]
+      +getQuantityFood(): Integer
+      +getQuantityPheromone(): Integer
+      +getRow(): Integer
+      +getColumn(): Integer
+      +setQuantityFood(quantityFood: Integer[*][*])
+      +setQuantityPheromone(quantityPheromone: Integer[*][*])
+      +setEstNourriture(estNourriture: boolean[*][*])
+      +setEstObstacle(estObstacle: boolean[*][*])
+  }
+
+  class Colonie #burlywood {
+      -numColonie:Integer
+      -evaporationParam: Integer
+      -foodParam: Integer
+      -pheromoneParam: Integer
+      -quantityFood: Integer
+
+      <<Create>>Colonie()
+
+      +getEvaporationParam(): Integer
+      +getFoodParam(): Integer
+      +getPheromoneParam(): Integer
+      +setEvaporationParam(evaporationParam: Integer)
+      +setFoodParam(foodParam: Integer)
+      +setPheromoneParam(pheromoneParam: Integer)
+      +setQuantityFood(quantityFood: Integer)
+      {abstract} +toString(): String
+  }
+
+  class Noeud #burlywood {
+      -coordonneeNoeud: Integer
+
+      <<Create>>Noeud(g:Graphe, numeroNoeud:Integer)
+      +getCoordonneNoeud()
+      +setCoordonneNoeud(coord:Integer)
+      +toString(): String
+  }
+
+  class AntFacade #back:Wheat;line.bold {
+      -grid: BitSet[*][*]
+      -graphe: Graphe
+      -theSoldiers: ArrayList<Soldat>
+      -theWorkers: ArrayList<Ouvrier>
+      -reine: Reine
+      -width: Integer
+      -height: Integer
+      -xColonie: Integer
+      -yColonie: Integer
+      -antHisto: AntFacadeHistorique
+
+      {abstract}  +setParameters(evaporationParam:Integer,
+      {abstract}  foodParam:Integer, pheromoneParam:Integer)
+      {abstract}  +createGrid(width:Integer, height:Integer)
+      {abstract} +putObstacle(row:Integer, column:Integer)
+      {abstract}  +putFood(row:Integer, column:Integer, quantity:Integer)
+      {abstract}  +createColony(row:Integer, column:Integer)
+      {abstract}  +createSoldiers(amount:Integer)
+      {abstract}  +createWorkers(amount:Integer)
+      {abstract}  +setAntFile(antLogFile:String)
+      {abstract}  +play(duration:Integer, record:Boolean) : BitSet[*][*]
+  }
+
+    class AntFacadeHistorique #back:Wheat;line.bold {
+        -grid: BitSet[*][*]
+        -width: Integer
+        -height: Integer
+        -durationPlay: Integer
+        -fLog: File
+        -fw: FileWriter
+        -graphe: Graphe
+
+        <<Create>>AntFacadeHistorique(width:Integer,
+         height:Integer, grid:BitSet[*][*], antLogFile:String, g:Graphe)
+        +startFile()
+        +iteration(grid:BitSet[*][*], theWorkers:ArrayList<Ouvrier>,
+         theSoldiers:ArrayList<Soldat>)
+        +closeFile()
+    }
+
+  interface Fourmis <<interface>> #lightgreen;line:green {
+      +setX(x:Integer);
+      +setY(y:Integer);
+  }
+
+  class Reine #lightblue;line:green {
+      -x: Integer
+      -y: Integer
+      -colonie: Colonie
+      -graphe: Graphe
+      -theSoldiers: ArrayList<Soldat>
+      -theWorkers: ArrayList<Ouvrier>
+
+      <<Create>>Reine(x:Integer, y:Integer, g:Graphe)
+      +giveBirthSoldier(amount:Integer)
+      +giveBirthWorker(amount:Integer)
+      +setParameters(evaporationParam:Integer,
+      foodParam:Integer, pheromoneParam:Integer)
+
+      +getTheSoldiers(): ArrayList<Soldat>
+      +getTheWorkers(): ArrayList<Ouvrier>
+      +setX(x:Integer)
+      {redefined}+setY(y:Integer)
+      +getColonie(): Colonie
+  }
+
+  interface IFourmisMove <<interface>> #lightgreen;line:green {
+        +randomDirection()
+        +noeudVoisin(o:Object, g:Graphe): String
+    }
+
+  abstract class FourmisMove #lightgreen;line:green {
+     -listNoeud: ArrayList<Noeud>
+     -random: Random
+     -record: boolean
+
+      +rechercheAretes(x:Integer, y:Integer)
+      -verficationNoeud(x:Integer, y:Integer)
+      +randomNoeud()
+      +probabilityLaw(n, rand)
+      +noeudVoisin(o:Object, g:Graphe): String
+      +getListNoeud(): ArrayList<Noeud>
+  }
+
+    class Soldat #mediumpurple;line:darkviolet {
+        -{static} nombreSoldat = 0: Integer
+        -colonie: Colonie
+        -x: Integer
+        -y: Integer
+        -g: Graphe
+        -positionActuel: Noeud
+        -numeroSoldat: Integer
+
+        <<Create>>Soldat(x:Integer, y:Integer, c:Colonie, g:Graphe)
+        +recherchePositionActuel(ligne:Integer, colonne:Integer)
+        +randomDirection()
+
+        {redefined} +toString(): String
+        +getNumeroSoldat(): Integer
+        +getPositionActuel(): Noeud
+        +setPositionActuel(n:Noeud)
+        +getX(): Integer
+        +getY(): Integer
+        {redefined}+setX(x:Integer)
+        {redefined}+setY(x:Integer)
+    }
+
+  abstract class MoveOuvrier #gold;line:goldenrod  {
+       -x: Integer
+       -y: Integer
+       -graphe: Graphe
+       -positionActuel: Noeud
+       -listNoeud: ArrayList<Noeud>
+       -listNoeudRetour: ArrayList<Noeud>
+       -aVisite: boolean[*][*]
+       -etatRetour:boolean
+       -quantityFoodTaken: Integer
+       -colonie: Colonie
+       -random: Random
+       -record: boolean
+       -estObstacle: boolean[*][*]
+
+      <<Create>>MoveOuvrier(x:Integer, y:Integer, c:Colonie, g:Graphe)
+      +randomDirection()
+      +cheminRetour()
+      +paramOuvrier()
+      -rechercheBestPheromone(x:Integer, y:Integer)
+      -rechercheAucunPheromone(droitPassage: boolean):boolean
+      -rechercheToutVisite(ouvrier:Ouvrier): boolean
+
+      +isEtatRetour(): boolean
+      +getListNoeudRetour(): ArrayList<Noeud>
+      +getQuantityFoodTaken(): Integer
+      +getPositionActuel(): Noeud
+      +setListNoeudRetour()
+      +setaVisite(x:Integer, y:Integer, bool:boolean)
+      +setEtatRetour(etatRetour: Boolean)
+      +setQuantityFoodTaken(quantityFoodTaken: Integer)
+      +setPositionActuel(position:Noeud)
+      +getX(): Integer
+      +getY(): Integer
+      {redefined}+setX(x:Integer)
+      {redefined}+setY(y:Integer)
+  }
+
+   class Ouvrier #mediumpurple;line:darkviolet {
+        -{static} nombreOuvrier = 0: Integer
+        -numeroWorker: Integer
+        -colonie: Colonie
+        -g: Graphe
+
+        <<Create>>Ouvrier(x:Integer, y:Integer, c:Colonie, g:Graphe)
+        +recherchePositionActuel(ligne:Integer, colonne:Integer)
+        +doitRetravailler(): Boolean
+
+        {redefined} +toString(): String
+        +getNumeroWorker()
+    }
+
+}
+
+    AntFacadeController <|.. AntFacade : <<implements>>
+    AntFacade .right.|> Graphe : <<instantiate>>
+    AntFacade ..|> Reine : <<instantiate>>
+    AntFacade ..|> AntFacadeHistorique : <<instantiate>>
+
+    Graphe "1" *-right-> "1..*" Noeud : > contient
+
+    Reine "1" *-> "1" Colonie : > appartient
+    Noeud "1" *- -> "0..*\t" Fourmis : > comporte
+
+    Fourmis <|.. Reine : <<implements>>
+    Fourmis <|.. IFourmisMove : <<extends>>
+
+    IFourmisMove <|..FourmisMove : <<implements>>
+    FourmisMove <|.. MoveOuvrier : \n\n<<extends>>
+    FourmisMove <|.. Soldat : \n\n<<extends>>
+
+    MoveOuvrier <|- - Ouvrier : <<extends>>
+    Reine "1" o- -> "1..*" Soldat : > donne naissance
+    Reine "1" o- -> "1..*" Ouvrier : > donne naissance
+
+    Ouvrier ..> Colonie : <<use>>
+    Reine ..> Graphe : <<use>>
+    Soldat ..> Colonie : <<use>>
+    Ouvrier ..> Graphe : <<use>>
+    Soldat ..> Graphe : <<use>>
+    FourmisMove ..> Noeud : <<use>>
+    FourmisMove ..> Graphe : <<use>>
+    MoveOuvrier ..> Noeud : <<use>>
+    MoveOuvrier ..> Graphe : <<use>>
+    AntFacadeHistorique ..> Soldat : <<use>>
+    AntFacadeHistorique ..> Ouvrier : <<use>>
+
+
+
+@enduml
+
+PlantUML version 1.2021.5(Sun Apr 25 13:20:28 CEST 2021)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: Dynamic Code Evolution 64-Bit Server VM
+Default Encoding: Cp1252
+Language: fr
+Country: FR
+--></g></svg>
