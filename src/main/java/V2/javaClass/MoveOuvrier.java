@@ -22,7 +22,7 @@ public abstract class MoveOuvrier extends FourmisMove {
     private Noeud positionActuel; // Le noeud où se trouve la fourmis
     private final Random random = new Random(); //Qui permet de choisir aléatoirement un noeud dans une liste de Noeuds adjacents à la fourmi.
     private boolean record; // Record sert a mettre dans rechercheAretes() le noeud qui est un obstacle, on l'ajoutera exeptionnelement dans la liste de Noeud pour le fichier en .CSV
-    private final int[][] quantityPheromone;
+    private final int[][] quantityPheromone; // La quantité de phéromone
 
     /**
      * Instantiates a new Move ouvrier.

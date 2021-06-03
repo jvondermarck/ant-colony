@@ -16,7 +16,7 @@
 
 - La classe Colonie **crée** une colonie.
 - La classe Noeud **crée** un noeud.
-- La classe FourmisMove **cherche** les noeuds adjacents à la fourmi.
+- La classe FourmisMove **cherche** les noeuds adjacents à la fourmi Soldat et Ouvriere.
 
 2. **Open Closed P.**
 
@@ -39,19 +39,18 @@
 - Au vu des grandes différences de fonctions entre une fourmi Soldat et Ouvrière, nous avons 
   décidé de créer une sous-classe de FourmisMove, qui se dénomme
   MoveOuvrier.
-- FourmisMove fait déplacer des soldats de facons aléatoires en évitant des obstacles en utilsant la classe Aretes.
+- FourmisMove s'occupe de chercher tous les noeuds adjacents à la fourmi en évitant les obstacles.
 - Alors que MoveOuvrier fait déplacer des ouvriers qui ne doivent pas retourner sur leur pas
   antérieur, ils doivent chercher à manger et suivre les phéromones et en lacher, donc tout ceci 
   est réalisé grâce à la class MoveOuvrier qui hérite de la classe FourmisMove, cette sous-classe
   permet d'utiliser des méthodes spécifiques à des ouvriers, ce qui bloque l'àccès aux Soldats
   et à la Reine. En bref, FourmisMove permet de donner la liste de tous les noeuds adjacents de la
-  fourmis ouvrière et MoveOuvrier fait déplacer la fourmi en fonction de toutes les méthodes de déplacement
+  fourmis ouvrière et soldats, et MoveOuvrier fait déplacer la fourmi en fonction de toutes les méthodes de déplacement
   spécifiques à une fourmi ouvrière.
 
 
 4. **Interface Segregation P.**
 
-- (Decouper une interface en plusieurs interfaces afin d'éviter la casse)
 - L'interface Fourmis doit servir à la Reine et aux fourmis qui se déplacent. Alors que
   l'interface IFourmisMove doit servir seulement aux fourmis ouvrières et soldats.
 - Ces deux interfaces permettent de spécifier des caractéristiques différentes aux différentes fourmis.
@@ -100,8 +99,7 @@
 4. **Forte cohésion**
 
 - Quels objects doivent prendre la responsabilité de :
-  - Chercher les arêtes adjacentes des fourmis soldats : **Classe FourmisMove**
-  - Prendre les résultats de la liste de Noeud de la classe FourmisMove : **Classe MoveOuvrier**
+  - Chercher les arêtes adjacentes en évitant juste les obstacles : **Classe FourmisMove**
   - Chercher les arêtes adjacentes des fourmis ouvrières : **Classe MoveOuvrier**
   - Crée des noeuds : **Classe Graphe**
   - Déplacer les fourmis soldats : **Classe FourmisMove**
@@ -113,8 +111,11 @@
 - Quel objet doit prendre la responsabilité de créer les soldats et des ouvriers sur la fourmilière ?
   Réponse : La classe Reine doit prendre cette responsabilité car c'est elle qui
   détient toutes les informations nécessaires à la création d'un soldat et d'un ouvrier.
-- Il n'est pas possible de créer des soldats ou des ouvriers sans reine, donc il faut d'abord une reine
+  Il n'est pas possible de créer des soldats ou des ouvriers sans reine, donc il faut d'abord une reine
   pour créer des soldats/ouvriers.
+- Quel objet doit prendre la responsabilité de créer une colonie ?
+  La classe Reine doit prendre cette responsabilité car on ne peut pas créer de colonie avant d'avoir une Reine
+  a-titrée à une colonie.
 
 6. **Contrôleur**
 
@@ -129,10 +130,10 @@
 7. **Polymorphisme**
 
 - Utilisation du polymorphisme pour la classe AntFacadeHistorique, car nous appelons la méthode de la classe FourmisMove
-  avec la méthode noeudVoisin() pour afficher dans une chaine de charactère des noeuds adjacents à la fourmi (soldat et ouvriere) a 
+  avec la méthode noeudVoisin() pour afficher dans une chaine de charactère des noeuds adjacents à la fourmi (soldat et ouvriere)
   grâce à l'objet de la classe Ouvrier et Solddat.
 - La classe Reine, Soldat, Ouvrier, redéfinissent la méthode toString() qui permettent de mieux les identifier.
-  L'avantage c'est qu'elles formennt une forte cohésion : les sous-classes définissent leur propre comportement.
+  L'avantage c'est qu'elles forment une forte cohésion : les sous-classes définissent leur propre comportement.
 
 8. **Indirection**
 
@@ -152,6 +153,12 @@
   - Cette classe est une invention pure, elle aura une unique responsabilité qui est d'afficher l'historique de la grille
   - Elle aura plus de chance d'être réutilisé et elle peut être utilisé dans d'autres classes 
   - Elle a un impact minimal sur la cohésion et le couplage de AntFacade
+
+### **2) Conclusion - V2**
+
+- Dans la V1, une classe Aretes et AretesOuvrier était présent, nous avons décidé de les supprimer car nous instancions ces méthodes
+  à chaque déplacement d'une fourmi. Il nous semblait plus cohérant de créer directement des classes que la fourmi Soldat et Ouvrier pourront
+  hériter directement.
 
 <hr />
 <hr />

@@ -6,28 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="47cd6ad5-e8f1-43de-aae4-65f52ffc0fb8" name="Default Changelist" comment="MAJ">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TraceFourmis.csv" beforeDir="false" afterPath="$PROJECT_DIR$/TraceFourmis.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/plantUML/V2/Fourmis_DC_Analyse.puml" beforeDir="false" afterPath="$PROJECT_DIR$/plantUML/V2/Fourmis_DC_Analyse.puml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/plantUML/V2/Fourmis_DC_Conception.puml" beforeDir="false" afterPath="$PROJECT_DIR$/plantUML/V2/Fourmis_DC_Conception.puml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/plantUML/V2/Fourmis_DS_Iteration.puml" beforeDir="false" afterPath="$PROJECT_DIR$/plantUML/V2/Fourmis_DS_Iteration.puml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/V1/javaClass/Graphe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/V1/javaClass/Graphe.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/V1/javaClass/Noeud.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/V1/javaClass/Noeud.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/V1/javaTest/GrapheTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/V1/javaTest/GrapheTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/V1/javaTest/NoeudTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/V1/javaTest/NoeudTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/V2/javaClass/Colonie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/V2/javaClass/Colonie.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/V2/javaClass/FourmisMove.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/V2/javaClass/FourmisMove.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/V2/javaClass/Graphe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/V2/javaClass/Graphe.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/V2/javaClass/MoveOuvrier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/V2/javaClass/MoveOuvrier.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/V2/javaClass/Noeud.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/V2/javaClass/Noeud.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/V2/javaTest/ColonieTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/V2/javaTest/ColonieTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/V2/javaTest/FourmiDeplacementTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/V2/javaTest/FourmiDeplacementTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/V2/javaTest/FourmiOuvrierTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/V2/javaTest/FourmiOuvrierTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/V2/javaTest/FourmisMoveTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/V2/javaTest/FourmisMoveTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/V2/javaTest/GrapheTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/V2/javaTest/GrapheTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/V2/javaTest/NoeudTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/V2/javaTest/NoeudTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/V2/javaTest/OuvrierTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/V2/javaTest/OuvrierTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/V2/javaTest/ReineTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/V2/javaTest/ReineTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/V2/javaTest/SoldatTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/V2/javaTest/SoldatTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,21 +74,8 @@
       <recent name="javaTest" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.SoldatTest">
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MoveOuvrierTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.FourmiSoldatTest">
+    <configuration name="FourmiOuvrierTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="fourmis" />
       <extension name="coverage">
         <pattern>
@@ -114,13 +84,13 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="V2.javaTest" />
-      <option name="MAIN_CLASS_NAME" value="V2.javaTest.MoveOuvrierTest" />
+      <option name="MAIN_CLASS_NAME" value="V2.javaTest.FourmiOuvrierTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="NoeudTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="FourmiSoldatTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="fourmis" />
       <extension name="coverage">
         <pattern>
@@ -129,7 +99,7 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="V2.javaTest" />
-      <option name="MAIN_CLASS_NAME" value="V2.javaTest.NoeudTest" />
+      <option name="MAIN_CLASS_NAME" value="V2.javaTest.FourmiSoldatTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -182,11 +152,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.FourmiSoldatTest" />
+        <item itemvalue="JUnit.FourmiOuvrierTest" />
         <item itemvalue="JUnit.SoldatTest" />
         <item itemvalue="JUnit.ReineTest" />
         <item itemvalue="JUnit.OuvrierTest" />
-        <item itemvalue="JUnit.NoeudTest" />
-        <item itemvalue="JUnit.MoveOuvrierTest" />
       </list>
     </recent_temporary>
   </component>
@@ -277,14 +247,10 @@
       <workItem from="1622392143081" duration="32000" />
       <workItem from="1622406886881" duration="101000" />
       <workItem from="1622470369037" duration="5848000" />
-      <workItem from="1622483585738" duration="4108000" />
-    </task>
-    <task id="LOCAL-00034" summary="Fix bug deplacement Ouvrier">
-      <created>1621375303595</created>
-      <option name="number" value="00034" />
-      <option name="presentableId" value="LOCAL-00034" />
-      <option name="project" value="LOCAL" />
-      <updated>1621375303595</updated>
+      <workItem from="1622483585738" duration="6311000" />
+      <workItem from="1622495332749" duration="604000" />
+      <workItem from="1622673284332" duration="181000" />
+      <workItem from="1622708218154" duration="5786000" />
     </task>
     <task id="LOCAL-00035" summary="Test generate Jav Doc">
       <created>1621415559835</created>
@@ -622,7 +588,14 @@
       <option name="project" value="LOCAL" />
       <updated>1622392167148</updated>
     </task>
-    <option name="localTasksCounter" value="83" />
+    <task id="LOCAL-00083" summary="MAJ">
+      <created>1622487765668</created>
+      <option name="number" value="00083" />
+      <option name="presentableId" value="LOCAL-00083" />
+      <option name="project" value="LOCAL" />
+      <updated>1622487765668</updated>
+    </task>
+    <option name="localTasksCounter" value="84" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

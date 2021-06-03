@@ -40,7 +40,7 @@ return
 ' ---------AntFacade Historique--------------
 ant -> ant++ #lightgreen : setAntFile(antLogFile)
     create "antHisto:AntFacadeHistorique"
-    ant -> "antHisto:AntFacadeHistorique" ++ #FFBBBB: <<Create>> AntFacadeHistorique(width,height, grid, antLogFile)
+    ant -> "antHisto:AntFacadeHistorique" ++ #FFBBBB: <<Create>> AntFacadeHistorique(width,height, antLogFile)
         return
 return
 
@@ -130,15 +130,15 @@ loop i<duration
                             loop y<=yPosition+1
                                 alt x == xPosition || y == yPosition
                                      "ms:FourmisMove" --> "ms:FourmisMove"++ #FFBBBB : verficationNoeud(x, y, g)
-                                    return
+                                    return bool
                                 end
                             end
                         end
                     return
                 "s:Soldat" --> "ms:FourmisMove"++ #DarkSalmon : randomNoeud()
                  "ms:FourmisMove" --> "ms:FourmisMove"++ #FFBBBB: probabilityLaw(n,rand)
-                 return
-                return
+                 return index
+                return Noeud
             return
         end
     end
@@ -148,12 +148,32 @@ loop i<duration
     ' ---------Déplacer Ouvrier--------------
     alt this.theWorkers != null
         loop Ouvrier o : "mo:MoveOuvrier"
-        ant --> "s:Soldat"++ #lightcoral: doitRetravailler()
-            return
-        ant --> "s:Soldat"++ #lightcoral
-            create "mo:MoveOuvrier"
-            "s:Soldat" --> "mo:MoveOuvrier"++ #FFBBBB: isEtatRetour()
-            return
+        ant --> "o:Ouvrier"++ #lightcoral: doitRetravailler()
+             create "mo:MoveOuvrier"
+             "o:Ouvrier" --> "mo:MoveOuvrier"++ #FFBBBB: getListNoeudRetour()
+             return listeNoeud
+             alt getListNoeudRetour().isEmpty()
+                "o:Ouvrier" --> "mo:MoveOuvrier"++ #FFBBBB: setEtatRetour(false)
+                return
+                "o:Ouvrier" --> "mo:MoveOuvrier"++ #FFBBBB : colonie.setQuantityFood(getQuantityFoodTaken())
+                return
+                alt i<g.getRow()
+                    alt j<g.getColumn()
+                        "o:Ouvrier" --> "mo:MoveOuvrier"++ #FFBBBB : setaVisite(i, j, false);
+                        return
+                    end
+                end
+                "o:Ouvrier" --> "mo:MoveOuvrier"++ #FFBBBB : setaVisite(getX(), getY(), true)
+                return
+                "o:Ouvrier" --> "mo:MoveOuvrier"++ #FFBBBB : setListNoeudRetour(g.rechercherNoeud(getX(),getY()))
+                 return
+                 "o:Ouvrier" --> "mo:MoveOuvrier"++ #FFBBBB : setQuantityFoodTaken(0)
+                  return
+             end
+        return !isEtatRetour()
+        ant --> "o:Ouvrier"++ #lightcoral
+            "o:Ouvrier" --> "mo:MoveOuvrier"++ #FFBBBB: isEtatRetour()
+            return resBool
         return
         alt o.isEtatRetour() && !o.doitRetravailler()
             ant -> "o:Ouvrier"++ #lightcoral
@@ -172,29 +192,29 @@ loop i<duration
                         loop y<=yPosition+1
                             alt x == xPosition || y == yPosition
                                  "ms2:FourmisMove" --> "ms2:FourmisMove"++ #FFBBBB : verficationNoeud(x, y, g)
-                                return
+                                return resBool
                             end
                         end
                     end
                  return
                  "mo:MoveOuvrier" --> "ms2:FourmisMove"++ #FFBBBB: getListNoeud()
-                    return
+                    return listeNoeud
                  "mo:MoveOuvrier" --> graphe++ #FFBBBB: rechercherCoord(positionActuel)
-                    return
+                    return listeXY
                  "mo:MoveOuvrier" --> "mo:MoveOuvrier"++ #DarkSalmon: paramOuvrier(ouvrier)
                      "mo:MoveOuvrier" --> "mo:MoveOuvrier"++ #FFBBBB : rechercheToutVisite(ouvrier)
-                         return
+                         return resVisite
                      "mo:MoveOuvrier" --> "mo:MoveOuvrier"++ #FFBBBB : rechercheAucunPheromone(droitDePasssage)
                          alt !rechercheAucunPheromone(droitDePasssage)
                                 "mo:MoveOuvrier" --> "mo:MoveOuvrier"++ #FFBBBB: rechercheBestPheromone(xCoord,yCoord)
-                                return
+                                return resBool
                          end
-                    return
+                    return bool
                     "mo:MoveOuvrier" --> "ms2:FourmisMove"++ #FFBBBB: probabilityLaw(n,rand)
-                    return
-                return
+                    return index
+                return Noeud
                     "mo:MoveOuvrier" --> graphe++ #FFBBBB: getEstNourriture()
-                        return
+                        return resBool
                     alt (g.getEstNourriture()[this.x][this.y])
                         "mo:MoveOuvrier" --> graphe++ #FFBBBB: gestionNourriture(x,y,colonie)
                         return
@@ -209,28 +229,44 @@ loop i<duration
 ' ---------Fichier historique des fourmis--------------
 == Mise à jour du fichier d'historique des fourmis ==
     alt record == true
-        ant --> "antHisto:AntFacadeHistorique"++ #DeepSkyBlue : iteration(this.grid, this.theSoldiers, this.theWorkers)
+        ant --> "antHisto:AntFacadeHistorique"++ #DeepSkyBlue : iteration(this.theSoldiers, this.theWorkers)
             loop Ouvrier o : theWorkers
                 "antHisto:AntFacadeHistorique" --> "o:Ouvrier"++ #DeepSkyBlue: toString()
-                return
+                return stringOuv
                 "antHisto:AntFacadeHistorique" --> "mo:MoveOuvrier"++ #DeepSkyBlue: noeudVoisin(ouvrier)
                 create "ms3:FourmisMove"
                 "mo:MoveOuvrier" --> "ms3:FourmisMove"++ #DeepSkyBlue : rechercheAretes(x,y,graphe)
+                    loop x<=xPosition+1
+                        loop y<=yPosition+1
+                            alt x == xPosition || y == yPosition
+                                 "ms3:FourmisMove" --> "ms3:FourmisMove"++ #FFBBBB : verficationNoeud(x, y, g)
+                                return resBool
+                            end
+                        end
+                    end
                 return
                 "mo:MoveOuvrier" --> "ms3:FourmisMove"++ #DeepSkyBlue: noeudVoisin(ouvrier)
                 return
-                return
+                return stringEtatNoeud
             end
             loop Soldat s : theSoldiers
                 "antHisto:AntFacadeHistorique" --> "s:Soldat"++ #DeepSkyBlue : toString()
-                return
+                return stringSoldat
                 "antHisto:AntFacadeHistorique" --> "mo:MoveOuvrier"++ #DeepSkyBlue: noeudVoisin(soldat, graphe)
                 create "ms4:FourmisMove"
                 "mo:MoveOuvrier" --> "ms4:FourmisMove"++ #DeepSkyBlue : rechercheAretes(x,y,graphe)
+                 loop x<=xPosition+1
+                    loop y<=yPosition+1
+                        alt x == xPosition || y == yPosition
+                             "ms4:FourmisMove" --> "ms4:FourmisMove"++ #FFBBBB : verficationNoeud(x, y, g)
+                            return resBool
+                        end
+                    end
+                end
                 return
                 "mo:MoveOuvrier" --> "ms4:FourmisMove"++ #DeepSkyBlue: noeudVoisin(soldat, graphe)
                 return
-                return
+                return stringEtatNoeud
             end
         return
     end

@@ -58,6 +58,7 @@ package "Diagramme de Classe de Conception V2 " <<Folder>> {
       -quantityFood: Integer
 
       <<Create>>Colonie()
+
       +getEvaporationParam(): Integer
       +getFoodParam(): Integer
       +getPheromoneParam(): Integer
@@ -136,10 +137,11 @@ package "Diagramme de Classe de Conception V2 " <<Folder>> {
       +giveBirthWorker(amount:Integer)
       +setParameters(evaporationParam:Integer,
       foodParam:Integer, pheromoneParam:Integer)
+
       +getTheSoldiers(): ArrayList<Soldat>
       +getTheWorkers(): ArrayList<Ouvrier>
       +setX(x:Integer)
-      +setY(y:Integer)
+      {redefined}+setY(y:Integer)
       +getColonie(): Colonie
   }
 
@@ -173,6 +175,7 @@ package "Diagramme de Classe de Conception V2 " <<Folder>> {
         <<Create>>Soldat(x:Integer, y:Integer, c:Colonie, g:Graphe)
         +recherchePositionActuel(ligne:Integer, colonne:Integer)
         +randomDirection()
+
         {redefined} +toString(): String
         +getNumeroSoldat(): Integer
         +getPositionActuel(): Noeud
@@ -205,6 +208,7 @@ package "Diagramme de Classe de Conception V2 " <<Folder>> {
       -rechercheBestPheromone(x:Integer, y:Integer)
       -rechercheAucunPheromone(droitPassage: boolean):boolean
       -rechercheToutVisite(ouvrier:Ouvrier): boolean
+
       +isEtatRetour(): boolean
       +getListNoeudRetour(): ArrayList<Noeud>
       +getQuantityFoodTaken(): Integer
@@ -216,8 +220,8 @@ package "Diagramme de Classe de Conception V2 " <<Folder>> {
       +setPositionActuel(position:Noeud)
       +getX(): Integer
       +getY(): Integer
-      +setX(x:Integer)
-      +setY(y:Integer)
+      {redefined}+setX(x:Integer)
+      {redefined}+setY(y:Integer)
   }
 
    class Ouvrier #mediumpurple;line:darkviolet {
@@ -229,6 +233,7 @@ package "Diagramme de Classe de Conception V2 " <<Folder>> {
         <<Create>>Ouvrier(x:Integer, y:Integer, c:Colonie, g:Graphe)
         +recherchePositionActuel(ligne:Integer, colonne:Integer)
         +doitRetravailler(): Boolean
+
         {redefined} +toString(): String
         +getNumeroWorker()
     }

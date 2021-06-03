@@ -118,10 +118,10 @@ package "Diagramme de Classe d'Analyse V2 " <<Folder>> {
     AntFacade ..|> Reine : <<instantiate>>
     AntFacade ..|> AntFacadeHistorique : <<instantiate>>
 
-    Graphe "1" *-right-> "1..*" Noeud : > contient
+    Graphe *-right-> Noeud : > contient
 
-    Reine "1" *-> "1" Colonie : > appartient
-    Noeud "1" *--> "0..*\t" Fourmis : > comporte
+    Reine *->  Colonie : > appartient
+    Noeud *--> Fourmis : > comporte
 
     Fourmis <|.. Reine : <<implements>>
     Fourmis <|.. IFourmisMove : <<extends>>
@@ -131,8 +131,8 @@ package "Diagramme de Classe d'Analyse V2 " <<Folder>> {
     FourmisMove <|.. Soldat : \n\n<<extends>>
 
     MoveOuvrier <|-- Ouvrier : <<extends>>
-    Reine "1" o--> "1..*" Soldat : > donne naissance
-    Reine "1" o--> "1..*" Ouvrier : > donne naissance
+    Reine o--> Soldat : > donne naissance
+    Reine o--> Ouvrier : > donne naissance
 
     Ouvrier ..> Colonie : <<use>>
     Reine ..> Graphe : <<use>>
