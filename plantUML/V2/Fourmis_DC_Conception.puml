@@ -204,10 +204,10 @@ package "Diagramme de Classe de Conception V2 " <<Folder>> {
       <<Create>>MoveOuvrier(x:Integer, y:Integer, c:Colonie, g:Graphe)
       +randomDirection()
       +cheminRetour()
-      +paramOuvrier()
-      -rechercheBestPheromone(x:Integer, y:Integer)
+      +paramOuvrier(): Noeud
+      -rechercheBestPheromone(droitPassage: boolean))
       -rechercheAucunPheromone(droitPassage: boolean):boolean
-      -rechercheToutVisite(ouvrier:Ouvrier): boolean
+      -rechercheToutVisite(): boolean
 
       +isEtatRetour(): boolean
       +getListNoeudRetour(): ArrayList<Noeud>

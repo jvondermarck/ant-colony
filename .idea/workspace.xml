@@ -4,8 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="47cd6ad5-e8f1-43de-aae4-65f52ffc0fb8" name="Default Changelist" comment="SVG UML">
+    <list default="true" id="47cd6ad5-e8f1-43de-aae4-65f52ffc0fb8" name="Default Changelist" comment="Rapport Test JAVA">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TraceFourmis.csv" beforeDir="false" afterPath="$PROJECT_DIR$/TraceFourmis.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/plantUML/V2/Fourmis_DC_Conception.puml" beforeDir="false" afterPath="$PROJECT_DIR$/plantUML/V2/Fourmis_DC_Conception.puml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plantUML/V2/Fourmis_DC_Conception.svg" beforeDir="false" afterPath="$PROJECT_DIR$/plantUML/V2/Fourmis_DC_Conception.svg" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,31 +73,16 @@
       <recent name="javaTest" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.SoldatTest">
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MoveOuvrierTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="V2.javaClass.Main" />
       <module name="fourmis" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="V2.javaTest.*" />
+          <option name="PATTERN" value="V2.javaClass.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="V2.javaTest" />
-      <option name="MAIN_CLASS_NAME" value="V2.javaTest.MoveOuvrierTest" />
-      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -160,11 +149,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.SoldatTest" />
         <item itemvalue="JUnit.ReineTest" />
         <item itemvalue="JUnit.OuvrierTest" />
         <item itemvalue="JUnit.NoeudTest" />
-        <item itemvalue="JUnit.MoveOuvrierTest" />
       </list>
     </recent_temporary>
   </component>
@@ -258,21 +247,9 @@
       <workItem from="1622483585738" duration="6311000" />
       <workItem from="1622495332749" duration="604000" />
       <workItem from="1622673284332" duration="181000" />
-      <workItem from="1622708218154" duration="6150000" />
-    </task>
-    <task id="LOCAL-00037" summary="Différence V1/V2">
-      <created>1621429495593</created>
-      <option name="number" value="00037" />
-      <option name="presentableId" value="LOCAL-00037" />
-      <option name="project" value="LOCAL" />
-      <updated>1621429495593</updated>
-    </task>
-    <task id="LOCAL-00038" summary="JavaDoc + Tests V1">
-      <created>1621440463659</created>
-      <option name="number" value="00038" />
-      <option name="presentableId" value="LOCAL-00038" />
-      <option name="project" value="LOCAL" />
-      <updated>1621440463659</updated>
+      <workItem from="1622708218154" duration="6318000" />
+      <workItem from="1622741913388" duration="1636000" />
+      <workItem from="1622749138328" duration="481000" />
     </task>
     <task id="LOCAL-00039" summary="Changements Majeurs (Java+UML+Bug) V1&amp;2">
       <created>1621632538522</created>
@@ -603,7 +580,21 @@
       <option name="project" value="LOCAL" />
       <updated>1622714475337</updated>
     </task>
-    <option name="localTasksCounter" value="86" />
+    <task id="LOCAL-00086" summary="SVG UML">
+      <created>1622714615601</created>
+      <option name="number" value="00086" />
+      <option name="presentableId" value="LOCAL-00086" />
+      <option name="project" value="LOCAL" />
+      <updated>1622714615602</updated>
+    </task>
+    <task id="LOCAL-00087" summary="Rapport Test JAVA">
+      <created>1622714749017</created>
+      <option name="number" value="00087" />
+      <option name="presentableId" value="LOCAL-00087" />
+      <option name="project" value="LOCAL" />
+      <updated>1622714749017</updated>
+    </task>
+    <option name="localTasksCounter" value="88" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -622,7 +613,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Historique .CSV" />
     <MESSAGE value="DCC UML" />
     <MESSAGE value="DS UML V2 + Checkup V1 Java" />
     <MESSAGE value="Fix bug" />
@@ -647,7 +637,8 @@
     <MESSAGE value="MAJ" />
     <MESSAGE value="MAJ Global" />
     <MESSAGE value="SVG UML" />
-    <option name="LAST_COMMIT_MESSAGE" value="SVG UML" />
+    <MESSAGE value="Rapport Test JAVA" />
+    <option name="LAST_COMMIT_MESSAGE" value="Rapport Test JAVA" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

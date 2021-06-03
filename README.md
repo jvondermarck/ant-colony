@@ -39,7 +39,7 @@
 - Au vu des grandes différences de fonctions entre une fourmi Soldat et Ouvrière, nous avons 
   décidé de créer une sous-classe de FourmisMove, qui se dénomme
   MoveOuvrier.
-- FourmisMove s'occupe de chercher tous les noeuds adjacents à la fourmi en évitant les obstacles.
+- FourmisMove s'occupe de chercher tous les noeuds adjacents à la fourmi, que se soit l'ouvrière ou le soldat en évitant les obstacles.
 - Alors que MoveOuvrier fait déplacer des ouvriers qui ne doivent pas retourner sur leur pas
   antérieur, ils doivent chercher à manger et suivre les phéromones et en lacher, donc tout ceci 
   est réalisé grâce à la class MoveOuvrier qui hérite de la classe FourmisMove, cette sous-classe
@@ -52,7 +52,7 @@
 4. **Interface Segregation P.**
 
 - L'interface Fourmis doit servir à la Reine et aux fourmis qui se déplacent. Alors que
-  l'interface IFourmisMove doit servir seulement aux fourmis ouvrières et soldats.
+  l'interface IFourmisMove doit servir seulement aux fourmis ouvrières et soldats. On bloque donc l'accès à la reine de pouvoir se déplacer.
 - Ces deux interfaces permettent de spécifier des caractéristiques différentes aux différentes fourmis.
 - Cela évite que la classe Reine aie des méthodes inutiles (écritent pour des fourmis qui se déplacent)
 - Si l'interface IFourmisMove change, la classe Reine ne sera pas affecté.
@@ -154,7 +154,7 @@
   - Elle aura plus de chance d'être réutilisé et elle peut être utilisé dans d'autres classes 
   - Elle a un impact minimal sur la cohésion et le couplage de AntFacade
 
-### **2) Conclusion - V2**
+### **3) Conclusion - V2**
 
 - Dans la V1, une classe Aretes et AretesOuvrier était présent, nous avons décidé de les supprimer car nous instancions ces méthodes
   à chaque déplacement d'une fourmi. Il nous semblait plus cohérant de créer directement des classes que la fourmi Soldat et Ouvrier pourront
