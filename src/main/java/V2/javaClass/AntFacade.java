@@ -10,6 +10,7 @@ import java.util.BitSet;
 public class AntFacade implements AntFacadeController {
     private BitSet[][] grid;
     private Graphe graphe;
+    private final long sleepingTime; // Vitesse de repos entre chaque seconde de durée
 
     private ArrayList<Soldat> theSoldiers; // La liste de tous les soldats crées qui permettra de les faire déplacer
     private ArrayList<Ouvrier> theWorkers; // La liste de tous les ouvriers crées qui permettra de les faire déplacer
@@ -27,7 +28,19 @@ public class AntFacade implements AntFacadeController {
      */
     public AntFacade()
     {
+        this.sleepingTime = 500;
     }
+
+    /**
+     * Instantiates a new Ant facade.
+     *
+     * @param temps the temps
+     */
+    public AntFacade(int temps)
+    {
+        this.sleepingTime = temps;
+    }
+
 
     @Override
     public void createGrid(int width, int height) {
@@ -175,12 +188,13 @@ public class AntFacade implements AntFacadeController {
                 if(record){
                     antHisto.iteration(this.grid, this.theWorkers, this.theSoldiers); // On va créer l'affichage de l'íteration qui vient de se passer
                 }
+                Thread.sleep(this.sleepingTime);
             }
             if (record){
                 antHisto.closeFile(); // on ferme la connexion d'écriture
             }
         }
-        catch (IOException e)
+        catch (InterruptedException | IOException e)
         {
             e.printStackTrace();
         }

@@ -3,7 +3,7 @@ package V2.javaClass;
 public class Main {
     public static void main(String[] args)
     {
-        MyOwnTest(new AntFacade());
+        MyOwnTest(new AntFacade(500));
     }
 
     public static void MyOwnTest(AntFacadeController controller)
